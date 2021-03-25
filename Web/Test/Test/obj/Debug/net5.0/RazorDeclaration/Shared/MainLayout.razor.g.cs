@@ -97,7 +97,7 @@ using BlazorStrap;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\pepos\complex-task-apps\Web\Test\Test\Shared\MainLayout.razor"
+#line 13 "C:\pepos\complex-task-apps\Web\Test\Test\Shared\MainLayout.razor"
       
     private Boolean isServerSide = false;
     protected override async System.Threading.Tasks.Task OnInitializedAsync()
