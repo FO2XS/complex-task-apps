@@ -623,11 +623,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\pepos\\Test\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\pepos\\complex-task-apps\\Web\\Test\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\pepos\\Test\\Test\\Test.csproj",
+      "projectPath": "C:\\pepos\\complex-task-apps\\Web\\Test\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\Qwerty\\.nuget\\packages\\",
-      "outputPath": "C:\\pepos\\Test\\Test\\obj\\",
+      "outputPath": "C:\\pepos\\complex-task-apps\\Web\\Test\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Qwerty\\AppData\\Roaming\\NuGet\\NuGet.Config",

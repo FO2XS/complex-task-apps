@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cg1lHumQi16IfksYJsqicGgtqxRL+YM70jNQKtBSDmrjA1QaB9MU1MGA6CvMkk4LkqWVCxIt56NAwsuCSYr5Nw==",
+  "dgSpecHash": "KvJ2IoylqwCOQ2RrpGC7N9PwDNQjkCbcZzkyuT8In71CQrDEhEA/kDD+ATNiooHFHiIhTRpkPjjh5LtlAAkiaA==",
   "success": true,
-  "projectFilePath": "C:\\pepos\\Test\\Test\\Test.csproj",
+  "projectFilePath": "C:\\pepos\\complex-task-apps\\Web\\Test\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Qwerty\\.nuget\\packages\\blazorcomponentutilities\\1.6.0\\blazorcomponentutilities.1.6.0.nupkg.sha512",
     "C:\\Users\\Qwerty\\.nuget\\packages\\blazorstrap\\1.5.1\\blazorstrap.1.5.1.nupkg.sha512",
