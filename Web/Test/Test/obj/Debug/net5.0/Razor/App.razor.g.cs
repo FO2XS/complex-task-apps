@@ -145,7 +145,7 @@ using BlazorStrap;
 #nullable disable
                 ));
                 __builder2.AddAttribute(10, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
-                    __builder3.AddMarkupContent(11, "<p>Sorry, there\'s nothing at this address.</p>");
+                    __builder3.AddMarkupContent(11, "<p b-uajdozi659>Sorry, there\'s nothing at this address.</p>");
                 }
                 ));
                 __builder2.CloseComponent();

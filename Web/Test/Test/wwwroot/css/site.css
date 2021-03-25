@@ -48,3 +48,39 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+div.menu {
+    height: 800px;
+    width: 100%;
+    background-color: #96b8ba;
+}
+div.logo,
+div.logo-and-type-game {
+    margin: 10px auto;
+}
+select.type-game {
+    border-right: 100px solid;
+}
+div.technical-support {
+    border-right: 100px solid;
+}
+div.custom-features {
+
+}
+div.FAQ {
+
+}
+div.Log-in-log-up {
+
+}
+user-button {
+    border-radius: 0px;
+    height: 30px;
+}
+div.hot-matches {
+    margin: 0 auto;
+    width: 90%;
+    height: 10%;
+    background: #779ea4;
+    border-width: 1px;
+}

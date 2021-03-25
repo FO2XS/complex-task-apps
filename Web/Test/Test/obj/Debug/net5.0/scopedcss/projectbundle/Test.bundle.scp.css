@@ -1,5 +1,11 @@
 @import '';
 
+/* _content/Test/App.razor.rz.scp.css */
+div.menu[b-uajdozi659] {
+    height: 50px;
+    width: 100%;
+    background-color: #96b8ba;
+}
 /* _content/Test/Shared/MainLayout.razor.rz.scp.css */
 .page[b-vv8m6rf2se] {
     position: relative;

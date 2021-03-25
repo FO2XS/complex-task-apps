@@ -97,15 +97,22 @@ using BlazorStrap;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\pepos\complex-task-apps\Web\Test\Test\Shared\NavMenu.razor"
+#line 71 "C:\pepos\complex-task-apps\Web\Test\Test\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
-
+    public string str { get; set; }
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    bool IsOpen { get; set; }
+    void onclick(MouseEventArgs e)
+    {
+        IsOpen = !IsOpen;
+        StateHasChanged();
     }
 
 #line default
