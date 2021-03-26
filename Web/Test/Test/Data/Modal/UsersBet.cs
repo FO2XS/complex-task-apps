@@ -4,7 +4,7 @@ using System.Collections;
 
 #nullable disable
 
-namespace Test
+namespace Test.Data.Modal
 {
     public partial class UsersBet
     {

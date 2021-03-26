@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Test
+namespace Test.Data.Modal
 {
     public partial class User
     {
