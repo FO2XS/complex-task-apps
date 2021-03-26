@@ -210,3 +210,5 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.Views.pdb
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.csproj.CopyComplete
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.genruntimeconfig.cache
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModal.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\TestModal.razor.g.cs
