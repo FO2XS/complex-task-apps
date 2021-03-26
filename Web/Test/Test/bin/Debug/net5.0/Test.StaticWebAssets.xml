@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Test\Test\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/BlazorStrap" Path="C:\Users\FOXXS\.nuget\packages\blazorstrap\1.5.1\build\..\staticwebassets\" />
+</StaticWebAssets>
