@@ -22,4 +22,5 @@ namespace Test.Data
             }).ToArray());
         }
     }
+}
 
