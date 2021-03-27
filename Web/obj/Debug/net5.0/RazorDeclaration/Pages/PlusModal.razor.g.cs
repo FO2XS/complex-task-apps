@@ -111,13 +111,20 @@ using Test.Data.Modal;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 130 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
       
-    ////////////////////////////////////////////////////////////////
-    private BSModal Modal { get; set; }
+    private BSModal ModalSelectBet { get; set; }
     private Event Event { get; set; }
-
     private List<PossibleBet> Bets { get; set; }
+    //
+    private BSModal ModalFinishBet{get;set;}
+    private Team selectTeam{get;set;}
+    private PossibleBet selectBet{get;set;}
+    private float selectCoef{get;set;}
+    private decimal? sum;
+    //
+    private bool IsVisible{get;set;} = false;
+
 
 
     private void GetBets()
@@ -127,9 +134,30 @@ using Test.Data.Modal;
 
         Bets = service.GetPossibleBets(Event);
 
-        Modal.Show();
+        ModalSelectBet.Show();
     }
-    /////////////////////////////////////////
+
+    private void OpenFinishModal(Team team, PossibleBet bet){
+        selectTeam = team;
+        selectBet = bet;
+        selectCoef = Event.IdTeam1Navigation==team? bet.Coef1:bet.Coef2;
+        sum = null;
+        ModalFinishBet.Show();
+        ModalSelectBet.Hide();
+    }
+    private void CloseFinishOpenSelectModal(){
+        ModalFinishBet.Hide();
+        ModalSelectBet.Show();
+    }
+
+    private void CreateBet(){
+        IsVisible = !IsVisible;
+        ModalFinishBet.Hide();
+    }
+
+    private decimal? CalculatePrize(decimal? sum, float coef){
+        return sum * Convert.ToDecimal(coef);
+    }
 
 #line default
 #line hidden

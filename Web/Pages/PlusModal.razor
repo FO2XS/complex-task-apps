@@ -6,10 +6,19 @@
 @inject WebService service
 
 <BSButton OnClick="@(() => GetBets())">Нажми чтобы появились ставки</BSButton>
+<BSToast IsVisible="@IsVisible">
+    <BSToastHeader>Ставка осуществлена</BSToastHeader>
+    <BSToastBody>
+    <p>Это просто заплатка. Ставка осуществлена, <br> далее ставка будет обработана и зарегистрирована, <br>а заплатку уберу</p>
+    <p>Также нужно не забыть про проверки на макс. <br>и мин сумму и Null
+    <br> и наличие средств у юзера</p>
+    <br>Нажав на крестик, уведомление исчезнет навсегда
+    </BSToastBody>
+</BSToast>
 
 
-        <BSModal @ref="Modal">
-            <BSModalHeader OnClick="@(() => Modal.Hide())">Выбор ставки</BSModalHeader>
+        <BSModal @ref="ModalSelectBet">
+            <BSModalHeader OnClick="@(() => ModalSelectBet.Hide())">Выбор ставки</BSModalHeader>
             <BSModalBody>
                 @if (@Event != null)
                 {
@@ -41,7 +50,7 @@
                         {
                             <BSRow>
                                 <BSCol XS = "3">
-                                    <BSButton Size = "Size.Small">Поставить</BSButton>
+                                    <BSButton Size = "Size.Small" OnClick = "@(() => OpenFinishModal(Event.IdTeam1Navigation, bet))">Поставить</BSButton>
                                 </BSCol>
                                 <BSCol XS = "1">
                                     @bet.Coef1
@@ -53,7 +62,7 @@
                                     @bet.Coef2
                                 </BSCol>
                                 <BSCol XS = "3">
-                                    <BSButton Size = "Size.Small">Поставить</BSButton>
+                                    <BSButton Size = "Size.Small" OnClick = "@(() => OpenFinishModal(Event.IdTeam2Navigation, bet))">Поставить</BSButton>
                                 </BSCol>
                             </BSRow>
                             <br>
@@ -62,17 +71,75 @@
                 }
             </BSModalBody>
             <BSModalFooter>
-                <BSButton Color="Color.Secondary" @onclick="@(() => Modal.Hide())">Закрыть</BSButton>
+                <BSButton Color="Color.Secondary" @onclick="@(() => ModalSelectBet.Hide())">Закрыть</BSButton>
             </BSModalFooter>
+            
         </BSModal>
 
 
-@code{
-    ////////////////////////////////////////////////////////////////
-    private BSModal Modal { get; set; }
-    private Event Event { get; set; }
+        <BSModal @ref="ModalFinishBet">
+            <BSModalHeader OnClick="@(() => CloseFinishOpenSelectModal())">Завершение ставки</BSModalHeader>
+            <BSModalBody>
+                @if(selectTeam != null && selectBet != null){
+                    <BSContainer>
+                        <BSRow>
+                            <BSCol>
+                                @selectBet.IdTobNavigation.Title
+                            </BSCol>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol>
+                                @selectTeam.Title
+                                <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@selectTeam.Logo" alt="Thumbnail image" />
+                            </BSCol>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol>
+                                Размер ставки
+                            </BSCol>
+                            <BSCol>
+                                Коэффициент
+                            </BSCol>
+                            <BSCol>
+                                Выигрыш
+                            </BSCol>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol>
+                                <BSBasicInput InputType = "InputType.Number" Size="Size.Small" PlaceHolder = "Сумма ставки" @bind-Value = "sum"/>
+                            </BSCol>
+                            <BSCol>
+                                @selectCoef
+                            </BSCol>
+                            <BSCol>
+                                @CalculatePrize(sum, selectCoef)
+                            </BSCol>
+                        </BSRow>
+                    </BSContainer>
+                }
+            </BSModalBody>
+            <BSModalFooter>
+                <BSButton Color="Color.Primary" @onclick="@(() => CreateBet())">Поставить</BSButton>
+                <BSButton Color="Color.Secondary" @onclick="@(() => CloseFinishOpenSelectModal())">Отмена</BSButton>
+            </BSModalFooter>
+        </BSModal>
 
+        
+
+
+@code{
+    private BSModal ModalSelectBet { get; set; }
+    private Event Event { get; set; }
     private List<PossibleBet> Bets { get; set; }
+    //
+    private BSModal ModalFinishBet{get;set;}
+    private Team selectTeam{get;set;}
+    private PossibleBet selectBet{get;set;}
+    private float selectCoef{get;set;}
+    private decimal? sum;
+    //
+    private bool IsVisible{get;set;} = false;
+
 
 
     private void GetBets()
@@ -82,7 +149,28 @@
 
         Bets = service.GetPossibleBets(Event);
 
-        Modal.Show();
+        ModalSelectBet.Show();
     }
-    /////////////////////////////////////////
+
+    private void OpenFinishModal(Team team, PossibleBet bet){
+        selectTeam = team;
+        selectBet = bet;
+        selectCoef = Event.IdTeam1Navigation==team? bet.Coef1:bet.Coef2;
+        sum = null;
+        ModalFinishBet.Show();
+        ModalSelectBet.Hide();
+    }
+    private void CloseFinishOpenSelectModal(){
+        ModalFinishBet.Hide();
+        ModalSelectBet.Show();
+    }
+
+    private void CreateBet(){
+        IsVisible = !IsVisible;
+        ModalFinishBet.Hide();
+    }
+
+    private decimal? CalculatePrize(decimal? sum, float coef){
+        return sum * Convert.ToDecimal(coef);
+    }
 }
