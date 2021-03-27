@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test
+namespace Test.Pages
 {
     #line hidden
     using System;
@@ -89,13 +89,53 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
-    public partial class App : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+using Test.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+using Test.Data.Modal;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class PlusModal : LayoutComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 56 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+      
+    ////////////////////////////////////////////////////////////////
+    private BSModal Modal { get; set; }
+    private Event Event { get; set; }
+
+    private List<PossibleBet> Bets { get; set; }
+
+
+    private void GetBets()
+    {
+        var temp = service.GetFutureEvents(new Sport { Id = 1 });
+        Event = temp[2];
+
+        Bets = service.GetPossibleBets(Event);
+
+        Modal.Show();
+    }
+    /////////////////////////////////////////
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WebService service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591

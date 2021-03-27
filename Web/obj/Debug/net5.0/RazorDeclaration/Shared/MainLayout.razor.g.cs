@@ -13,78 +13,92 @@ namespace Test.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 1 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 2 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 3 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 6 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 7 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 8 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 9 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Test;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 10 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Test.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 11 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using BlazorStrap;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+using Test.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+using Test.Data.Modal;
 
 #line default
 #line hidden
@@ -97,17 +111,9 @@ using BlazorStrap;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 80 "C:\pepos\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 50 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
       
-
-    String Str { get; set; }
-    void click()
-    {
-        var ser = new Test.Data.WebService();
-
-        ser.GetCurrentEvents(new Data.Modal.Sport() { Id = 1 }).ToList().ForEach(x => Str += x.StartDate + "\n");
-    }
-
+    
     private Boolean isServerSide = false;
     protected override async System.Threading.Tasks.Task OnInitializedAsync()
     {
@@ -129,6 +135,7 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WebService service { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }

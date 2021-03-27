@@ -78,15 +78,7 @@
     </body>
 </html>
 @code{
-
-    String Str { get; set; }
-    void click()
-    {
-        var ser = new Test.Data.WebService();
-
-        ser.GetCurrentEvents(new Data.Modal.Sport() { Id = 1 }).ToList().ForEach(x => Str += x.StartDate + "\n");
-    }
-
+    
     private Boolean isServerSide = false;
     protected override async System.Threading.Tasks.Task OnInitializedAsync()
     {

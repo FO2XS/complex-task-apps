@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Test.csproj",
+  "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -111,6 +111,102 @@
         }
       },
       {
+        "HashCode": -177681889,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.PlusModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "PlusModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.PlusModal"
+        }
+      },
+      {
+        "HashCode": 1901255922,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.PlusModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.PlusModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.PlusModal",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 278461451,
+        "Kind": "Components.ChildContent",
+        "Name": "Test.Pages.PlusModal.Body",
+        "AssemblyName": "Test",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "PlusModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Test.Pages.PlusModal.Body",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": -1840052264,
+        "Kind": "Components.ChildContent",
+        "Name": "Test.Pages.PlusModal.Body",
+        "AssemblyName": "Test",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "Test.Pages.PlusModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Test.Pages.PlusModal.Body",
+          "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1132936243,
         "Kind": "Components.Component",
         "Name": "Test.App",
@@ -193,6 +289,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Test.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 720188193,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1179052538,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -289,39 +418,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Test.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 720188193,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1179052538,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -34560,52 +34656,57 @@
   "RootNamespace": "Test",
   "Documents": [
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\App.razor",
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Pages\\FetchData.razor",
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\FetchData.razor",
       "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\PlusModal.razor",
+      "TargetPath": "Pages\\PlusModal.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Pages\\Error.cshtml",
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test\\Test\\Pages\\Index.razor",
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
       "FileKind": "component"
     }

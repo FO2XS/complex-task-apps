@@ -1,0 +1,74 @@
+@inherits LayoutComponentBase
+@inject IBootstrapCss BootstrapCSS
+
+@using Test.Data
+@using Test.Data.Modal
+@inject WebService service
+
+<BSButton OnClick="@(() => GetBets())">Нажми чтобы появились ставки</BSButton>
+
+
+        <BSModal @ref="Modal">
+            <BSModalHeader OnClick="@(() => Modal.Hide())">Выбор ставки</BSModalHeader>
+            <BSModalBody>
+                @if (@Event != null)
+                {
+                    <BSTable IsBorderless = "true">
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <td>@Event.IdTeam1Navigation.Title
+                                    <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam1Navigation.Logo" alt="Thumbnail image" />
+                                </td>
+                                <td style="vertical-align: middle;">VS</td>
+                                <td>@Event.IdTeam2Navigation.Title
+                                    <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam2Navigation.Logo" alt="Thumbnail image" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </BSTable>
+                    <hr>
+                    <BSTable IsBorderless = "true">
+                        <tbody style="text-align: center;">
+                            @foreach (var bet in Bets)
+                            {
+                                <tr>
+                                <td>
+                                    <BSButton Size = "Size.Small">Поставить</BSButton>
+                                </td>
+                                <td>@bet.Coef1</td>
+                                <td>@bet.IdTobNavigation.Title</td>
+                                <td>@bet.Coef2</td>
+                                <td>
+                                    <BSButton Size = "Size.Small">Поставить</BSButton>
+                                </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </BSTable>
+                }
+            </BSModalBody>
+            <BSModalFooter>
+                <BSButton Color="Color.Secondary" @onclick="@(() => Modal.Hide())">Закрыть</BSButton>
+            </BSModalFooter>
+        </BSModal>
+
+
+@code{
+    ////////////////////////////////////////////////////////////////
+    private BSModal Modal { get; set; }
+    private Event Event { get; set; }
+
+    private List<PossibleBet> Bets { get; set; }
+
+
+    private void GetBets()
+    {
+        var temp = service.GetFutureEvents(new Sport { Id = 1 });
+        Event = temp[2];
+
+        Bets = service.GetPossibleBets(Event);
+
+        Modal.Show();
+    }
+    /////////////////////////////////////////
+}
