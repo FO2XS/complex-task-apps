@@ -31,6 +31,7 @@ namespace Test
 			services.AddServerSideBlazor();
 			services.AddSingleton<WeatherForecastService>();
 			services.AddBootstrapCss();
+			services.AddSingleton<WebService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

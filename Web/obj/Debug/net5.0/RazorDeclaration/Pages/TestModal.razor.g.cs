@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test
+namespace Test.Pages
 {
     #line hidden
     using System;
@@ -89,13 +89,30 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
-    public partial class App : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\TestModal.razor"
+using Test.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\TestModal.razor"
+using Test.Data.Modal;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/test")]
+    public partial class TestModal : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WebService service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591
