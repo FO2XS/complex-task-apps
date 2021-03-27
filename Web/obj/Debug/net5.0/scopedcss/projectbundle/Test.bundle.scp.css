@@ -1,76 +1,114 @@
 @import '';
 
 /* _content/Test/Shared/MainLayout.razor.rz.scp.css */
-.page[b-vv8m6rf2se] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+div.main-main[b-vv8m6rf2se] {
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.main[b-vv8m6rf2se] {
-    flex: 1;
+div.main[b-vv8m6rf2se] {
+    margin-top: 70px;
 }
 
-.sidebar[b-vv8m6rf2se] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+div.menu1[b-vv8m6rf2se] {
+    height: 80px;
+    width: 100%;
+    background-color: #779ea4;
+    border: 1px;
 }
 
-.top-row[b-vv8m6rf2se] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
+div.logo-and-type-game-and-technical-support[b-vv8m6rf2se] {
+    margin-left: 0px;
+    display: inline-block;
 }
 
-    .top-row[b-vv8m6rf2se]  a, .top-row .btn-link[b-vv8m6rf2se] {
-        white-space: nowrap;
-        margin-left: 1.5rem;
+    div.logo-and-type-game-and-technical-support div[b-vv8m6rf2se] {
+        display: inline-block;
     }
 
-    .top-row a:first-child[b-vv8m6rf2se] {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row:not(.auth)[b-vv8m6rf2se] {
-        display: none;
-    }
-
-    .top-row.auth[b-vv8m6rf2se] {
-        justify-content: space-between;
-    }
-
-    .top-row a[b-vv8m6rf2se], .top-row .btn-link[b-vv8m6rf2se] {
-        margin-left: 0;
-    }
+div.logo[b-vv8m6rf2se] {
 }
 
-@media (min-width: 641px) {
-    .page[b-vv8m6rf2se] {
-        flex-direction: row;
-    }
-
-    .sidebar[b-vv8m6rf2se] {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row[b-vv8m6rf2se] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .main > div[b-vv8m6rf2se] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
+div.technical-support[b-vv8m6rf2se] {
 }
+
+div.type-games[b-vv8m6rf2se] {
+}
+
+div.custom-features[b-vv8m6rf2se] {
+    white-space: nowrap;
+    float: right;
+}
+
+    div.custom-features div[b-vv8m6rf2se] {
+        display: inline-block;
+    }
+
+div.log-in-log-up[b-vv8m6rf2se] {
+}
+
+div.hot-matches[b-vv8m6rf2se] {
+    margin: 0 auto;
+    width: 85%;
+    height: 10%;
+    background: #779ea4;
+    border-width: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+div.hot-matches-title[b-vv8m6rf2se] {
+    text-align: center;
+}
+
+    div.hot-matches-title p[b-vv8m6rf2se] {
+        padding-top: 10px;
+    }
+
+div.place-bet[b-vv8m6rf2se] {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+    div.place-bet button[b-vv8m6rf2se] {
+        display: block;
+        text-align: center;
+    }
+
+    div.place-bet span[b-vv8m6rf2se] {
+        padding: 0px;
+        display: block;
+        text-align: center;
+    }
+
+div.team-right[b-vv8m6rf2se],
+div.team-left[b-vv8m6rf2se] {
+}
+
+div.team-right[b-vv8m6rf2se] {
+    float: right;
+}
+
+div.team-left[b-vv8m6rf2se] {
+    float: left;
+}
+
+div.active-matches[b-vv8m6rf2se] {
+    text-align: center;
+}
+
+div.list-of-active-matches[b-vv8m6rf2se] {
+}
+
+    div.list-of-active-matches ul[b-vv8m6rf2se] {
+        text-align: left;
+    }
+
+        div.list-of-active-matches ul li[b-vv8m6rf2se] {
+            display: inline;
+        }
 /* _content/Test/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-tgg5veqzp4] {
     background-color: rgba(255, 255, 255, 0.1);

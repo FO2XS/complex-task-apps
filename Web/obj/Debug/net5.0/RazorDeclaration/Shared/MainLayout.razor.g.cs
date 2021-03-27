@@ -97,8 +97,17 @@ using BlazorStrap;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\pepos\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 80 "C:\pepos\complex-task-apps\Web\Shared\MainLayout.razor"
       
+
+    String Str { get; set; }
+    void click()
+    {
+        var ser = new Test.Data.WebService();
+
+        ser.GetCurrentEvents(new Data.Modal.Sport() { Id = 1 }).ToList().ForEach(x => Str += x.StartDate + "\n");
+    }
+
     private Boolean isServerSide = false;
     protected override async System.Threading.Tasks.Task OnInitializedAsync()
     {

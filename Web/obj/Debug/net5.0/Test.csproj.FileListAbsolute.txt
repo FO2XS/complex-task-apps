@@ -210,3 +210,11 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.Views.pdb
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.csproj.CopyComplete
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.genruntimeconfig.cache
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Humanizer.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
