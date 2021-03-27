@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test.Shared
+namespace Test.Pages
 {
     #line hidden
     using System;
@@ -90,20 +90,20 @@ using BlazorStrap;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data.Modal;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    public partial class PlusModal : LayoutComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,26 +111,25 @@ using Test.Data.Modal;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 56 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
       
-    
-    private Boolean isServerSide = false;
-    protected override async System.Threading.Tasks.Task OnInitializedAsync()
+    ////////////////////////////////////////////////////////////////
+    private BSModal Modal { get; set; }
+    private Event Event { get; set; }
+
+    private List<PossibleBet> Bets { get; set; }
+
+
+    private void GetBets()
     {
-        try
-        {
-            await BootstrapCSS.SetBootstrapCss("4.3.1");
-        }
-        catch (Exception)
-        {
-            isServerSide = true;
-        }
+        var temp = service.GetFutureEvents(new Sport { Id = 1 });
+        Event = temp[2];
+
+        Bets = service.GetPossibleBets(Event);
+
+        Modal.Show();
     }
-    protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-    {
-        if (isServerSide && firstRun)
-            await BootstrapCSS.SetBootstrapCss();
-    }
+    /////////////////////////////////////////
 
 #line default
 #line hidden

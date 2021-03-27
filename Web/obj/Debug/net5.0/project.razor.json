@@ -111,35 +111,217 @@
         }
       },
       {
-        "HashCode": 1291464278,
+        "HashCode": -177681889,
         "Kind": "Components.Component",
-        "Name": "Test.Pages.TestModal",
+        "Name": "Test.Pages.PlusModal",
         "AssemblyName": "Test",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TestModal"
+            "TagName": "PlusModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.TestModal"
+          "Common.TypeName": "Test.Pages.PlusModal"
         }
       },
       {
-        "HashCode": 923087983,
+        "HashCode": 1901255922,
         "Kind": "Components.Component",
-        "Name": "Test.Pages.TestModal",
+        "Name": "Test.Pages.PlusModal",
         "AssemblyName": "Test",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Test.Pages.TestModal"
+            "TagName": "Test.Pages.PlusModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.TestModal",
+          "Common.TypeName": "Test.Pages.PlusModal",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 278461451,
+        "Kind": "Components.ChildContent",
+        "Name": "Test.Pages.PlusModal.Body",
+        "AssemblyName": "Test",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "PlusModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Test.Pages.PlusModal.Body",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": -1840052264,
+        "Kind": "Components.ChildContent",
+        "Name": "Test.Pages.PlusModal.Body",
+        "AssemblyName": "Test",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "Test.Pages.PlusModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Test.Pages.PlusModal.Body",
+          "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1132936243,
+        "Kind": "Components.Component",
+        "Name": "Test.App",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.App"
+        }
+      },
+      {
+        "HashCode": 1023357431,
+        "Kind": "Components.Component",
+        "Name": "Test.App",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1304724516,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.SurveyPrompt",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -1587740759,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.SurveyPrompt",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 720188193,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1179052538,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -236,125 +418,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Test.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1304724516,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.SurveyPrompt",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": -1587740759,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.SurveyPrompt",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 720188193,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1179052538,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1132936243,
-        "Kind": "Components.Component",
-        "Name": "Test.App",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.App"
-        }
-      },
-      {
-        "HashCode": 1023357431,
-        "Kind": "Components.Component",
-        "Name": "Test.App",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -34608,14 +34671,14 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\TestModal.razor",
-      "TargetPath": "Pages\\TestModal.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\PlusModal.razor",
+      "TargetPath": "Pages\\PlusModal.razor",
+      "FileKind": "component"
     },
     {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\Error.cshtml",
