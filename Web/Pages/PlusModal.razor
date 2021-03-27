@@ -13,38 +13,52 @@
             <BSModalBody>
                 @if (@Event != null)
                 {
-                    <BSTable IsBorderless = "true">
-                        <tbody style="text-align: center;">
-                            <tr>
-                                <td>@Event.IdTeam1Navigation.Title
-                                    <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam1Navigation.Logo" alt="Thumbnail image" />
-                                </td>
-                                <td style="vertical-align: middle;">VS</td>
-                                <td>@Event.IdTeam2Navigation.Title
-                                    <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam2Navigation.Logo" alt="Thumbnail image" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </BSTable>
-                    <hr>
-                    <BSTable IsBorderless = "true">
-                        <tbody style="text-align: center;">
-                            @foreach (var bet in Bets)
-                            {
-                                <tr>
-                                <td>
+                    <BSContainer>
+                        <BSRow>
+                            <BSCol XS = "3">
+                                @Event.IdTeam1Navigation.Title
+                            </BSCol>
+                            <BSCol></BSCol>
+                            <BSCol XS = "3">
+                                @Event.IdTeam2Navigation.Title
+                            </BSCol>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol XS = "3"> 
+                                <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam1Navigation.Logo" alt="Thumbnail image" />
+                            </BSCol>
+                            <BSCol><span style="font-size: 2vmax;">VS</span></BSCol>
+                            <BSCol XS = "3">
+                                <BSImage style="max-width: 75px;" IsRounded="true" Alignment="Alignment.Center" src="@Event.IdTeam2Navigation.Logo" alt="Thumbnail image" />
+                            </BSCol>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol>
+                                <hr>
+                            </BSCol>
+                        </BSRow>
+                        @foreach (var bet in Bets)
+                        {
+                            <BSRow>
+                                <BSCol XS = "3">
                                     <BSButton Size = "Size.Small">Поставить</BSButton>
-                                </td>
-                                <td>@bet.Coef1</td>
-                                <td>@bet.IdTobNavigation.Title</td>
-                                <td>@bet.Coef2</td>
-                                <td>
+                                </BSCol>
+                                <BSCol XS = "1">
+                                    @bet.Coef1
+                                </BSCol>
+                                <BSCol XS = "4">
+                                    @bet.IdTobNavigation.Title
+                                </BSCol>
+                                <BSCol XS = "1">
+                                    @bet.Coef2
+                                </BSCol>
+                                <BSCol XS = "3">
                                     <BSButton Size = "Size.Small">Поставить</BSButton>
-                                </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </BSTable>
+                                </BSCol>
+                            </BSRow>
+                            <br>
+                        }
+                    </BSContainer>
                 }
             </BSModalBody>
             <BSModalFooter>
