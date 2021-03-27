@@ -1,3 +1,51 @@
+/* _content/Test/Pages/HotMath.razor.rz.scp.css */
+div.hot-matches[b-wq3mdwacej] {
+    margin: 0 auto;
+    width: 85%;
+    height: 10%;
+    background: #779ea4;
+    border-width: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+div.hot-matches-title[b-wq3mdwacej] {
+    text-align: center;
+}
+
+    div.hot-matches-title p[b-wq3mdwacej] {
+        padding-top: 10px;
+    }
+
+div.place-bet[b-wq3mdwacej] {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+    div.place-bet button[b-wq3mdwacej] {
+        display: block;
+        text-align: center;
+    }
+
+    div.place-bet span[b-wq3mdwacej] {
+        padding: 0px;
+        display: block;
+        text-align: center;
+    }
+
+div.team-right[b-wq3mdwacej],
+div.team-left[b-wq3mdwacej] {
+}
+
+div.team-right[b-wq3mdwacej] {
+    float: right;
+}
+
+div.team-left[b-wq3mdwacej] {
+    float: left;
+}
 /* _content/Test/Shared/MainLayout.razor.rz.scp.css */
 div.main-main[b-vv8m6rf2se] {
     max-width: 1440px;
@@ -43,54 +91,6 @@ div.custom-features[b-vv8m6rf2se] {
     }
 
 div.log-in-log-up[b-vv8m6rf2se] {
-}
-
-div.hot-matches[b-vv8m6rf2se] {
-    margin: 0 auto;
-    width: 85%;
-    height: 10%;
-    background: #779ea4;
-    border-width: 1px;
-    white-space: nowrap;
-    text-align: center;
-}
-
-div.hot-matches-title[b-vv8m6rf2se] {
-    text-align: center;
-}
-
-    div.hot-matches-title p[b-vv8m6rf2se] {
-        padding-top: 10px;
-    }
-
-div.place-bet[b-vv8m6rf2se] {
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    margin: 0 auto;
-}
-
-    div.place-bet button[b-vv8m6rf2se] {
-        display: block;
-        text-align: center;
-    }
-
-    div.place-bet span[b-vv8m6rf2se] {
-        padding: 0px;
-        display: block;
-        text-align: center;
-    }
-
-div.team-right[b-vv8m6rf2se],
-div.team-left[b-vv8m6rf2se] {
-}
-
-div.team-right[b-vv8m6rf2se] {
-    float: right;
-}
-
-div.team-left[b-vv8m6rf2se] {
-    float: left;
 }
 
 div.active-matches[b-vv8m6rf2se] {

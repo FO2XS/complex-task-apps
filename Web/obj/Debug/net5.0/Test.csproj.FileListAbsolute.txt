@@ -212,3 +212,16 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.genruntimeconfig.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModal.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\TestModal.razor.g.cs
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Humanizer.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\PlusModal.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css

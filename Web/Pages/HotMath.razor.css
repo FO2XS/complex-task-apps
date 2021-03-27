@@ -1,0 +1,47 @@
+﻿div.hot-matches {
+    margin: 0 auto;
+    width: 85%;
+    height: 10%;
+    background: #779ea4;
+    border-width: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+div.hot-matches-title {
+    text-align: center;
+}
+
+    div.hot-matches-title p {
+        padding-top: 10px;
+    }
+
+div.place-bet {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+    div.place-bet button {
+        display: block;
+        text-align: center;
+    }
+
+    div.place-bet span {
+        padding: 0px;
+        display: block;
+        text-align: center;
+    }
+
+div.team-right,
+div.team-left {
+}
+
+div.team-right {
+    float: right;
+}
+
+div.team-left {
+    float: left;
+}

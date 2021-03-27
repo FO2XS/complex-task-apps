@@ -1,84 +1,68 @@
 ﻿@inherits LayoutComponentBase
 @inject IBootstrapCss BootstrapCSS
-<html>
-<head>
-    <style>
-        
-    </style>
-</head>
-    <body>
-        <div class="main-main">
-            <div class="menu1">
-                <div class="logo-and-type-game-and-technical-support">
-                    <div class="logo">
-                        Лого
-                    </div>
-                    <div class="">
-                        <select>
-                            <option selected>
-                                CS:GO
-                            </option>
-                            <option>
-                                LoL
-                            </option>
-                        </select>
-                    </div>
-                    <div class="technical-support">
-                        Тех. поддержка
-                    </div>
-                </div>
+@using Test.Pages
 
-                <div class="custom-features">
-                    <div>FAQ</div>
-                    <div>
-                        <button style="display: block;">log in</button>
-                        <button style="display: block;">log up</button>
-                    </div>
-                    <div>  </div>
+
+    <div class="main-main">
+        <div class="menu1">
+            <div class="logo-and-type-game-and-technical-support">
+                <div class="logo">
+                    Лого
+                </div>
+                <div class="">
+                    <select>
+                        <option selected>
+                            CS:GO
+                        </option>
+                        <option>
+                            LoL
+                        </option>
+                    </select>
+                </div>
+                <div class="technical-support">
+                    Тех. поддержка
                 </div>
             </div>
 
-            <div class="main">
-                <div class="hot-matches">
-                    <div class="team-left">
-                        <span>Team 1</span><img>
-                    </div>
-                    <div class="place-bet">
-                        <span class="name-match">dawd</span>
-                        <span class="date-match">dawd</span>
-                        <button >СДЕЛАТЬ СТАВКУ!</button>
-                    </div>
-                    <div class="team-right">
-                        <img><span>Team 2</span>
-                    </div>
+            <div class="custom-features">
+                <div>FAQ</div>
+                <div>
+                    <button style="display: block;">log in</button>
+                    <button style="display: block;">log up</button>
                 </div>
+                <div>  </div>
+            </div>
+        </div>
 
-                <div class="active-matches">
-                    <div class="active-matches-title">
-                        <p>Эти матчи уже начались! Смотри матчи и ставь ставки!</p>
-                    </div>
-                    <div class="list-of-active-matches">
-                        <ul>
-                            <li>
-                                <div class="active-matches-bet">
-                                    <div class="first-team">
+        <div class="main">
+            <Test.Pages.HotMath></Test.Pages.HotMath>
 
-                                    </div>
-                                    <div class="second-team">
+            <div class="active-matches">
+                <div class="active-matches-title">
+                    <p>Эти матчи уже начались! Смотри матчи и ставь ставки!</p>
+                </div>
+                <div class="list-of-active-matches">
+                    <ul>
+                        <li>
+                            <div class="active-matches-bet">
+                                <div class="first-team">
 
-                                    </div>
                                 </div>
-                            </li>
-                            <li>вфцвфц</li>
-                        </ul>
-                    </div>
+                                <div class="second-team">
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+
+
 @code{
-    
+
     private Boolean isServerSide = false;
     protected override async System.Threading.Tasks.Task OnInitializedAsync()
     {

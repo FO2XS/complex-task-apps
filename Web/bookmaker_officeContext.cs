@@ -9,13 +9,11 @@ namespace Test
 {
     public partial class bookmaker_officeContext : DbContext
     {
-        public bookmaker_officeContext()
-        {
+        public bookmaker_officeContext() {
         }
 
         public bookmaker_officeContext(DbContextOptions<bookmaker_officeContext> options)
-            : base(options)
-        {
+            : base(options) {
         }
 
         public virtual DbSet<Event> Events { get; set; }
