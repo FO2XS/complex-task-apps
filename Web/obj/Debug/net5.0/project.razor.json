@@ -144,125 +144,6 @@
         }
       },
       {
-        "HashCode": 1132936243,
-        "Kind": "Components.Component",
-        "Name": "Test.App",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.App"
-        }
-      },
-      {
-        "HashCode": 1023357431,
-        "Kind": "Components.Component",
-        "Name": "Test.App",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1304724516,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.SurveyPrompt",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": -1587740759,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.SurveyPrompt",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 720188193,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1179052538,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -952235922,
         "Kind": "Components.Component",
         "Name": "Test.Shared.MainLayout",
@@ -355,6 +236,125 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Test.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1304724516,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.SurveyPrompt",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -1587740759,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.SurveyPrompt",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 720188193,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1179052538,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1132936243,
+        "Kind": "Components.Component",
+        "Name": "Test.App",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.App"
+        }
+      },
+      {
+        "HashCode": 1023357431,
+        "Kind": "Components.Component",
+        "Name": "Test.App",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
