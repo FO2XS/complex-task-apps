@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #pragma checksum "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "445349fd4348c492bcb06bb7708f27552d8b93b9"
+=======
+#pragma checksum "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "445349fd4348c492bcb06bb7708f27552d8b93b9"
+>>>>>>> Stashed changes
 =======
 #pragma checksum "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "445349fd4348c492bcb06bb7708f27552d8b93b9"
 >>>>>>> Stashed changes
@@ -134,7 +138,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 9 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 9 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 9 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -165,7 +173,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 21 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 21 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 21 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -189,7 +201,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 23 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 23 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 23 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -213,7 +229,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 28 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 28 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 28 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -240,7 +260,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 32 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 32 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 32 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -271,7 +295,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 37 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -288,7 +316,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 37 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -305,7 +337,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 37 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 37 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -340,7 +376,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 41 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -357,7 +397,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 41 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -374,7 +418,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 41 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 41 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -393,6 +441,7 @@ using Test.Data.Modal;
                             ));
                             __builder5.CloseComponent();
                         }
+<<<<<<< Updated upstream
                         ));
                         __builder4.CloseComponent();
                         __builder4.AddMarkupContent(63, "\r\n                        ");
@@ -416,6 +465,22 @@ using Test.Data.Modal;
 =======
 =======
 >>>>>>> Stashed changes
+=======
+                        ));
+                        __builder4.CloseComponent();
+                        __builder4.AddMarkupContent(63, "\r\n                        ");
+                        __builder4.OpenComponent<BlazorStrap.BSRow>(64);
+                        __builder4.AddAttribute(65, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder5) => {
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(66);
+                            __builder5.AddAttribute(67, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.AddMarkupContent(68, "<hr>");
+                            }
+                            ));
+                            __builder5.CloseComponent();
+                        }
+                        ));
+                        __builder4.CloseComponent();
+>>>>>>> Stashed changes
 #nullable restore
 #line 49 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                          foreach (var bet in Bets)
@@ -431,6 +496,11 @@ using Test.Data.Modal;
                             __builder5.AddAttribute(73, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
                                 __builder6.OpenComponent<BlazorStrap.BSButton>(74);
                                 __builder6.AddAttribute(75, "Size", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<BlazorStrap.Size>(
+<<<<<<< Updated upstream
+#nullable restore
+#line 53 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                      Size.Small
+=======
 #nullable restore
 #line 53 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                                                       Size.Small
@@ -438,6 +508,96 @@ using Test.Data.Modal;
 #line default
 #line hidden
 #nullable disable
+                                ));
+                                __builder6.AddAttribute(76, "OnClick", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+#nullable restore
+#line 53 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                                               () => OpenFinishModal(Event.IdTeam1Navigation, bet)
+
+#line default
+#line hidden
+#nullable disable
+                                )));
+                                __builder6.AddAttribute(77, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder7) => {
+                                    __builder7.AddMarkupContent(78, "Поставить");
+                                }
+                                ));
+                                __builder6.CloseComponent();
+                            }
+                            ));
+                            __builder5.CloseComponent();
+                            __builder5.AddMarkupContent(79, "\r\n                                ");
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(80);
+                            __builder5.AddAttribute(81, "XS", "1");
+                            __builder5.AddAttribute(82, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.AddContent(83, 
+#nullable restore
+#line 56 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                     bet.Coef1
+
+#line default
+#line hidden
+#nullable disable
+                                );
+                            }
+                            ));
+                            __builder5.CloseComponent();
+                            __builder5.AddMarkupContent(84, "\r\n                                ");
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(85);
+                            __builder5.AddAttribute(86, "XS", "4");
+                            __builder5.AddAttribute(87, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.AddContent(88, 
+#nullable restore
+#line 59 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                     bet.IdTobNavigation.Title
+
+#line default
+#line hidden
+#nullable disable
+                                );
+                            }
+                            ));
+                            __builder5.CloseComponent();
+                            __builder5.AddMarkupContent(89, "\r\n                                ");
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(90);
+                            __builder5.AddAttribute(91, "XS", "1");
+                            __builder5.AddAttribute(92, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.AddContent(93, 
+#nullable restore
+#line 62 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                     bet.Coef2
+
+#line default
+#line hidden
+#nullable disable
+                                );
+                            }
+                            ));
+                            __builder5.CloseComponent();
+                            __builder5.AddMarkupContent(94, "\r\n                                ");
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(95);
+                            __builder5.AddAttribute(96, "XS", "3");
+                            __builder5.AddAttribute(97, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.OpenComponent<BlazorStrap.BSButton>(98);
+                                __builder6.AddAttribute(99, "Size", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<BlazorStrap.Size>(
+#nullable restore
+#line 65 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                      Size.Small
+
+#line default
+#line hidden
+#nullable disable
+                                ));
+                                __builder6.AddAttribute(100, "OnClick", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+#nullable restore
+#line 65 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                                               () => OpenFinishModal(Event.IdTeam2Navigation, bet)
+>>>>>>> Stashed changes
+
+#line default
+#line hidden
+#nullable disable
+<<<<<<< Updated upstream
                                 ));
                                 __builder6.AddAttribute(76, "OnClick", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
@@ -699,6 +859,8 @@ using Test.Data.Modal;
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                                 )));
                                 __builder6.AddAttribute(101, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder7) => {
                                     __builder7.AddMarkupContent(102, "Поставить");
@@ -715,7 +877,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 69 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 69 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 69 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -733,9 +899,12 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 71 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
                 }
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #line 71 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
@@ -756,6 +925,7 @@ using Test.Data.Modal;
 #line 74 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                                  Color.Secondary
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 
 #line default
@@ -774,6 +944,8 @@ using Test.Data.Modal;
                                  Color.Secondary
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 #line default
 #line hidden
@@ -782,7 +954,11 @@ using Test.Data.Modal;
                     __builder3.AddAttribute(109, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 74 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                              () => ModalSelectBet.Hide()
+=======
+#line 74 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                                                               () => ModalSelectBet.Hide()
 =======
 #line 74 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
@@ -811,6 +987,41 @@ using Test.Data.Modal;
 #line default
 #line hidden
 #nullable disable
+<<<<<<< Updated upstream
+                    ));
+                    __builder3.AddAttribute(110, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
+                        __builder4.AddMarkupContent(111, "Закрыть");
+                    }
+                    ));
+                    __builder3.CloseComponent();
+                }
+                ));
+                __builder2.CloseComponent();
+            }
+            ));
+            __builder.AddComponentReferenceCapture(112, (__value) => {
+#nullable restore
+#line 20 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                       ModalSelectBet = (BlazorStrap.BSModal)__value;
+>>>>>>> Stashed changes
+=======
+            }
+            );
+            __builder.CloseComponent();
+            __builder.AddMarkupContent(113, "\r\n\r\n\r\n        ");
+            __builder.OpenComponent<BlazorStrap.BSModal>(114);
+            __builder.AddAttribute(115, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.OpenComponent<BlazorStrap.BSModalHeader>(116);
+                __builder2.AddAttribute(117, "OnClick", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+#nullable restore
+#line 81 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                      () => CloseFinishOpenSelectModal()
+>>>>>>> Stashed changes
+
+#line default
+#line hidden
+#nullable disable
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     ));
                     __builder3.AddAttribute(110, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
@@ -891,6 +1102,8 @@ using Test.Data.Modal;
 #nullable disable
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                 )));
                 __builder2.AddAttribute(118, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
                     __builder3.AddMarkupContent(119, "Завершение ставки");
@@ -903,7 +1116,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 83 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 83 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 83 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -925,7 +1142,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 87 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 87 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 87 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -953,7 +1174,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 92 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 92 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 92 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -973,7 +1198,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 93 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -990,7 +1219,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 93 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -1007,7 +1240,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 93 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 93 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -1063,9 +1300,12 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 109 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
                                                            InputType.Number
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #line 109 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
@@ -1101,6 +1341,8 @@ using Test.Data.Modal;
 #nullable restore
 #line 112 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                                  selectCoef
+<<<<<<< Updated upstream
+=======
 
 #line default
 #line hidden
@@ -1109,6 +1351,23 @@ using Test.Data.Modal;
                             }
                             ));
                             __builder5.CloseComponent();
+                            __builder5.AddMarkupContent(172, "\r\n                            ");
+                            __builder5.OpenComponent<BlazorStrap.BSCol>(173);
+                            __builder5.AddAttribute(174, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
+                                __builder6.AddContent(175, 
+#nullable restore
+#line 115 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                 CalculatePrize(sum, selectCoef)
+>>>>>>> Stashed changes
+
+#line default
+#line hidden
+#nullable disable
+                                );
+                            }
+                            ));
+                            __builder5.CloseComponent();
+<<<<<<< Updated upstream
                             __builder5.AddMarkupContent(172, "\r\n                            ");
                             __builder5.OpenComponent<BlazorStrap.BSCol>(173);
                             __builder5.AddAttribute(174, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder6) => {
@@ -1180,6 +1439,8 @@ using Test.Data.Modal;
                             }
                             ));
                             __builder5.CloseComponent();
+=======
+>>>>>>> Stashed changes
                         }
                         ));
                         __builder4.CloseComponent();
@@ -1189,7 +1450,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 119 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 119 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 119 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -1211,6 +1476,7 @@ using Test.Data.Modal;
                     __builder3.AddAttribute(180, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<BlazorStrap.Color>(
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nullable restore
 #line 122 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 =======
@@ -1289,6 +1555,49 @@ using Test.Data.Modal;
 >>>>>>> Stashed changes
 #line 123 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
                                  Color.Secondary
+=======
+#nullable restore
+#line 122 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                 Color.Primary
+>>>>>>> Stashed changes
+
+#line default
+#line hidden
+#nullable disable
+                    ));
+<<<<<<< Updated upstream
+                    __builder3.AddAttribute(187, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+#nullable restore
+#line 123 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                              () => CloseFinishOpenSelectModal()
+=======
+                    __builder3.AddAttribute(181, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+#nullable restore
+#line 122 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                                            () => CreateBet()
+>>>>>>> Stashed changes
+
+#line default
+#line hidden
+#nullable disable
+                    ));
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+                    __builder3.AddAttribute(182, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
+                        __builder4.AddMarkupContent(183, "Поставить");
+                    }
+                    ));
+                    __builder3.CloseComponent();
+                    __builder3.AddMarkupContent(184, "\r\n                ");
+                    __builder3.OpenComponent<BlazorStrap.BSButton>(185);
+                    __builder3.AddAttribute(186, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<BlazorStrap.Color>(
+#nullable restore
+#line 123 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+                                 Color.Secondary
 
 #line default
 #line hidden
@@ -1303,9 +1612,6 @@ using Test.Data.Modal;
 #line hidden
 #nullable disable
                     ));
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
                     __builder3.AddAttribute(188, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
                         __builder4.AddMarkupContent(189, "Отмена");
@@ -1321,7 +1627,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 80 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 80 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 80 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes
@@ -1341,7 +1651,11 @@ using Test.Data.Modal;
 #nullable restore
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #line 130 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+=======
+#line 130 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+>>>>>>> Stashed changes
 =======
 #line 130 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
 >>>>>>> Stashed changes

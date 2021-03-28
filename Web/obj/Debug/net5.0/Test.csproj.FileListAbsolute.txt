@@ -226,7 +226,10 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
