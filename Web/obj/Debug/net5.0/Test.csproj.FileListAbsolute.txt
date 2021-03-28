@@ -92,8 +92,6 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.csproj.CoreCompileInputs.ca
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.MvcApplicationPartsAssemblyInfo.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorComponent.input.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
@@ -105,8 +103,6 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.TagHelpers.input.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.TagHelpers.output.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorCoreGenerate.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
@@ -228,3 +224,9 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
+<<<<<<< Updated upstream
+=======
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css
+>>>>>>> Stashed changes
