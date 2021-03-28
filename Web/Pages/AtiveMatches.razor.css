@@ -1,0 +1,44 @@
+﻿div.active-matches {
+}
+
+    div.active-matches .active-matches-title {
+        text-align: center;
+    }
+
+div.list-of-active-matches {
+}
+
+    div.list-of-active-matches ul {
+    }
+
+        div.list-of-active-matches ul li {
+            display: inline-block;
+            width: 49%;
+            background-color: gray;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+            div.list-of-active-matches ul li div {
+                background-color: red;
+                white-space: nowrap;
+            }
+
+div.matches-bet-info {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+div.team-right,
+div.team-left {
+}
+
+div.team-right {
+    float: right;
+}
+
+div.team-left {
+    float: left;
+}

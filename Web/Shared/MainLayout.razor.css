@@ -43,18 +43,3 @@ div.custom-features {
 
 div.log-in-log-up {
 }
-
-div.active-matches {
-    text-align: center;
-}
-
-div.list-of-active-matches {
-}
-
-    div.list-of-active-matches ul {
-        text-align: left;
-    }
-
-        div.list-of-active-matches ul li {
-            display: inline;
-        }
