@@ -13,91 +13,91 @@ namespace Test.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 1 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 2 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 5 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 6 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 7 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 8 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 9 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Test;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 10 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using Test.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
 using BlazorStrap;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 5 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data.Modal;
 
 #line default
@@ -111,13 +111,20 @@ using Test.Data.Modal;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 56 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 130 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
       
-    ////////////////////////////////////////////////////////////////
-    private BSModal Modal { get; set; }
+    private BSModal ModalSelectBet { get; set; }
     private Event Event { get; set; }
-
     private List<PossibleBet> Bets { get; set; }
+    //
+    private BSModal ModalFinishBet{get;set;}
+    private Team selectTeam{get;set;}
+    private PossibleBet selectBet{get;set;}
+    private float selectCoef{get;set;}
+    private decimal? sum;
+    //
+    private bool IsVisible{get;set;} = false;
+
 
 
     private void GetBets()
@@ -127,9 +134,30 @@ using Test.Data.Modal;
 
         Bets = service.GetPossibleBets(Event);
 
-        Modal.Show();
+        ModalSelectBet.Show();
     }
-    /////////////////////////////////////////
+
+    private void OpenFinishModal(Team team, PossibleBet bet){
+        selectTeam = team;
+        selectBet = bet;
+        selectCoef = Event.IdTeam1Navigation==team? bet.Coef1:bet.Coef2;
+        sum = null;
+        ModalFinishBet.Show();
+        ModalSelectBet.Hide();
+    }
+    private void CloseFinishOpenSelectModal(){
+        ModalFinishBet.Hide();
+        ModalSelectBet.Show();
+    }
+
+    private void CreateBet(){
+        IsVisible = !IsVisible;
+        ModalFinishBet.Hide();
+    }
+
+    private decimal? CalculatePrize(decimal? sum, float coef){
+        return sum * Convert.ToDecimal(coef);
+    }
 
 #line default
 #line hidden

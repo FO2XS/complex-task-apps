@@ -210,8 +210,6 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.Views.pdb
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.csproj.CopyComplete
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.genruntimeconfig.cache
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\TestModal.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\TestModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Humanizer.dll
 C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\pepos\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -225,6 +223,8 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\PlusModal.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css

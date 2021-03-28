@@ -111,6 +111,39 @@
         }
       },
       {
+        "HashCode": 667198781,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.HotMath",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "HotMath"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.HotMath"
+        }
+      },
+      {
+        "HashCode": -600612535,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.HotMath",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.HotMath"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.HotMath",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -177681889,
         "Kind": "Components.Component",
         "Name": "Test.Pages.PlusModal",
@@ -293,39 +326,6 @@
         }
       },
       {
-        "HashCode": 720188193,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1179052538,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -952235922,
         "Kind": "Components.Component",
         "Name": "Test.Shared.MainLayout",
@@ -418,6 +418,39 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Test.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 720188193,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1179052538,
+        "Kind": "Components.Component",
+        "Name": "Test.Shared.NavMenu",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -34678,6 +34711,11 @@
     {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\PlusModal.razor",
       "TargetPath": "Pages\\PlusModal.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\HotMath.razor",
+      "TargetPath": "Pages\\HotMath.razor",
       "FileKind": "component"
     },
     {
