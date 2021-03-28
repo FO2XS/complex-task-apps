@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test.Shared
+namespace Test.Pages
 {
     #line hidden
     using System;
@@ -89,46 +89,13 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\pepos\complex-task-apps\Web\Shared\MainLayout.razor"
-using Test.Pages;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    public partial class AtiveMatches : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 50 "C:\pepos\complex-task-apps\Web\Shared\MainLayout.razor"
-      
-
-    private Boolean isServerSide = false;
-    protected override async System.Threading.Tasks.Task OnInitializedAsync()
-    {
-        try
-        {
-            await BootstrapCSS.SetBootstrapCss("4.3.1");
-        }
-        catch (Exception)
-        {
-            isServerSide = true;
-        }
-    }
-    protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-    {
-        if (isServerSide && firstRun)
-            await BootstrapCSS.SetBootstrapCss();
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591

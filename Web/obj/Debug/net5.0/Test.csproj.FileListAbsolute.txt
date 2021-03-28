@@ -225,3 +225,6 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css

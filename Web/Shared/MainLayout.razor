@@ -3,61 +3,47 @@
 @using Test.Pages
 
 
-    <div class="main-main">
-        <div class="menu1">
-            <div class="logo-and-type-game-and-technical-support">
-                <div class="logo">
-                    Лого
-                </div>
-                <div class="">
-                    <select>
-                        <option selected>
-                            CS:GO
-                        </option>
-                        <option>
-                            LoL
-                        </option>
-                    </select>
-                </div>
-                <div class="technical-support">
-                    Тех. поддержка
-                </div>
+<div class="main-main">
+    <div class="menu1">
+        <div class="logo-and-type-game-and-technical-support">
+            <div class="logo">
+                Лого
             </div>
-
-            <div class="custom-features">
-                <div>FAQ</div>
-                <div>
-                    <button style="display: block;">log in</button>
-                    <button style="display: block;">log up</button>
-                </div>
-                <div>  </div>
+            <div class="">
+                <select>
+                    <option selected>
+                        CS:GO
+                    </option>
+                    <option>
+                        LoL
+                    </option>
+                </select>
+            </div>
+            <div class="technical-support">
+                Тех. поддержка
             </div>
         </div>
 
-        <div class="main">
-            <Test.Pages.HotMath></Test.Pages.HotMath>
-
-            <div class="active-matches">
-                <div class="active-matches-title">
-                    <p>Эти матчи уже начались! Смотри матчи и ставь ставки!</p>
-                </div>
-                <div class="list-of-active-matches">
-                    <ul>
-                        <li>
-                            <div class="active-matches-bet">
-                                <div class="first-team">
-
-                                </div>
-                                <div class="second-team">
-
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <div class="custom-features">
+            <div>FAQ</div>
+            <div>
+                <button style="display: block;">log in</button>
+                <button style="display: block;">log up</button>
             </div>
+            <div>  </div>
         </div>
     </div>
+
+    <div class="main">
+        <Test.Pages.HotMath></Test.Pages.HotMath>
+            
+        <Test.Pages.AtiveMatches></Test.Pages.AtiveMatches>
+        
+        <div>
+
+        </div>
+    </div>
+</div>
 
 
 

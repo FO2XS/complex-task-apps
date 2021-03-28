@@ -1,3 +1,48 @@
+/* _content/Test/Pages/AtiveMatches.razor.rz.scp.css */
+div.active-matches[b-oq7gvcb4w8] {
+}
+
+    div.active-matches .active-matches-title[b-oq7gvcb4w8] {
+        text-align: center;
+    }
+
+div.list-of-active-matches[b-oq7gvcb4w8] {
+}
+
+    div.list-of-active-matches ul[b-oq7gvcb4w8] {
+    }
+
+        div.list-of-active-matches ul li[b-oq7gvcb4w8] {
+            display: inline-block;
+            width: 49%;
+            background-color: gray;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+            div.list-of-active-matches ul li div[b-oq7gvcb4w8] {
+                background-color: red;
+                white-space: nowrap;
+            }
+
+div.matches-bet-info[b-oq7gvcb4w8] {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+div.team-right[b-oq7gvcb4w8],
+div.team-left[b-oq7gvcb4w8] {
+}
+
+div.team-right[b-oq7gvcb4w8] {
+    float: right;
+}
+
+div.team-left[b-oq7gvcb4w8] {
+    float: left;
+}
 /* _content/Test/Pages/HotMath.razor.rz.scp.css */
 div.hot-matches[b-wq3mdwacej] {
     margin: 0 auto;
@@ -92,21 +137,6 @@ div.custom-features[b-vv8m6rf2se] {
 
 div.log-in-log-up[b-vv8m6rf2se] {
 }
-
-div.active-matches[b-vv8m6rf2se] {
-    text-align: center;
-}
-
-div.list-of-active-matches[b-vv8m6rf2se] {
-}
-
-    div.list-of-active-matches ul[b-vv8m6rf2se] {
-        text-align: left;
-    }
-
-        div.list-of-active-matches ul li[b-vv8m6rf2se] {
-            display: inline;
-        }
 /* _content/Test/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-tgg5veqzp4] {
     background-color: rgba(255, 255, 255, 0.1);
