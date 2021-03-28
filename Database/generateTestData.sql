@@ -5,6 +5,7 @@ TRUNCATE public.possible_bets RESTART IDENTITY CASCADE;
 TRUNCATE public.events RESTART IDENTITY CASCADE;
 TRUNCATE public.type_of_bets RESTART IDENTITY CASCADE;
 TRUNCATE public.sports RESTART IDENTITY CASCADE;
+TRUNCATE public.teams RESTART IDENTITY CASCADE;
 
 -- Заполнение таблиц данными
 --for users 100
@@ -23,10 +24,28 @@ INSERT INTO "users" (email,password,nickname,name,surname,balance) VALUES ('et.u
 INSERT INTO public.sports(title) VALUES ('Counter Strike'), ('League of Legends');
 
 -- for teams 22rows
-INSERT INTO public.teams(title)
-	VALUES ('Astralis'), ('T1'), ('Fnatic'), ('Natus Vincere'), ('Virtus.pro'), ('SK Gaming'),('Team Liquid'),('FaZe Clan'),('mousesports'),('Ninjas in Pyjamas');
-INSERT INTO public.teams(title)
-	VALUES ('Samsung Galaxy'),('Royal Never Give Up'),('Cloud9'),('G2 Esports'),('Invictus Gaming'),('Team Envy'),('G2 Esports'),('Gambit Esports'),('Team Vitality'),('EDward Gaming'),('MIBR'),('FPX Esports');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (3, 'Fnatic', NULL, NULL, NULL, 'https://i.ibb.co/N1rfFnx/fnatic.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (16, 'Team Envy', NULL, NULL, NULL, 'https://i.ibb.co/vXW3vZx/Team-Envy.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (1, 'Astralis', NULL, NULL, NULL, 'https://i.ibb.co/QnVmfmt/Astralis-logo-svg.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (2, 'T1', NULL, NULL, NULL, 'https://i.ibb.co/TgP8XG2/T1.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (4, 'Natus Vincere', NULL, NULL, NULL, 'https://i.ibb.co/9VXhpwy/navy.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (5, 'Virtus.pro', NULL, NULL, NULL, 'https://i.ibb.co/wKK2tbp/Virtus-Pro.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (6, 'SK Gaming', NULL, NULL, NULL, 'https://i.ibb.co/NWxT583/SK-gaming.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (7, 'Team Liquid', NULL, NULL, NULL, 'https://i.ibb.co/3ck016t/Team-Liquid.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (8, 'FaZe Clan', NULL, NULL, NULL, 'https://i.ibb.co/FsTVhxC/Fazeclan.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (9, 'mousesports', NULL, NULL, NULL, 'https://i.ibb.co/4TCFQTw/Mouse-Sport.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (10, 'Ninjas in Pyjamas', NULL, NULL, NULL, 'https://i.ibb.co/LPRQPP3/NiP.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (11, 'Samsung Galaxy', NULL, NULL, NULL, 'https://i.ibb.co/Y0f11G0/Samsung-Galaxy.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (12, 'Royal Never Give Up', NULL, NULL, NULL, 'https://i.ibb.co/ysxnyY7/RNGU.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (13, 'Cloud9', NULL, NULL, NULL, 'https://i.ibb.co/h2Qkf74/Cloud9.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (14, 'G2 Esports', NULL, NULL, NULL, 'https://i.ibb.co/YdMYsjN/G2-Esports-2020-Logo-1-884x1024.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (15, 'Invictus Gaming', NULL, NULL, NULL, 'https://i.ibb.co/qFb6hs4/Invictus-gaming.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (17, 'Team Empire', NULL, NULL, NULL, 'https://i.ibb.co/vJzgT38/EMpire.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (18, 'Gambit Esports', NULL, NULL, NULL, 'https://i.ibb.co/BKSvnCX/Gambit-Esports.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (19, 'Team Vitality', NULL, NULL, NULL, 'https://i.ibb.co/8Mc8BwK/Team-Vitality.png');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (20, 'EDward Gaming', NULL, NULL, NULL, 'https://i.ibb.co/ypV8jsQ/Edward-Gaming.webp');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (21, 'MIBR', NULL, NULL, NULL, 'https://i.ibb.co/CVnjQRv/Mibr.jpg');
+INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (22, 'FPX Esports', NULL, NULL, NULL, 'https://i.ibb.co/vDq9Dqc/FPX-Esports.png');
 
 --for events 100 rows
 
