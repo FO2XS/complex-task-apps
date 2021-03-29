@@ -1,3 +1,13 @@
 
 Web/.vs/Test/v16/.suo
 *.v2
+Web/obj/project.nuget.cache
+Web/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Pages/PlusModal.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Pages/HotMath.razor.g.cs
+Web/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
