@@ -89,13 +89,65 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
-    public partial class AtiveMatches : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+using Data.Modal;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+using Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+using Microsoft.EntityFrameworkCore;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class AtiveMatches : ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 53 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+       
+    public List<Event> Events = null;
+
+    protected override void OnInitialized()
+    {
+        Events = new bookmaker_officeContext().Events
+            .Where(a => a.IdSport == 1)
+            .Where(a => a.StartDate <= DateTime.Now)
+            .Where(a => a.IsPast != true)
+            .Include(team1 => team1.IdTeam1Navigation)
+            .Include(team2 => team2.IdTeam2Navigation)
+            .Include(x => x.PossibleBets)
+            .ToList();
+    }
+
+    public String GetCoef1(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef1.ToString();
+    }
+    public String GetCoef2(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef2.ToString();
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

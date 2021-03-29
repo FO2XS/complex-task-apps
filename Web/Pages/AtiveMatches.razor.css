@@ -108,10 +108,9 @@ div.team {
 }
 
     div.team img {
-        padding-top: 5px;
         width: 90px;
         height: 90px;
-        border-radius:3px;
+        border-radius: 5px;
     }
 
     div.team p.title {

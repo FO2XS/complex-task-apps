@@ -111,10 +111,9 @@ div.team[b-oq7gvcb4w8] {
 }
 
     div.team img[b-oq7gvcb4w8] {
-        padding-top: 5px;
         width: 90px;
         height: 90px;
-        border-radius:3px;
+        border-radius: 5px;
     }
 
     div.team p.title[b-oq7gvcb4w8] {
