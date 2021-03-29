@@ -1,4 +1,7 @@
 ﻿div.active-matches {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
     div.active-matches .active-matches-title {
@@ -6,6 +9,8 @@
     }
 
 div.list-of-active-matches {
+    background-color: #2a2f36;
+    border-radius: 4px;
 }
 
     div.list-of-active-matches ul {
@@ -13,32 +18,82 @@ div.list-of-active-matches {
 
         div.list-of-active-matches ul li {
             display: inline-block;
-            width: 49%;
-            background-color: #313d3d;
+            width: 45%;
+            background-color: #2f353d;
             white-space: nowrap;
             text-align: center;
+            margin: 10px;
+            border-radius: 6px;
         }
 
             div.list-of-active-matches ul li div {
                 white-space: nowrap;
             }
-            
-div.matches-bet-info {
+
+div.main-info {
     display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+    top:10px;
 }
+
+    div.main-info div.matches-bet-info {
+        text-align: center;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+
+        div.main-info div.matches-bet-info p.tournament-title {
+            color: #9da0a6;
+            font-weight: 500;
+        }
+
+        div.main-info div.matches-bet-info p.type-bo {
+            font-weight: 700;
+            font-size: 11px;
+            color: #7d7f85;
+            position: relative;
+            top:-10px;
+        }
+
+        div.main-info div.matches-bet-info p.time {
+            font-weight: 700;
+            font-size: 11px;
+            color: #63666d;
+            position: relative;
+            top: 20px;
+        }
+
+    div.main-info div.vs {
+        position: absolute;
+        top: -53px;
+        left: -6px;
+        color: #2c3238;
+        z-index: -1;
+    }
+
+        div.main-info div.vs p {
+            font-size: 120px;
+            font-weight: 600;
+        }
+
+
 
 div.team-right,
 div.team-left {
     width: 100px;
-    height: 1200px;
+    height: 150px;
     text-align: center;
-    background-color: #435555;
     border-radius: 6px;
     margin: 6px;
+    transition: .2s;
 }
+
+    div.team-right:hover,
+    div.team-left:hover {
+        background-color: #4b9632;
+        transition: .2s;
+    }
 
 div.team-right {
     float: right;
@@ -51,13 +106,15 @@ div.team-left {
 div.team {
 
 }
+
     div.team img {
         padding-top: 5px;
         width: 90px;
         height: 90px;
         border-radius:3px;
     }
-    div.team p.title{
+
+    div.team p.title {
         position: relative;
         padding-top: 5px;
         color: whitesmoke;
@@ -65,10 +122,13 @@ div.team {
         -webkit-user-select: none;
         user-select: none;
         font-size: 12px;
+        font-weight: 600;
     }
+
     div.team .koef {
-        margin: 0 auto;
+
     }
+
         div.team .koef p {
             position: relative;
             top: -10px;
@@ -76,11 +136,13 @@ div.team {
             -moz-user-select: none;
             -webkit-user-select: none;
             user-select: none;
-            font-size: 14px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         div.team .koef hr {
             position: relative;
             top: -24px;
             background-color:yellow;
+            width: 40px;
         }

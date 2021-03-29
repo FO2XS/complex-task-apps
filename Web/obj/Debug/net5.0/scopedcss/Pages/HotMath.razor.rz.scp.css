@@ -1,11 +1,12 @@
 div.hot-matches[b-wq3mdwacej] {
-    margin: 0 auto;
-    width: 85%;
+    max-width: 1200px;
+    width: 96%;
     height: 10%;
     background: #779ea4;
     border-width: 1px;
     white-space: nowrap;
     text-align: center;
+    margin: 0 auto;
 }
 
 div.hot-matches-title[b-wq3mdwacej] {

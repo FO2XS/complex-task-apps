@@ -1,4 +1,7 @@
 div.active-matches[b-oq7gvcb4w8] {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
     div.active-matches .active-matches-title[b-oq7gvcb4w8] {
@@ -6,6 +9,8 @@ div.active-matches[b-oq7gvcb4w8] {
     }
 
 div.list-of-active-matches[b-oq7gvcb4w8] {
+    background-color: #2a2f36;
+    border-radius: 4px;
 }
 
     div.list-of-active-matches ul[b-oq7gvcb4w8] {
@@ -13,32 +18,82 @@ div.list-of-active-matches[b-oq7gvcb4w8] {
 
         div.list-of-active-matches ul li[b-oq7gvcb4w8] {
             display: inline-block;
-            width: 49%;
-            background-color: #313d3d;
+            width: 45%;
+            background-color: #2f353d;
             white-space: nowrap;
             text-align: center;
+            margin: 10px;
+            border-radius: 6px;
         }
 
             div.list-of-active-matches ul li div[b-oq7gvcb4w8] {
                 white-space: nowrap;
             }
-            
-div.matches-bet-info[b-oq7gvcb4w8] {
+
+div.main-info[b-oq7gvcb4w8] {
     display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+    top:10px;
 }
+
+    div.main-info div.matches-bet-info[b-oq7gvcb4w8] {
+        text-align: center;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+
+        div.main-info div.matches-bet-info p.tournament-title[b-oq7gvcb4w8] {
+            color: #9da0a6;
+            font-weight: 500;
+        }
+
+        div.main-info div.matches-bet-info p.type-bo[b-oq7gvcb4w8] {
+            font-weight: 700;
+            font-size: 11px;
+            color: #7d7f85;
+            position: relative;
+            top:-10px;
+        }
+
+        div.main-info div.matches-bet-info p.time[b-oq7gvcb4w8] {
+            font-weight: 700;
+            font-size: 11px;
+            color: #63666d;
+            position: relative;
+            top: 20px;
+        }
+
+    div.main-info div.vs[b-oq7gvcb4w8] {
+        position: absolute;
+        top: -53px;
+        left: -6px;
+        color: #2c3238;
+        z-index: -1;
+    }
+
+        div.main-info div.vs p[b-oq7gvcb4w8] {
+            font-size: 120px;
+            font-weight: 600;
+        }
+
+
 
 div.team-right[b-oq7gvcb4w8],
 div.team-left[b-oq7gvcb4w8] {
     width: 100px;
-    height: 1200px;
+    height: 150px;
     text-align: center;
-    background-color: #435555;
     border-radius: 6px;
     margin: 6px;
+    transition: .2s;
 }
+
+    div.team-right:hover[b-oq7gvcb4w8],
+    div.team-left:hover[b-oq7gvcb4w8] {
+        background-color: #4b9632;
+        transition: .2s;
+    }
 
 div.team-right[b-oq7gvcb4w8] {
     float: right;
@@ -51,13 +106,15 @@ div.team-left[b-oq7gvcb4w8] {
 div.team[b-oq7gvcb4w8] {
 
 }
+
     div.team img[b-oq7gvcb4w8] {
         padding-top: 5px;
         width: 90px;
         height: 90px;
         border-radius:3px;
     }
-    div.team p.title[b-oq7gvcb4w8]{
+
+    div.team p.title[b-oq7gvcb4w8] {
         position: relative;
         padding-top: 5px;
         color: whitesmoke;
@@ -65,10 +122,13 @@ div.team[b-oq7gvcb4w8] {
         -webkit-user-select: none;
         user-select: none;
         font-size: 12px;
+        font-weight: 600;
     }
+
     div.team .koef[b-oq7gvcb4w8] {
-        margin: 0 auto;
+
     }
+
         div.team .koef p[b-oq7gvcb4w8] {
             position: relative;
             top: -10px;
@@ -76,11 +136,13 @@ div.team[b-oq7gvcb4w8] {
             -moz-user-select: none;
             -webkit-user-select: none;
             user-select: none;
-            font-size: 14px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         div.team .koef hr[b-oq7gvcb4w8] {
             position: relative;
             top: -24px;
             background-color:yellow;
+            width: 40px;
         }

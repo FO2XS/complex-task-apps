@@ -1294,28 +1294,25 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BlazorStrap >= 1.5.1",
+      "Microsoft.EntityFrameworkCore >= 5.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.4",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FOXXS\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Qwerty\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
+      "projectUniqueName": "C:\\pepos\\complex-task-apps\\Web\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
-      "packagesPath": "C:\\Users\\FOXXS\\.nuget\\packages\\",
-      "outputPath": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\obj\\",
+      "projectPath": "C:\\pepos\\complex-task-apps\\Web\\Test.csproj",
+      "packagesPath": "C:\\Users\\Qwerty\\.nuget\\packages\\",
+      "outputPath": "C:\\pepos\\complex-task-apps\\Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\FOXXS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Qwerty\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1344,6 +1341,10 @@
           "BlazorStrap": {
             "target": "Package",
             "version": "[1.5.1, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.4, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -1374,7 +1375,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
