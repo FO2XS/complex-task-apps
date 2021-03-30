@@ -4,69 +4,70 @@
 
 
 <div class="main-main">
-    <div class="menu1">
-        <div class="logo-and-type-game-and-technical-support">
-            <div class="logo">
-                Лого
-            </div>
-            <div class="">
-                <select>
-                    <option selected>
-                        CS:GO
-                    </option>
-                    <option>
-                        LoL
-                    </option>
-                </select>
-            </div>
-            <div class="technical-support">
-                Тех. поддержка
-            </div>
-        </div>
+	<div class="menu1">
+		<div class="logo-and-type-game-and-technical-support">
+			<div class="logo">
+				Лого
+			</div>
+			<div class="">
+				<select>
+					<option selected>
+						CS:GO
+					</option>
+					<option>
+						LoL
+					</option>
+				</select>
+			</div>
+			<div class="technical-support">
+				Тех. поддержка
+			</div>
+		</div>
 
-        <div class="custom-features">
-            <div>FAQ</div>
-            <div>
-                <!--Вместо кнопки Log in--><Test.Pages.AuthenticationModal></Test.Pages.AuthenticationModal>
-                <NavLink class="nav-link" href="registration">
-                    <span aria-hidden="true"> Reg</span>
-                </NavLink>
-                
-            </div>
-            <div>  </div>
-        </div>
-    </div>
+		<div class="custom-features">
+			<div>FAQ</div>
+			<div>
+				<!--Вместо кнопки Log in--><Test.Pages.AuthenticationModal></Test.Pages.AuthenticationModal>
+				<NavLink class="nav-link" href="active-matches">
+					<span aria-hidden="true"> Main</span>
+				</NavLink>
+				<NavLink class="nav-link" href="registration">
+					<span aria-hidden="true"> Reg</span>
+				</NavLink>
+				<a href=""></a>
+			</div>
+			<div>  </div>
+		</div>
+	</div>
 
-    <div class="main">
-        <Test.Pages.HotMath></Test.Pages.HotMath>
-            
-        <Test.Pages.AtiveMatches></Test.Pages.AtiveMatches>
-        
-        <div>
-
-        </div>
-    </div>
+	<div class="main">
+		<Test.Pages.HotMath></Test.Pages.HotMath>
+		
+		<div>
+			@Body
+		</div>
+	</div>
 </div>
 
 
 
 @code{
 
-    private Boolean isServerSide = false;
-    protected override async System.Threading.Tasks.Task OnInitializedAsync()
-    {
-        try
-        {
-            await BootstrapCSS.SetBootstrapCss("4.3.1");
-        }
-        catch (Exception)
-        {
-            isServerSide = true;
-        }
-    }
-    protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-    {
-        if (isServerSide && firstRun)
-            await BootstrapCSS.SetBootstrapCss();
-    }
+	private Boolean isServerSide = false;
+	protected override async System.Threading.Tasks.Task OnInitializedAsync()
+	{
+		try
+		{
+			await BootstrapCSS.SetBootstrapCss("4.3.1");
+		}
+		catch (Exception)
+		{
+			isServerSide = true;
+		}
+	}
+	protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
+	{
+		if (isServerSide && firstRun)
+			await BootstrapCSS.SetBootstrapCss();
+	}
 }
