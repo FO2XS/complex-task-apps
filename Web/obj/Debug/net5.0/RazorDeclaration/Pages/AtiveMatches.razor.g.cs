@@ -118,10 +118,11 @@ using Microsoft.EntityFrameworkCore;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 75 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
        
-    public List<Event> Events = null;
-
+    private BSModal VerticallyCentered { get; set; }
+    private List<Event> Events { get; set; } = null;
+    private Event SelectedMatch { get; set; }
     protected override void OnInitialized()
     {
         Events = new bookmaker_officeContext().Events
@@ -134,16 +135,29 @@ using Microsoft.EntityFrameworkCore;
             .ToList();
     }
 
-    public String GetCoef1(ICollection<PossibleBet> ts)
+    private String GetCoef1(ICollection<PossibleBet> ts)
     {
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
         return tob is null ? "null" : tob.Coef1.ToString();
     }
-    public String GetCoef2(ICollection<PossibleBet> ts)
+    private String GetCoef2(ICollection<PossibleBet> ts)
     {
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
         return tob is null ? "null" : tob.Coef2.ToString();
     }
+
+    public void BetsForTeam(Event @event)
+    {
+        if (@event is null)
+            return;
+
+        SelectedMatch = @event;
+
+        VerticallyCentered.Toggle();
+    }
+
+    public void Close() 
+		=> VerticallyCentered.Toggle();
 
 #line default
 #line hidden

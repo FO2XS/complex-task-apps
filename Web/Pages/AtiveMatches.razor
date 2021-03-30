@@ -15,8 +15,13 @@
 				<li>
 					<div class="active-matches-bet">
 						<div class="team-left">
-							<div class="team">
-								<img src="@bet.IdTeam1Navigation.Logo">
+							<div class="team" @onclick="(() => BetsForTeam(bet))">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam1Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
 								<p class="title">@bet.IdTeam1Navigation.Title</p>
 								<div class="koef">
 									<p>@(GetCoef1(bet.PossibleBets))</p>
@@ -35,14 +40,19 @@
 							</div>
 						</div>
 						<div class="team-right">
-							<div class="team">
-								<img src="@bet.IdTeam2Navigation.Logo">
-								<p class="title">@bet.IdTeam2Navigation.Title</p>
-								<div class="koef">
-									<p>@(GetCoef2(bet.PossibleBets))</p>
-									<hr />
-								</div>
-							</div>
+                            <div class="team" @onclick="(() => BetsForTeam(bet))">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam2Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
+                                <p class="title">@bet.IdTeam2Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef2(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
+                            </div>
 						</div>
 					</div>
 				</li>
@@ -50,9 +60,22 @@
 		</ul>
 	</div>
 </div>
-@code {
-    public List<Event> Events = null;
 
+<BSModal @ref="VerticallyCentered" IsCentered="true">
+	<BSModalHeader @onclick="@Close">Modal title</BSModalHeader>
+	<BSModalBody>
+		<p>Modal body text goes here.</p>
+	</BSModalBody>
+	<BSModalFooter>
+		<BSButton Color="Color.Secondary" @onclick="@Close">Close</BSButton>
+		<BSButton Color="Color.Primary" @onclick="@Close">Save Changes</BSButton>
+	</BSModalFooter>
+</BSModal>
+
+@code {
+    private BSModal VerticallyCentered { get; set; }
+    private List<Event> Events { get; set; } = null;
+    private Event SelectedMatch { get; set; }
     protected override void OnInitialized()
     {
         Events = new bookmaker_officeContext().Events
@@ -65,14 +88,27 @@
             .ToList();
     }
 
-    public String GetCoef1(ICollection<PossibleBet> ts)
+    private String GetCoef1(ICollection<PossibleBet> ts)
     {
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
         return tob is null ? "null" : tob.Coef1.ToString();
     }
-    public String GetCoef2(ICollection<PossibleBet> ts)
+    private String GetCoef2(ICollection<PossibleBet> ts)
     {
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
         return tob is null ? "null" : tob.Coef2.ToString();
     }
+
+    public void BetsForTeam(Event @event)
+    {
+        if (@event is null)
+            return;
+
+        SelectedMatch = @event;
+
+        VerticallyCentered.Toggle();
+    }
+
+    public void Close() 
+		=> VerticallyCentered.Toggle();
 }

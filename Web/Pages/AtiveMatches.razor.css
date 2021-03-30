@@ -1,147 +1,174 @@
 ﻿div.active-matches {
-    width: 96%;
-    max-width: 1200px;
-    margin: 0 auto;
+	width: 96%;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-    div.active-matches .active-matches-title {
-        text-align: center;
-    }
+	div.active-matches .active-matches-title {
+		text-align: center;
+	}
 
 div.list-of-active-matches {
-    background-color: #2a2f36;
-    border-radius: 4px;
+	background-color: #2a2f36;
+	border-radius: 4px;
 }
 
-    div.list-of-active-matches ul {
-    }
+	div.list-of-active-matches ul {
+	}
 
-        div.list-of-active-matches ul li {
-            display: inline-block;
-            width: 45%;
-            background-color: #2f353d;
-            white-space: nowrap;
-            text-align: center;
-            margin: 10px;
-            border-radius: 6px;
-        }
+		div.list-of-active-matches ul li {
+			display: inline-block;
+			width: 45%;
+			background-color: #2f353d;
+			white-space: nowrap;
+			text-align: center;
+			margin: 10px;
+			border-radius: 6px;
+		}
 
-            div.list-of-active-matches ul li div {
-                white-space: nowrap;
-            }
+			div.list-of-active-matches ul li div {
+				white-space: nowrap;
+			}
 
 div.main-info {
-    display: inline-block;
-    position: relative;
-    z-index: 100;
-    top:10px;
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+	top:10px;
 }
 
-    div.main-info div.matches-bet-info {
-        text-align: center;
-        white-space: nowrap;
-        margin: 0 auto;
-    }
+	div.main-info div.matches-bet-info {
+		text-align: center;
+		white-space: nowrap;
+		margin: 0 auto;
+	}
 
-        div.main-info div.matches-bet-info p.tournament-title {
-            color: #9da0a6;
-            font-weight: 500;
-        }
+		div.main-info div.matches-bet-info p.tournament-title {
+			color: #9da0a6;
+			font-weight: 500;
+		}
 
-        div.main-info div.matches-bet-info p.type-bo {
-            font-weight: 700;
-            font-size: 11px;
-            color: #7d7f85;
-            position: relative;
-            top:-10px;
-        }
+		div.main-info div.matches-bet-info p.type-bo {
+			font-weight: 700;
+			font-size: 11px;
+			color: #7d7f85;
+			position: relative;
+			top:-10px;
+		}
 
-        div.main-info div.matches-bet-info p.time {
-            font-weight: 700;
-            font-size: 11px;
-            color: #63666d;
-            position: relative;
-            top: 20px;
-        }
+		div.main-info div.matches-bet-info p.time {
+			font-weight: 700;
+			font-size: 11px;
+			color: #63666d;
+			position: relative;
+			top: 20px;
+		}
 
-    div.main-info div.vs {
-        position: absolute;
-        top: -53px;
-        left: -6px;
-        color: #2c3238;
-        z-index: -1;
-    }
+	div.main-info div.vs {
+		position: absolute;
+		top: -53px;
+		left: -6px;
+		color: #2c3238;
+		z-index: -1;
+	}
 
-        div.main-info div.vs p {
-            font-size: 120px;
-            font-weight: 600;
-        }
+		div.main-info div.vs p {
+			font-size: 120px;
+			font-weight: 600;
+		}
 
 
 
 div.team-right,
 div.team-left {
-    width: 100px;
-    height: 150px;
-    text-align: center;
-    border-radius: 6px;
-    margin: 6px;
-    transition: .2s;
+	width: 100px;
+	height: 150px;
+	text-align: center;
+	margin: 6px;
 }
 
-    div.team-right:hover,
-    div.team-left:hover {
-        background-color: #4b9632;
-        transition: .2s;
-    }
-
 div.team-right {
-    float: right;
+	float: right;
 }
 
 div.team-left {
-    float: left;
+	float: left;
 }
+
 
 div.team {
-
+	position: relative;
+	transition: .2s;
+	border-radius: 6px;
 }
 
-    div.team img {
-        width: 90px;
-        height: 90px;
-        border-radius: 5px;
-    }
+	div.team:hover {
+		background-color: #4b9632;
+		transition: .2s;
+	}
 
-    div.team p.title {
-        position: relative;
-        padding-top: 5px;
-        color: whitesmoke;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        font-size: 12px;
-        font-weight: 600;
-    }
+	div.team div.logo-team{
+		border-radius:3px;
+		background-color:#2a2f36;
+	}
+		div.team div.logo-team img {
+			margin-top: 5px;
+			width: 90px;
+			height: 90px;
+			border-radius: 5px;
+			transition: .2s;
+		}
 
-    div.team .koef {
+		div.team:hover div.logo-team img {
+			opacity: 0.2;
+		}
 
-    }
+		div.team div.logo-team div.text-place-bet {
+			position: absolute;
+			visibility: hidden;
+			transition: .2s;
+			font-size: 12px;
+			font-weight: 600;
+			color: whitesmoke;
+		}
 
-        div.team .koef p {
-            position: relative;
-            top: -10px;
-            color: whitesmoke;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
-            font-size: 12px;
-            font-weight: 600;
-        }
+	div.team:hover div.logo-team div.text-place-bet {
+		transition: .3s;
+		visibility: visible;
+	}
 
-        div.team .koef hr {
-            position: relative;
-            top: -24px;
-            background-color:yellow;
-            width: 40px;
-        }
+	div.team p.title {
+		position: relative;
+		padding-top: 5px;
+		color: whitesmoke;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+		font-size: 12px;
+		font-weight: 600;
+	}
+
+	div.team .koef {
+		position: relative;
+		text-align: center;
+	}
+
+		div.team .koef p {
+			position: relative;
+			top: -10px;
+			color: whitesmoke;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		div.team .koef hr {
+			position: absolute;
+			background-color: yellow;
+			width: 40px;
+			margin: 0 auto;
+			top: 8px;
+			left: 28px
+		}
