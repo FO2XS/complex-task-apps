@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test.Shared
+namespace Test.Pages
 {
     #line hidden
     using System;
@@ -90,45 +90,27 @@ using BlazorStrap;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
-using Test.Pages;
+#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\RegistrationNewUser.razor"
+using Test.Data;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+#nullable restore
+#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\RegistrationNewUser.razor"
+using Test.Data.Modal;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/registration")]
+    public partial class RegistrationNewUser : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 53 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
-      
-
-    private Boolean isServerSide = false;
-    protected override async System.Threading.Tasks.Task OnInitializedAsync()
-    {
-        try
-        {
-            await BootstrapCSS.SetBootstrapCss("4.3.1");
-        }
-        catch (Exception)
-        {
-            isServerSide = true;
-        }
-    }
-    protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-    {
-        if (isServerSide && firstRun)
-            await BootstrapCSS.SetBootstrapCss();
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -90,14 +90,14 @@ using BlazorStrap;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 5 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 6 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
 using Test.Data.Modal;
 
 #line default
@@ -111,7 +111,7 @@ using Test.Data.Modal;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 130 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 131 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\PlusModal.razor"
       
     private BSModal ModalSelectBet { get; set; }
     private Event Event { get; set; }
