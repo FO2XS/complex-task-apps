@@ -9,10 +9,12 @@
 <BSToast IsVisible="@IsVisible">
     <BSToastHeader>Ставка осуществлена</BSToastHeader>
     <BSToastBody>
-    <p>Это просто заплатка. Ставка осуществлена, <br> далее ставка будет обработана и зарегистрирована, <br>а заплатку уберу</p>
-    <p>Также нужно не забыть про проверки на макс. <br>и мин сумму и Null
-    <br> и наличие средств у юзера</p>
-    <br>Нажав на крестик, уведомление исчезнет навсегда
+        <p>Это просто заплатка. Ставка осуществлена, <br> далее ставка будет обработана и зарегистрирована, <br>а заплатку уберу</p>
+        <p>
+            Также нужно не забыть про проверки на макс. <br>и мин сумму и Null
+            <br> и наличие средств у юзера
+        </p>
+        <br>Нажав на крестик, уведомление исчезнет навсегда
     </BSToastBody>
 </BSToast>
 
@@ -128,6 +130,15 @@
 
 
 @code{
+
+
+    protected override void OnInitialized()
+    {
+
+        base.OnInitialized();
+    }
+
+
     private BSModal ModalSelectBet { get; set; }
     private Event Event { get; set; }
     private List<PossibleBet> Bets { get; set; }
@@ -141,8 +152,7 @@
     private bool IsVisible{get;set;} = false;
 
 
-
-    private void GetBets()
+    public void GetBets()
     {
         var temp = service.GetFutureEvents(new Sport { Id = 1 });
         Event = temp[2];
@@ -173,4 +183,5 @@
     private decimal? CalculatePrize(decimal? sum, float coef){
         return sum * Convert.ToDecimal(coef);
     }
+
 }

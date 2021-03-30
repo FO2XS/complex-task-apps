@@ -111,8 +111,17 @@ using Test.Data.Modal;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 130 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
+#line 132 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
       
+
+
+    protected override void OnInitialized()
+    {
+
+        base.OnInitialized();
+    }
+
+
     private BSModal ModalSelectBet { get; set; }
     private Event Event { get; set; }
     private List<PossibleBet> Bets { get; set; }
@@ -126,8 +135,7 @@ using Test.Data.Modal;
     private bool IsVisible{get;set;} = false;
 
 
-
-    private void GetBets()
+    public void GetBets()
     {
         var temp = service.GetFutureEvents(new Sport { Id = 1 });
         Event = temp[2];
@@ -158,6 +166,7 @@ using Test.Data.Modal;
     private decimal? CalculatePrize(decimal? sum, float coef){
         return sum * Convert.ToDecimal(coef);
     }
+
 
 #line default
 #line hidden

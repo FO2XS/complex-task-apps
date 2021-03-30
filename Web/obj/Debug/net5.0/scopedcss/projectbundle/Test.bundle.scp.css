@@ -5,6 +5,9 @@ div.active-matches[b-oq7gvcb4w8] {
 	width: 96%;
 	max-width: 1200px;
 	margin: 0 auto;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 	div.active-matches .active-matches-title[b-oq7gvcb4w8] {
@@ -80,12 +83,10 @@ div.main-info[b-oq7gvcb4w8] {
 			font-weight: 600;
 		}
 
-
-
 div.team-right[b-oq7gvcb4w8],
 div.team-left[b-oq7gvcb4w8] {
 	width: 100px;
-	height: 150px;
+	height: auto;
 	text-align: center;
 	margin: 6px;
 }
@@ -98,11 +99,12 @@ div.team-left[b-oq7gvcb4w8] {
 	float: left;
 }
 
-
 div.team[b-oq7gvcb4w8] {
 	position: relative;
 	transition: .2s;
+	height: 164px;
 	border-radius: 6px;
+	padding: 5px 5px;
 }
 
 	div.team:hover[b-oq7gvcb4w8] {
@@ -110,30 +112,34 @@ div.team[b-oq7gvcb4w8] {
 		transition: .2s;
 	}
 
-	div.team div.logo-team[b-oq7gvcb4w8]{
-		border-radius:3px;
-		background-color:#2a2f36;
+	div.team div.logo-team[b-oq7gvcb4w8] {
+		border-radius: 3px;
+		background-color: rgba(42, 47, 54, 0.7);
+		margin-top: 3px;
 	}
+
 		div.team div.logo-team img[b-oq7gvcb4w8] {
-			margin-top: 5px;
 			width: 90px;
 			height: 90px;
-			border-radius: 5px;
+			border-radius: 8px;
 			transition: .2s;
+			padding: 5px
 		}
 
-		div.team:hover div.logo-team img[b-oq7gvcb4w8] {
-			opacity: 0.2;
-		}
+	div.team:hover div.logo-team img[b-oq7gvcb4w8] {
+		opacity: 0.2;
+	}
 
-		div.team div.logo-team div.text-place-bet[b-oq7gvcb4w8] {
-			position: absolute;
-			visibility: hidden;
-			transition: .2s;
-			font-size: 12px;
-			font-weight: 600;
-			color: whitesmoke;
-		}
+	div.team div.logo-team div.text-place-bet[b-oq7gvcb4w8] {
+		position: absolute;
+		visibility: hidden;
+		transition: .2s;
+		font-size: 12px;
+		font-weight: 600;
+		color: whitesmoke;
+		left: 25px;
+		top: 38px;
+	}
 
 	div.team:hover div.logo-team div.text-place-bet[b-oq7gvcb4w8] {
 		transition: .3s;
@@ -144,11 +150,11 @@ div.team[b-oq7gvcb4w8] {
 		position: relative;
 		padding-top: 5px;
 		color: whitesmoke;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		user-select: none;
 		font-size: 12px;
 		font-weight: 600;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	div.team .koef[b-oq7gvcb4w8] {
@@ -158,11 +164,8 @@ div.team[b-oq7gvcb4w8] {
 
 		div.team .koef p[b-oq7gvcb4w8] {
 			position: relative;
-			top: -10px;
+			top: -8px;
 			color: whitesmoke;
-			-moz-user-select: none;
-			-webkit-user-select: none;
-			user-select: none;
 			font-size: 12px;
 			font-weight: 600;
 		}
@@ -170,10 +173,10 @@ div.team[b-oq7gvcb4w8] {
 		div.team .koef hr[b-oq7gvcb4w8] {
 			position: absolute;
 			background-color: yellow;
-			width: 40px;
+			width: 38px;
 			margin: 0 auto;
-			top: 8px;
-			left: 28px
+			top: 12px;
+			left: 25px
 		}
 /* _content/Test/Pages/HotMath.razor.rz.scp.css */
 div.hot-matches[b-wq3mdwacej] {

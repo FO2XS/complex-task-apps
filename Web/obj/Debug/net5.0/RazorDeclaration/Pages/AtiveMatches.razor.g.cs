@@ -118,11 +118,12 @@ using Microsoft.EntityFrameworkCore;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 76 "C:\pepos\complex-task-apps\Web\Pages\AtiveMatches.razor"
        
     private BSModal VerticallyCentered { get; set; }
     private List<Event> Events { get; set; } = null;
     private Event SelectedMatch { get; set; }
+
     protected override void OnInitialized()
     {
         Events = new bookmaker_officeContext().Events
@@ -156,8 +157,11 @@ using Microsoft.EntityFrameworkCore;
         VerticallyCentered.Toggle();
     }
 
-    public void Close() 
-		=> VerticallyCentered.Toggle();
+    public void Close()
+    {
+        SelectedMatch = null;
+        VerticallyCentered.Toggle();
+    }
 
 #line default
 #line hidden
