@@ -12,72 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 384078813,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.AtiveMatches",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AtiveMatches"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.AtiveMatches"
-        }
-      },
-      {
-        "HashCode": 1633696381,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.AtiveMatches",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Pages.AtiveMatches"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.AtiveMatches",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 667198781,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.HotMath",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "HotMath"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.HotMath"
-        }
-      },
-      {
-        "HashCode": -600612535,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.HotMath",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Pages.HotMath"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.HotMath",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -177681889,
         "Kind": "Components.Component",
         "Name": "Test.Pages.PlusModal",
@@ -207,6 +141,105 @@
         }
       },
       {
+        "HashCode": 1371216258,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.RegistrationNewUser",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "RegistrationNewUser"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.RegistrationNewUser"
+        }
+      },
+      {
+        "HashCode": 1690779227,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.RegistrationNewUser",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.RegistrationNewUser"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.RegistrationNewUser",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 384078813,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.AtiveMatches",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AtiveMatches"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.AtiveMatches"
+        }
+      },
+      {
+        "HashCode": 1633696381,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.AtiveMatches",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.AtiveMatches"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.AtiveMatches",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 667198781,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.HotMath",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "HotMath"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.HotMath"
+        }
+      },
+      {
+        "HashCode": -600612535,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.HotMath",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.HotMath"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.HotMath",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -2072859966,
         "Kind": "Components.Component",
         "Name": "Test.Pages.Index",
@@ -303,39 +336,6 @@
         }
       },
       {
-        "HashCode": 1371216258,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.RegistrationNewUser",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "RegistrationNewUser"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.RegistrationNewUser"
-        }
-      },
-      {
-        "HashCode": 1690779227,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.RegistrationNewUser",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Pages.RegistrationNewUser"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.RegistrationNewUser",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 1132936243,
         "Kind": "Components.Component",
         "Name": "Test.App",
@@ -418,39 +418,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Test.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 720188193,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1179052538,
-        "Kind": "Components.Component",
-        "Name": "Test.Shared.NavMenu",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -34837,11 +34804,6 @@
     {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\AtiveMatches.razor",
       "TargetPath": "Pages\\AtiveMatches.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {

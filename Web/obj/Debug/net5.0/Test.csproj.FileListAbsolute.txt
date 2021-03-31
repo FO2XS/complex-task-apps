@@ -123,7 +123,6 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorComponent.output.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Test.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.TagHelpers.input.cache
@@ -137,7 +136,6 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorAssemblyInfo.cache
@@ -147,7 +145,6 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\bundle\Test.styles.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\projectbundle\Test.bundle.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorTargetAssemblyInfo.cache
