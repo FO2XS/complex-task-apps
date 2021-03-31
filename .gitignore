@@ -35,3 +35,17 @@ Web/obj/Debug/net5.0/Test.Views.dll
 Web/obj/Debug/net5.0/Test.Views.pdb
 Web/obj/project.assets.json
 Web/obj/project.nuget.cache
+Web/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/AuthenticationModal.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/HotMath.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/PlusModal.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Pages/RegistrationNewUser.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
+Web/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
+Web/obj/Debug/net5.0/Test.assets.cache
+Web/obj/Debug/net5.0/Test.csprojAssemblyReference.cache
+Web/obj/Debug/net5.0/Test.TagHelpers.output.cache
