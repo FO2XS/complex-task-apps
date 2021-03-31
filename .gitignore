@@ -80,3 +80,5 @@ Web/obj/Debug/net5.0/Test.RazorCoreGenerate.cache
 Web/obj/Debug/net5.0/Test.TagHelpers.output.cache
 Web/obj/Debug/net5.0/Test.Views.dll
 Web/obj/Debug/net5.0/Test.Views.pdb
+Web/bin/Debug/net5.0/Test.dll
+Web/bin/Debug/net5.0/Test.Views.dll
