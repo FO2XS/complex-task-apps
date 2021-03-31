@@ -57,10 +57,12 @@ namespace Test.Data
         /// </summary>
         /// <param name="sport">Вид спорта</param>
         /// <returns>Список матчей с включенными объектами Team.</returns>
+        [Obsolete("ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.", true)]
         public List<Event> GetCurrentEvents(Sport sport)
         {
             using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
+                /// ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.
                 return context.Events
                     .Where(a => a.IdSport == sport.Id)
                     .Where(a => a.StartDate <= DateTime.Now)

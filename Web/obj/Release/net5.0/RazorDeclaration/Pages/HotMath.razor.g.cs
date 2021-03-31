@@ -89,90 +89,13 @@ using BlazorStrap;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
-using Test.Data;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
-using Test.Data.Modal;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class PlusModal : LayoutComponentBase
+    public partial class HotMath : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 132 "C:\pepos\complex-task-apps\Web\Pages\PlusModal.razor"
-      
-
-
-    protected override void OnInitialized()
-    {
-
-        base.OnInitialized();
-    }
-
-
-    private BSModal ModalSelectBet { get; set; }
-    private Event Event { get; set; }
-    private List<PossibleBet> Bets { get; set; }
-    //
-    private BSModal ModalFinishBet{get;set;}
-    private Team selectTeam{get;set;}
-    private PossibleBet selectBet{get;set;}
-    private float selectCoef{get;set;}
-    private decimal? sum;
-    //
-    private bool IsVisible{get;set;} = false;
-
-
-    public void GetBets()
-    {
-        var temp = service.GetFutureEvents(new Sport { Id = 1 });
-        Event = temp[2];
-
-        Bets = service.GetPossibleBets(Event);
-
-        ModalSelectBet.Show();
-    }
-
-    private void OpenFinishModal(Team team, PossibleBet bet){
-        selectTeam = team;
-        selectBet = bet;
-        selectCoef = Event.IdTeam1Navigation==team? bet.Coef1:bet.Coef2;
-        sum = null;
-        ModalFinishBet.Show();
-        ModalSelectBet.Hide();
-    }
-    private void CloseFinishOpenSelectModal(){
-        ModalFinishBet.Hide();
-        ModalSelectBet.Show();
-    }
-
-    private void CreateBet(){
-        IsVisible = !IsVisible;
-        ModalFinishBet.Hide();
-    }
-
-    private decimal? CalculatePrize(decimal? sum, float coef){
-        return sum * Convert.ToDecimal(coef);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WebService service { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591

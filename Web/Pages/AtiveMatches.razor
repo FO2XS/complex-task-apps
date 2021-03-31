@@ -1,116 +1,119 @@
-﻿@page "/active-matches"
+﻿@inherits ComponentBase
+@using Data.Modal
+@using Data
+@using Microsoft.EntityFrameworkCore;
+
+
 <div class="active-matches">
-    <div class="active-matches-title">
-        <p>Эти матчи уже начались! Смотри матчи и ставь ставки!</p>
-    </div>
-    
     <div class="list-of-active-matches">
+        <div class="active-matches-title">
+            <p>АКТИВНЫЕ МАТЧИ</p>
+        </div>
+
         <ul>
-            <li>
-                <div class="active-matches-bet">
-                    <div class="team-left">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
+            @foreach (var bet in Events)
+            {
+                <li>
+                    <div class="active-matches-bet">
+                        <div class="team-left">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam1Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
+                                <p class="title">@bet.IdTeam1Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef1(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-info">
+                            <div class="matches-bet-info">
+                                <p class="tournament-title">ESEA Advanced NA</p>
+                                <p class="type-bo">BO3</p>
+                                <p class="time">@((@DateTime.Now - @bet.StartDate).Value.ToString(@"hh\:mm\:ss"))</p>
+                            </div>
+                            <div class="vs">
+                                <p>VS</p>
+                            </div>
+                        </div>
+                        <div class="team-right">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam2Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
+                                <p class="title">@bet.IdTeam2Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef2(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="main-info">
-                        <div class="matches-bet-info">
-                            <p class="tournament-title">ESEA Advanced NA</p>
-                            <p class="type-bo">BO3</p>
-                            <p class="time">1:12:01</p>
-                        </div>
-                        <div class="vs">
-                            <p>VS</p>
-                        </div>
-                    </div>
-                    <div class="team-right">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="active-matches-bet">
-                    <div class="team-left">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-info">
-                        <div class="matches-bet-info">
-                            <p class="tournament-title">ESEA Advanced NA</p>
-                            <p class="type-bo">BO3</p>
-                            <p class="time">1:12:01</p>
-                        </div>
-                        <div class="vs">
-                            <p>VS</p>
-                        </div>
-                    </div>
-                    <div class="team-right">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="active-matches-bet">
-                    <div class="team-left">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-info">
-                        <div class="matches-bet-info">
-                            <p class="tournament-title">ESEA Advanced NA</p>
-                            <p class="type-bo">BO3</p>
-                            <p class="time">1:12:01</p>
-                        </div>
-                        <div class="vs">
-                            <p>VS</p>
-                        </div>
-                    </div>
-                    <div class="team-right">
-                        <div class="team">
-                            <img>
-                            <p class="title">Spirit</p>
-                            <div class="koef">
-                                <p>x 1.8</p>
-                                <hr />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+                </li>
+            }
         </ul>
     </div>
 </div>
+
+<BSModal @ref="VerticallyCentered" IsCentered="true">
+	<BSModalHeader @onclick="@Close">Modal title</BSModalHeader>
+	<BSModalBody>
+		<p>Modal body text goes here.</p>
+	</BSModalBody>
+	<BSModalFooter>
+		<BSButton Color="Color.Secondary" @onclick="@Close">Close</BSButton>
+		<BSButton Color="Color.Primary" @onclick="@Close">Save Changes</BSButton>
+	</BSModalFooter>
+</BSModal>
+
 @code {
-    
+    private BSModal VerticallyCentered { get; set; }
+    private List<Event> Events { get; set; } = null;
+    private Event SelectedMatch { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Events = new bookmaker_officeContext().Events
+            .Where(a => a.IdSport == 1)
+            .Where(a => a.StartDate <= DateTime.Now)
+            .Where(a => a.IsPast != true)
+            .Include(team1 => team1.IdTeam1Navigation)
+            .Include(team2 => team2.IdTeam2Navigation)
+            .Include(x => x.PossibleBets)
+            .ToList();
+    }
+
+    private String GetCoef1(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef1.ToString();
+    }
+    private String GetCoef2(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef2.ToString();
+    }
+
+    public void BetsForTeam(Event @event)
+    {
+        if (@event is null)
+            return;
+
+        SelectedMatch = @event;
+
+        VerticallyCentered.Toggle();
+    }
+
+    public void Close()
+    {
+        SelectedMatch = null;
+        VerticallyCentered.Toggle();
+    }
 }

@@ -164,3 +164,4 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\Registrat
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AuthenticationModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\RegistrationNewUser.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
