@@ -196,6 +196,52 @@ div.team-right[b-wq3mdwacej] {
 div.team-left[b-wq3mdwacej] {
     float: left;
 }
+/* _content/Test/Pages/Index.razor.rz.scp.css */
+div.main-main[b-1i06yy398t] {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+div.main[b-1i06yy398t] {
+    margin-top: 70px;
+}
+
+div.menu1[b-1i06yy398t] {
+    height: 80px;
+    width: 100%;
+    background-color: #779ea4;
+    border: 1px;
+}
+
+div.logo-and-type-game-and-technical-support[b-1i06yy398t] {
+    margin-left: 0px;
+    display: inline-block;
+}
+
+    div.logo-and-type-game-and-technical-support div[b-1i06yy398t] {
+        display: inline-block;
+    }
+
+div.logo[b-1i06yy398t] {
+}
+
+div.technical-support[b-1i06yy398t] {
+}
+
+div.type-games[b-1i06yy398t] {
+}
+
+div.custom-features[b-1i06yy398t] {
+    white-space: nowrap;
+    float: right;
+}
+
+    div.custom-features div[b-1i06yy398t] {
+        display: inline-block;
+    }
+
+div.log-in-log-up[b-1i06yy398t] {
+}
 /* _content/Test/Shared/MainLayout.razor.rz.scp.css */
 div.main-main[b-vv8m6rf2se] {
     max-width: 1440px;
@@ -241,67 +287,4 @@ div.custom-features[b-vv8m6rf2se] {
     }
 
 div.log-in-log-up[b-vv8m6rf2se] {
-}
-/* _content/Test/Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-tgg5veqzp4] {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.top-row[b-tgg5veqzp4] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand[b-tgg5veqzp4] {
-    font-size: 1.1rem;
-}
-
-.oi[b-tgg5veqzp4] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
-.nav-item[b-tgg5veqzp4] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-tgg5veqzp4] {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type[b-tgg5veqzp4] {
-        padding-bottom: 1rem;
-    }
-
-    .nav-item[b-tgg5veqzp4]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-.nav-item[b-tgg5veqzp4]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
-
-.nav-item[b-tgg5veqzp4]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-@media (min-width: 641px) {
-    .navbar-toggler[b-tgg5veqzp4] {
-        display: none;
-    }
-
-    .collapse[b-tgg5veqzp4] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-    }
 }
