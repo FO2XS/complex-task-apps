@@ -5,42 +5,42 @@
 
 
 <div class="active-matches">
-	<div class="active-matches-title">
-		<p>Эти матчи уже начались! Смотри матчи и ставь ставки!</p>
-	</div>
+    <div class="list-of-active-matches">
+        <div class="active-matches-title">
+            <p>АКТИВНЫЕ МАТЧИ</p>
+        </div>
 
-	<div class="list-of-active-matches">
-		<ul>
-			@foreach (var bet in Events)
-			{
-				<li>
-					<div class="active-matches-bet">
-						<div class="team-left">
-							<div class="team" @onclick="(() => BetsForTeam(bet))">
+        <ul>
+            @foreach (var bet in Events)
+            {
+                <li>
+                    <div class="active-matches-bet">
+                        <div class="team-left">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))">
                                 <div class="logo-team">
                                     <img src="@bet.IdTeam1Navigation.Logo">
                                     <div class="text-place-bet">
                                         СДЕЛАТЬ<br />СТАВКУ
                                     </div>
                                 </div>
-								<p class="title">@bet.IdTeam1Navigation.Title</p>
-								<div class="koef">
-									<p>@(GetCoef1(bet.PossibleBets))</p>
-									<hr />
-								</div>
-							</div>
-						</div>
-						<div class="main-info">
-							<div class="matches-bet-info">
-								<p class="tournament-title">ESEA Advanced NA</p>
-								<p class="type-bo">BO3</p>
-								<p class="time">@((@DateTime.Now - @bet.StartDate).Value.ToString(@"hh\:mm\:ss"))</p>
-							</div>
-							<div class="vs">
-								<p>VS</p>
-							</div>
-						</div>
-						<div class="team-right">
+                                <p class="title">@bet.IdTeam1Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef1(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-info">
+                            <div class="matches-bet-info">
+                                <p class="tournament-title">ESEA Advanced NA</p>
+                                <p class="type-bo">BO3</p>
+                                <p class="time">@((@DateTime.Now - @bet.StartDate).Value.ToString(@"hh\:mm\:ss"))</p>
+                            </div>
+                            <div class="vs">
+                                <p>VS</p>
+                            </div>
+                        </div>
+                        <div class="team-right">
                             <div class="team" @onclick="(() => BetsForTeam(bet))">
                                 <div class="logo-team">
                                     <img src="@bet.IdTeam2Navigation.Logo">
@@ -54,12 +54,12 @@
                                     <hr />
                                 </div>
                             </div>
-						</div>
-					</div>
-				</li>
-			}
-		</ul>
-	</div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
 
 <BSModal @ref="VerticallyCentered" IsCentered="true">

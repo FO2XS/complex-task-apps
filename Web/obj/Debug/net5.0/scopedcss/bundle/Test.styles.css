@@ -8,37 +8,47 @@ div.active-matches[b-oq7gvcb4w8] {
 	user-select: none;
 }
 
-	div.active-matches .active-matches-title[b-oq7gvcb4w8] {
-		text-align: center;
-	}
-
 div.list-of-active-matches[b-oq7gvcb4w8] {
 	background-color: #2a2f36;
 	border-radius: 4px;
 }
 
+	div.list-of-active-matches .active-matches-title[b-oq7gvcb4w8] {
+		position:relative;
+		top: 20px;
+		text-align: left;
+		color: whitesmoke;
+		font-weight: 500;
+		margin-left: 50px;
+	}
+
+		div.list-of-active-matches .active-matches-title p[b-oq7gvcb4w8] {
+			margin-top: 20px;
+		}
+
 	div.list-of-active-matches ul[b-oq7gvcb4w8] {
+		margin-top:30px;
 	}
 
 		div.list-of-active-matches ul li[b-oq7gvcb4w8] {
-			display: inline-block;
-			width: 45%;
 			background-color: #2f353d;
 			white-space: nowrap;
 			text-align: center;
 			margin: 10px;
 			border-radius: 6px;
+			display: inline-block;
+			max-width: 500px;
+			min-width: 400px;
 		}
 
 			div.list-of-active-matches ul li div[b-oq7gvcb4w8] {
-				white-space: nowrap;
 			}
 
 div.main-info[b-oq7gvcb4w8] {
 	display: inline-block;
 	position: relative;
 	z-index: 100;
-	top:10px;
+	top:14px;
 }
 
 	div.main-info div.matches-bet-info[b-oq7gvcb4w8] {

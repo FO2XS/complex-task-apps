@@ -7,37 +7,47 @@
 	user-select: none;
 }
 
-	div.active-matches .active-matches-title {
-		text-align: center;
-	}
-
 div.list-of-active-matches {
 	background-color: #2a2f36;
 	border-radius: 4px;
 }
 
+	div.list-of-active-matches .active-matches-title {
+		position:relative;
+		top: 20px;
+		text-align: left;
+		color: whitesmoke;
+		font-weight: 500;
+		margin-left: 50px;
+	}
+
+		div.list-of-active-matches .active-matches-title p {
+			margin-top: 20px;
+		}
+
 	div.list-of-active-matches ul {
+		margin-top:30px;
 	}
 
 		div.list-of-active-matches ul li {
-			display: inline-block;
-			width: 45%;
 			background-color: #2f353d;
 			white-space: nowrap;
 			text-align: center;
 			margin: 10px;
 			border-radius: 6px;
+			display: inline-block;
+			max-width: 500px;
+			min-width: 400px;
 		}
 
 			div.list-of-active-matches ul li div {
-				white-space: nowrap;
 			}
 
 div.main-info {
 	display: inline-block;
 	position: relative;
 	z-index: 100;
-	top:10px;
+	top:14px;
 }
 
 	div.main-info div.matches-bet-info {
