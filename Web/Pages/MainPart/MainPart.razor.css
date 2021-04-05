@@ -1,0 +1,23 @@
+﻿div.main-part {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: table;
+}
+    div.main-part div.active-bet {
+        display: table-cell;
+        width: auto;
+        float: left;
+        width: auto;
+    }
+
+    div.main-part div.user {
+        display: table-cell;
+        float: right;
+    }
+td.side {
+    border-left: 5px solid rgba(0, 0, 0, 0.00);
+    text-align:center;
+    vertical-align: top;
+}
+td.side div{
+}

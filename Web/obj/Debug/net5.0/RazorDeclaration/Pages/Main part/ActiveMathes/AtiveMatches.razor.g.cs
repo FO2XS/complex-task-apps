@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test.Pages
+namespace Test.Pages.Main_part.ActiveMathes
 {
     #line hidden
     using System;
@@ -13,98 +13,98 @@ namespace Test.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 1 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 2 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 3 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 4 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 5 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 6 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 7 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 8 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 9 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Test;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 10 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using Test.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+#line 11 "C:\pepos\complex-task-apps\Web\_Imports.razor"
 using BlazorStrap;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 2 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
 using Data.Modal;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 3 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
 using Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 4 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
 using Microsoft.EntityFrameworkCore;
 
 #line default
@@ -118,7 +118,7 @@ using Microsoft.EntityFrameworkCore;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 76 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
        
     private BSModal VerticallyCentered { get; set; }
     private List<Event> Events { get; set; } = null;

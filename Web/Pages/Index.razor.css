@@ -1,17 +1,36 @@
 div.main-main {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
+    margin-top: 70px;
 }
 
 div.main {
-    margin-top: 70px;
 }
+    div.main div {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+        div.main div.hot-matches {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        div.main div.main-part {
+            margin-top: 80px;
+        }
+
 
 div.menu1 {
     height: 80px;
     width: 100%;
-    background-color: #779ea4;
+    background-color: #3b4451;
     border: 1px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    color: whitesmoke;
+    font-weight: 500;
 }
 
 div.logo-and-type-game-and-technical-support {

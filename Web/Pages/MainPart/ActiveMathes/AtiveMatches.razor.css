@@ -1,75 +1,72 @@
-div.active-matches[b-oq7gvcb4w8] {
-	width: 96%;
-	max-width: 1200px;
-	margin: 0 auto;
+﻿div.active-matches {
+	text-align:center;
+}
+
+div.list-of-active-matches {
+	background-color: #2a2f36;
+	border-radius: 4px;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
+	margin-left: 0px;
 }
 
-div.list-of-active-matches[b-oq7gvcb4w8] {
-	background-color: #2a2f36;
-	border-radius: 4px;
-}
-
-	div.list-of-active-matches .active-matches-title[b-oq7gvcb4w8] {
-		position:relative;
+	div.list-of-active-matches .active-matches-title {
+		position: relative;
 		top: 20px;
 		text-align: left;
 		color: whitesmoke;
 		font-weight: 500;
-		margin-left: 50px;
+		margin-left: 30px;
 	}
 
-		div.list-of-active-matches .active-matches-title p[b-oq7gvcb4w8] {
-			margin-top: 20px;
+		div.list-of-active-matches .active-matches-title p {
 		}
 
-	div.list-of-active-matches ul[b-oq7gvcb4w8] {
-		margin-top:30px;
+	div.list-of-active-matches ul {
+		padding-left: 0px;
+		margin: 15px;
+		margin-top: 30px;
 	}
 
-		div.list-of-active-matches ul li[b-oq7gvcb4w8] {
+		div.list-of-active-matches ul li {
 			background-color: #2f353d;
 			white-space: nowrap;
-			text-align: center;
-			margin: 10px;
+			margin: 8px;
 			border-radius: 6px;
 			display: inline-block;
-			max-width: 500px;
-			min-width: 400px;
+
 		}
 
-			div.list-of-active-matches ul li div[b-oq7gvcb4w8] {
+			div.list-of-active-matches ul li div {
 			}
 
-div.main-info[b-oq7gvcb4w8] {
-	display: inline-block;
+div.main-info {
+	display: inline-grid;
 	position: relative;
 	z-index: 100;
-	top:14px;
+	top: 14px;
 }
 
-	div.main-info div.matches-bet-info[b-oq7gvcb4w8] {
+	div.main-info div.matches-bet-info {
 		text-align: center;
-		white-space: nowrap;
 		margin: 0 auto;
 	}
 
-		div.main-info div.matches-bet-info p.tournament-title[b-oq7gvcb4w8] {
+		div.main-info div.matches-bet-info p.tournament-title {
 			color: #9da0a6;
 			font-weight: 500;
 		}
 
-		div.main-info div.matches-bet-info p.type-bo[b-oq7gvcb4w8] {
+		div.main-info div.matches-bet-info p.type-bo {
 			font-weight: 700;
 			font-size: 11px;
 			color: #7d7f85;
 			position: relative;
-			top:-10px;
+			top: -10px;
 		}
 
-		div.main-info div.matches-bet-info p.time[b-oq7gvcb4w8] {
+		div.main-info div.matches-bet-info p.time {
 			font-weight: 700;
 			font-size: 11px;
 			color: #63666d;
@@ -77,7 +74,7 @@ div.main-info[b-oq7gvcb4w8] {
 			top: 20px;
 		}
 
-	div.main-info div.vs[b-oq7gvcb4w8] {
+	div.main-info div.vs {
 		position: absolute;
 		top: -53px;
 		left: -6px;
@@ -85,28 +82,28 @@ div.main-info[b-oq7gvcb4w8] {
 		z-index: -1;
 	}
 
-		div.main-info div.vs p[b-oq7gvcb4w8] {
+		div.main-info div.vs p {
 			font-size: 120px;
 			font-weight: 600;
 		}
 
-div.team-right[b-oq7gvcb4w8],
-div.team-left[b-oq7gvcb4w8] {
+div.team-right,
+div.team-left {
 	width: 100px;
 	height: auto;
 	text-align: center;
 	margin: 6px;
 }
 
-div.team-right[b-oq7gvcb4w8] {
+div.team-right {
 	float: right;
 }
 
-div.team-left[b-oq7gvcb4w8] {
+div.team-left {
 	float: left;
 }
 
-div.team[b-oq7gvcb4w8] {
+div.team {
 	position: relative;
 	transition: .2s;
 	height: 164px;
@@ -114,18 +111,18 @@ div.team[b-oq7gvcb4w8] {
 	padding: 5px 5px;
 }
 
-	div.team:hover[b-oq7gvcb4w8] {
+	div.team:hover {
 		background-color: #4b9632;
 		transition: .2s;
 	}
 
-	div.team div.logo-team[b-oq7gvcb4w8] {
+	div.team div.logo-team {
 		border-radius: 3px;
 		background-color: rgba(42, 47, 54, 0.7);
 		margin-top: 3px;
 	}
 
-		div.team div.logo-team img[b-oq7gvcb4w8] {
+		div.team div.logo-team img {
 			width: 90px;
 			height: 90px;
 			border-radius: 8px;
@@ -133,11 +130,11 @@ div.team[b-oq7gvcb4w8] {
 			padding: 5px
 		}
 
-	div.team:hover div.logo-team img[b-oq7gvcb4w8] {
+	div.team:hover div.logo-team img {
 		opacity: 0.2;
 	}
 
-	div.team div.logo-team div.text-place-bet[b-oq7gvcb4w8] {
+	div.team div.logo-team div.text-place-bet {
 		position: absolute;
 		visibility: hidden;
 		transition: .2s;
@@ -148,12 +145,12 @@ div.team[b-oq7gvcb4w8] {
 		top: 38px;
 	}
 
-	div.team:hover div.logo-team div.text-place-bet[b-oq7gvcb4w8] {
+	div.team:hover div.logo-team div.text-place-bet {
 		transition: .3s;
 		visibility: visible;
 	}
 
-	div.team p.title[b-oq7gvcb4w8] {
+	div.team p.title {
 		position: relative;
 		padding-top: 5px;
 		color: whitesmoke;
@@ -164,12 +161,12 @@ div.team[b-oq7gvcb4w8] {
 		text-overflow: ellipsis;
 	}
 
-	div.team .koef[b-oq7gvcb4w8] {
+	div.team .koef {
 		position: relative;
 		text-align: center;
 	}
 
-		div.team .koef p[b-oq7gvcb4w8] {
+		div.team .koef p {
 			position: relative;
 			top: -8px;
 			color: whitesmoke;
@@ -177,7 +174,7 @@ div.team[b-oq7gvcb4w8] {
 			font-weight: 600;
 		}
 
-		div.team .koef hr[b-oq7gvcb4w8] {
+		div.team .koef hr {
 			position: absolute;
 			background-color: yellow;
 			width: 38px;

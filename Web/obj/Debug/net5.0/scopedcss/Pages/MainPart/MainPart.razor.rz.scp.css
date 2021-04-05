@@ -1,0 +1,23 @@
+div.main-part[b-m7f5v0km5k] {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: table;
+}
+    div.main-part div.active-bet[b-m7f5v0km5k] {
+        display: table-cell;
+        width: auto;
+        float: left;
+        width: auto;
+    }
+
+    div.main-part div.user[b-m7f5v0km5k] {
+        display: table-cell;
+        float: right;
+    }
+td.side[b-m7f5v0km5k] {
+    border-left: 5px solid rgba(0, 0, 0, 0.00);
+    text-align:center;
+    vertical-align: top;
+}
+td.side div[b-m7f5v0km5k]{
+}
