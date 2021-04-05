@@ -82,13 +82,6 @@ using Test.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
-using BlazorStrap;
-
-#line default
-#line hidden
-#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

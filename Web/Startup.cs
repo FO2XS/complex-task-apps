@@ -1,4 +1,3 @@
-using BlazorStrap;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Test.Data;
+using Test.Pages;
 
 namespace Test
 {
@@ -30,7 +30,6 @@ namespace Test
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
 			services.AddSingleton<WeatherForecastService>();
-			services.AddBootstrapCss();
 			services.AddSingleton<WebService>();
 		}
 

@@ -83,13 +83,6 @@ using Test.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
-using BlazorStrap;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 2 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
 using Data.Modal;
 
@@ -118,11 +111,14 @@ using Microsoft.EntityFrameworkCore;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+#line 75 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
        
-    private BSModal VerticallyCentered { get; set; }
     private List<Event> Events { get; set; } = null;
     private Event SelectedMatch { get; set; }
+
+    //
+    SelectBetModal child;
+    //
 
     protected override void OnInitialized()
     {
@@ -154,14 +150,9 @@ using Microsoft.EntityFrameworkCore;
 
         SelectedMatch = @event;
 
-        VerticallyCentered.Toggle();
+
     }
 
-    public void Close()
-    {
-        SelectedMatch = null;
-        VerticallyCentered.Toggle();
-    }
 
 #line default
 #line hidden

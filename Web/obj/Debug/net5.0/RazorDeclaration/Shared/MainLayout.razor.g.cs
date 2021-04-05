@@ -83,14 +83,7 @@ using Test.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
-using BlazorStrap;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
+#line 2 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
 using Test.Pages;
 
 #line default
@@ -103,32 +96,6 @@ using Test.Pages;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 14 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Shared\MainLayout.razor"
-      
-
-	private Boolean isServerSide = false;
-	protected override async System.Threading.Tasks.Task OnInitializedAsync()
-	{
-		try
-		{
-			await BootstrapCSS.SetBootstrapCss("4.3.1");
-		}
-		catch (Exception)
-		{
-			isServerSide = true;
-		}
-	}
-	protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-	{
-		if (isServerSide && firstRun)
-			await BootstrapCSS.SetBootstrapCss();
-	}
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IBootstrapCss BootstrapCSS { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -80,13 +80,6 @@ using Test.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
-using BlazorStrap;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 3 "D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\RegistrationNewUser.razor"
 using Test.Data;
 
