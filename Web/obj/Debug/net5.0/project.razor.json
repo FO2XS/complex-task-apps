@@ -45,39 +45,6 @@
         }
       },
       {
-        "HashCode": 384078813,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.AtiveMatches",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AtiveMatches"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.AtiveMatches"
-        }
-      },
-      {
-        "HashCode": 1633696381,
-        "Kind": "Components.Component",
-        "Name": "Test.Pages.AtiveMatches",
-        "AssemblyName": "Test",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Test.Pages.AtiveMatches"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Test.Pages.AtiveMatches",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 667198781,
         "Kind": "Components.Component",
         "Name": "Test.Pages.HotMath",
@@ -203,6 +170,191 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Test.Pages.Index.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -72310234,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.ActiveMathes.AtiveMatches",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AtiveMatches"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.ActiveMathes.AtiveMatches"
+        }
+      },
+      {
+        "HashCode": 904212668,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.ActiveMathes.AtiveMatches",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.MainPart.ActiveMathes.AtiveMatches"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.ActiveMathes.AtiveMatches",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 919530047,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.MainPart",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "MainPart"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.MainPart"
+        }
+      },
+      {
+        "HashCode": -2117084620,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.MainPart",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.MainPart.MainPart"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.MainPart",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 372048460,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.UserSide.UserSide",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "UserSide"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.UserSide.UserSide"
+        }
+      },
+      {
+        "HashCode": -1326677059,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.MainPart.UserSide.UserSide",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.MainPart.UserSide.UserSide"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.MainPart.UserSide.UserSide",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 181829311,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.AuthenticationModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AuthenticationModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.AuthenticationModal"
+        }
+      },
+      {
+        "HashCode": 1278973769,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.AuthenticationModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.AuthenticationModal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.AuthenticationModal",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1432212713,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.SelectBetModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SelectBetModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Event",
+            "TypeName": "Test.Data.Modal.Event",
+            "Metadata": {
+              "Common.PropertyName": "Event"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.SelectBetModal"
+        }
+      },
+      {
+        "HashCode": 886154792,
+        "Kind": "Components.Component",
+        "Name": "Test.Pages.SelectBetModal",
+        "AssemblyName": "Test",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Test.Pages.SelectBetModal"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Event",
+            "TypeName": "Test.Data.Modal.Event",
+            "Metadata": {
+              "Common.PropertyName": "Event"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Test.Pages.SelectBetModal",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15990,8 +16142,23 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\MainPart\\ActiveMathes\\AtiveMatches.razor",
+      "TargetPath": "Pages\\MainPart\\ActiveMathes\\AtiveMatches.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\AuthenticationModal.razor",
       "TargetPath": "Pages\\AuthenticationModal.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\MainPart\\UserSide\\UserSide.razor",
+      "TargetPath": "Pages\\MainPart\\UserSide\\UserSide.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\MainPart\\MainPart.razor",
+      "TargetPath": "Pages\\MainPart\\MainPart.razor",
       "FileKind": "component"
     },
     {
@@ -16027,11 +16194,6 @@
     {
       "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "d:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Pages\\AtiveMatches.razor",
-      "TargetPath": "Pages\\AtiveMatches.razor",
       "FileKind": "component"
     },
     {

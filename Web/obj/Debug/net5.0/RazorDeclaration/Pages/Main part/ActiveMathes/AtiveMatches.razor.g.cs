@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Test.Pages
+namespace Test.Pages.Main_part.ActiveMathes
 {
     #line hidden
     using System;
@@ -13,91 +13,150 @@ namespace Test.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 1 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 1 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 2 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 2 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 3 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 3 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 4 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 5 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 5 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 6 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 6 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 7 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 7 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 8 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 8 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 9 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 9 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Test;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 10 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\_Imports.razor"
+=======
+#line 10 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Test.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 2 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+=======
+#line 11 "C:\pepos\complex-task-apps\Web\_Imports.razor"
+using BlazorStrap;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Data.Modal;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 3 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+=======
+#line 3 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 4 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+=======
+#line 4 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
 using Microsoft.EntityFrameworkCore;
 
 #line default
@@ -111,7 +170,11 @@ using Microsoft.EntityFrameworkCore;
         }
         #pragma warning restore 1998
 #nullable restore
+<<<<<<< HEAD:Web/obj/Debug/net5.0/RazorDeclaration/Pages/AtiveMatches.razor.g.cs
 #line 75 "d:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\Pages\AtiveMatches.razor"
+=======
+#line 76 "C:\pepos\complex-task-apps\Web\Pages\Main part\ActiveMathes\AtiveMatches.razor"
+>>>>>>> WebDevelopment:Web/obj/Debug/net5.0/RazorDeclaration/Pages/Main part/ActiveMathes/AtiveMatches.razor.g.cs
        
     private List<Event> Events { get; set; } = null;
     private Event SelectedMatch { get; set; }

@@ -39,10 +39,8 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\Index.raz
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\PlusModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorComponent.output.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Test.dll
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.TagHelpers.input.cache
@@ -53,20 +51,16 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorAssemblyInfo.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorAssemblyInfo.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\staticwebassets\Test.StaticWebAssets.Manifest.cache
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\staticwebassets\Test.StaticWebAssets.xml
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\bundle\Test.styles.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\projectbundle\Test.bundle.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorTargetAssemblyInfo.cache
@@ -154,5 +148,17 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AuthenticationModal.
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\RegistrationNewUser.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
+<<<<<<< HEAD
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\SelectBetModal.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\SelectBetModal.razor.g.cs
+=======
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\ActiveMathes\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\MainPart.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\UserSide\UserSide.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\ActiveMathes\AtiveMatches.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\MainPart.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\UserSide\UserSide.razor.g.cs
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\ActiveMathes\AtiveMatches.razor.rz.scp.css
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\MainPart.razor.rz.scp.css
+C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\UserSide\UserSide.razor.rz.scp.css
+>>>>>>> WebDevelopment

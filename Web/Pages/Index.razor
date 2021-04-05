@@ -1,54 +1,54 @@
 ﻿@page "/"
 @inherits LayoutComponentBase
 
-<div class="main-main">
-    <div class="menu1">
-        <div class="logo-and-type-game-and-technical-support">
-            <div class="logo">
-                Лого
-            </div>
-            <div class="">
-                <select>
-                    <option selected>
-                        CS:GO
-                    </option>
-                    <option>
-                        LoL
-                    </option>
-                </select>
-            </div>
-            <div class="technical-support">
-                Тех. поддержка
-            </div>
-        </div>
+@using Test.Pages.MainPart
 
-        <div class="custom-features">
-            <div>FAQ</div>
-            <div>
-                <!--Вместо кнопки Log in-->
-                <Test.Pages.AuthenticationModal></Test.Pages.AuthenticationModal>
+<div class="menu1">
+	<div style="margin: 0 auto; max-width: 1240px; ">
+		<div class="logo-and-type-game-and-technical-support">
+			<div class="logo">
+				Лого
+			</div>
+			<div class="">
+				<select>
+					<option selected>
+						CS:GO
+					</option>
+					<option>
+						LoL
+					</option>
+				</select>
+			</div>
+			<div class="technical-support">
+				Тех. поддержка
+			</div>
+		</div>
+
+		<div class="custom-features">
+			<div>FAQ</div>
+			<div>
+				<Test.Pages.AuthenticationModal></Test.Pages.AuthenticationModal>
                 <br />
                 <button class="btn btn-success">
                     <NavLink style="text-decoration:none; color: white;" href="registration">
                         Reg
                     </NavLink>
                 </button>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="main">
-        <Test.Pages.HotMath></Test.Pages.HotMath>
-        <Test.Pages.AtiveMatches></Test.Pages.AtiveMatches>
-    </div>
+			</div>
+		</div>
+	</div>
 </div>
 
-
-
-
-
-
+<div class="main-main">
+	<div class="main">
+		<div class="hot-matches">
+			<HotMath></HotMath>
+		</div>
+		<div class="main-part">
+			<MainPart></MainPart>
+		</div>
+	</div>
+</div>
 
 
 
