@@ -9,6 +9,7 @@
         <div class="active-matches-title">
             <p>АКТИВНЫЕ МАТЧИ</p>
         </div>
+        <Test.Pages.SelectBetModal @ref="child" Event="@SelectedMatch"></Test.Pages.SelectBetModal>
 
         <ul>
             @foreach (var bet in Events)
@@ -16,7 +17,7 @@
                 <li>
                     <div class="active-matches-bet">
                         <div class="team-left">
-                            <div class="team" @onclick="(() => BetsForTeam(bet))">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
                                 <div class="logo-team">
                                     <img src="@bet.IdTeam1Navigation.Logo">
                                     <div class="text-place-bet">
@@ -41,7 +42,7 @@
                             </div>
                         </div>
                         <div class="team-right">
-                            <div class="team" @onclick="(() => BetsForTeam(bet))">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
                                 <div class="logo-team">
                                     <img src="@bet.IdTeam2Navigation.Logo">
                                     <div class="text-place-bet">
@@ -62,21 +63,22 @@
     </div>
 </div>
 
-<BSModal @ref="VerticallyCentered" IsCentered="true">
-	<BSModalHeader @onclick="@Close">Modal title</BSModalHeader>
-	<BSModalBody>
-		<p>Modal body text goes here.</p>
-	</BSModalBody>
-	<BSModalFooter>
-		<BSButton Color="Color.Secondary" @onclick="@Close">Close</BSButton>
-		<BSButton Color="Color.Primary" @onclick="@Close">Save Changes</BSButton>
-	</BSModalFooter>
-</BSModal>
+
+<!--
+<Test.Pages.PlusModal Event="@SelectedMatch"></Test.Pages.PlusModal>
+-->
+
+    
+
+
 
 @code {
-    private BSModal VerticallyCentered { get; set; }
     private List<Event> Events { get; set; } = null;
     private Event SelectedMatch { get; set; }
+
+    //
+    SelectBetModal child;
+    //
 
     protected override void OnInitialized()
     {
@@ -108,12 +110,7 @@
 
         SelectedMatch = @event;
 
-        VerticallyCentered.Toggle();
+
     }
 
-    public void Close()
-    {
-        SelectedMatch = null;
-        VerticallyCentered.Toggle();
-    }
 }

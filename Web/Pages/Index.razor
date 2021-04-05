@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inherits LayoutComponentBase
-@inject IBootstrapCss BootstrapCSS
+
 @using Test.Pages.MainPart
 
 <div class="menu1">
@@ -27,10 +27,13 @@
 		<div class="custom-features">
 			<div>FAQ</div>
 			<div>
-				<!--Вместо кнопки Log in-->
-				<NavLink class="nav-link" href="registration">
-					<span aria-hidden="true"> Reg</span>
-				</NavLink>
+				<Test.Pages.AuthenticationModal></Test.Pages.AuthenticationModal>
+                <br />
+                <button class="btn btn-success">
+                    <NavLink style="text-decoration:none; color: white;" href="registration">
+                        Reg
+                    </NavLink>
+                </button>
 			</div>
 		</div>
 	</div>

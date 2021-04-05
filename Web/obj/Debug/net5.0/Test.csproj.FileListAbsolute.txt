@@ -84,24 +84,15 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Test.pdb
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Test.Views.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Test.Views.pdb
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\BlazorComponentUtilities.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\BlazorStrap.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Humanizer.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Components.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Components.Forms.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Components.Web.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Microsoft.JSInterop.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\bin\Debug\net5.0\System.IO.Pipelines.dll
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.csprojAssemblyReference.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.GeneratedMSBuildEditorConfig.editorconfig
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.AssemblyInfoInputs.cache
@@ -111,10 +102,8 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorComponent.input.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\PlusModal.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\AtiveMatches.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\HotMath.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorComponent.output.cache
@@ -124,10 +113,8 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorCoreGenerate.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\App.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\PlusModal.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AtiveMatches.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\HotMath.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
@@ -136,7 +123,6 @@ D:\Университет\4 семестр\Веб-программировани
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Test.RazorAssemblyInfo.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\staticwebassets\Test.StaticWebAssets.Manifest.cache
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\staticwebassets\Test.StaticWebAssets.xml
-D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\AtiveMatches.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\HotMath.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\bundle\Test.styles.css
@@ -159,6 +145,10 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\AuthenticationModal.
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\RegistrationNewUser.razor.g.cs
 D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
+<<<<<<< HEAD
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\SelectBetModal.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\SelectBetModal.razor.g.cs
+=======
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\ActiveMathes\AtiveMatches.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\MainPart.razor.g.cs
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\UserSide\UserSide.razor.g.cs
@@ -168,3 +158,13 @@ C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\UserSide\Us
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\ActiveMathes\AtiveMatches.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\MainPart.razor.rz.scp.css
 C:\pepos\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\UserSide\UserSide.razor.rz.scp.css
+>>>>>>> WebDevelopment
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\ActiveMathes\AtiveMatches.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\MainPart.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\RazorDeclaration\Pages\MainPart\UserSide\UserSide.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\ActiveMathes\AtiveMatches.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\MainPart.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\Razor\Pages\MainPart\UserSide\UserSide.razor.g.cs
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\ActiveMathes\AtiveMatches.razor.rz.scp.css
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\MainPart.razor.rz.scp.css
+D:\Университет\4 семестр\Веб-программирование\complex-task-apps\Web\obj\Debug\net5.0\scopedcss\Pages\MainPart\UserSide\UserSide.razor.rz.scp.css
