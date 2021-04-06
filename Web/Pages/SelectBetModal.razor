@@ -8,7 +8,7 @@
 
 <div class="modal" id="betsModal" tabindex="-1">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-color: #F6F6F6">
+        <div class="modal-content" style="background-color: #F6F6F6; font-family: Trebuchet MS;">
             <div class="modal-header">
                 <h5 class="modal-title">Выбор ставки</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,15 +53,16 @@
                                 <div class="col-3">
                                     <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(Event.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
                                 </div>
-                                <div class="col-1" style="font-size: 0.7vmax;">
-                                    @bet.Coef1
+                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                    <div class="text-nowrap">@bet.Coef1</div>
+                                    
                                 </div>
-                                <div class="col-4">
-                                    <span style="font-size: 0.9vmax;">@bet.IdTobNavigation.Title</span>
+                                <div class="col-4" style="font-size: 0.9vmax;">
+                                    @bet.IdTobNavigation.Title
 
                                 </div>
-                                <div class="col-1">
-                                    @bet.Coef2
+                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                    <div class="text-nowrap">@bet.Coef1</div>
                                 </div>
                                 <div class="col-3">
                                     <button type="button" class="btn btn-success btn-sm" style = "width: 100%;" @onclick="(() => OpenFinishBetModal(Event.IdTeam2Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
@@ -85,7 +86,7 @@
 
     <div class="modal" id="finishBetModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="font-family: Trebuchet MS;">
                 <div class="modal-header">
                     <h5 class="modal-title">Заключение пари</h5>
                     <button type="button" class="close" data-toggle="modal" data-target="#betsModal" data-dismiss="modal" aria-label="Close">

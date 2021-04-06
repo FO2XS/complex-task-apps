@@ -54,19 +54,11 @@ body {
 }
 
 hr {
-<<<<<<< HEAD
     margin: 1rem 0;
     color: inherit;
     background-color: currentColor;
     border: 0;
     opacity: 0.25;
-=======
-  margin: 1rem 0;
-  color: inherit;
-  background-color: currentColor;
-  border: 0;
-  opacity: 1;
->>>>>>> WebDevelopment
 }
 
     hr:not([size]) {
