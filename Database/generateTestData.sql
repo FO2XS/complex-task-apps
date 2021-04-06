@@ -5,6 +5,7 @@ TRUNCATE public.possible_bets RESTART IDENTITY CASCADE;
 TRUNCATE public.events RESTART IDENTITY CASCADE;
 TRUNCATE public.type_of_bets RESTART IDENTITY CASCADE;
 TRUNCATE public.sports RESTART IDENTITY CASCADE;
+TRUNCATE public.teams RESTART IDENTITY CASCADE;
 
 -- Заполнение таблиц данными
 --for users 100
@@ -23,12 +24,7 @@ INSERT INTO "users" (email,password,nickname,name,surname,balance) VALUES ('et.u
 INSERT INTO public.sports(title) VALUES ('Counter Strike'), ('League of Legends');
 
 -- for teams 22rows
-<<<<<<< Updated upstream
-INSERT INTO public.teams(title)
-	VALUES ('Astralis'), ('T1'), ('Fnatic'), ('Natus Vincere'), ('Virtus.pro'), ('SK Gaming'),('Team Liquid'),('FaZe Clan'),('mousesports'),('Ninjas in Pyjamas');
-INSERT INTO public.teams(title)
-	VALUES ('Samsung Galaxy'),('Royal Never Give Up'),('Cloud9'),('G2 Esports'),('Invictus Gaming'),('Team Envy'),('G2 Esports'),('Gambit Esports'),('Team Vitality'),('EDward Gaming'),('MIBR'),('FPX Esports');
-=======
+
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (3, 'Fnatic', NULL, NULL, NULL, 'https://i.ibb.co/N1rfFnx/fnatic.png');
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (1, 'Astralis', NULL, NULL, NULL, 'https://i.ibb.co/QnVmfmt/Astralis-logo-svg.png');
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (7, 'Team Liquid', NULL, NULL, NULL, 'https://i.ibb.co/3ck016t/Team-Liquid.png');
@@ -51,7 +47,7 @@ INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVER
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (15, 'Invictus Gaming', NULL, NULL, NULL, 'https://i.ibb.co/mJxT6Z4/Invictus-gaming.png');
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (11, 'Samsung Galaxy', NULL, NULL, NULL, 'https://i.ibb.co/GJW8h2h/Samsung-Galaxy.png');
 INSERT INTO public.teams (id, title, raiting, percent_win, squadlist, logo) OVERRIDING SYSTEM VALUE VALUES (12, 'Royal Never Give Up', NULL, NULL, NULL, 'https://i.ibb.co/YNMwHdJ/RNGU.png');
->>>>>>> Stashed changes
+
 
 --for events 100 rows
 
