@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T6Lt+mYdWgmREdTwgOb3KO4uCXY/DF7NqWqbArAZqSCFo96/IM7MRz6US0hbXRQxzODRUjQMA5Lm/FyLEaW1kg==",
+  "dgSpecHash": "/dYEdN3Udj4s5zXWEC3VhZko+FQ/2XWdLc74/kQAOpA9jjowdu+/1Fuyh+1vvtkaDREYnL0g51RQ45KLvd6nvg==",
   "success": true,
-  "projectFilePath": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
+  "projectFilePath": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FOXXS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\FOXXS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -28,12 +28,5 @@
     "C:\\Users\\FOXXS\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\FOXXS\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

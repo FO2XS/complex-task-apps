@@ -859,11 +859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
+      "projectUniqueName": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\Test.csproj",
+      "projectPath": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj",
       "packagesPath": "C:\\Users\\FOXXS\\.nuget\\packages\\",
-      "outputPath": "D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\obj\\",
+      "outputPath": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -931,13 +931,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\Университет\\4 семестр\\Веб-программирование\\complex-task-apps\\Web\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
