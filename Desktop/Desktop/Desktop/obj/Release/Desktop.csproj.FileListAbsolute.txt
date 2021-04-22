@@ -1,0 +1,15 @@
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\bin\Release\Desktop.exe.config
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\bin\Release\Desktop.exe
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\bin\Release\Desktop.pdb
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\MainWindow.g.cs
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\App.g.cs
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop_MarkupCompile.cache
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop_MarkupCompile.lref
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\MainWindow.baml
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.g.resources
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.Properties.Resources.resources
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.csproj.GenerateResource.cache
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.csproj.CoreCompileInputs.cache
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.exe
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.pdb
+C:\pepos\complex-task-apps\Desktop\Desktop\Desktop\obj\Release\Desktop.csprojAssemblyReference.cache
