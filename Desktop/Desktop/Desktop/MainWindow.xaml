@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:Desktop"
 		mc:Ignorable="d"
-		Title="MainWindow" Height="609" Width="1173">
+		Title="MainWindow" Height="609" Width="1173" Loaded="Window_Loaded">
 
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
@@ -194,10 +194,10 @@
                                 </Style>
                             </ListView.Style>
 
-                            <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
+                            <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}" Selected="ListViewItem_Selected">
                                 ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
                             </ListViewItem>
-                            <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
+                            <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}" Selected="ListViewItem_Selected_1">
                                 СОЗДАНИЕ И РЕДАКТИРОВАНИЕ СТАВОК
                             </ListViewItem>
                             <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
@@ -289,32 +289,47 @@
 
             <Border Grid.Row="1" Background="#FF10263A"/>
 
-            <Grid x:Name="main" Grid.Row="2">
+            <Grid x:Name="editAndAddMatches" Grid.Row="2" Visibility="Hidden">
                 <Grid.RowDefinitions>
-                    <RowDefinition MaxHeight="400"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition MaxHeight="220"/>
+                    <RowDefinition MaxHeight="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                <Grid Grid.Row="1">
+                <TextBlock>
+                    ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
+                </TextBlock>
+                
+                <Grid Grid.Row="4">
+                    <Grid.Resources>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                            <Setter Property="FontWeight" Value="600"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox></TextBox>
+                    <Button Grid.Column="1" MinWidth="160">Поиск</Button>
+                </Grid>
+
+                <Grid Grid.Row="5">
                     <DataGrid BorderBrush="#FF10263A" BorderThickness="0 0.3 0 0">
 
                     </DataGrid>
                 </Grid>
 
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="1"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-
-                    <TextBlock>
-                        РАДАКТИРОВАНИЕ МАТЧЕЙ
-                    </TextBlock>
 
                     <Border Grid.Row="1" Background="#FF10263A" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
 
@@ -326,7 +341,6 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="10"/>
                         </Grid.ColumnDefinitions>
-
 
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
@@ -366,7 +380,7 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Height="37" Margin="38,32" Width="64">
-                                Выберите Команды
+                                    Выберите Команды
                                 </TextBlock>
 
                                 <Border Style="{StaticResource TeamImg}" Grid.Column="0" Grid.Row="0" Background="Blue">
@@ -376,27 +390,24 @@
                                     <TextBlock HorizontalAlignment="Center" Foreground="WhiteSmoke">Team 1</TextBlock>
                                 </Border>
 
-                                <ComboBox Grid.Column="0" Grid.Row="2">
-                                    <ComboBoxItem>Team 1</ComboBoxItem>
-                                </ComboBox>
-                                <ComboBox Grid.Column="2" Grid.Row="2">
-                                    <ComboBoxItem>Team 1</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox x:Name="Team1" Grid.Column="0" Grid.Row="2"/>
+                                <ComboBox x:Name="Team2" Grid.Column="2" Grid.Row="2"/>
                             </Grid>
                         </Grid>
 
-                        <Grid Grid.Column="3">
+                        <Grid Grid.Column="3" HorizontalAlignment="Center">
                             <Grid.Resources>
                             </Grid.Resources>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="60"/>
-                                <RowDefinition Height="auto"/>
                                 <RowDefinition Height="10"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="10"/>
                                 <RowDefinition Height="auto"/>
-                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="40"/>
                                 <RowDefinition Height="30"/>
+                                <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
 
                             <Grid Grid.Row="1" Grid.Column="1">
@@ -410,9 +421,7 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock HorizontalAlignment="Right">ВЫБЕРИТЕ ТУРНИР</TextBlock>
-                                <ComboBox Grid.Column="2" Grid.Row="0">
-                                    <ComboBoxItem>ESL Pro League Season 13</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox x:Name="TypeMatch" Grid.Column="2" Grid.Row="0"/>
                             </Grid>
 
                             <Grid Grid.Row="3" Grid.Column="1">
@@ -427,7 +436,7 @@
 
                                 <TextBlock HorizontalAlignment="Right">ВВЕДИТЕ ДАТУ НАЧАЛА</TextBlock>
 
-                                <DatePicker FontSize="14" FontWeight="600" MinWidth="200" HorizontalAlignment="Left" MinHeight="40" Grid.Column="2" Grid.Row="0"></DatePicker>
+                                <DatePicker x:Name="Date" FontSize="14" FontWeight="600" MinWidth="200" HorizontalAlignment="Left" MinHeight="40" Grid.Column="2" Grid.Row="0"></DatePicker>
                             </Grid>
 
                             <Grid Grid.Row="5" Grid.Column="1">
@@ -449,13 +458,26 @@
                                 </ComboBox>
                             </Grid>
 
-                            <Button Grid.Row="7" Grid.Column="1" Width="110" HorizontalAlignment="Right" Margin="10 0">
+                            <Button Grid.Row="7" Grid.Column="3" Width="110" Height="29" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10 0" Click="Button_Click">
                                 <TextBlock FontSize="13" FontWeight="Bold">СОХРАНИТЬ</TextBlock>
                             </Button>
                         </Grid>
-
                     </Grid>
                 </Grid>
+            </Grid>
+
+            <Grid x:Name="editAndAddBets" Grid.Row="2" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock>
+                    ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ СТАВОК
+                </TextBlock>
+
             </Grid>
         </Grid>
     </Grid>
