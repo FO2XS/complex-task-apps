@@ -5,117 +5,117 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:Desktop"
 		mc:Ignorable="d"
-		Title="MainWindow" Height="592" Width="800">
+		Title="MainWindow" Height="609" Width="1173">
 
-	<Window.Resources>
-		<Storyboard x:Key="MenuOpen">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
-				<EasingDoubleKeyFrame KeyTime="0" Value="40"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<QuadraticEase EasingMode="EaseIn"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
-		<Storyboard x:Key="MenuClose">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
-				<EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<QuadraticEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
-		<Style x:Key="ButtonStyle" TargetType="Button">
-			<Setter Property="HorizontalAlignment" Value="Right"/>
-			<Setter Property="VerticalAlignment" Value="Top"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border x:Name="border">
-							<Border.Style>
-								<Style TargetType="Border">
-									<Setter Property="Background" Value="White"/>
-									<Setter Property="Height" Value="30"/>
-									<Setter Property="Width" Value="30"/>
-									<Setter Property="CornerRadius" Value="5"/>
-								</Style>
-							</Border.Style>
-							<Grid VerticalAlignment="Top" HorizontalAlignment="Center">
-								<ContentControl x:Name="text" Margin="0 0 0 6" Content="{TemplateBinding Content}" FontSize="21">
-									<ContentControl.Style>
-										<Style TargetType="ContentControl">
-											<Setter Property="VerticalContentAlignment" Value="Top"/>
-											<Setter Property="HorizontalContentAlignment" Value="Center"/>
-										</Style>
-									</ContentControl.Style>
-								</ContentControl>
-							</Grid>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-		
-		<Style TargetType="Button" x:Key="menu-button">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate>
-						<Border>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-		
-		<Style TargetType="ListViewItem" x:Key="itemSelectingAnActionStyle">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListViewItem">
-						<Grid x:Name="item">
-							<Grid>
-								<Grid.Style>
-									<Style TargetType="Grid">
-										<Setter Property="Margin" Value="40 5 10 5"/>
-										<Setter Property="Background" Value="{x:Null}"/>
-										<Setter Property="MaxWidth" Value="150"/>
-									</Style>
-								</Grid.Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="Height" Value="30"/>
+                                    <Setter Property="Width" Value="30"/>
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Border.Style>
+                            <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
+                                <ContentControl x:Name="text" Margin="0 0 0 6" Content="{TemplateBinding Content}" FontSize="21">
+                                    <ContentControl.Style>
+                                        <Style TargetType="ContentControl">
+                                            <Setter Property="VerticalContentAlignment" Value="Top"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-								<TextBlock Text="{TemplateBinding Content}">
-									<TextBlock.Style>
-										<Style TargetType="TextBlock">
-											<Setter Property="Foreground" Value="WhiteSmoke"/>
-											<Setter Property="FontSize" Value="10"/>
-											<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
-											<Setter Property="FontWeight" Value="500"/>
-										</Style>
-									</TextBlock.Style>
-								</TextBlock>
-							</Grid>
-						</Grid>
-						
-						<ControlTemplate.Triggers>
-							<Trigger Property="IsSelected" Value="True">
-								<Setter TargetName="item" Property="Background" Value="#FF254054"/>
-							</Trigger>
-							<MultiTrigger>
-								<MultiTrigger.Conditions>
-									<Condition Property="IsMouseOver" Value="True"></Condition>
-									<Condition Property="IsSelected" Value="False"></Condition>
-								</MultiTrigger.Conditions>
-								<MultiTrigger.Setters>
-									<Setter TargetName="item" Property="Background" Value="#FF254054"/>
-								</MultiTrigger.Setters>
-							</MultiTrigger>
-						</ControlTemplate.Triggers>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
+        <Style TargetType="Button" x:Key="menu-button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ListViewItem" x:Key="itemSelectingAnActionStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Grid x:Name="item">
+                            <Grid>
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Margin" Value="40 5 10 5"/>
+                                        <Setter Property="Background" Value="{x:Null}"/>
+                                        <Setter Property="MaxWidth" Value="150"/>
+                                    </Style>
+                                </Grid.Style>
+
+                                <TextBlock Text="{TemplateBinding Content}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="WhiteSmoke"/>
+                                            <Setter Property="FontSize" Value="10"/>
+                                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                                            <Setter Property="FontWeight" Value="500"/>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="item" Property="Background" Value="#FF254054"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"></Condition>
+                                    <Condition Property="IsSelected" Value="False"></Condition>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="item" Property="Background" Value="#FF254054"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
@@ -125,38 +125,47 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10 0"/>
         </Style>
-    </Window.Resources>
-	<Window.Triggers>
-		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonMenuOpen">
-			<BeginStoryboard Storyboard="{StaticResource MenuOpen}"></BeginStoryboard>
-		</EventTrigger>
-		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonMenuClose">
-			<BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
-		</EventTrigger>
-	</Window.Triggers>
 
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition MinWidth="40" Width="auto" MaxWidth="200"/>
-			<ColumnDefinition Width="1"/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		
-		<Grid x:Name="selectingAnAction">
-			
-			<Border x:Name="BorderMenu">
-				<Border.Style>
-					<Style TargetType="Border">
+        <Style TargetType="ComboBox">
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="MinWidth" Value="200"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="600"/>
+        </Style>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonMenuOpen">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"></BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonMenuClose">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="40" Width="auto" MaxWidth="200"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="selectingAnAction">
+
+            <Border x:Name="BorderMenu">
+                <Border.Style>
+                    <Style TargetType="Border">
                         <Setter Property="Width" Value="40"/>
                     </Style>
-				</Border.Style>
-				
-				<Grid>
-					<Grid.Style>
-						<Style TargetType="Grid">
-							<Setter Property="Background" Value="#FF10263A"/>
-						</Style>
-					</Grid.Style>
+                </Border.Style>
+
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Background" Value="#FF10263A"/>
+                        </Style>
+                    </Grid.Style>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
@@ -164,30 +173,30 @@
                     </Grid.RowDefinitions>
 
                     <Grid x:Name="buttonClouseUp" Grid.Row="0">
-						<StackPanel Orientation="Horizontal" Background="White">
-							<Grid>
-								<Button Margin="5" Content="≡" Style="{StaticResource ButtonStyle}" x:Name="ButtonMenuOpen" Click="MenuOpenEvent"/>
-								<Button Margin="5" Content="≡" Style="{StaticResource ButtonStyle}" x:Name="ButtonMenuClose" Click="MenuCloseEvent" Visibility="Collapsed"/>
-							</Grid>
-						</StackPanel>
-					</Grid>
-					
-                    
-					<Grid x:Name="gridSelectingAnAction" Grid.Row="1">
-						<ListView x:Name="listSelectingAnAction">
-							<ListView.Style>
-								<Style TargetType="ListView">
-									<Setter Property="Background" Value="{x:Null}"/>
-									<Setter Property="BorderBrush" Value="{x:Null}"/>
-									<Setter Property="BorderThickness" Value="0"/>
-									<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"></Setter>
-									<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"></Setter>
-								</Style>
-							</ListView.Style>
+                        <StackPanel Orientation="Horizontal" Background="White">
+                            <Grid>
+                                <Button Margin="5" Content="≡" Style="{StaticResource ButtonStyle}" x:Name="ButtonMenuOpen" Click="MenuOpenEvent"/>
+                                <Button Margin="5" Content="≡" Style="{StaticResource ButtonStyle}" x:Name="ButtonMenuClose" Click="MenuCloseEvent" Visibility="Collapsed"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
 
-							<ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
-								ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
-							</ListViewItem>
+
+                    <Grid x:Name="gridSelectingAnAction" Grid.Row="1">
+                        <ListView x:Name="listSelectingAnAction">
+                            <ListView.Style>
+                                <Style TargetType="ListView">
+                                    <Setter Property="Background" Value="{x:Null}"/>
+                                    <Setter Property="BorderBrush" Value="{x:Null}"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"></Setter>
+                                    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"></Setter>
+                                </Style>
+                            </ListView.Style>
+
+                            <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
+                                ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
+                            </ListViewItem>
                             <ListViewItem Style="{StaticResource itemSelectingAnActionStyle}">
                                 СОЗДАНИЕ И РЕДАКТИРОВАНИЕ СТАВОК
                             </ListViewItem>
@@ -201,28 +210,28 @@
                                 РАСЧЕТ СТАВОК
                             </ListViewItem>
                         </ListView>
-					</Grid>
-				</Grid>
-			</Border>
-		</Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
 
-		<Border Grid.Column="1" Background="#FF10263A"/>
+        <Border Grid.Column="1" Background="#FF10263A"/>
 
-		<Grid Grid.Column="2">
+        <Grid Grid.Column="2">
 
-			<Grid.Style>
-				<Style TargetType="Grid">
-					<Setter Property="Grid.Column" Value="1"/>
-				</Style>
-			</Grid.Style>
-			
-			<Grid.RowDefinitions>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Grid.Column" Value="1"/>
+                </Style>
+            </Grid.Style>
+
+            <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="0.1"/>
                 <RowDefinition/>
-			</Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
-			<Grid x:Name="menu" Grid.Row="0">
+            <Grid x:Name="menu" Grid.Row="0">
                 <Grid x:Name="registrationAndAuthorization">
                     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Background="White">
                         <Grid>
@@ -245,7 +254,7 @@
                                                             <Setter Property="CornerRadius" Value="2"/>
                                                         </Style>
                                                     </Border.Style>
-                                                    
+
                                                     <ContentControl x:Name="content" Content="{TemplateBinding Content}">
                                                         <ContentControl.Style>
                                                             <Style TargetType="Control">
@@ -270,7 +279,7 @@
                                     </Setter>
                                 </Style>
                             </Grid.Resources>
-                            
+
                             <Button Grid.Column="0">Nikolla</Button>
                             <Button Grid.Column="1" >Выйти</Button>
                         </Grid>
@@ -282,17 +291,17 @@
 
             <Grid x:Name="main" Grid.Row="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition MaxHeight="400"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid Grid.Row="1">
                     <DataGrid BorderBrush="#FF10263A" BorderThickness="0 0.3 0 0">
-                        
+
                     </DataGrid>
                 </Grid>
 
@@ -312,7 +321,7 @@
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="600"/>
                             <ColumnDefinition Width="10"/>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="10"/>
@@ -323,10 +332,9 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="10"/>
                                 <RowDefinition MinHeight="140" MaxHeight="160"/>
-                                <RowDefinition Height="10"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            
+
                             <Grid Grid.Row="1" Grid.Column="1">
                                 <Grid.Resources>
                                     <Style TargetType="Border" x:Key="TeamImg">
@@ -334,20 +342,30 @@
                                         <Setter Property="MaxWidth" Value="100"/>
                                         <Setter Property="CornerRadius" Value="3"/>
                                     </Style>
+
+                                    <Style TargetType="ComboBox">
+                                        <Setter Property="MinHeight" Value="30" />
+                                        <Setter Property="MaxHeight" Value="300"/>
+                                        <Setter Property="MinWidth" Value="220"/>
+                                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                        <Setter Property="FontWeight" Value="600"/>
+                                    </Style>
                                 </Grid.Resources>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition MinWidth="80" MaxWidth="130"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition MinWidth="80" MaxWidth="130"/>
+                                    <ColumnDefinition MinWidth="80" MaxWidth="400" Width="74*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition MinWidth="80" MaxWidth="400" Width="79*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition MinHeight="80" MaxHeight="100"/>
                                     <RowDefinition Height="5"/>
-                                    <RowDefinition MinHeight="20" MaxHeight="24"/>
+                                    <RowDefinition MinHeight="20" MaxHeight="30"/>
                                 </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+                                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Height="37" Margin="38,32" Width="64">
                                 Выберите Команды
                                 </TextBlock>
 
@@ -358,16 +376,18 @@
                                     <TextBlock HorizontalAlignment="Center" Foreground="WhiteSmoke">Team 1</TextBlock>
                                 </Border>
 
-                                <ComboBox MaxHeight="23" Grid.Column="0" Grid.Row="2">
+                                <ComboBox Grid.Column="0" Grid.Row="2">
                                     <ComboBoxItem>Team 1</ComboBoxItem>
                                 </ComboBox>
-                                <ComboBox MaxHeight="23" Grid.Column="2" Grid.Row="2">
+                                <ComboBox Grid.Column="2" Grid.Row="2">
                                     <ComboBoxItem>Team 1</ComboBoxItem>
                                 </ComboBox>
                             </Grid>
                         </Grid>
 
                         <Grid Grid.Column="3">
+                            <Grid.Resources>
+                            </Grid.Resources>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="60"/>
                                 <RowDefinition Height="auto"/>
@@ -383,14 +403,14 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="1"/>
-                                    <ColumnDefinition MaxWidth="120"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
 
                                 <TextBlock HorizontalAlignment="Right">ВЫБЕРИТЕ ТУРНИР</TextBlock>
-                                <ComboBox MaxHeight="23" HorizontalAlignment="Left" MinWidth="120" Grid.Column="2" Grid.Row="0">
+                                <ComboBox Grid.Column="2" Grid.Row="0">
                                     <ComboBoxItem>ESL Pro League Season 13</ComboBoxItem>
                                 </ComboBox>
                             </Grid>
@@ -399,7 +419,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="1"/>
-                                    <ColumnDefinition MaxWidth="120"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
@@ -407,14 +427,14 @@
 
                                 <TextBlock HorizontalAlignment="Right">ВВЕДИТЕ ДАТУ НАЧАЛА</TextBlock>
 
-                                <DatePicker MaxHeight="23" HorizontalAlignment="Left" MinWidth="120" Grid.Column="2" Grid.Row="0"></DatePicker>
+                                <DatePicker FontSize="14" FontWeight="600" MinWidth="200" HorizontalAlignment="Left" MinHeight="40" Grid.Column="2" Grid.Row="0"></DatePicker>
                             </Grid>
 
                             <Grid Grid.Row="5" Grid.Column="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="1"/>
-                                    <ColumnDefinition MaxWidth="120"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
@@ -422,7 +442,7 @@
 
                                 <TextBlock HorizontalAlignment="Right">ВЫБЕРИТЕ ТИП МАТЧА</TextBlock>
 
-                                <ComboBox MaxHeight="20" HorizontalAlignment="Left" MinWidth="120" Grid.Column="2" Grid.Row="0">
+                                <ComboBox Grid.Column="2" Grid.Row="0">
                                     <ComboBoxItem>BO1</ComboBoxItem>
                                     <ComboBoxItem>BO3</ComboBoxItem>
                                     <ComboBoxItem>BO5</ComboBoxItem>
@@ -433,10 +453,10 @@
                                 <TextBlock FontSize="13" FontWeight="Bold">СОХРАНИТЬ</TextBlock>
                             </Button>
                         </Grid>
-                        
+
                     </Grid>
                 </Grid>
             </Grid>
-		</Grid>
-	</Grid>
+        </Grid>
+    </Grid>
 </Window>
