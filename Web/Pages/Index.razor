@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inherits LayoutComponentBase
 
-@using Test.Pages.MainPart
+@using Pages.MainPart;
 
 <div class="menu1">
 	<div style="margin: 0 auto; max-width: 1240px; ">
@@ -19,9 +19,10 @@
 					</option>
 				</select>
 			</div>
-			<div class="technical-support">
-				Тех. поддержка
-			</div>
+            <div class="technical-support">
+                Тех. поддержка
+                
+            </div>
 		</div>
 
 		<div class="custom-features">
@@ -38,14 +39,15 @@
 		</div>
 	</div>
 </div>
-
+<NavLink class="nav-link" href="test"> ТЕСТИМ
+</NavLink>
 <div class="main-main">
 	<div class="main">
 		<div class="hot-matches">
 			<HotMath></HotMath>
 		</div>
 		<div class="main-part">
-			<MainPart></MainPart>
+			<Test.Pages.MainPart.MainPart></Test.Pages.MainPart.MainPart>
 		</div>
 	</div>
 </div>

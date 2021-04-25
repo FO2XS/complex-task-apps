@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj": {}
+    "D:\\Университет\\4 семестр\\Web\\Test.csproj": {}
   },
   "projects": {
-    "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj": {
+    "D:\\Университет\\4 семестр\\Web\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj",
+        "projectUniqueName": "D:\\Университет\\4 семестр\\Web\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\Test.csproj",
+        "projectPath": "D:\\Университет\\4 семестр\\Web\\Test.csproj",
         "packagesPath": "C:\\Users\\FOXXS\\.nuget\\packages\\",
-        "outputPath": "D:\\Университет\\4 семестр\\complex-task-apps\\Web\\obj\\",
+        "outputPath": "D:\\Университет\\4 семестр\\Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,7 +43,19 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.4, )"
             },
@@ -53,9 +65,13 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.5.1, )"
             }
           },
           "imports": [
@@ -76,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
