@@ -351,3 +351,5 @@ MigrationBackup/
 Web/appsettings.json
 
 Web/obj/
+
+Web/bin/

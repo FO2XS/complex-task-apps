@@ -7,10 +7,7 @@ namespace Test.Data.ModalEntity
 {
     public partial class UserToken : IdentityUserToken<int>
     {
-        public int UserId { get; set; }
-        public string LoginProvider { get; set; }
-        public string Name { get; set; }
-        public string Value { get; set; }
+        
 
         public virtual User User { get; set; }
     }

@@ -8,13 +8,13 @@ using Test.Data.ModalEntity;
 
 namespace Test
 {
-    public partial class TestEntityContext : IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
+    public partial class BookmakerContext : IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
-        public TestEntityContext()
+        public BookmakerContext()
         {
         }
 
-        public TestEntityContext(DbContextOptions<TestEntityContext> options)
+        public BookmakerContext(DbContextOptions<BookmakerContext> options)
             : base(options)
         {
         }
