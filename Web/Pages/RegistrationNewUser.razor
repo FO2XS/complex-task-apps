@@ -1,7 +1,12 @@
-@page "/blalba"
+@page "/bla"
 
 @using Test.Data
-@using Test.Data.Modal
+@using Test.Data.ModalEntity
+@using Microsoft.AspNetCore.Identity;
+
+@inject NavigationManager manager;
+@inject UserManager<User> userManager;
+
 
 
 
@@ -34,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="email" class="form-control" placeholder="Например@mail.ru">
+                            <input @bind-value="email" type="email" class="form-control" placeholder="Например@mail.ru">
                             <br>
                         </div>
                     </div>
@@ -46,7 +51,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="password" class="form-control" placeholder="qwerty123">
+                            <input @bind-value="password" type="password" class="form-control" placeholder="qwerty123">
                             <br>
                         </div>
                     </div>
@@ -58,12 +63,12 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="password" class="form-control" placeholder="qwerty123">
+                            <input @bind-value="verifyPassword" type="password" class="form-control" placeholder="qwerty123">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="btn btn-dark">Далее</button>
+                            <button type="button" class="btn btn-dark" @onclick="(() => CreateUser())">Далее</button>
                         </div>
                     </div>
                 </div>
@@ -84,6 +89,3 @@
     </div>
 </div>
 
-@code{
-
-}

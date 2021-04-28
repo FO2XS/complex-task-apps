@@ -30,11 +30,11 @@ namespace Test
 				.AddDefaultUI()
 				.AddDefaultTokenProviders();
 
-
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
-			services.AddSingleton<WeatherForecastService>();
 			services.AddSingleton<WebService>();
+			//services.AddSingleton<UserManager<User>>();
+			
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,8 +54,10 @@ namespace Test
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseRouting();
+
 			app.UseAuthentication();
 			app.UseAuthorization();
+
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapBlazorHub();
