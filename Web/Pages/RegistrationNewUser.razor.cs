@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Test.Data.ModalEntity;
 using Microsoft.AspNetCore.Components;
-
 namespace Test.Pages
 {
     public partial class RegistrationNewUser

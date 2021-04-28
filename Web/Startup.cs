@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Test.Data;
 using Test.Data.ModalEntity;
+using MudBlazor.Services;
 
 namespace Test
 {
@@ -24,16 +25,17 @@ namespace Test
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddDbContext<BookmakerContext>(option => option.UseNpgsql(Configuration.GetConnectionString("AzureConnection")));
-
+			
 			services.AddIdentity<User, Role>()
 				.AddEntityFrameworkStores<BookmakerContext>()
 				.AddDefaultUI()
 				.AddDefaultTokenProviders();
-
+			
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
 			services.AddSingleton<WebService>();
-			//services.AddSingleton<UserManager<User>>();
+
+			services.AddMudServices();
 			
 		}
 
