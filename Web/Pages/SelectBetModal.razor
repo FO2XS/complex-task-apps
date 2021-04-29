@@ -1,9 +1,7 @@
 @using Test.Data
-@using Test.Data.Modal
+@using Test.Data.ModalEntity
 @inject WebService service
-<!--
-   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#betsModal"> Выбор ставки Bootstrap</button>
--->
+
 
 
 <div class="modal" id="betsModal" tabindex="-1">
@@ -16,28 +14,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                @if (Event is not null)
+                @if (CurrentEvent is not null)
                 {
                     <div class="container-fluid" style="text-align:center;">
                         <div class="row">
                             <div class="col-4">
-                                @Event.IdTeam1Navigation.Title
+                                @CurrentEvent.IdTeam1Navigation.Title
                             </div>
                             <div class="col"></div>
                             <div class="col-4">
-                                @Event.IdTeam2Navigation.Title
+                                @CurrentEvent.IdTeam2Navigation.Title
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
-                                <img src="@Event.IdTeam1Navigation.Logo" class="img-fluid" alt="Команда 1">
+                                <img src="@CurrentEvent.IdTeam1Navigation.Logo" class="img-fluid" alt="Команда 1">
                             </div>
                             <div class="col">
                                 <h2>VS</h2>
                             </div>
                             <div class="col-4">
-                                <img src="@Event.IdTeam2Navigation.Logo" class="img-fluid" alt="Команда 1">
+                                <img src="@CurrentEvent.IdTeam2Navigation.Logo" class="img-fluid" alt="Команда 1">
                             </div>
                         </div>
 
@@ -51,7 +49,7 @@
                         {
                             <div class="row">
                                 <div class="col-3">
-                                    <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(Event.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                                    <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
                                 </div>
                                 <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
                                     <div class="text-nowrap">@bet.Coef1</div>
@@ -65,7 +63,7 @@
                                     <div class="text-nowrap">@bet.Coef1</div>
                                 </div>
                                 <div class="col-3">
-                                    <button type="button" class="btn btn-success btn-sm" style = "width: 100%;" @onclick="(() => OpenFinishBetModal(Event.IdTeam2Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                                    <button type="button" class="btn btn-success btn-sm" style = "width: 100%;" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam2Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
                                 </div>
                             </div>
                             <br>
@@ -146,7 +144,7 @@
 
 @code{
     [Parameter]
-    public Event Event { get; set; }
+    public Event CurrentEvent { get; set; }
     private List<PossibleBet> Bets { get; set; }
     private Team selectedTeam { get; set; }
     private PossibleBet selectedBet { get; set; }
@@ -157,9 +155,9 @@
 
     protected override void OnParametersSet()
     {
-        if (Event != null)
+        if (CurrentEvent != null)
         {
-            Bets = service.GetPossibleBets(Event);
+            Bets = service.GetPossibleBets(CurrentEvent);
         }
     }
 
@@ -167,7 +165,7 @@
     {
         selectedTeam = team;
         selectedBet = bet;
-        selectedCoef = Event.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
+        selectedCoef = CurrentEvent.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
         sum = null;
     }
 
