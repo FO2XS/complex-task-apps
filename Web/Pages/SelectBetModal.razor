@@ -1,0 +1,176 @@
+@using Test.Data
+@using Test.Data.ModalEntity
+@inject WebService service
+
+
+
+<div class="modal" id="betsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #F6F6F6; font-family: Trebuchet MS;">
+            <div class="modal-header">
+                <h5 class="modal-title">Выбор ставки</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @if (CurrentEvent is not null)
+                {
+                    <div class="container-fluid" style="text-align:center;">
+                        <div class="row">
+                            <div class="col-4">
+                                @CurrentEvent.IdTeam1Navigation.Title
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-4">
+                                @CurrentEvent.IdTeam2Navigation.Title
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="@CurrentEvent.IdTeam1Navigation.Logo" class="img-fluid" alt="Команда 1">
+                            </div>
+                            <div class="col">
+                                <h2>VS</h2>
+                            </div>
+                            <div class="col-4">
+                                <img src="@CurrentEvent.IdTeam2Navigation.Logo" class="img-fluid" alt="Команда 1">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <hr>
+                            </div>
+                        </div>
+
+                        @foreach (var bet in Bets)
+                        {
+                            <div class="row">
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                                </div>
+                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                    <div class="text-nowrap">@bet.Coef1</div>
+                                    
+                                </div>
+                                <div class="col-4" style="font-size: 0.9vmax;">
+                                    @bet.IdTobNavigation.Title
+
+                                </div>
+                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                    <div class="text-nowrap">@bet.Coef1</div>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-success btn-sm" style = "width: 100%;" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam2Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                                </div>
+                            </div>
+                            <br>
+                        }
+                    </div>
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Поставить</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="modal" id="finishBetModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" style="font-family: Trebuchet MS; background-color: #F6F6F6;">
+                <div class="modal-header">
+                    <h5 class="modal-title">Заключение пари</h5>
+                    <button type="button" class="close" data-toggle="modal" data-target="#betsModal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (selectedTeam != null && selectedBet != null)
+                    {
+                        <div class="container-fluid" style="text-align:center;">
+                            <div class="row">
+                                <div class="col">
+                                    @selectedTeam.Title
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="@selectedTeam.Logo" class="img-fluid" style="max-width:75px;" alt="Команда 1">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    Размер ставки
+                                </div>
+                                <div class="col">
+                                    Коэффициент
+                                </div>
+                                <div class="col">
+                                    Выигрыш
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Сумма ставки" @bind-value="sum">
+                                </div>
+                                <div class="col">
+                                    @selectedCoef
+                                </div>
+                                <div class="col">
+                                    @CalculatePrize(sum, selectedCoef)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Поставить</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#betsModal" data-dismiss="modal">Закрыть</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+@code{
+    [Parameter]
+    public Event CurrentEvent { get; set; }
+    private List<PossibleBet> Bets { get; set; }
+    private Team selectedTeam { get; set; }
+    private PossibleBet selectedBet { get; set; }
+    private float selectedCoef { get; set; }
+    private decimal? sum;
+
+    private bool IsVisible { get; set; } = false;
+
+    protected override void OnParametersSet()
+    {
+        if (CurrentEvent != null)
+        {
+            Bets = service.GetPossibleBets(CurrentEvent);
+        }
+    }
+
+    private void OpenFinishBetModal(Team team, PossibleBet bet)
+    {
+        selectedTeam = team;
+        selectedBet = bet;
+        selectedCoef = CurrentEvent.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
+        sum = null;
+    }
+
+    private decimal? CalculatePrize(decimal? sum, float coef)
+    {
+        return sum * Convert.ToDecimal(coef);
+    }
+}

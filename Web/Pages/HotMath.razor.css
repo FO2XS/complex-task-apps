@@ -1,0 +1,116 @@
+﻿div.hot-matches {
+    height: 90px;
+    background: #2a2f36;
+    border-width: 1px;
+    text-align: center;
+    margin: 0 auto;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    border-radius: 4px;
+    color: whitesmoke;
+}
+
+div.hot-matches-title {
+    text-align: center;
+}
+
+    div.hot-matches-title p {
+        padding-top: 10px;
+    }
+
+div.place-bet {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 30%;
+}
+
+    div.place-bet .name-match {
+        font-weight: 500;
+        color: #9da0a6;
+    }
+
+    div.place-bet .type-bo {
+        font-weight: 700;
+        font-size: 12px;
+        color: #7d7f85
+    }
+
+    div.place-bet .date-match {
+        font-size: 12px;
+        font-weight: 700;
+        color: #d5c0c0;
+    }
+
+    div.place-bet span {
+        padding: 0px;
+        display: block;
+        text-align: center;
+    }
+
+    div.place-bet button.top-up {
+        border-radius: 2px;
+        border: 0px;
+        font-weight: 600;
+        width: auto;
+        height: 28px;
+        color: whitesmoke;
+        transition: .1s;
+        margin: 5px;
+        background-color: #6bab44;
+        font-size: 15px;
+        padding: 0 14px;
+    }
+
+        div.place-bet button.top-up:hover {
+            background-color: #6dbe3b;
+            transition: .2s;
+        }
+
+div.team-right,
+div.team-left {
+    text-align: center;
+    width: 30%;
+    height: 100px;
+    z-index: 10;
+}
+
+    div.team-right img,
+    div.team-left img {
+        width: 80px;
+        height: 80px;
+    }
+
+.title {
+    vertical-align: central;
+    margin: 10px;
+}
+
+div.team-right {
+    float: right;
+}
+
+    div.team-right img {
+        float: left;
+    }
+
+    div.team-right .title-right {
+        float: left;
+        margin-left: 30px;
+    }
+
+div.team-left {
+    float: left;
+}
+
+    div.team-left img {
+        float: right;
+    }
+
+    div.team-left .title {
+        float: right;
+        margin-right: 30px;
+    }

@@ -1,0 +1,135 @@
+﻿div.users-corner {
+    background-color: #2a2f36;
+    border-radius: 4px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    min-width: 340px;
+    min-height: 600px;
+    text-align: center;
+    position: relative;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+    div.users-corner div.box {
+        padding: 10px;
+        padding-top: 18px;
+    }
+
+div.card-user {
+    text-align: left;
+    height: 150px;
+}
+
+    div.card-user div.title {
+        padding-bottom: 20px;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    div.card-user div.back {
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        transition: .1s;
+        z-index: 10;
+        background: #1e1e1e;
+        transition: .1s;
+    }
+
+        div.card-user div.back:hover {
+            background-color: #6bab44;
+            transition: .1s;
+        }
+
+        div.card-user div.back .icon-user {
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 2px solid yellow;
+            z-index: 1;
+        }
+
+        div.card-user div.back:hover .icon-user {
+            opacity: 0.1;
+            transition: .3s;
+        }
+
+        div.card-user div.back .title-img {
+            visibility: hidden;
+            position: absolute;
+            font-size: 12px;
+            top: 30px;
+            left: 12px;
+        }
+
+        div.card-user div.back:hover .title-img {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        div.card-user div.back img {
+        }
+
+    div.card-user div.info-for-user {
+        margin-left: 8px;
+        float: left;
+    }
+
+        div.card-user div.info-for-user .user-name {
+            color: #6893a6;
+        }
+
+        div.card-user div.info-for-user .balance {
+        }
+
+
+div.user-capabilities {
+    text-align: center;
+}
+
+    div.user-capabilities button.withdrawal,
+    button.top-up {
+        border-radius: 2px;
+        border: 0px;
+        font-weight: 600;
+        width: 120px;
+        height: 28px;
+        color: whitesmoke;
+        transition: .1s;
+        margin: 5px;
+    }
+
+    div.user-capabilities button.top-up {
+        background-color: #6bab44;
+        font-size: 15px;
+    }
+
+        div.user-capabilities button.top-up:hover {
+            background-color: #6dbe3b;
+            transition: .2s;
+        }
+
+    div.user-capabilities button.withdrawal {
+        font-size: 14px;
+        background-color: #343a45;
+    }
+
+        div.user-capabilities button.withdrawal:hover {
+            background-color: #48505f;
+            transition: .2s;
+        }
+
+
+div.history-bids{
+
+}
+    div.history-bids div.history-bids-title {
+        margin-top:20px;
+        float:left;
+        margin-left:20px;
+    }

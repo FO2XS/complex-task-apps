@@ -1,9 +1,5 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
 a, .btn-link {
     color: #0366d6;
 }
@@ -50,52 +46,6 @@ a, .btn-link {
         top: 0.5rem;
     }
 
-div.menu {
-    height: 800px;
-    width: 100%;
-    background-color: #96b8ba;
-}
 
-div.logo,
-div.logo-and-type-game-and-technical-support {
-    display: inline-block;
-    border-right: 100px solid;
-}
 
-select.type-game {
-    display: inline-block;
-}
-
-div.technical-support {
-    display: inline-block;
-}
-
-div.custom-features {
-    display: inline-block;
-}
-
-div.FAQ {
-    display: inline-block;
-}
-
-div.log-in-log-up {
-    display: inline-block;
-    display: block;
-}
-
-.user-button {
-    border-radius: 0px;
-    height: 30px;
-    display: inline-block;
-}
-
-div.hot-matches {
-    margin: 0 auto;
-    width: 90%;
-    height: 10%;
-    background: #779ea4;
-    border-width: 1px;
-}
-
-div.box {
-}
+        

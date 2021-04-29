@@ -1,64 +1,16 @@
 ﻿@inherits LayoutComponentBase
-@inject IBootstrapCss BootstrapCSS
+@using Test.Pages
 
-<link rel=stylesheet type="text/css" href="~/css/site.css">
-<div class="menu">
-    <div class="logo-and-type-game-and-technical-support">
-        <div class="logo">
-            <NavLink href="" Match="NavLinkMatch.All">
-            </NavLink>
-        </div>
-        <div class="type-game">
-            <select>
-                <option selected>
-                    <NavLink href="" Match="NavLinkMatch.All">
-                        CS:GO
-                    </NavLink>
-                </option>
-                <option>
-                    <NavLink href="" Match="NavLinkMatch.All">
-                        LoL
-                    </NavLink>
-                </option>
-            </select>
-        </div>
-    </div>
-    <div class="technical-support">
-        Тех. поддержка
-    </div>
 
-    <div class="custom-features">
-        <div class="FAQ">FAQ</div>
-        <div class="log-in-log-up">
-            <button class="user-button">log in</button>
-            <button class="user-button">log up</button>
-        </div>
-        <div>
-        </div>
-    </div>
-    <div>
-    </div>
-</div>
-<div class="content px-4">
-    @Body
-</div>
+<div>@Body</div>
+
+
+
+<NavLink class="nav-link" href="">
+</NavLink>
+
 
 @code{
-    private Boolean isServerSide = false;
-    protected override async System.Threading.Tasks.Task OnInitializedAsync()
-    {
-        try
-        {
-            await BootstrapCSS.SetBootstrapCss("4.3.1");
-        }
-        catch (Exception)
-        {
-            isServerSide = true;
-        }
-    }
-    protected override async System.Threading.Tasks.Task OnAfterRenderAsync(Boolean firstRun)
-    {
-        if (isServerSide && firstRun)
-            await BootstrapCSS.SetBootstrapCss();
-    }
+
+	
 }

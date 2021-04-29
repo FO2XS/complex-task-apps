@@ -1,0 +1,107 @@
+﻿@inherits ComponentBase
+@using Data.ModalEntity
+@using Data
+@using Microsoft.EntityFrameworkCore;
+
+
+<div class="active-matches">
+    <div class="list-of-active-matches card">
+        <div class="active-matches-title">
+            <p>АКТИВНЫЕ МАТЧИ</p>
+        </div>
+        <Test.Pages.SelectBetModal @ref="child" CurrentEvent="SelectedMatch"></Test.Pages.SelectBetModal>
+
+        <ul>
+            @foreach (var bet in Events)
+            {
+                <li>
+                    <div class="active-matches-bet">
+                        <div class="team-left">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam1Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
+                                <p class="title">@bet.IdTeam1Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef1(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-info">
+                            <div class="matches-bet-info">
+                                <p class="tournament-title">ESEA Advanced NA</p>
+                                <p class="type-bo">BO3</p>
+                                <p class="time">@((@DateTime.Now - @bet.StartDate).ToString(@"hh\:mm\:ss"))</p>
+                            </div>
+                            <div class="vs">
+                                <p>VS</p>
+                            </div>
+                        </div>
+                        <div class="team-right">
+                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
+                                <div class="logo-team">
+                                    <img src="@bet.IdTeam2Navigation.Logo">
+                                    <div class="text-place-bet">
+                                        СДЕЛАТЬ<br />СТАВКУ
+                                    </div>
+                                </div>
+                                <p class="title">@bet.IdTeam2Navigation.Title</p>
+                                <div class="koef">
+                                    <p>@(GetCoef2(bet.PossibleBets))</p>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+
+@code {
+    private List<Event> Events { get; set; } = null;
+    private Event SelectedMatch { get; set; }
+    private Sport SelectSport { get; set; } = new Sport() { Id = 1 };
+
+    //
+    SelectBetModal child;
+    //
+
+    protected override void OnInitialized()
+    {
+        Events = new WebService().GetCurrentEvents(SelectSport);
+    }
+
+    private String GetCoef1(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef1.ToString();
+    }
+    private String GetCoef2(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef2.ToString();
+    }
+
+    public void BetsForTeam(Event @event)
+    {
+        if (@event is null)
+            return;
+
+        SelectedMatch = @event;
+
+
+    }
+
+}
