@@ -353,3 +353,5 @@ Web/appsettings.json
 Web/obj/
 
 Web/bin/
+
+Web/BookmakerContext.cs
