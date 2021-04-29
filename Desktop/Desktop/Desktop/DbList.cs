@@ -186,19 +186,25 @@ namespace DbHendler
 			return b;
 		}
 
-		public void Clear()
-			=> throw new NotImplementedException();
 
 		public bool Contains(T item) 
 			=> ListItem.Contains(item);
 
-		public void CopyTo(T[] array, int arrayIndex)
-			=> throw new NotImplementedException();
 
 		public IEnumerator<T> GetEnumerator()
 			=> ListItem.GetEnumerator();
 
 		IEnumerator IEnumerable.GetEnumerator()
 			=> ListItem.GetEnumerator();
-	}
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            ((ICollection<T>)ListItem).CopyTo(array, arrayIndex);
+        }
+
+        public void Clear()
+        {
+            ((ICollection<T>)ListItem).Clear();
+        }
+    }
 }

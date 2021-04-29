@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace Test.Data.Modal
 {
-    public partial class Teams
+    public partial class Teams 
+        : IComparable
     {
         public Teams() { }
 
@@ -14,9 +15,10 @@ namespace Test.Data.Modal
         public string Squadlist { get; set; }
         public string Logo { get; set; }
 
+        public int CompareTo(Object other)
+            => String.Compare(Title, ((Teams)other).Title);
+
         public override string ToString()
-        {
-            return $"{Title}";
-        }
+            => $"{Title}";
     }
 }

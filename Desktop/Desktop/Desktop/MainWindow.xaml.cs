@@ -21,7 +21,8 @@ namespace Desktop
 	/// <summary>
 	/// Логика взаимодействия для MainWindow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class MainWindow
+		: Window
 	{
 		public MainWindow()
 		{
@@ -41,6 +42,8 @@ namespace Desktop
 			ButtonMenuClose.Visibility = Visibility.Visible;
 		}
 
+
+		/*
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			var date = Date.SelectedDate;
@@ -49,8 +52,11 @@ namespace Desktop
 
 			DB.Events.Add(new Events() { Id_Sport = 1, Id_Team1 = team1.Id, Id_Team2 = team2.Id, Start_Date = date });
 		}
+		*/
 
 		DbContext DB { get; set; }
+
+		IEnumerable<Match> Matches { get; set; }
 
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
@@ -63,12 +69,17 @@ namespace Desktop
 			try
 			{
 				DB = new DbContext(npgSqlConnection);
+				Matches = DB.Events.Select(x =>
+					new Match()
+					{
+						Id = x.Id,
+						Team1 = DB.Teams.FirstOrDefault(x1 => x1.Id == x.Id_Team1),
+						Team2 = DB.Teams.FirstOrDefault(x1 => x1.Id == x.Id_Team2),
+						Data = x.Start_Date.Value.ToString("Y")
+					});
+				data.ItemsSource = Matches;
 
-				foreach (var item in DB.Teams)
-				{
-					Team1.Items.Add(item);
-					Team2.Items.Add(item);
-				}
+				data.Columns[0].Visibility = Visibility.Collapsed;
 			}
 			catch (NpgsqlException ex)
 			{
@@ -97,5 +108,36 @@ namespace Desktop
 			Grid = editAndAddBets;
 			Grid.Visibility = Visibility.Visible;
 		}
+
+        private void data_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+			BorderContext.Visibility = Visibility.Hidden;
+			BorderContext.Visibility = Visibility.Visible;
+
+			BorderContext.IsHitTestVisible = true;
+
+			e.Cancel = true;
+		}
+
+        private void SearchTextBox_SearchClick(object sender, RoutedEventArgs e)
+        {
+			if (!String.IsNullOrWhiteSpace(searchTextBox.Text))
+            {
+				var str = searchTextBox.Text.Trim().ToLowerInvariant();
+
+				data.ItemsSource = Matches.Where(x => x.Team1.Title.ToLowerInvariant().Contains(str) || x.Team2.Title.ToLowerInvariant().Contains(str));
+			}
+
+			else
+				data.ItemsSource = Matches;
+
+			if (data.Items.Count > 0)
+				data.Columns[0].Visibility = Visibility.Collapsed;
+		}
+
+        private void BorderContext_MouseLeave(object sender, MouseEventArgs e)
+        {
+			BorderContext.IsHitTestVisible = false;
+        }
     }
 }
