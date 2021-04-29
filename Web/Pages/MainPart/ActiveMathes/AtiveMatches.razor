@@ -1,5 +1,5 @@
 ﻿@inherits ComponentBase
-@using Data.Modal
+@using Data.ModalEntity
 @using Data
 @using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +9,7 @@
         <div class="active-matches-title">
             <p>АКТИВНЫЕ МАТЧИ</p>
         </div>
-        <Test.Pages.SelectBetModal @ref="child" Event="@SelectedMatch"></Test.Pages.SelectBetModal>
+        <Test.Pages.SelectBetModal @ref="child" CurrentEvent="SelectedMatch"></Test.Pages.SelectBetModal>
 
         <ul>
             @foreach (var bet in Events)
@@ -35,7 +35,7 @@
                             <div class="matches-bet-info">
                                 <p class="tournament-title">ESEA Advanced NA</p>
                                 <p class="type-bo">BO3</p>
-                                <p class="time">@((@DateTime.Now - @bet.StartDate).Value.ToString(@"hh\:mm\:ss"))</p>
+                                <p class="time">@((@DateTime.Now - @bet.StartDate).ToString(@"hh\:mm\:ss"))</p>
                             </div>
                             <div class="vs">
                                 <p>VS</p>
@@ -63,46 +63,7 @@
     </div>
 </div>
 
-<div>
-    <MudGrid>
-        @foreach (var item in Events)
-        {
-            <MudItem xs="12" sm="6">
-                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
-                    <MudGrid style="margin: 10px;">
-                        <MudItem xs="12" sm="6">
-                            <MudCard>
-                                <MudCardMedia Image="@item.IdTeam1Navigation.Logo" Height="160" />
-                                <MudCardContent>
-                                    <MudText Typo="Typo.h5">@item.IdTeam1Navigation.Title</MudText>
-                                </MudCardContent>
-                                <MudCardActions>
-                                    <MudButton Variant="Variant.Text" Color="Color.Primary">Сделать ставку</MudButton>
-                                </MudCardActions>
-                            </MudCard>
-                        </MudItem>
-                        <MudItem xs="12" sm="6">
-                            <MudCard>
-                                <MudCardMedia Image="@item.IdTeam2Navigation.Logo" Height="160" />
-                                <MudCardContent>
-                                    <MudText Typo="Typo.h5">@item.IdTeam2Navigation.Title</MudText>
-                                </MudCardContent>
-                                <MudCardActions>
-                                    <MudButton Variant="Variant.Text" Color="Color.Primary">Сделать ставку</MudButton>
-                                </MudCardActions>
-                            </MudCard>
-                        </MudItem>
-                    </MudGrid>
-                </MudPaper>
-            </MudItem>
-        }
-    </MudGrid>
-</div>
 
-
-<!--
-<Test.Pages.PlusModal Event="@SelectedMatch"></Test.Pages.PlusModal>
--->
 
     
 
@@ -111,6 +72,7 @@
 @code {
     private List<Event> Events { get; set; } = null;
     private Event SelectedMatch { get; set; }
+    private Sport SelectSport { get; set; } = new Sport() { Id = 1 };
 
     //
     SelectBetModal child;
@@ -118,14 +80,7 @@
 
     protected override void OnInitialized()
     {
-        Events = new bookmaker_officeContext().Events
-            .Where(a => a.IdSport == 1)
-            .Where(a => a.StartDate <= DateTime.Now)
-            .Where(a => a.IsPast != true)
-            .Include(team1 => team1.IdTeam1Navigation)
-            .Include(team2 => team2.IdTeam2Navigation)
-            .Include(x => x.PossibleBets)
-            .ToList();
+        Events = new WebService().GetCurrentEvents(SelectSport);
     }
 
     private String GetCoef1(ICollection<PossibleBet> ts)
