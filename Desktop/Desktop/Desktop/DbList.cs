@@ -233,7 +233,7 @@ namespace DbHendler
 
 		public bool Contains(T item) 
 			=> ListItem.Contains(item);
-			
+
 		public IEnumerator<T> GetEnumerator()
 			=> ListItem.GetEnumerator();
 
