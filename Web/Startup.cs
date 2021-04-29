@@ -1,13 +1,17 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Test.Data;
-using Test.Data.ModalEntity;
 using MudBlazor.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Test.Data;
+using Test.Pages;
 
 namespace Test
 {
@@ -24,19 +28,11 @@ namespace Test
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddDbContext<BookmakerContext>(option => option.UseNpgsql(Configuration.GetConnectionString("AzureConnection")));
-			
-			services.AddIdentity<User, Role>()
-				.AddEntityFrameworkStores<BookmakerContext>()
-				.AddDefaultUI()
-				.AddDefaultTokenProviders();
-			
 			services.AddRazorPages();
-			services.AddServerSideBlazor();
-			services.AddSingleton<WebService>();
-
 			services.AddMudServices();
-			
+			services.AddServerSideBlazor();
+			services.AddSingleton<WeatherForecastService>();
+			services.AddSingleton<WebService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +51,9 @@ namespace Test
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+
 			app.UseRouting();
 
-			app.UseAuthentication();
-			app.UseAuthorization();
-			
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapBlazorHub();

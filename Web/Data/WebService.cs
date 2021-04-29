@@ -3,13 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Test.Data.ModalEntity;
+using Test.Data.Modal;
 
 namespace Test.Data
 {
     public class WebService
     {
-        private BookmakerContext context;
         /// <summary>
         /// Возвращает список всех матчей по указанному виду спорта.
         /// </summary>
@@ -17,7 +16,7 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
                 return context.Events
                     .Where(n => n.IdSport == sport.Id)
@@ -34,11 +33,11 @@ namespace Test.Data
         /// <returns>Список возможных ставок с включенным объектом TypeOfBet.</returns>
         public List<PossibleBet> GetPossibleBets(Event @event)
         {
-            using (context = new BookmakerContext())
+            using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
                 return context.PossibleBets
                     .Where(n => n.IdEvent == @event.Id)
-                    .Where(n => n.IsAvalaible == true)
+                    .Where(n => n.IsAvailable == true)
                     .Include(tob => tob.IdTobNavigation)
                     .ToList();
             }
@@ -58,10 +57,10 @@ namespace Test.Data
         /// </summary>
         /// <param name="sport">Вид спорта</param>
         /// <returns>Список матчей с включенными объектами Team.</returns>
-        //[Obsolete("ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.", false)]
+        [Obsolete("ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.", true)]
         public List<Event> GetCurrentEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
                 /// ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.
                 return context.Events
@@ -70,7 +69,6 @@ namespace Test.Data
                     .Where(a => a.IsPast != true)
                     .Include(team1 => team1.IdTeam1Navigation)
                     .Include(team2 => team2.IdTeam2Navigation)
-                    .Include(x => x.PossibleBets)
                     .ToList();
             }
         }
@@ -81,7 +79,7 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetFutureEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
                 return context.Events
                     .Where(a => a.IdSport == sport.Id)
@@ -98,7 +96,7 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetPastEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (bookmaker_officeContext context = new bookmaker_officeContext())
             {
                 return context.Events
                     .Where(a => a.IdSport == sport.Id)
