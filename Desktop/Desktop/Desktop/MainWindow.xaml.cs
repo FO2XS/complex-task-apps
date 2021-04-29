@@ -69,6 +69,16 @@ namespace Desktop
 			try
 			{
 				DB = new DbContext(npgSqlConnection);
+
+				/*
+				foreach (var item in DB.Teams)
+				{
+					Team1.Items.Add(item);
+					Team2.Items.Add(item);
+				}
+				*/
+				data.ItemsSource = null;
+
 				Matches = DB.Events.Select(x =>
 					new Match()
 					{
@@ -89,8 +99,8 @@ namespace Desktop
 
 		Grid Grid { get; set; }
 
-        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
-        {
+		private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+		{
 			if (Grid is null)
 				return;
 
@@ -99,7 +109,7 @@ namespace Desktop
 			Grid.Visibility = Visibility.Visible;
 		}
 
-        private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+		private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
 		{
 			if (Grid is null)
 				return;
@@ -139,5 +149,33 @@ namespace Desktop
         {
 			BorderContext.IsHitTestVisible = false;
         }
-    }
+		/*
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			var listEvent = new List<Events>();
+
+			if (searchBox.Text.Trim() != "")
+			{
+				var list = DB
+					.Teams
+					.Search($"lower(title) LIKE lower('%{searchBox.Text}%')");
+
+				foreach (var item in list)
+					listEvent.AddRange(DB.Events.Search($"id_team1 = {item.Id} OR id_team2 = {item.Id}"));
+			}
+			else
+				listEvent = DB.Events.ToList();
+
+			data.ItemsSource = null;
+
+			data.ItemsSource = listEvent.Select(
+				x => new 
+				{
+					Team1 = DB.Teams.FirstOrDefault(x1 => x1.Id == x.Id_Team1).Title,
+					Team2 = DB.Teams.FirstOrDefault(x1 => x1.Id == x.Id_Team2).Title,
+					Date = x.Start_Date
+				});
+		}
+		*/
+	}
 }

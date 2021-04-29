@@ -74,9 +74,10 @@ namespace DbHendler
 					foreach (var item in TableName.GetProperties())
                     {
 						var d = read[item.Name];
-						String s = d?.ToString();
+						
 						if(d is System.DBNull)
 							item.SetValue(ob, null);
+
 						else
 							item.SetValue(ob, d);
 					}
@@ -142,6 +143,49 @@ namespace DbHendler
 			}
 		}
 
+		public ICollection<T> Search(String str)
+		{
+			var list = new List<T>();
+
+			try
+			{
+				Connection.Open();
+
+				var strSql = $"SELECT * FROM {TableName.Name} WHERE {str}";
+				var cmd = new NpgsqlCommand(strSql, Connection);
+				var read = cmd.ExecuteReader();
+
+
+				while (read.Read())
+				{
+					Object ob = Constructor.Invoke(null);
+
+					foreach (var item in TableName.GetProperties())
+					{
+						var d = read[item.Name];
+
+						if (d is System.DBNull)
+							item.SetValue(ob, null);
+
+						else
+							item.SetValue(ob, d);
+					}
+
+					list.Add((T)(ob));
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Не удалось прочитать данные из таблицы\nОписание: " + e.Message);
+			}
+			finally
+			{
+				Connection.Close();
+			}
+
+			return list;
+		}
+
 		public bool Remove(T item)
 		{
 			Boolean b = false;
@@ -189,8 +233,7 @@ namespace DbHendler
 
 		public bool Contains(T item) 
 			=> ListItem.Contains(item);
-
-
+			
 		public IEnumerator<T> GetEnumerator()
 			=> ListItem.GetEnumerator();
 
