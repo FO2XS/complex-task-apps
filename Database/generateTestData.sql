@@ -10,6 +10,7 @@ TRUNCATE "Teams" RESTART IDENTITY CASCADE;
 INSERT INTO "Sports"("Title") VALUES ('Counter Strike'), ('League of Legends');
 
 -- for teams 22rows
+
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (3, 'Fnatic', NULL, NULL, NULL, 'https://i.ibb.co/N1rfFnx/fnatic.png');
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (16, 'Team Envy', NULL, NULL, NULL, 'https://i.ibb.co/vXW3vZx/Team-Envy.png');
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (1, 'Astralis', NULL, NULL, NULL, 'https://i.ibb.co/QnVmfmt/Astralis-logo-svg.png');
@@ -32,6 +33,7 @@ INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo"
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (20, 'EDward Gaming', NULL, NULL, NULL, 'https://i.ibb.co/ypV8jsQ/Edward-Gaming.webp');
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (21, 'MIBR', NULL, NULL, NULL, 'https://i.ibb.co/CVnjQRv/Mibr.jpg');
 INSERT INTO "Teams" ("Id", "Title", "Raiting", "PercentWin", "SquadList", "Logo") OVERRIDING SYSTEM VALUE VALUES (22, 'FPX Esports', NULL, NULL, NULL, 'https://i.ibb.co/vDq9Dqc/FPX-Esports.png');
+
 
 --for events 100 rows
 
