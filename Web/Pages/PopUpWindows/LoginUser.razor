@@ -1,10 +1,12 @@
-@page "/loginUser"
-@inherits ComponentBase;
-@inject WebService service;
-@inject UserManager<User> UserManager;
-@inject SignInManager<User> signInManager;
-@inject NavigationManager manager;
+﻿@page "/loginUser"
+@inherits ComponentBase
+@inject WebService service
+@inject UserManager<User> userManager
+@inject SignInManager<User> signInManager
+@inject NavigationManager manager
 @inject IDataProtectionProvider dataProtectionProvider
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject ISnackbar snackBar
 
 <MudDialog>
     <DialogContent>
@@ -16,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input @bind-value="login" type="email" class="form-control" placeholder="Например@mail.ru">
+                    <input @bind-value="mail" type="email" class="form-control" placeholder="Например@mail.ru">
                 </div>
             </div>
             <div class="row"><div class="col"><br></div></div>
@@ -33,7 +35,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                        <input class="form-check-input" type="checkbox" @bind-value ="rememberMe">
                         <label class="form-check-label" for="rememberMe">
                             Запомнить меня
                         </label>
@@ -58,15 +60,25 @@
 </MudDialog>
 
 @code {
-    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
 
     void Cancel() => MudDialog.Cancel();
 
     async void Submit()
     {
-        await AutheticationUser();
+        var result = await loginUser();
+        if(result == true)
+        {
+            StateHasChanged();
+            MudDialog.Close();
 
-        StateHasChanged();
+        }
+        else
+        {
+
+        }
+
     }
 }
 

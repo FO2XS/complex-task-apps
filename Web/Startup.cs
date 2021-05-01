@@ -8,6 +8,8 @@ using Microsoft.Extensions.Hosting;
 using Test.Data;
 using Test.Data.ModalEntity;
 using MudBlazor.Services;
+using Blazored.LocalStorage;
+using MudBlazor;
 
 namespace Test
 {
@@ -35,8 +37,19 @@ namespace Test
 			services.AddServerSideBlazor();
 			services.AddSingleton<WebService>();
 
-			services.AddMudServices();
+			services.AddMudServices(config =>
+			{
+				config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+				config.SnackbarConfiguration.NewestOnTop = true;
+				config.SnackbarConfiguration.ShowCloseIcon = true;
+				config.SnackbarConfiguration.VisibleStateDuration = 1000;
+				config.SnackbarConfiguration.HideTransitionDuration = 500;
+				config.SnackbarConfiguration.ShowTransitionDuration = 500;
+				config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
+				config.SnackbarConfiguration.MaxDisplayedSnackbars = 3;
+			});
 			
+			services.AddBlazoredLocalStorage();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

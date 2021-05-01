@@ -1,10 +1,10 @@
 ﻿@page "/"
-@using Pages.MainPart;
-@using Data.ModalEntity;
+@using Pages.MainPart
+@using Pages.PopUpWindows
 
 @inherits LayoutComponentBase
 @inject IDialogService DialogService
-
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject SignInManager<User> signInManager;
 @inject NavigationManager manager;
 @inject UserManager<User> UserManager;
@@ -37,19 +37,17 @@
                 <MudButton @onclick="OpenDialog" Variant="Variant.Filled" Color="Color.Success">
                     Войти
                 </MudButton>
-                @if (signInManager.Context.User.Identity.IsAuthenticated)
+                @if (loginUser is not null)
                 {
-                    <div>Он зашёл
+                    <div>
+                        @loginUser.Id
                         <br />
-                        @signInManager.Context.User.Identity.Name
+                        @loginUser.Email
                     </div>
                 }
-                 else
-                {
-                    <div>Он не зашёл</div>
-                }
-               
-                    <br />
+
+
+                <br />
                 <MudButton Variant="Variant.Filled" Color="Color.Success">
                     <NavLink style="text-decoration:none; color: white;" href="bla">
                         Регистрация
@@ -75,10 +73,13 @@
 
 
 @code{
-    private void OpenDialog()
+    User loginUser;
+    private async void OpenDialog()
     {
-        DialogService.Show<AuthenticationModal>("Simple Dialog");
+        DialogService.Show<LoginUser>("Simple Dialog");
+        loginUser = await localStorage.GetItemAsync<User>("userInfo");
+
     }
 
-   
+
 }
