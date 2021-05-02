@@ -1,6 +1,6 @@
 @using Test.Data
 @using Test.Data.ModalEntity
-@inject WebService service
+@inject WebService _service
 
 
 
@@ -51,15 +51,15 @@
                                 <div class="col-3">
                                     <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
                                 </div>
-                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                <div class="col-1" style="font-size: small; padding-left: 0px; padding-right: 0px;">
                                     <div class="text-nowrap">@bet.Coef1</div>
                                     
                                 </div>
-                                <div class="col-4" style="font-size: 0.9vmax;">
+                                <div class="col-4" style="font-size: small;">
                                     @bet.IdTobNavigation.Title
 
                                 </div>
-                                <div class="col-1" style="font-size: 0.9vmax; padding-left: 0px; padding-right: 0px;">
+                                <div class="col-1" style="font-size: small; padding-left: 0px; padding-right: 0px;">
                                     <div class="text-nowrap">@bet.Coef1</div>
                                 </div>
                                 <div class="col-3">
@@ -92,17 +92,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @if (selectedTeam != null && selectedBet != null)
+                    @if (SelectedTeam != null && SelectedBet != null)
                     {
                         <div class="container-fluid" style="text-align:center;">
                             <div class="row">
                                 <div class="col">
-                                    @selectedTeam.Title
+                                    @SelectedTeam.Title
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <img src="@selectedTeam.Logo" class="img-fluid" style="max-width:75px;" alt="Команда 1">
+                                    <img src="@SelectedTeam.Logo" class="img-fluid" style="max-width:75px;" alt="Команда 1">
                                 </div>
                             </div>
                             <div class="row">
@@ -118,13 +118,13 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <input type="number" class="form-control form-control-sm" placeholder="Сумма ставки" @bind-value="sum">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Сумма ставки" @bind-value="_sum">
                                 </div>
                                 <div class="col">
-                                    @selectedCoef
+                                    @SelectedCoef
                                 </div>
                                 <div class="col">
-                                    @CalculatePrize(sum, selectedCoef)
+                                    @CalculatePrize(_sum, SelectedCoef)
                                 </div>
                             </div>
                         </div>
@@ -146,10 +146,10 @@
     [Parameter]
     public Event CurrentEvent { get; set; }
     private List<PossibleBet> Bets { get; set; }
-    private Team selectedTeam { get; set; }
-    private PossibleBet selectedBet { get; set; }
-    private float selectedCoef { get; set; }
-    private decimal? sum;
+    private Team SelectedTeam { get; set; }
+    private PossibleBet SelectedBet { get; set; }
+    private float SelectedCoef { get; set; }
+    private decimal? _sum;
 
     private bool IsVisible { get; set; } = false;
 
@@ -157,16 +157,16 @@
     {
         if (CurrentEvent != null)
         {
-            Bets = service.GetPossibleBets(CurrentEvent);
+            Bets = _service.GetPossibleBets(CurrentEvent);
         }
     }
 
     private void OpenFinishBetModal(Team team, PossibleBet bet)
     {
-        selectedTeam = team;
-        selectedBet = bet;
-        selectedCoef = CurrentEvent.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
-        sum = null;
+        SelectedTeam = team;
+        SelectedBet = bet;
+        SelectedCoef = CurrentEvent.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
+        _sum = null;
     }
 
     private decimal? CalculatePrize(decimal? sum, float coef)

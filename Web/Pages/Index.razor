@@ -3,11 +3,12 @@
 @using Pages.PopUpWindows
 
 @inherits LayoutComponentBase
-@inject IDialogService DialogService
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
-@inject SignInManager<User> signInManager;
-@inject NavigationManager manager;
-@inject UserManager<User> UserManager;
+@inject IDialogService _dialogService
+@inject SignInManager<User> _signInManager
+@inject NavigationManager _manager
+@inject UserManager<User> _userManager
+@inject Blazored.LocalStorage.ILocalStorageService _localStorage
+@inject Blazored.SessionStorage.ISessionStorageService _sessionStorage
 
 <div class="menu1">
     <div style="margin: 0 auto; max-width: 1240px; ">
@@ -34,15 +35,15 @@
         <div class="custom-features">
             <div>FAQ</div>
             <div>
-                <MudButton @onclick="OpenDialog" Variant="Variant.Filled" Color="Color.Success">
+                <MudButton @onclick="OpenLogin" Variant="Variant.Filled" Color="Color.Success">
                     Войти
                 </MudButton>
-                @if (loginUser is not null)
+                @if (_loginUser is not null)
                 {
                     <div>
-                        @loginUser.Id
+                        @_loginUser.Id
                         <br />
-                        @loginUser.Email
+                        @_loginUser.Email
                     </div>
                 }
 
@@ -73,13 +74,32 @@
 
 
 @code{
-    User loginUser;
-    private async void OpenDialog()
+    User _loginUser;
+    private async void OpenLogin()
     {
-        DialogService.Show<LoginUser>("Simple Dialog");
-        loginUser = await localStorage.GetItemAsync<User>("userInfo");
-
+        _dialogService.Show<LoginUser>("Вход");
+        GetSession();
     }
 
+    private async void OpenLogout()
+    {
+        _dialogService.Show<LogOut>("Подтверждение");
+    }
 
+    protected async override void OnInitialized()
+    {
+        var temp = await _localStorage.ContainKeyAsync(StorageKeys.LocalKey);
+        if (temp)
+        {
+            GetSession();
+            StateHasChanged();
+        }
+    }
+
+    private async void GetSession()
+    {
+        _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
+        await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
+        _loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
+    }
 }

@@ -1,45 +1,70 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Test.Data.ModalEntity;
+using Test.Data;
 
 namespace Test.Pages.PopUpWindows
 {
     public partial class LoginUser
     {
-        private string mail = "Test2@mail.ru";
-        private string password = "Qwerty123.";
-        private bool rememberMe = false;
-        string error = null;
-        private bool showSignInError = false;
-        string key = "userInfo";
+        private string _mail = "Test2@mail.ru";
+        private string _password = "Qwerty123.";
+        private bool _rememberMe = false;
+        string _error = null;
+        private bool _showSignInError = false;
+        
 
 
 
-        public async Task<bool> loginUser()
+        [CascadingParameter]
+        MudDialogInstance MudDialog { get; set; }
+
+        void Cancel() => MudDialog.Cancel();
+
+        async void Submit()
         {
-            var user = await userManager.FindByEmailAsync(mail);
+            var result = await Login();
+            if (result)
+            {
+                StateHasChanged();
+                MudDialog.Close();
 
-            
+            }
+            else
+            {
+                ErrorMessage("Логин или пароль введены неверно");
+            }
+
+        }
+
+        public async Task<bool> Login()
+        {
+            var user = await _userManager.FindByEmailAsync(_mail);
+
             if (user is null)
             {
-                ErrorMessage("Такого пользователя нет");
                 return false;
             }
-            if (await signInManager.CanSignInAsync(user))
+            if (await _signInManager.CanSignInAsync(user))
             {
-                var result = await signInManager.CheckPasswordSignInAsync(user, password, lockoutOnFailure: false);
+                var result = await _signInManager.CheckPasswordSignInAsync(user, _password, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    SaveLocalStorage(user);
+                    SaveSessionStorage(user);
+                    if (_rememberMe)
+                    {
+                        SaveLocalStorage(user);
+                        SuccessMessage("Пользователь запомнен");
+                    }
                     SuccessMessage("Добро пожаловать");
-                    
                     return true;
                 }
                 else
                 {
-                    ErrorMessage("Пароль введён некорректно");
                     return false;
                 }
             }
@@ -48,21 +73,22 @@ namespace Test.Pages.PopUpWindows
 
         public async void SaveLocalStorage(User user)
         {
-            await localStorage.SetItemAsync(key, user);
+            await _localStorage.SetItemAsync(StorageKeys.LocalKey, user);
         }
-        public async void ClearLocalStorage()
-        {
-            await localStorage.ClearAsync();
-        }
+        
 
+        public async void SaveSessionStorage(User user)
+        {
+            await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, user);
+        }
 
         public void ErrorMessage(string message)
         {
-            snackBar.Add(message, MudBlazor.Severity.Error);
+            _snackBar.Add(message, MudBlazor.Severity.Error);
         }
         public void SuccessMessage(string message)
         {
-            snackBar.Add(message, MudBlazor.Severity.Success);
+            _snackBar.Add(message, MudBlazor.Severity.Success);
         }
     }
 }

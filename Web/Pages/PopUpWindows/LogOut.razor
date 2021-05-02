@@ -1,0 +1,22 @@
+﻿@page "/logoutUser"
+@inject UserManager<User> _userManager
+@inject SignInManager<User> _signInManager
+@inject NavigationManager _manager
+@inject Blazored.LocalStorage.ILocalStorageService _localStorage
+@inject Blazored.SessionStorage.ISessionStorageService _sessionStorage
+
+@inject ISnackbar _snackBar
+
+
+
+<MudDialog>
+    <DialogContent>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Отмена</MudButton>
+        <MudButton Color="Color.Primary" OnClick="@(() => Submit())">Подтвердить</MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+

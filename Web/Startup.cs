@@ -9,6 +9,7 @@ using Test.Data;
 using Test.Data.ModalEntity;
 using MudBlazor.Services;
 using Blazored.LocalStorage;
+using Blazored.SessionStorage;
 using MudBlazor;
 
 namespace Test
@@ -50,6 +51,7 @@ namespace Test
 			});
 			
 			services.AddBlazoredLocalStorage();
+			services.AddBlazoredSessionStorage();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

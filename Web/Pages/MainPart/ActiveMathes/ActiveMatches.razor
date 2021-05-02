@@ -6,7 +6,7 @@
         <div class="active-matches-title">
             <p>АКТИВНЫЕ МАТЧИ</p>
         </div>
-        <Test.Pages.SelectBetModal @ref="child" CurrentEvent="SelectedMatch"></Test.Pages.SelectBetModal>
+        <Test.Pages.SelectBetModal @ref="_child" CurrentEvent="SelectedMatch"></Test.Pages.SelectBetModal>
 
         <ul>
             @foreach (var bet in Events)
@@ -72,7 +72,7 @@
     private Sport SelectSport { get; set; } = new Sport() { Id = 1 };
 
     //
-    SelectBetModal child;
+    SelectBetModal _child;
     //
 
     protected override void OnInitialized()

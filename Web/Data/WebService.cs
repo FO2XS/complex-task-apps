@@ -9,7 +9,7 @@ namespace Test.Data
 {
     public class WebService
     {
-        private BookmakerContext context;
+        private BookmakerContext _context;
         /// <summary>
         /// Возвращает список всех матчей по указанному виду спорта.
         /// </summary>
@@ -17,9 +17,9 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (_context = new BookmakerContext())
             {
-                return context.Events
+                return _context.Events
                     .Where(n => n.IdSport == sport.Id)
                     .Include(team1 => team1.IdTeam1Navigation)
                     .Include(team2 => team2.IdTeam2Navigation)
@@ -34,9 +34,9 @@ namespace Test.Data
         /// <returns>Список возможных ставок с включенным объектом TypeOfBet.</returns>
         public List<PossibleBet> GetPossibleBets(Event @event)
         {
-            using (context = new BookmakerContext())
+            using (_context = new BookmakerContext())
             {
-                return context.PossibleBets
+                return _context.PossibleBets
                     .Where(n => n.IdEvent == @event.Id)
                     .Where(n => n.IsAvalaible == true)
                     .Include(tob => tob.IdTobNavigation)
@@ -61,10 +61,10 @@ namespace Test.Data
         //[Obsolete("ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.", false)]
         public List<Event> GetCurrentEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (_context = new BookmakerContext())
             {
                 /// ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.
-                return context.Events
+                return _context.Events
                     .Where(a => a.IdSport == sport.Id)
                     .Where(a => a.StartDate <= DateTime.Now)
                     .Where(a => a.IsPast != true)
@@ -81,9 +81,9 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetFutureEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (_context = new BookmakerContext())
             {
-                return context.Events
+                return _context.Events
                     .Where(a => a.IdSport == sport.Id)
                     .Where(a => a.StartDate > DateTime.Now)
                     .Include(team1 => team1.IdTeam1Navigation)
@@ -98,9 +98,9 @@ namespace Test.Data
         /// <returns>Список матчей с включенными объектами Team.</returns>
         public List<Event> GetPastEvents(Sport sport)
         {
-            using (context = new BookmakerContext())
+            using (_context = new BookmakerContext())
             {
-                return context.Events
+                return _context.Events
                     .Where(a => a.IdSport == sport.Id)
                     .Where(a => a.IsPast == true) // проверка на "прошлость" события осуществляется только по лог. типу. Дата не учитывается
                     .Include(team1 => team1.IdTeam1Navigation)

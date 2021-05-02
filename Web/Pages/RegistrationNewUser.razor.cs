@@ -12,21 +12,21 @@ namespace Test.Pages
     public partial class RegistrationNewUser
     {
         
-        private SignInManager<User> signInManager;
-        private string email;
-        private string password;
-        private string verifyPassword;
+        private SignInManager<User> _signInManager;
+        private string _email;
+        private string _password;
+        private string _verifyPassword;
 
 
         public async void CreateUser()
         {
-            User user = new User { UserName = email, Email = email };
-            var result = await userManager.CreateAsync(user, password);
+            User user = new User { UserName = _email, Email = _email };
+            var result = await _userManager.CreateAsync(user, _password);
 
             if (result.Succeeded)
             {
                 Console.WriteLine("Пользователь с паролем добавлен");
-                manager.NavigateTo("/");
+                _manager.NavigateTo("/");
             }
             else
             {
