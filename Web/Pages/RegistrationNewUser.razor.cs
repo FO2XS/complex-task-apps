@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Test.Data.ModalEntity;
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
+using Test.Pages.PopUpWindows;
+
 namespace Test.Pages
 {
     public partial class RegistrationNewUser
@@ -18,22 +21,24 @@ namespace Test.Pages
         private string _verifyPassword;
 
 
-        public async void CreateUser()
+        private async void CreateUser()
         {
-            User user = new User { UserName = _email, Email = _email };
+            var user = new User { UserName = _email, Email = _email };
             var result = await _userManager.CreateAsync(user, _password);
 
             if (result.Succeeded)
             {
-                Console.WriteLine("Пользователь с паролем добавлен");
-                _manager.NavigateTo("/");
+                var options = new DialogParameters {["Content"] = "Авторизируйтесь на главной странице",["ContentAcceptButton"] = "Перейти"};
+                var dialog = _dialogService.Show<CustomPopUp>("Завершение регистрации", options);
+                var result2 = await dialog.Result;
+                if (!result2.Cancelled)
+                {
+                    _manager.NavigateTo("/");
+                }
             }
             else
             {
-                foreach(var error in result.Errors)
-                {
-                    Console.WriteLine(error.Description);
-                }
+                _snackBar.Add("Ошибка при регистрации, введите другие данные");
             }
         }
     }

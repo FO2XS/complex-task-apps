@@ -13,57 +13,47 @@ namespace Test.Pages.PopUpWindows
     {
         private string _mail = "Test2@mail.ru";
         private string _password = "Qwerty123.";
-        private bool _rememberMe = false;
-        string _error = null;
-        private bool _showSignInError = false;
+        private bool _rememberMe;
         
 
 
 
-        [CascadingParameter]
-        MudDialogInstance MudDialog { get; set; }
+        [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
 
-        void Cancel() => MudDialog.Cancel();
+        private void Cancel() => MudDialog.Cancel();
 
-        async void Submit()
+        private async void Submit()
         {
             var result = await Login();
-            if (result)
+            if (result is not null)
             {
-                MudDialog.Close(DialogResult.Ok(true));
+                MudDialog.Close(DialogResult.Ok(result));
             }
             else
             {
                 ErrorMessage("Логин или пароль введены неверно");
             }
-
         }
 
-        private async Task<bool> Login()
+        private async Task<User> Login()
         {
             var user = await _userManager.FindByEmailAsync(_mail);
 
-            if (user is null)
+            if (user is null) return null;
+            if (!await _signInManager.CanSignInAsync(user)) return null;
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, _password, false);
+
+            if (!result.Succeeded) return null;
+
+            if (_rememberMe)
             {
-                return false;
+                SaveLocalStorage(user);
+                SuccessMessage("Пользователь запомнен");
             }
-            if (!await _signInManager.CanSignInAsync(user)) return false;
-            var result = await _signInManager.CheckPasswordSignInAsync(user, _password, lockoutOnFailure: false);
-            if (result.Succeeded)
-            {
-                SaveSessionStorage(user);
-                if (_rememberMe)
-                {
-                    SaveLocalStorage(user);
-                    SuccessMessage("Пользователь запомнен");
-                }
-                SuccessMessage("Добро пожаловать");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            SaveSessionStorage(user);
+            SuccessMessage("Добро пожаловать");
+            return user;
         }
 
         private async void SaveLocalStorage(User user)

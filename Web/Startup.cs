@@ -29,8 +29,16 @@ namespace Test
 		{
 			services.AddDbContext<BookmakerContext>(option => option.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 			
-			services.AddIdentity<User, Role>()
-				.AddEntityFrameworkStores<BookmakerContext>()
+			services.AddIdentity<User, Role>(opts =>
+                {
+                    opts.Password.RequiredLength = 5;
+                    opts.Password.RequireNonAlphanumeric = false;
+                    opts.Password.RequireLowercase = false;
+                    opts.Password.RequireUppercase = false;
+                    opts.Password.RequireDigit = false;
+                })
+                    
+                .AddEntityFrameworkStores<BookmakerContext>()
 				.AddDefaultUI()
 				.AddDefaultTokenProviders();
 			
@@ -43,11 +51,11 @@ namespace Test
 				config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
 				config.SnackbarConfiguration.NewestOnTop = true;
 				config.SnackbarConfiguration.ShowCloseIcon = true;
-				config.SnackbarConfiguration.VisibleStateDuration = 1000;
-				config.SnackbarConfiguration.HideTransitionDuration = 500;
-				config.SnackbarConfiguration.ShowTransitionDuration = 500;
+				config.SnackbarConfiguration.VisibleStateDuration = 2000;
+				config.SnackbarConfiguration.HideTransitionDuration = 1000;
+				config.SnackbarConfiguration.ShowTransitionDuration = 1000;
 				config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
-				config.SnackbarConfiguration.MaxDisplayedSnackbars = 3;
+				config.SnackbarConfiguration.MaxDisplayedSnackbars = 5;
 			});
 			
 			services.AddBlazoredLocalStorage();

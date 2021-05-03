@@ -23,6 +23,7 @@ namespace Test.Data.ModalEntity
         public string Name { get; set; }
         public string Surname { get; set; }
         public decimal Balance { get; set; }
+        public string Avatar { get; set; }
 
         public virtual ICollection<MoneyManagement> MoneyManagements { get; set; }
         public virtual ICollection<UserBet> UserBets { get; set; }

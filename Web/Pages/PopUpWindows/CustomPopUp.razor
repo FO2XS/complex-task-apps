@@ -1,0 +1,19 @@
+﻿
+
+@inject IDialogService _dialogService
+@inject SignInManager<User> _signInManager
+@inject NavigationManager _manager
+@inject UserManager<User> _userManager
+@inject Blazored.LocalStorage.ILocalStorageService _localStorage
+@inject Blazored.SessionStorage.ISessionStorageService _sessionStorage
+@inject ISnackbar _snackBar
+
+
+<MudDialog>
+    <DialogContent>
+        @Content
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick=Accept>@ContentAcceptButton</MudButton>
+    </DialogActions>
+</MudDialog>

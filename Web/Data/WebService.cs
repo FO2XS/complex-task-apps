@@ -27,6 +27,16 @@ namespace Test.Data
 
             }
         }
+
+        public HashSet<Event> GetEvents(IEnumerable<int> eventsId)
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.Events
+                    .Where(e => eventsId.Contains(e.Id))
+                    .ToHashSet();
+            }
+        }
         /// <summary>
         /// Возвращает список всех доступных ставок по данному событию.
         /// </summary>
@@ -41,6 +51,20 @@ namespace Test.Data
                     .Where(n => n.IsAvalaible == true)
                     .Include(tob => tob.IdTobNavigation)
                     .ToList();
+            }
+        }
+        /// <summary>
+        /// Возвращает список указанных доступных ставок по данному событию.
+        /// </summary>
+        /// <param name="betsId">Id нужных типов ставок</param>
+        /// <returns>Список возможных ставок с указанными Id</returns>
+        public HashSet<PossibleBet> GetPossibleBets(IEnumerable<int> betsId)
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.PossibleBets
+                    .Where(e => betsId.Contains(e.Id))
+                    .ToHashSet();
             }
         }
         /// <summary>
@@ -91,6 +115,16 @@ namespace Test.Data
                     .ToList();
             }
         }
+
+        public List<Event> GetAllFutureAndCurrentEvents()
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.Events
+                    .Where(e => e.IsPast == false)
+                    .ToList();
+            }
+        }
         /// <summary>
         /// Возвращает список прошедших матчей.
         /// </summary>
@@ -108,5 +142,29 @@ namespace Test.Data
                     .ToList();
             }
         }
+
+        public string UploadUserAvatar(User user)
+        {
+            
+            return null;
+        }
+
+        public HashSet<TypeOfBet> GetTypeOfBets()
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.TypeOfBets.ToHashSet();
+            }
+        }
+
+        public HashSet<Team> GetTeams()
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.Teams.ToHashSet();
+            }
+        }
+
+        
     }
 }

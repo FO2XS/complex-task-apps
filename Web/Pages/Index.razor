@@ -9,6 +9,7 @@
 @inject UserManager<User> _userManager
 @inject Blazored.LocalStorage.ILocalStorageService _localStorage
 @inject Blazored.SessionStorage.ISessionStorageService _sessionStorage
+@inject ISnackbar _snackBar
 
 <div class="menu1">
     <div style="margin: 0 auto; max-width: 1240px; ">
@@ -33,15 +34,12 @@
         </div>
 
         <div class="custom-features">
-            <div>FAQ</div>
             <div>
-                
                 @if (_loginUser is not null)
                 {
                     <MudButton OnClick="Logout" Variant="Variant.Filled" Color="Color.Success">
                         Выйти
                     </MudButton>
-                    
                 }
                 else
                 {
@@ -49,31 +47,11 @@
                         Войти
                     </MudButton>
                 }
-
-
-                <br />
-                <br/>
-                @if (_loginUser is not null)
-                {
-                    <div>
-                        @_loginUser.Id
-                        <br />
-                        @_loginUser.Email
-                    </div>
-                }
-                else
-                {
-                    <span>Объект не иницализирован</span>
-                    @message
-                }
-                
                 <MudButton Variant="Variant.Filled" Color="Color.Success">
                     <NavLink style="text-decoration:none; color: white;" href="bla">
                         Регистрация
                     </NavLink>
                 </MudButton>
-
-
             </div>
         </div>
     </div>
@@ -84,7 +62,7 @@
             <HotMath></HotMath>
         </div>
         <div class="main-part">
-            <Test.Pages.MainPart.MainPart></Test.Pages.MainPart.MainPart>
+            <Test.Pages.MainPart.MainPart User ="@_loginUser"></Test.Pages.MainPart.MainPart>
         </div>
     </div>
 </div>
@@ -93,34 +71,35 @@
 
 @code{
     User _loginUser;
-    string message;
 
     protected override async Task OnInitializedAsync()
     {
-        _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
+        if (await _localStorage.ContainKeyAsync(StorageKeys.LocalKey))
+        {
+            _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
+            await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
+        }
     }
-    async Task Login()
+
+    private async void Login()
     {
         var dialog = _dialogService.Show<LoginUser>("Вход");
-
         var result = await dialog.Result;
-        if (!result.Cancelled)
+        if (result.Cancelled)
         {
-            message = "Всё успешно";
-            _loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
-
 
         }
         else
         {
-            message = "Объект не вернулся";
+            _loginUser = (User) result.Data;
+            //_loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
+            StateHasChanged();
         }
-        StateHasChanged();
     }
 
-    async Task Logout()
-    {
 
+    private async Task Logout()
+    {
         var dialog = _dialogService.Show<LogOut>("Подтверждение");
 
         var result = await dialog.Result;
@@ -129,16 +108,11 @@
         {
             _loginUser = null;
         }
-
     }
 
 
-    private async void GetSession()
-    {
-        _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
-        await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
-        _loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
-    }
+
+
 
 
 
