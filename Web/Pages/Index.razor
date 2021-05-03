@@ -35,9 +35,24 @@
         <div class="custom-features">
             <div>FAQ</div>
             <div>
-                <MudButton @onclick="OpenLogin" Variant="Variant.Filled" Color="Color.Success">
-                    Войти
-                </MudButton>
+                
+                @if (_loginUser is not null)
+                {
+                    <MudButton OnClick="Logout" Variant="Variant.Filled" Color="Color.Success">
+                        Выйти
+                    </MudButton>
+                    
+                }
+                else
+                {
+                    <MudButton OnClick="Login" Variant="Variant.Filled" Color="Color.Success">
+                        Войти
+                    </MudButton>
+                }
+
+
+                <br />
+                <br/>
                 @if (_loginUser is not null)
                 {
                     <div>
@@ -46,9 +61,12 @@
                         @_loginUser.Email
                     </div>
                 }
-
-
-                <br />
+                else
+                {
+                    <span>Объект не иницализирован</span>
+                    @message
+                }
+                
                 <MudButton Variant="Variant.Filled" Color="Color.Success">
                     <NavLink style="text-decoration:none; color: white;" href="bla">
                         Регистрация
@@ -75,26 +93,45 @@
 
 @code{
     User _loginUser;
-    private async void OpenLogin()
-    {
-        _dialogService.Show<LoginUser>("Вход");
-        GetSession();
-    }
+    string message;
 
-    private async void OpenLogout()
+    protected override async Task OnInitializedAsync()
     {
-        _dialogService.Show<LogOut>("Подтверждение");
+        _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
     }
-
-    protected async override void OnInitialized()
+    async Task Login()
     {
-        var temp = await _localStorage.ContainKeyAsync(StorageKeys.LocalKey);
-        if (temp)
+        var dialog = _dialogService.Show<LoginUser>("Вход");
+
+        var result = await dialog.Result;
+        if (!result.Cancelled)
         {
-            GetSession();
-            StateHasChanged();
+            message = "Всё успешно";
+            _loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
+
+
         }
+        else
+        {
+            message = "Объект не вернулся";
+        }
+        StateHasChanged();
     }
+
+    async Task Logout()
+    {
+
+        var dialog = _dialogService.Show<LogOut>("Подтверждение");
+
+        var result = await dialog.Result;
+
+        if (!result.Cancelled)
+        {
+            _loginUser = null;
+        }
+
+    }
+
 
     private async void GetSession()
     {
@@ -102,4 +139,10 @@
         await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
         _loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
     }
+
+
+
+
+
+
 }

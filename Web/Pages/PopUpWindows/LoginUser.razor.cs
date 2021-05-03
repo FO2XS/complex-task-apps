@@ -30,9 +30,7 @@ namespace Test.Pages.PopUpWindows
             var result = await Login();
             if (result)
             {
-                StateHasChanged();
-                MudDialog.Close();
-
+                MudDialog.Close(DialogResult.Ok(true));
             }
             else
             {
@@ -41,7 +39,7 @@ namespace Test.Pages.PopUpWindows
 
         }
 
-        public async Task<bool> Login()
+        private async Task<bool> Login()
         {
             var user = await _userManager.FindByEmailAsync(_mail);
 
@@ -49,44 +47,42 @@ namespace Test.Pages.PopUpWindows
             {
                 return false;
             }
-            if (await _signInManager.CanSignInAsync(user))
+            if (!await _signInManager.CanSignInAsync(user)) return false;
+            var result = await _signInManager.CheckPasswordSignInAsync(user, _password, lockoutOnFailure: false);
+            if (result.Succeeded)
             {
-                var result = await _signInManager.CheckPasswordSignInAsync(user, _password, lockoutOnFailure: false);
-                if (result.Succeeded)
+                SaveSessionStorage(user);
+                if (_rememberMe)
                 {
-                    SaveSessionStorage(user);
-                    if (_rememberMe)
-                    {
-                        SaveLocalStorage(user);
-                        SuccessMessage("Пользователь запомнен");
-                    }
-                    SuccessMessage("Добро пожаловать");
-                    return true;
+                    SaveLocalStorage(user);
+                    SuccessMessage("Пользователь запомнен");
                 }
-                else
-                {
-                    return false;
-                }
+                SuccessMessage("Добро пожаловать");
+                return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
-        public async void SaveLocalStorage(User user)
+        private async void SaveLocalStorage(User user)
         {
             await _localStorage.SetItemAsync(StorageKeys.LocalKey, user);
         }
-        
 
-        public async void SaveSessionStorage(User user)
+
+        private async void SaveSessionStorage(User user)
         {
             await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, user);
         }
 
-        public void ErrorMessage(string message)
+        private void ErrorMessage(string message)
         {
             _snackBar.Add(message, MudBlazor.Severity.Error);
         }
-        public void SuccessMessage(string message)
+
+        private void SuccessMessage(string message)
         {
             _snackBar.Add(message, MudBlazor.Severity.Success);
         }

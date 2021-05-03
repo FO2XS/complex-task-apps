@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MudBlazor;
+using Test.Data.ModalEntity;
 
 namespace Test.Pages.PopUpWindows
 {
@@ -8,21 +9,14 @@ namespace Test.Pages.PopUpWindows
         [CascadingParameter]
         MudDialogInstance MudDialog { get; set; }
 
-
         private void Cancel() => MudDialog.Cancel();
 
-        private bool Submit()
+        private void Submit()
         {
-            try
-            {
                 ClearLocalStorage();
                 ClearSessionStorage();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+                _snackBar.Add("Выход осуществлен", Severity.Success);
+                MudDialog.Close(DialogResult.Ok(true));
         }
 
         private async void ClearLocalStorage()
