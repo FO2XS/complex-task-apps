@@ -194,6 +194,7 @@ CREATE TABLE public."UserBets" (
     ),
     "IdUser" integer NOT NULL,
     "IdPosBet" integer NOT NULL,
+    "Side" boolean NOT NULL,
     "Coef" real NOT NULL,
     "Sum" numeric(12,2) NOT NULL,
     "Victory" bit(2),
