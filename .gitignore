@@ -355,5 +355,3 @@ Web/obj/
 Web/bin/
 
 Web/BookmakerContext.cs
-
-Web/appsettings.Development.json

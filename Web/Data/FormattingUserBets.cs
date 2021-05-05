@@ -8,16 +8,18 @@ namespace Test.Data
 {
     public class FormattingUserBets
     {
-        private static readonly WebService Service = new WebService();
+        private static readonly WebService Service = new();
         private static HashSet<Team> _teams = Service.GetTeams();
         private static HashSet<TypeOfBet> _typeOfBets = Service.GetTypeOfBets();
         private HashSet<PossibleBet> _possibleBets;
         private HashSet<Event> _events;
 
 
-        public FormatUserBets Format (IEnumerable<UserBet> userBets)
+        public HashSet<FormatUserBets> Format (IEnumerable<UserBet> userBets)
         {
+            var formattingUserBets = new HashSet<FormatUserBets>();
             var possibleId = new HashSet<int>();
+
             foreach (var bet in userBets)
             {
                 possibleId.Add(bet.IdPosBet);
@@ -33,9 +35,6 @@ namespace Test.Data
 
             _events = Service.GetEvents(eventsId);
 
-            HashSet<FormatUserBets> formattingUserBets = new HashSet<FormatUserBets>();
-
-
             foreach (var userBet in userBets)
             {
                 var posbet = _possibleBets.First(e => e.Id == userBet.IdPosBet);
@@ -48,27 +47,33 @@ namespace Test.Data
 
                 formattingUserBets.Add(new FormatUserBets(userBet));
 
-                formattingUserBets.Last().View = $"{teams1.Title}vs{teams2.Title} Вид ставки:{tob.Title} "
+                formattingUserBets.Last().ViewEvent = $"{teams1.Title} vs {teams2.Title}";
+                formattingUserBets.Last().ViewBet = tob.Title;
             }
+
+            return new HashSet<FormatUserBets>();
         }
 
-        public class FormatUserBets : UserBet
-        {
-            public string View { get; set; }
+        
+    }
+    public class FormatUserBets : UserBet
+    {
+        public string ViewEvent { get; set; }
+        public string ViewBet { get; set; }
+        public string ViewMoney { get; set; }
 
-            public FormatUserBets(UserBet userBet)
-            {
-                this.Id = userBet.Id;
-                this.IdPosBet = userBet.IdPosBet;
-                this.Coef = userBet.Coef;
-                this.IdPosBetNavigation = userBet.IdPosBetNavigation;
-                this.IdUser = userBet.IdUser;
-                this.IdUserNavigation = userBet.IdUserNavigation;
-                this.Prize = userBet.Prize;
-                this.ToArchive = userBet.ToArchive;
-                this.Sum = userBet.Sum;
-                this.Victory = userBet.Victory;
-            }
+        public FormatUserBets(UserBet userBet)
+        {
+            this.Id = userBet.Id;
+            this.IdPosBet = userBet.IdPosBet;
+            this.Side = userBet.Side;
+            this.Coef = userBet.Coef;
+            this.IdUser = userBet.IdUser;
+            this.Prize = userBet.Prize;
+            this.ToArchive = userBet.ToArchive;
+            this.Sum = userBet.Sum;
+            this.Victory = userBet.Victory;
+            this.ViewMoney = $"{Sum} * {Coef}";
         }
     }
 }

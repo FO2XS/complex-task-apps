@@ -11,6 +11,7 @@ namespace Test.Data.ModalEntity
         public int Id { get; set; }
         public int IdUser { get; set; }
         public int IdPosBet { get; set; }
+        public bool Side { get; set; }
         public float Coef { get; set; }
         public decimal Sum { get; set; }
         public BitArray Victory { get; set; }

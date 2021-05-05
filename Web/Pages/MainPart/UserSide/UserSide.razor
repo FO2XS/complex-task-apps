@@ -38,17 +38,22 @@
 
             <div class="history-bids">
                 <div class="history-bids-title">
-                    @if (User.UserBets is not null)
+                    @if (_formatting is not null)
                     {
-                        <ol>
-                            @foreach (var userBet in User.UserBets)
-                            {
-                                <li>
-                                    
-                                </li>
-                            }
-                        </ol>
-                        
+                    <MudGrid>
+                        @foreach (var userBet in _formatUserBets)
+                        {
+                            <MudItem xs="12">
+                                @userBet.ViewEvent
+                            </MudItem>
+                            <MudItem xs="6">
+                                @userBet.ViewBet
+                            </MudItem>
+                            <MudItem xs="6">
+                                @userBet.ViewMoney
+                            </MudItem>
+                        }
+                    </MudGrid>
                     }
                 </div>
             </div>
