@@ -51,7 +51,7 @@ namespace Test.Data
                 formattingUserBets.Last().ViewBet = tob.Title;
             }
 
-            return new HashSet<FormatUserBets>();
+            return formattingUserBets;
         }
 
         

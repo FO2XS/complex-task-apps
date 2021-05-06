@@ -67,6 +67,15 @@ namespace Test.Data
                     .ToHashSet();
             }
         }
+
+        public ICollection<UserBet> GetUserBets(User user)
+        {
+            using (_context = new BookmakerContext())
+            {
+                return _context.UserBets
+                    .Where(e => e.IdUser == user.Id).ToList();
+            }
+        }
         /// <summary>
         /// В настоящее время возвращает Null. В будущем будет возвращать список горячих матчей.
         /// </summary>

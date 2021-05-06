@@ -18,7 +18,10 @@ namespace Test.Pages.MainPart.UserSide
 
         protected override void OnParametersSet()
         {
+            if (User is null) return;
+            User.UserBets = webService.GetUserBets(User);
             _formatUserBets = _formatting.Format(User.UserBets);
+
         }
 
         protected override void OnInitialized()
