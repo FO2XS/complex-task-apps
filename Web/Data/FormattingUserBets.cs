@@ -37,11 +37,11 @@ namespace Test.Data
 
             foreach (var userBet in userBets)
             {
-                var posbet = _possibleBets.First(e => e.Id == userBet.IdPosBet);
-                var eEvent = _events.First(e => e.Id == posbet.IdEvent);
-                var tob = _typeOfBets.First(e => e.Id == posbet.IdTob);
-                var teams1 = _teams.First(e => e.Id == eEvent.IdTeam1);
-                var teams2 = _teams.First(e => e.Id == eEvent.IdTeam2);
+                var posbet = _possibleBets.FirstOrDefault(e => e.Id == userBet.IdPosBet);
+                var eEvent = _events.FirstOrDefault(e => e.Id == posbet.IdEvent);
+                var tob = _typeOfBets.FirstOrDefault(e => e.Id == posbet.IdTob);
+                var teams1 = _teams.FirstOrDefault(e => e.Id == eEvent.IdTeam1);
+                var teams2 = _teams.FirstOrDefault(e => e.Id == eEvent.IdTeam2);
 
 
 
