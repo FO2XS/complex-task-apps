@@ -1,152 +1,24 @@
 ﻿@page "/"
-@using Pages.MainPart
-@using Pages.PopUpWindows
 
+@layout MainLayout
 @inherits LayoutComponentBase
-@inject IDialogService _dialogService
-@inject SignInManager<User> _signInManager
-@inject NavigationManager _manager
-@inject UserManager<User> _userManager
-@inject Blazored.LocalStorage.ILocalStorageService _localStorage
-@inject Blazored.SessionStorage.ISessionStorageService _sessionStorage
-@inject ISnackbar _snackBar
 
-<div class="menu1">
-    <div style="margin: 0 auto; max-width: 1240px; ">
-        <div class="logo-and-type-game-and-technical-support">
-            <div class="logo">
-                Лого
-            </div>
-            <div class="">
-                <select>
-                    <option selected>
-                        CS:GO
-                    </option>
-                    <option>
-                        LoL
-                    </option>
-                </select>
-            </div>
-            <div class="technical-support">
-                Тех. поддержка
 
-            </div>
-        </div>
-
-        <div class="custom-features">
-            <div>
-                @if (_loginUser is not null)
-                {
-                    <MudButton OnClick="Logout" Variant="Variant.Filled" Color="Color.Success">
-                        Выйти
-                    </MudButton>
-                }
-                else
-                {
-                    <MudButton OnClick="Login" Variant="Variant.Filled" Color="Color.Success">
-                        Войти
-                    </MudButton>
-                }
-                <MudButton Variant="Variant.Filled" Color="Color.Success">
-                    <NavLink style="text-decoration:none; color: white;" href="bla">
-                        Регистрация
-                    </NavLink>
-                </MudButton>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="main-main">
     <div class="main">
         <div class="hot-matches">
             <HotMath></HotMath>
         </div>
         <div class="main-part">
-            <Test.Pages.MainPart.MainPart User ="@_loginUser"></Test.Pages.MainPart.MainPart>
+            <Test.Pages.MainPart.MainPart></Test.Pages.MainPart.MainPart>
         </div>
     </div>
 </div>
 
 
-<footer class="footer-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-3 item">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Web design</a></li>
-                    <li><a href="#">Development</a></li>
-                    <li><a href="#">Hosting</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-6 col-md-3 item">
-                <h3>About</h3>
-                <ul>
-                    <li><a href="#">Company</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6 item text">
-                <h3>Company Name</h3>
-                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-            </div>
-            <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-        </div>
-        <p class="copyright">Company Name © 2021</p>
-    </div>
-</footer>
-
 
 
 @code{
-    User _loginUser;
-
-    protected override async Task OnInitializedAsync()
-    {
-        if (await _localStorage.ContainKeyAsync(StorageKeys.LocalKey))
-        {
-            _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
-            await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
-        }
-    }
-        
-    private async void Login()
-    {
-        var dialog = _dialogService.Show<LoginUser>("Вход");
-        var result = await dialog.Result;
-        if (result.Cancelled)
-        {
-
-        }
-        else
-        {
-            _loginUser = (User) result.Data;
-            //_loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
-            StateHasChanged();
-        }
-    }
-
-
-    private async Task Logout()
-    {
-        var dialog = _dialogService.Show<LogOut>("Подтверждение");
-
-        var result = await dialog.Result;
-
-        if (!result.Cancelled)
-        {
-            _loginUser = null;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
+    [CascadingParameter]
+    public User LoginUser { get; set; }
 }

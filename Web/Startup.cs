@@ -41,7 +41,8 @@ namespace Test
                 .AddEntityFrameworkStores<BookmakerContext>()
 				.AddDefaultUI()
 				.AddDefaultTokenProviders();
-			
+
+            services.AddRouting();
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
 			services.AddSingleton<WebService>();

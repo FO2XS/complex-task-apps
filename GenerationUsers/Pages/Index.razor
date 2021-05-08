@@ -1,0 +1,75 @@
+﻿@page "/"
+@using Test
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> userManager
+<h1>Hello, world!</h1>
+
+<label>Почта</label>
+<input @bind-value="@email" />
+<br />
+<label>Пароль</label>
+<input @bind-value="@password" />
+
+<button @onclick="@(() => AddOneUser())">Добавить</button>
+<br />
+<label> @info</label>
+
+<br />
+<label>Колво юзеров</label>
+<input @bind-value="@count" />
+<label>Старт с</label>
+<input @bind-value="@start" />
+<br />
+<button @onclick="@(() => AddManyUser(count, start))">Добавить Кучу</button>
+<br />
+<label>Добавлено успешно - @countSuccess</label>
+@code
+{
+    string email;
+    string password;
+    string info;
+    int count;
+    int start;
+    int countSuccess = 0;
+    public void AddOneUser()
+    {
+        User user = new User() { Email = email, UserName = email };
+
+        var result = userManager.CreateAsync(user, password);
+
+        if (result.IsCompleted)
+        {
+            info = "success";
+        }
+        else
+        {
+            info = "fail";
+
+        }
+    }
+
+    public async void AddManyUser(int count, int start)
+    {
+
+        for (int i = 0; i < count; i++)
+        {
+            email = $"Test{i + start}@mail.ru";
+            password = "qwerty";
+            
+            User user = new User() { Email = email, UserName = email };
+
+            var result = await userManager.CreateAsync(user, password);
+
+            if (result.Succeeded)
+            {
+                continue;
+            }
+            else
+            {
+                info = "fail";
+
+            }
+
+        }
+    }
+}

@@ -154,7 +154,6 @@ namespace Test.Data
 
         public string UploadUserAvatar(User user)
         {
-            
             return null;
         }
 
@@ -174,6 +173,5 @@ namespace Test.Data
             }
         }
 
-        
     }
 }

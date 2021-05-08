@@ -9,15 +9,15 @@
             </td>
             <td class="side">
                 <div class="user">
-                    <Test.Pages.MainPart.UserSide.UserSide User="@User"></Test.Pages.MainPart.UserSide.UserSide>
+                    <Test.Pages.MainPart.UserSide.UserSide></Test.Pages.MainPart.UserSide.UserSide>
                 </div>
             </td>
         </tr>
-    </table>
+    </table>    
 </div>
 
 
 @code {
-        [Parameter]
+        [CascadingParameter]
         public User User { get; set; }
 }

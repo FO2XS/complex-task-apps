@@ -1,0 +1,106 @@
+﻿@page "/header"
+
+@using Pages.PopUpWindows
+
+@inherits LayoutComponentBase
+@inject IDialogService _dialogService
+@inject SignInManager<User> _signInManager
+@inject NavigationManager _manager
+@inject UserManager<User> _userManager
+@inject ILocalStorageService _localStorage
+@inject ISessionStorageService _sessionStorage
+@inject ISnackbar _snackBar
+
+<div class="menu1">
+    <div style="margin: 0 auto; max-width: 1240px; ">
+        <div class="logo-and-type-game-and-technical-support">
+            <div class="logo">
+                Лого
+            </div>
+            <div class="">
+                <select>
+                    <option selected>
+                        CS:GO
+                    </option>
+                    <option>
+                        LoL
+                    </option>
+                </select>
+            </div>
+            <div class="technical-support">
+                Тех. поддержка
+            </div>
+        </div>
+
+        <div class="custom-features">
+            <div>
+                @if (_loginUser is not null)
+                {
+                    <MudButton OnClick="Logout" Variant="Variant.Filled" Color="Color.Success">
+                        Выйти
+                    </MudButton>
+                }
+                else
+                {
+                    <MudButton OnClick="Login" Variant="Variant.Filled" Color="Color.Success">
+                        Войти
+                    </MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Success">
+                        <NavLink style="text-decoration:none; color: white;" href="bla">
+                            Регистрация
+                        </NavLink>
+                    </MudButton>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    User _loginUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (await _localStorage.ContainKeyAsync(StorageKeys.LocalKey))
+        {
+            _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
+            await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
+            await OnClickCallback.InvokeAsync(_loginUser);
+        }
+    }
+
+    private async void Login()
+    {
+        var dialog = _dialogService.Show<LoginUser>("Вход");
+        var result = await dialog.Result;
+        if (result.Cancelled)
+        {
+
+        }
+        else
+        {
+            _loginUser = (User)result.Data;
+            //_loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
+            await OnClickCallback.InvokeAsync(_loginUser);
+            StateHasChanged();
+        }
+    }
+
+
+    private async Task Logout()
+    {
+        var dialog = _dialogService.Show<LogOut>("Подтверждение");
+
+        var result = await dialog.Result;
+
+        if (!result.Cancelled)
+        {
+            _loginUser = null;
+            await OnClickCallback.InvokeAsync(_loginUser);
+        }
+    }
+
+    [Parameter]
+    public EventCallback<User> OnClickCallback { get; set; }
+}

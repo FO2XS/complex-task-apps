@@ -1,7 +1,28 @@
---TRUNCATE "UserBets" RESTART IDENTITY CASCADE;
---TRUNCATE "Users" RESTART IDENTITY CASCADE;
+--
+-- PostgreSQL database dump
+--
 
--- Нужна User часть в 100 строк
+-- Dumped from database version 13.1
+-- Dumped by pg_dump version 13.2
+
+-- Started on 2021-05-07 01:45:22
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3059 (class 0 OID 27140)
+-- Dependencies: 201
+-- Data for Name: Users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
 
 INSERT INTO public."Users" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount", "Name", "Surname", "Balance", "Avatar") VALUES (2, 'Qwerty142@mail.ru', 'QWERTY142@MAIL.RU', 'Qwerty142@mail.ru', 'QWERTY142@MAIL.RU', false, 'AQAAAAEAACcQAAAAEDHbCJ6oSCD49zMn4TTn+7J2kMDP8ZA5QUiOCP+2Oqwox9Nc8anzYQHo7yeanJB0aA==', '2Y2CLMUH2GXJIDSW34FGJXFMOU5XRWBZ', 'd442e81e-3450-4c93-ae99-4aa37ed09a14', NULL, false, false, NULL, true, 0, NULL, NULL, 0.00, NULL);
 INSERT INTO public."Users" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount", "Name", "Surname", "Balance", "Avatar") VALUES (3, 'Test3@mail.ru', 'TEST3@MAIL.RU', 'Test3@mail.ru', 'TEST3@MAIL.RU', false, 'AQAAAAEAACcQAAAAENmUrQ7t83aWV9gpkQq95IwhfrBKwLkqwT18ocZU2m/pLuV49yuk412GPNTPuKgKQQ==', 'IVDX2BMIRGO42SKZUNJ6OMSHQAACUOGF', 'fcbab6c8-0a25-4ba8-a611-914f3519154d', NULL, false, false, NULL, true, 0, NULL, NULL, 0.00, NULL);
@@ -54,15 +75,19 @@ INSERT INTO public."Users" ("Id", "UserName", "NormalizedUserName", "Email", "No
 INSERT INTO public."Users" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount", "Name", "Surname", "Balance", "Avatar") VALUES (49, 'test48@mail.ru', 'TEST48@MAIL.RU', 'test48@mail.ru', 'TEST48@MAIL.RU', false, 'AQAAAAEAACcQAAAAEPWposDfaBS5puFjyYmb4FpCqS/C6qBY+Mid1NVMHmgFt4IeAIQF377EKsCx9oNYPA==', 'XEJ2MZ7X6RWKFH5I34VEAI7PTB6YX6IG', '0ccaa4eb-3194-49af-9359-e927b69299a2', NULL, false, false, NULL, true, 0, NULL, NULL, 0.00, NULL);
 INSERT INTO public."Users" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount", "Name", "Surname", "Balance", "Avatar") VALUES (50, 'test49@mail.ru', 'TEST49@MAIL.RU', 'test49@mail.ru', 'TEST49@MAIL.RU', false, 'AQAAAAEAACcQAAAAEGxY1Ge7MFvJ43mCzrL+yYEGEPRbBLYxtUzVJKjhYIDThPNrGCKSD1pX0sMbhrB86g==', 'QFRDNZV35TLMHQYDHYABETC5XKVTV7XF', 'c643e0e6-6736-474f-84b5-f9bdaccf3a7f', NULL, false, false, NULL, true, 0, NULL, NULL, 0.00, NULL);
 
--- for users_bet 100rows
 
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (72,9,3,435,'False'),(94,9,2,379,'False'),(42,29,2,353,'True'),(50,44,2,113,'True'),(11,159,3,219,'False'),(78,62,2,464,'False'),(98,194,2,293,'True'),(98,75,3,459,'True'),(14,49,3,456,'False'),(85,172,3,224,'False');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (5,114,2,292,'True'),(77,132,3,343,'False'),(99,52,2,369,'True'),(86,114,2,278,'False'),(53,134,3,477,'True'),(95,79,3,461,'False'),(69,34,2,112,'False'),(61,121,3,108,'True'),(6,88,2,257,'True'),(33,127,3,214,'True');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (36,32,3,343,'True'),(77,181,3,252,'True'),(62,182,2,492,'True'),(43,174,3,322,'True'),(38,162,3,403,'True'),(72,192,2,424,'False'),(41,117,2,196,'True'),(1,71,2,116,'False'),(33,120,3,236,'True'),(12,113,3,340,'False');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (96,182,3,436,'False'),(76,54,2,452,'False'),(39,95,2,186,'True'),(82,26,2,222,'False'),(98,83,3,465,'False'),(46,89,3,439,'True'),(2,128,3,144,'False'),(43,68,2,236,'True'),(98,169,2,389,'True'),(55,11,3,149,'False');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (12,140,2,257,'True'),(12,169,2,440,'False'),(22,73,2,367,'True'),(9,66,2,353,'False'),(52,174,2,348,'True'),(95,162,3,106,'False'),(67,13,3,456,'False'),(88,115,3,397,'True'),(58,147,3,406,'False'),(17,97,3,192,'False');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (74,137,2,126,'True'),(48,196,3,340,'True'),(6,48,2,152,'False'),(21,87,3,299,'True'),(64,116,2,132,'True'),(2,109,3,115,'False'),(36,34,3,297,'False'),(91,52,2,367,'False'),(44,192,2,419,'True'),(50,93,3,257,'True');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (15,90,2,151,'False'),(65,76,3,231,'False'),(8,110,2,487,'False'),(31,144,3,102,'False'),(41,124,2,474,'True'),(2,58,3,457,'False'),(35,4,2,378,'False'),(9,120,3,499,'True'),(63,100,3,291,'True'),(83,130,2,227,'True');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (14,125,3,304,'True'),(3,40,3,467,'True'),(68,65,3,185,'True'),(90,67,2,464,'True'),(11,43,3,175,'False'),(24,128,2,264,'True'),(6,27,3,310,'False'),(31,150,3,100,'False'),(64,148,3,140,'False'),(100,54,2,474,'True');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (57,130,3,389,'True'),(38,145,2,296,'True'),(10,152,3,293,'False'),(87,85,3,410,'True'),(66,182,2,392,'True'),(53,62,3,178,'True'),(68,104,2,142,'True'),(84,35,3,310,'True'),(12,67,2,488,'False'),(99,7,2,464,'False');
-INSERT INTO "UserBets" ("IdUser","IdPosBet","Coef","Sum","Side") VALUES (24,10,2,410,'False'),(74,166,2,257,'True'),(95,55,2,289,'False'),(72,34,3,139,'False'),(69,110,3,486,'False'),(94,40,2,263,'True'),(32,135,3,326,'False'),(92,187,2,345,'True'),(52,112,2,266,'False'),(33,150,3,149,'True');
+--
+-- TOC entry 3065 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: Users_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."Users_Id_seq"', 50, true);
+
+
+-- Completed on 2021-05-07 01:45:23
+
+--
+-- PostgreSQL database dump complete
+--
+

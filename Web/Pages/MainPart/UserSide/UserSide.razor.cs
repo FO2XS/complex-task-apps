@@ -12,7 +12,8 @@ namespace Test.Pages.MainPart.UserSide
 {
     public partial class UserSide
     {
-        [Parameter] public User User { get; set; }
+        [CascadingParameter]
+        public User User { get; set; }
         private FormattingUserBets _formatting;
         private HashSet<FormatUserBets> _formatUserBets;
 

@@ -1,4 +1,26 @@
 ﻿@inherits LayoutComponentBase
+@using Test.Pages
 
-asdasdasdasdasd
-<div>@Body</div>
+
+
+
+<Header OnClickCallback="@AddLoginUser"></Header>
+
+
+<CascadingValue Value="@loginUser">
+    <div>@Body</div>
+</CascadingValue>
+
+
+<Footer></Footer>
+
+
+@code
+{
+    public User loginUser { get; set; }
+
+    private void AddLoginUser(User user)
+    {
+        loginUser = user;
+    }
+}

@@ -12,7 +12,7 @@ namespace Test.Pages.PopUpWindows
     public partial class LoginUser
     {
         private string _mail = "Test2@mail.ru";
-        private string _password = "Qwerty123.";
+        private string _password = "qwerty";
         private bool _rememberMe;
         
 

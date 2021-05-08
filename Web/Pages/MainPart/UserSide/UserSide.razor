@@ -9,14 +9,16 @@
                     <span>ВАШ ПРОФИЛЬ</span>
                 </div>
                 <div class="back">
-                    <span class="title-img">ПРОФИЛЬ</span>
-                    <img class="icon-user" src="https://sun9-32.userapi.com/impg/VPwq74YaL_kpjIyjEmpCmINCBR2oAi2d_rtCXg/qz6qG2UFMa8.jpg?size=933x1080&quality=96&sign=b35f69cf132c7dde117b0123dc729b96&type=album" />
+                    
+                    <NavLink href="userCabinet">
+                        <span class="title-img" style ="color: white">ПРОФИЛЬ</span>
+                        <img class="icon-user" src=@User.Avatar />
+                    </NavLink>
+                    
                 </div>
                 <div class="info-for-user">
                     <button class="nav">
-                        <NavLink href="userCabinet">
-                            Профиль
-                        </NavLink>
+                        
                     </button>
                     <div class="user-name">
                         @if (User.Name is null && User.Surname is null)
@@ -45,23 +47,22 @@
                 <div class="history-bids-title">
                     @if (_formatUserBets is not null)
                     {
-                        
                         <MudGrid>
                             @foreach (var userBet in _formatUserBets)
                             {
                                 <MudItem xs="12">
-                                    @userBet.ViewEvent
-                                </MudItem>
-                                <MudItem xs="6">
-                                    @userBet.ViewBet
-                                </MudItem>
-                                <MudItem xs="6">
-                                    @userBet.ViewMoney
+                                    <MudPaper Elevation="3" Style="color:white; background-color: inherit;">
+                                        @userBet.ViewEvent
+                                        <br/>
+                                        @userBet.ViewBet
+                                        <br/>
+                                        @userBet.ViewMoney
+                                    </MudPaper>
                                 </MudItem>
                             }
                         </MudGrid>
-
-
+                        
+                        
                     }
                 </div>
             </div>
