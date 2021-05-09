@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Shared\**" />
+    <Content Remove="Pages\Shared\**" />
+    <EmbeddedResource Remove="Pages\Shared\**" />
+    <None Remove="Pages\Shared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
     <PackageReference Include="Blazored.SessionStorage" Version="1.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
@@ -19,6 +26,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="MudBlazor" Version="5.0.8" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\fonts\Roboto\" />
+    <Folder Include="wwwroot\css\fonts\Montserrat\" />
   </ItemGroup>
 
 </Project>

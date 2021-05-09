@@ -1,0 +1,54 @@
+﻿@page "/betHistory"
+@using Test.Pages.UserCabinet
+@layout UserCabinet
+@inherits LayoutComponentBase
+@inject WebService webService
+
+
+<div>
+    <h1 class="text-center">История ставок</h1>
+    <div class="table-responsive d-flex" style="margin-top: 10px;">
+        <table class="table">
+            <thead style="color: rgb(194,194,194);">
+                <tr style="border-bottom-style: none;border-bottom-color: rgba(255,255,255,0);">
+                    <th>Матч</th>
+                    <th>Ставка</th>
+                    <th>Коэф.</th>
+                    <th>Сумма</th>
+                    <th>Выигрыш</th>
+                </tr>
+            </thead>
+            <tbody style="color: rgb(194, 194, 194);">
+                @foreach (var bet in formatUserBets)
+                {
+                    <tr style="border-top-width: 5px; border-bottom-style: none; border-bottom-color: rgba(255, 255, 255, 0);">
+                        <td>@bet.ViewEvent</td>
+                        <td>@bet.ViewBet</td>
+                        <td>@bet.Coef</td>
+                        <td>@bet.Sum</td>
+                        <td>@bet.Prize</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@code {
+    [CascadingParameter]
+    User User { get; set; }
+    private HashSet<FormatUserBets> formatUserBets { get; set; }
+
+    private FormattingUserBets _formatting;
+
+    protected override Task OnParametersSetAsync()
+    {
+        formatUserBets = _formatting.Format(User.UserBets);
+        return base.OnParametersSetAsync();
+    }
+
+    protected override void OnInitialized()
+    {
+
+        _formatting = new FormattingUserBets();
+    }
+}

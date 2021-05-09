@@ -1,59 +1,41 @@
 ﻿@page "/userCabinet"
-
-
-<div class="container-fluid d-xl-flex justify-content-xl-center" style="color: rgb(194,194,194);margin-top: 0px;margin-left: 0px;margin-bottom: 0px;padding-left: 0px;padding-right: 0px;height: 100%;">
-    <div class="row">
-        <div class="col-xl-3 offset-xl-0" style="min-height: auto;">
-            <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">Уголок пользователя</label><img class="rounded-circle img-fluid border" src="/image/3mSP5Uhic1Y.jpg" style="padding: 5%;"><label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">Логин</label><label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">Баланс</label><label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">12523.12</label>
-            <div class="btn-group d-flex" role="group" style="padding: 5%;"><button class="btn btn-primary" type="button" style="margin-right: 12px;">Пополнить</button><button class="btn btn-primary" type="button">Вывести</button></div>
-            <div class="btn-group-vertical d-flex" role="group" style="padding: 5%;"><button class="btn btn-primary" type="button">Сменить пароль</button><button class="btn btn-primary" type="button" style="margin-top: 8px;">Сменить никнейм</button><button class="btn btn-primary" type="button" style="margin-top: 8px;">Сменить почту</button><button class="btn btn-primary" type="button" style="margin-top: 8px;background: var(--bs-red);">Удалить аккаунт</button><button class="btn btn-primary" type="button" style="margin-top: 15%;">Выйти</button></div>
-        </div>
-        <div class="col">
-            <div>
-                <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">История ставок</label>
-                <div class="table-responsive d-flex" style="margin-top: 10px;">
-                    <table class="table">
-                        <thead style="color: rgb(194,194,194);">
-                            <tr style="border-bottom-style: none;border-bottom-color: rgba(255,255,255,0);">
-                                <th>Матч</th>
-                                <th>Ставка</th>
-                                <th>Коэф.</th>
-                                <th>Сумма</th>
-                                <th>Выигрыш</th>
-                            </tr>
-                        </thead>
-                        <tbody style="color: rgb(194,194,194);">
-                            <tr style="border-top-width: 5px;border-bottom-style: none;border-bottom-color: rgba(255,255,255,0);">
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                                <td>Cell 5</td>
-                            </tr>
-                            <tr style="border-top-width: 5px;border-bottom-style: none;border-bottom-color: rgba(255,255,255,0);">
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                                <td>Cell 5</td>
-                            </tr>
-                            <tr style="border-top-width: 5px;border-bottom-style: none;border-bottom-color: var(--bs-table-bg);">
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                                <td>Cell 5</td>
-                            </tr>
-                        </tbody>
-                    </table>
+@inherits LayoutComponentBase
+@inject NavigationManager _navigation
+@inject WebService webService
+@if (User is null)
+{
+    _navigation.NavigateTo("/");
+}
+else
+{
+    <div class="container-fluid d-xl-flex justify-content-xl-center" style="color: rgb(194,194,194);margin-top: 0px;margin-left: 0px;margin-bottom: 0px;padding-left: 0px;padding-right: 0px;height: 100%;">
+        <div class="row">
+            <div class="col-xl-3 offset-xl-0" style="min-height: auto;">
+                <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">Уголок пользователя</label>
+                <img class="rounded-circle img-fluid border" src="@User.Avatar" style="padding: 5%;">
+                <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">@User.UserName</label>
+                <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">Баланс</label>
+                <label class="form-label d-flex d-xl-flex justify-content-center justify-content-xl-center">@User.Balance</label>
+                <div class="btn-group d-flex" role="group" style="padding: 5%;">
+                    <button class="btn btn-primary" type="button" style="margin-right: 12px;">Пополнить</button>
+                    <button class="btn btn-primary" type="button">Вывести</button>
                 </div>
+                <div class="btn-group-vertical d-flex" role="group" style="padding: 5%;">
+                    <button class="btn btn-primary" type="button">Сменить пароль</button>
+                    <button class="btn btn-primary" type="button" style="margin-top: 8px;">Сменить никнейм</button>
+                    <button class="btn btn-primary" type="button" style="margin-top: 8px;">Сменить почту</button>
+                    <button class="btn btn-primary" type="button" style="margin-top: 8px; background: var(--bs-red);">Удалить аккаунт</button>
+                    <button class="btn btn-primary" type="button" style="margin-top: 15%;">Выйти</button>
+                </div>
+            </div>
+            <div class="col">
+                @Body
             </div>
         </div>
     </div>
-</div>
-
-
-
-@code {
-
 }
+
+
+
+
+
