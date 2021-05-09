@@ -121,10 +121,7 @@ namespace Desktop
 
         private void data_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
         {
-			BorderContext.Visibility = Visibility.Hidden;
 			BorderContext.Visibility = Visibility.Visible;
-
-			BorderContext.IsHitTestVisible = true;
 
 			e.Cancel = true;
 		}
@@ -147,8 +144,9 @@ namespace Desktop
 
         private void BorderContext_MouseLeave(object sender, MouseEventArgs e)
         {
-			BorderContext.IsHitTestVisible = false;
+			BorderContext.Visibility = Visibility.Hidden;
         }
+
 		/*
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{

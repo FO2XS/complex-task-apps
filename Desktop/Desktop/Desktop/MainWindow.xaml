@@ -7,7 +7,6 @@
 		mc:Ignorable="d"
 		Title="MainWindow" Height="609" Width="1173" Loaded="Window_Loaded">
 
-   
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
@@ -56,17 +55,6 @@
                                     </ContentControl.Style>
                                 </ContentControl>
                             </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="Button" x:Key="menu-button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -308,7 +296,7 @@
                         <Style TargetType="Border">
                             <Setter Property="Background" Value="Blue"/>
                             <Setter Property="Grid.Column" Value="1"/>
-                            <Setter Property="Visibility" Value="Hidden"/>
+                            <Setter Property="Visibility" Value="Collapsed"/>
                             <Setter Property="Margin" Value="10 0 0 0"/>
 
                             <Style.Triggers>
@@ -328,11 +316,8 @@
                                         </BeginStoryboard>
                                     </MultiTrigger.EnterActions>
                                 </MultiTrigger>
-                                <MultiTrigger>
-                                    <MultiTrigger.Conditions>
-                                        <Condition Property="IsHitTestVisible" Value="false"/>
-                                    </MultiTrigger.Conditions>
-                                    <MultiTrigger.EnterActions>
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Duration="0:0:0.3" From="300" To="0" Storyboard.TargetProperty="Width">
@@ -342,9 +327,10 @@
                                                 </DoubleAnimation>
                                             </Storyboard>
                                         </BeginStoryboard>
-                                    </MultiTrigger.EnterActions>
-                                </MultiTrigger>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
                             </Style.Triggers>
+                            
                         </Style>
                     </Border.Style>
                 </Border>
