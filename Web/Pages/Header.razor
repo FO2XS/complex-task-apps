@@ -11,52 +11,86 @@
 @inject ISessionStorageService _sessionStorage
 @inject ISnackbar _snackBar
 
-<div class="menu1">
-    <div style="margin: 0 auto; max-width: 1240px; ">
-        <div class="logo-and-type-game-and-technical-support">
-            <div class="logo">
-                Лого
-            </div>
-            <div class="">
-                <select>
-                    <option selected>
-                        CS:GO
-                    </option>
-                    <option>
-                        LoL
-                    </option>
-                </select>
-            </div>
-            <div class="technical-support">
-                Тех. поддержка
+
+<div class="menu1" style="margin: 0 0 0 0">
+    <div class="line">
+        <div class="grid" style="margin: 0 0 0 0">
+            <div>
+                <NavLink style="text-decoration: none; color: white;" href="">
+                    <div style="justify-content: center; display:inline-flex">
+                        <image src="https://img-fotki.yandex.ru/get/1109266/16969765.28b/0_aeda5_ab1cb125_orig.png" style="height: 80px; width: 80px;"></image>
+
+                        <div>
+                            Лого
+                        </div>
+                    </div>
+                </NavLink>
             </div>
         </div>
-        <div class="custom-features">
-            <div>
+
+        <div>
+            <div class="grid">
+                <div style=" height: 80px;">
+                    <select aria-label="Default select example" style="height: 80px; font-size: 20px; background-color:#3b4451; border-width: 0; border:0px; outline:0px; margin:0 10px; color: white; justify-content: center;">
+                        <option selected value="1">CS:GO</option>
+                        <option value="2">LoL</option>
+                    </select>
+                </div>
+                <div>
+                    <NavLink style="text-decoration:none; color: white; justify-content: center; height: 80px;" href="">
+                        Топ команд
+                    </NavLink>
+                </div>
+                <div>
+                    <NavLink style="text-decoration:none; color: white; justify-content: center; height: 80px;" href="">
+                        Тех. поддержка
+                    </NavLink>
+                </div>
+            </div>
+
+
+
+            <div class="custom-features" style="color: white; justify-content: center; height: 80px;">
                 @if (_loginUser is not null)
                 {
-                    <MudButton OnClick="Logout" Variant="Variant.Filled" Color="Color.Success">
-                        Выйти
-                    </MudButton>
+                    <div>
+                        <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="Logout">
+                            Выйти
+                        </MudButton>
+                    </div>
                 }
                 else
                 {
-                    <MudButton OnClick="Login" Variant="Variant.Filled" Color="Color.Success">
-                        Войти
-                    </MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Success">
-                        <NavLink style="text-decoration:none; color: white;" href="bla">
-                            Регистрация
-                        </NavLink>
-                    </MudButton>
+                    <div>
+                        <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="Login">
+                            Войти
+                        </MudButton>
+                        <br />
+                        <MudButton Variant="Variant.Filled" Color="Color.Success">
+                            <NavLink style="text-decoration:none; color: white;" href="registation">
+                                Регистрация
+                            </NavLink>
+                        </MudButton>
+                    </div>
                 }
+            </div>
+
+            <div class="custom-features" style="justify-content: center; height: 80px; margin:0 50px 0 0">
+                <div>
+                    <NavLink style="text-decoration:none; color: white;" href="">
+                        FAQ
+                    </NavLink>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
+
+
 @code {
+    
     User _loginUser;
 
     protected override async Task OnInitializedAsync()

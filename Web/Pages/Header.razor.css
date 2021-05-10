@@ -25,42 +25,42 @@ div.main div.main-part {
 div.menu1 {
     height: 80px;
     width: 100%;
-    background-color: #363D47;
+    margin: 0;
+    background-color: #3b4451;
     border: 1px;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     color: whitesmoke;
     font-weight: 500;
+    display: flex;
 }
 
-div.logo-and-type-game-and-technical-support {
-    margin-left: 0px;
-    display: inline-block;
+div.menu1 div.line {
+    margin: 0 auto;
+    width: 1240px;
 }
 
-div.logo-and-type-game-and-technical-support div {
-    display: inline-block;
+div.grid {
+    display: inline-flex;
+    float: left;
 }
 
-div.logo {
-}
-
-div.technical-support {
-}
-
-div.type-games {
+div.grid div {
+    float: left;
+    margin-left: 10px;
+    align-self: center;
+    font-size: 18px;
+    font-family: Roboto-Bold;
 }
 
 div.custom-features {
     white-space: nowrap;
     float: right;
+    display: inline-flex;
 }
 
 div.custom-features div {
-    display: inline-block;
+    display: flex;
+    align-self: center;
 }
-
-div.log-in-log-up {
-}
-
