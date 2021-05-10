@@ -39,8 +39,16 @@
             </div>
 
             <div class="user-capabilities">
-                <button class="top-up">ПОПОЛНИТЬ!</button>
-                <button class="withdrawal">ВЫВЕСТИ</button>
+                <button class="top-up">
+                    <NavLink style="text-decoration:none; color: white;" href="addFunds">
+                        ПОПОЛНИТЬ!
+                    </NavLink>
+                </button>
+                <button class="withdrawal">
+                    <NavLink style="text-decoration:none; color: white;" href="takeFunds">
+                        ВЫВЕСТИ
+                    </NavLink>
+                </button>
             </div>
 
             <div class="history-bids">
@@ -70,9 +78,3 @@
     </div>
 }
 
-
-@code {
-
-
-
-}

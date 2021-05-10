@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Test.Data.ModalEntity;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc.Razor.Internal;
+using MudBlazor;
+using Test.Pages.PopUpWindows;
 
 namespace Test.Shared
 {
@@ -11,6 +14,6 @@ namespace Test.Shared
     {
         [CascadingParameter]
         public User User { get; set; }
-
+        
     }
 }
