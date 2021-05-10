@@ -1,0 +1,57 @@
+﻿@inherits LayoutComponentBase
+@layout UserCabinet
+
+
+<div class="col">
+    <div class="row" style="margin-top: 18px;">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <label class="col-form-label d-flex justify-content-xl-center" style="font-size: 20px;">
+                        Электронная почта
+                    </label>
+                </div>
+                <div class="col d-flex">
+                    <input type="text" style="background: rgb(39, 42, 49); font-size: 20px;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="col-form-label d-xl-flex justify-content-xl-center" style="font-size: 20px;">
+                        Имя
+                    </label>
+                </div>
+                <div class="col d-flex">
+                    <input type="text" style="background: rgb(39, 42, 49); font-size: 20px;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="col-form-label d-flex justify-content-xl-center" style="font-size: 20px;">
+                        Фамилия
+                    </label>
+                </div>
+                <div class="col d-flex">
+                    <input type="text" style="background: rgb(39, 42, 49); font-size: 20px;"/>
+                </div>
+            </div>
+            <div role="group" class="btn-group d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+                
+                <button class="btn btn-primary" type="button" style="margin-top: 11px; margin-right: 5px; margin-left: 5px;">
+                    <NavLink style="text-decoration:none; color: white;" href="changePassword">
+                        Сменить пароль
+                    </NavLink>
+                </button>
+                
+                <button class="btn btn-primary" type="button" style="margin-top: 11px; margin-left: 5px; margin-right: 5px;">
+                    <NavLink style="text-decoration:none; color: white;" href="changeEmail">
+                        Сменить почту
+                    </NavLink>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            @Body
+        </div>
+    </div>
+</div>
