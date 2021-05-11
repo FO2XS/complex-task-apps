@@ -1,0 +1,71 @@
+﻿@inject WebService _service
+@inject IDialogService _dialogService
+
+<MudDialog>
+    <DialogContent>
+        <div>
+            @if (CurrentEvent is not null)
+            {
+                <div class="container-fluid" style="text-align:center;">
+                    <div class="row">
+                        <div class="col-4">
+                            @CurrentEvent.IdTeam1Navigation.Title
+                        </div>
+                        <div class="col"></div>
+                        <div class="col-4">
+                            @CurrentEvent.IdTeam2Navigation.Title
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="@CurrentEvent.IdTeam1Navigation.Logo" class="img-fluid" alt="Команда 1">
+                        </div>
+                        <div class="col">
+                            <h2>VS</h2>
+                        </div>
+                        <div class="col-4">
+                            <img src="@CurrentEvent.IdTeam2Navigation.Logo" class="img-fluid" alt="Команда 1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+
+                    @foreach (var bet in Bets)
+                    {
+                        <div class="row">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-success btn-sm" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam1Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                            </div>
+                            <div class="col-1" style="font-size: small; padding-left: 0px; padding-right: 0px;">
+                                <div class="text-nowrap">@bet.Coef1</div>
+
+                            </div>
+                            <div class="col-4" style="font-size: small;">
+                                @bet.IdTobNavigation.Title
+
+                            </div>
+                            <div class="col-1" style="font-size: small; padding-left: 0px; padding-right: 0px;">
+                                <div class="text-nowrap">@bet.Coef2</div>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-success btn-sm" style="width: 100%;" @onclick="(() => OpenFinishBetModal(CurrentEvent.IdTeam2Navigation, bet))" data-toggle="modal" data-target="#finishBetModal" data-dismiss="modal">Поставить</button>
+                            </div>
+                        </div>
+                        <br>
+                    }
+                </div>
+            }
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <button type="button" class="btn btn-dark" @onclick="() => MudDialog.Cancel()">Закрыть</button>
+    </DialogActions>
+</MudDialog>
+
+
+

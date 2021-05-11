@@ -30,11 +30,14 @@
 
         <div>
             <div class="grid">
-                <div style=" height: 80px;">
-                    <select aria-label="Default select example" style="height: 80px; font-size: 20px; background-color:#3b4451; border-width: 0; border:0px; outline:0px; margin:0 10px; color: white; justify-content: center;">
-                        <option selected value="1">CS:GO</option>
-                        <option value="2">LoL</option>
-                    </select>
+                <div style="height: 80px;">
+                   
+                        <select value="@selectSport.Id" @onchange="Callback" aria-label="Default select example" style="height: 80px; font-size: 20px; background-color:#3b4451; border-width: 0; border:0px; outline:0px; margin:0 10px; color: white; justify-content: center;">
+                            @foreach (var temp in _sports)
+                            {
+                                <option value="@temp.Id">@temp.Title</option>
+                            }
+                        </select>
                 </div>
                 <div>
                     <NavLink style="text-decoration:none; color: white; justify-content: center; height: 80px;" href="">
@@ -80,6 +83,10 @@
                     <NavLink style="text-decoration:none; color: white;" href="">
                         FAQ
                     </NavLink>
+                    @if (selectSport is not null)
+                    {
+                        @selectSport.Id
+                    }
                 </div>
             </div>
         </div>
@@ -90,8 +97,16 @@
 
 
 @code {
-    
+    Sport selectSport = new Sport();
     User _loginUser;
+    List<Sport> _sports = new List<Sport>();
+
+    [Parameter]
+    public EventCallback<User> OnClickCallback { get; set; }
+
+    [Parameter]
+    public EventCallback<Sport> SportCallBack { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -100,6 +115,8 @@
             _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
             await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
             await OnClickCallback.InvokeAsync(_loginUser);
+            _sports.Add(new Sport() { Id = 1, Title = "CS:GO" });
+            _sports.Add(new Sport() { Id = 2, Title = "LOL" });
         }
     }
 
@@ -134,6 +151,12 @@
         }
     }
 
-    [Parameter]
-    public EventCallback<User> OnClickCallback { get; set; }
+
+
+    private async void Callback(ChangeEventArgs obj)
+    {
+        selectSport = _sports.FirstOrDefault(e => e.Id== Convert.ToInt32(obj.Value));
+        await SportCallBack.InvokeAsync(selectSport);
+    }
+
 }

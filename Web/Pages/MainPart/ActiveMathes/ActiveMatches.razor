@@ -1,5 +1,6 @@
-﻿@inherits ComponentBase
-
+﻿@using Test.Pages.PopUpWindows
+@inherits ComponentBase
+@inject IDialogService _dialogService
 
 <div class="active-matches">
     <div class="list-of-active-matches card">
@@ -7,24 +8,22 @@
             <p>АКТИВНЫЕ МАТЧИ</p>
         </div>
 
-        <Test.Pages.SelectBetModal @ref="_child" CurrentEvent="SelectedMatch"></Test.Pages.SelectBetModal>
-
         <ul>
-            @foreach (var bet in Events)
+            @foreach (var selectEvent in Events)
             {
                 <li>
                     <div class="active-matches-bet">
                         <div class="team-left">
-                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
+                            <div class="team" @onclick="() => ClickEvent(selectEvent)">
                                 <div class="logo-team">
-                                    <img src="@bet.IdTeam1Navigation.Logo">
+                                    <img src="@selectEvent.IdTeam1Navigation.Logo">
                                     <div class="text-place-bet">
                                         СДЕЛАТЬ<br />СТАВКУ
                                     </div>
                                 </div>
-                                <p class="title">@bet.IdTeam1Navigation.Title</p>
+                                <p class="title">@selectEvent.IdTeam1Navigation.Title</p>
                                 <div class="koef">
-                                    <p>@(GetCoef1(bet.PossibleBets))</p>
+                                    <p>@(GetCoef1(selectEvent.PossibleBets))</p>
                                     <hr />
                                 </div>
                             </div>
@@ -33,23 +32,23 @@
                             <div class="matches-bet-info">
                                 <p class="tournament-title">ESEA Advanced NA</p>
                                 <p class="type-bo">BO3</p>
-                                <p class="time">@((@DateTime.Now - @bet.StartDate).ToString(@"hh\:mm\:ss"))</p>
+                                <p class="time">@((@DateTime.Now - selectEvent.StartDate).ToString(@"hh\:mm\:ss"))</p>
                             </div>
                             <div class="vs">
                                 <p>VS</p>
                             </div>
                         </div>
                         <div class="team-right">
-                            <div class="team" @onclick="(() => BetsForTeam(bet))" data-toggle="modal" data-target="#betsModal">
+                            <div class="team" @onclick="() => ClickEvent(selectEvent)">
                                 <div class="logo-team">
-                                    <img src="@bet.IdTeam2Navigation.Logo">
+                                    <img src="@selectEvent.IdTeam2Navigation.Logo">
                                     <div class="text-place-bet">
                                         СДЕЛАТЬ<br />СТАВКУ
                                     </div>
                                 </div>
-                                <p class="title">@bet.IdTeam2Navigation.Title</p>
+                                <p class="title">@selectEvent.IdTeam2Navigation.Title</p>
                                 <div class="koef">
-                                    <p>@(GetCoef2(bet.PossibleBets))</p>
+                                    <p>@(GetCoef2(selectEvent.PossibleBets))</p>
                                     <hr />
                                 </div>
                             </div>
@@ -69,12 +68,9 @@
 
 @code {
     private List<Event> Events { get; set; } = null;
-    private Event SelectedMatch { get; set; }
     private Sport SelectSport { get; set; } = new Sport() { Id = 1 };
 
-    //
-    SelectBetModal _child;
-    //
+
 
     protected override void OnInitialized()
     {
@@ -92,14 +88,12 @@
         return tob is null ? "null" : tob.Coef2.ToString();
     }
 
-    public void BetsForTeam(Event @event)
+
+    private void ClickEvent(Event selectEvent)
     {
-        if (@event is null)
-            return;
+        var parameter = new DialogParameters {{"CurrentEvent", selectEvent}};
 
-        SelectedMatch = @event;
-
-
+        var dialog = _dialogService.Show<SelectBetModal>("Выбор ставки", parameter);
     }
 
 }

@@ -1,0 +1,51 @@
+﻿@inject WebService _service
+@inject IDialogService _dialogService
+
+
+<MudDialog>
+    <DialogContent>
+        <div>
+            @if (SelectedTeam != null && SelectedBet != null)
+            {
+                <div class="container-fluid" style="text-align:center;">
+                    <div class="row">
+                        <div class="col">
+                            @SelectedTeam.Title
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="@SelectedTeam.Logo" class="img-fluid" style="max-width:75px;" alt="Команда 1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Размер ставки
+                        </div>
+                        <div class="col">
+                            Коэффициент
+                        </div>
+                        <div class="col">
+                            Выигрыш
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="number" class="form-control form-control-sm" placeholder="Сумма ставки" @bind-value="_sum">
+                        </div>
+                        <div class="col">
+                            @SelectedCoef
+                        </div>
+                        <div class="col">
+                            @CalculatePrize(_sum, SelectedCoef)
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <button type="button" class="btn btn-success" @onclick="MakeBet">Поставить</button>
+        <button type="button" class="btn btn-dark" @onclick="() => MudDialog.Cancel()">Закрыть</button>
+    </DialogActions>
+</MudDialog>
