@@ -53,13 +53,20 @@ namespace BaseSyle
 
 		private void data_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
 		{
-			if (SaveChange.IsEnabled)
+			if (ButtonSaveChange.IsEnabled || ButtonSaveChangeAdd.Visibility == Visibility.Visible)
             {
 				Tooltip.Show("Сохраните или отмените изменения!", Library.TypeEvent.ErrorUser);
-				e.Cancel = true;
 
+				e.Cancel = true;
 				return;
 			}
+
+			ButtonDelete.Visibility = Visibility.Visible;
+			ButtonIsEdit.Visibility = Visibility.Visible;
+			ButtonSaveChange.Visibility = Visibility.Visible;
+
+			ButtonSaveChangeAdd.Visibility = Visibility.Collapsed;
+			ButtonCancle.Visibility = Visibility.Collapsed;
 
 			BorderMenu.IsHitTestVisible = true;
 
@@ -130,7 +137,34 @@ namespace BaseSyle
 			Tooltip.Show("Данные полностью загружены");
 		}
 
-		private void DeleteItem_Click(object sender, RoutedEventArgs e) { }
+		private async void DeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите удалить?","Предупреждение!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+					await Control.DeleteAsync(SelectedItem);
+
+					Tooltip.Show("Строка успешна удалена!");
+				}
+				catch (ExceptionForUser ex)
+				{
+					Tooltip.Show(ex.Message, Library.TypeEvent.ErrorUser, ex.Title);
+					return;
+				}
+				catch (Exception ex)
+				{
+					Tooltip.Show(ex.InnerException.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+					return;
+				}
+
+				UpdateTable();
+			}
+            else
+            {
+				Tooltip.Show("Строка НЕ удалена!");
+			}
+		}
 
 		private async void SaveChange_Click(object sender, RoutedEventArgs e)
 		{
@@ -142,8 +176,13 @@ namespace BaseSyle
 
 				Tooltip.Show("Данные добавлены и успешно синхронизированы!");
 
-				SaveChange.IsEnabled = false;
-				ListView.IsEnabled = false;
+				UpdateTable();
+
+				ButtonIsEdit.Content = "Редактировать";
+				ButtonSaveChange.IsEnabled = false;
+
+				await Task.Delay(300);
+
 			}
 			catch (ExceptionForUser ex)
 			{
@@ -152,36 +191,111 @@ namespace BaseSyle
 			}
 			catch (Exception ex)
 			{
-				Tooltip.Show(ex.InnerException.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 				return;
 			}
+            finally
+            {
+				ButtonIsEdit.Content = "Редактировать";
 
-			data.ItemsSource = null;
-			data.Columns.Clear();
-
-			data.ItemsSource = Items;
-
-			View.ViewTable(data);
-
+				ButtonSaveChange.IsEnabled = false;
+				ListView.IsEnabled = false;
+			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			if (SaveChange.IsEnabled)
+			if (ButtonSaveChange.IsEnabled)
 			{
 				ListView.IsEnabled = false;
-				SaveChange.IsEnabled = false;
+				ButtonSaveChange.IsEnabled = false;
 
-				IsEdit.Content = "Редактировать";
+				ButtonIsEdit.Content = "Редактировать";
 
 				View.UpdateEditWindow(EditControls, SelectedItem);
 			}
 			else
             {
 				ListView.IsEnabled = true;
-				SaveChange.IsEnabled = true;
-				IsEdit.Content = "Отменить";
+				ButtonSaveChange.IsEnabled = true;
+				ButtonIsEdit.Content = "Отменить";
 			}
 		}
-	}
+
+        private void data_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+			if (ButtonSaveChange.IsEnabled)
+			{
+				data.SelectedItem = SelectedItem;
+
+				Tooltip.Show("Сохраните или отмените изменения!", Library.TypeEvent.ErrorUser);
+			}
+		}
+
+        private void AddItem(object sender, RoutedEventArgs e)
+        {
+			BorderMenu.IsHitTestVisible = true;
+			ListView.IsEnabled = true;
+
+			View.UpdateEditWindow(EditControls, null);
+
+			ButtonDelete.Visibility = Visibility.Collapsed;
+			ButtonIsEdit.Visibility = Visibility.Collapsed;
+			ButtonSaveChange.Visibility = Visibility.Collapsed;
+
+			ButtonSaveChangeAdd.Visibility = Visibility.Visible;
+			ButtonCancle.Visibility = Visibility.Visible;
+		}
+
+		[Obsolete("Чет БД не работает надо исправлять, хотя, возооожно, это моя вина")]
+        private async void ButtonSaveChangeAdd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+				var ob = View.GetUpdateInEditWindow(EditControls, null);
+
+				await Task.Delay(156); /// Делаем вид, что добавляем
+
+				// await Control.AddAsync(ob);
+
+				Items.Add(ob);
+
+				UpdateTable();
+
+				Tooltip.Show("Чет БД не работает надо исправлять, хотя, возооожно, это моя вина",Library.TypeEvent.ProgramError); /// Tooltip.Show("Данные успешно добавлены!");
+
+				ButtonCancle_Click(sender, null);
+			}
+			catch (ExceptionForUser ex)
+			{
+				Tooltip.Show(ex.Message, Library.TypeEvent.ErrorUser, ex.Title);
+				return;
+			}
+			catch (Exception ex)
+			{
+				Tooltip.Show(ex.InnerException.InnerException.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+				return;
+			}
+		}
+
+        private async void ButtonCancle_Click(object sender, RoutedEventArgs e)
+        {
+			ButtonSaveChangeAdd.Visibility = Visibility.Collapsed;
+
+			await Task.Delay(300);
+
+			BorderMenu.IsHitTestVisible = false;
+			ListView.IsEnabled = false;
+		}
+
+		private void UpdateTable()
+        {
+			data.ItemsSource = null;
+			data.Columns.Clear();
+
+			data.ItemsSource = Items;
+
+			View.ViewTable(data);
+		}
+    }
 }
