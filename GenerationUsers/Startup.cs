@@ -30,7 +30,8 @@ namespace GenerationUsers
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookmakerContext>(option => option.UseNpgsql("Server=127.0.0.1;Port=5432;Database=BookMakers;UserId=postgres;Password=admin;"));
+            services.AddDbContext<BookmakerContext>(option => 
+                option.UseNpgsql("Server=bookmaker-office.postgres.database.azure.com; Database=BookmakerStep2; Port=5432; User Id=Maxim@bookmaker-office; Password=Vladikavkaz1;"));
 
             services.AddIdentity<User, Role>(opts =>
                 {

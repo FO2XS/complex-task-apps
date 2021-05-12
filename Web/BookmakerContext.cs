@@ -39,7 +39,7 @@ namespace Test
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=BookMakers;UserId=postgres;Password=admin;");
+                optionsBuilder.UseNpgsql("Server=bookmaker-office.postgres.database.azure.com; Database=BookmakerStep2; Port=5432; User Id=Maxim@bookmaker-office; Password=Vladikavkaz1;");
             }
         }
 
