@@ -2,10 +2,11 @@
 @inherits ComponentBase
 @inject IDialogService _dialogService
 
+
 <div class="active-matches">
     <div class="list-of-active-matches card">
         <div class="active-matches-title">
-            <p>АКТИВНЫЕ МАТЧИ</p>
+            <p>БУДУЩЕЕ МАТЧИ</p>
         </div>
 
         <ul>
@@ -14,7 +15,7 @@
                 <li>
                     <div class="active-matches-bet">
                         <div class="team-left">
-                            <div class="team" @onclick="() => ClickEvent(selectEvent)">
+                            <div class="team">
                                 <div class="logo-team">
                                     <img src="@selectEvent.IdTeam1Navigation.Logo">
                                     <div class="text-place-bet">
@@ -29,17 +30,17 @@
                             </div>
                         </div>
                         <div class="main-info">
+                            <div class="vs">
+                                <p>VS</p>
+                            </div>
                             <div class="matches-bet-info">
                                 <p class="tournament-title">ESEA Advanced NA</p>
                                 <p class="type-bo">BO3</p>
                                 <p class="time">@((@DateTime.Now - selectEvent.StartDate).ToString(@"hh\:mm\:ss"))</p>
                             </div>
-                            <div class="vs">
-                                <p>VS</p>
-                            </div>
                         </div>
                         <div class="team-right">
-                            <div class="team" @onclick="() => ClickEvent(selectEvent)">
+                            <div class="team">
                                 <div class="logo-team">
                                     <img src="@selectEvent.IdTeam2Navigation.Logo">
                                     <div class="text-place-bet">
@@ -60,9 +61,6 @@
     </div>
 </div>
 
-
-
-    
 
 
 
@@ -93,7 +91,7 @@
 
     private void ClickEvent(Event selectEvent)
     {
-        var parameter = new DialogParameters {{"CurrentEvent", selectEvent}};
+        var parameter = new DialogParameters { { "CurrentEvent", selectEvent } };
 
         var dialog = _dialogService.Show<SelectBetModal>("Выбор ставки", parameter);
     }

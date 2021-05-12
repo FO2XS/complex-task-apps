@@ -1,0 +1,126 @@
+﻿@using Test.Pages.PopUpWindows
+@inherits ComponentBase
+@inject IDialogService _dialogService
+
+
+<div class="active-matches">
+    <div class="list-of-active-matches card">
+        <div class="active-matches-title">
+            <p>ПРОШЕДШИЕ МАТЧИ</p>
+        </div>
+
+        <ul>
+            @foreach (var selectEvent in Events)
+            {
+                <li>
+                    <div class="active-matches-bet">
+                        @if (selectEvent.IdWin == selectEvent.IdTeam1 && selectEvent.IdWin != null)
+                        {
+                            <div class="team-left">
+                                <div class="team-win">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam1Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam1Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef1(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-info">
+                                <div class="matches-bet-info">
+                                    <p class="tournament-title">ESEA Advanced NA</p>
+                                    <p class="type-bo">BO3</p>
+                                    <p class="time">@((@DateTime.Now - selectEvent.StartDate).ToString(@"hh\:mm\:ss"))</p>
+                                </div>
+                            </div>
+                            <div class="team-right">
+                                <div class="team-lose">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam2Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam2Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef2(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="team-left">
+                                <div class="team-lose">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam1Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam1Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef1(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-info">
+                                <div class="matches-bet-info">
+                                    <p class="tournament-title">ESEA Advanced NA</p>
+                                    <p class="type-bo">BO3</p>
+                                    <p class="time">@((@DateTime.Now - selectEvent.StartDate).ToString(@"hh\:mm\:ss"))</p>
+                                </div>
+                            </div>
+                            <div class="team-right">
+                                <div class="team-win">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam2Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam2Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef2(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
+@code {
+    private List<Event> Events { get; set; } = null;
+    [CascadingParameter]
+    public Sport SelectSport { get; set; }
+
+
+
+    protected override Task OnParametersSetAsync()
+    {
+        Events = new WebService().GetCurrentEvents(SelectSport);
+        return base.OnParametersSetAsync();
+    }
+
+    private String GetCoef1(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef1.ToString();
+    }
+    private String GetCoef2(ICollection<PossibleBet> ts)
+    {
+        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
+        return tob is null ? "null" : tob.Coef2.ToString();
+    }
+
+
+    private void ClickEvent(Event selectEvent)
+    {
+        var parameter = new DialogParameters { { "CurrentEvent", selectEvent } };
+
+        var dialog = _dialogService.Show<SelectBetModal>("Выбор ставки", parameter);
+    }
+}
