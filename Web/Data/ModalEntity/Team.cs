@@ -14,12 +14,14 @@ namespace Test.Data.ModalEntity
         }
 
         public int Id { get; set; }
+        public int IdSport { get; set; }
         public string Title { get; set; }
         public int? Raiting { get; set; }
         public float? PercentWin { get; set; }
         public string SquadList { get; set; }
         public string Logo { get; set; }
 
+        public virtual Sport IdSportNavigation { get; set; }
         public virtual ICollection<Event> EventIdTeam1Navigations { get; set; }
         public virtual ICollection<Event> EventIdTeam2Navigations { get; set; }
     }

@@ -23,17 +23,10 @@ namespace Test
         public virtual DbSet<MoneyManagement> MoneyManagements { get; set; }
         public virtual DbSet<Operator> Operators { get; set; }
         public virtual DbSet<PossibleBet> PossibleBets { get; set; }
-        //public virtual DbSet<Role> Roles { get; set; }
-        //public virtual DbSet<RoleClaim> RoleClaims { get; set; }
         public virtual DbSet<Sport> Sports { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<TypeOfBet> TypeOfBets { get; set; }
-        //public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserBet> UserBets { get; set; }
-        //public virtual DbSet<UserClaim> UserClaims { get; set; }
-        //public virtual DbSet<UserLogin> UserLogins { get; set; }
-        //public virtual DbSet<UserRole> UserRoles { get; set; }
-        //public virtual DbSet<UserToken> UserTokens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -146,6 +139,11 @@ namespace Test
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(50);
+                entity.HasOne(d => d.IdSportNavigation)
+                    .WithMany(p => p.Teams)
+                    .HasForeignKey(d => d.IdSport)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_teams_sports_idsport");
             });
 
             modelBuilder.Entity<TypeOfBet>(entity =>
