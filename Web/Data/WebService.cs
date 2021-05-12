@@ -97,7 +97,7 @@ namespace Test.Data
             using (_context = new BookmakerContext())
             {
                 /// ГРИША, ЕБ. РОТ! ДОБАВЬ ГЛ. СТАВКУ И ПРИВ. К СОБ.
-                var result = _context.Events
+                return _context.Events
                     .Where(a => a.IdSport == sport.Id)
                     .Where(a => a.StartDate <= DateTime.Now)
                     .Where(a => a.IsPast != true)
@@ -105,8 +105,6 @@ namespace Test.Data
                     .Include(team2 => team2.IdTeam2Navigation)
                     .Include(x => x.PossibleBets)
                     .ToList();
-
-                return result.GetEvetsCollection(e => e.StartDate <= DateTime.Now).ToList();
             }
 
 

@@ -1,5 +1,4 @@
 ﻿@using Test.Pages.PopUpWindows
-@inherits ComponentBase
 @inject IDialogService _dialogService
 
 <div class="active-matches">
@@ -67,17 +66,12 @@
 
 
 @code {
-    private List<Event> Events { get; set; } = null;
+    [Parameter]
+    public HashSet<Event> Events { get; set; }
+
     [CascadingParameter]
     public Sport SelectSport { get; set; }
 
-
-
-    protected override Task OnParametersSetAsync()
-    {
-        Events = new WebService().GetCurrentEvents(SelectSport);
-        return base.OnParametersSetAsync();
-    }
 
     private String GetCoef1(ICollection<PossibleBet> ts)
     {
@@ -89,7 +83,6 @@
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
         return tob is null ? "null" : tob.Coef2.ToString();
     }
-
 
     private void ClickEvent(Event selectEvent)
     {

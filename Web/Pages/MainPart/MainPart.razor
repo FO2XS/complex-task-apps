@@ -4,7 +4,7 @@
         <tr>
             <td>
                 <div class="bet" style="margin: 0px;">
-                    <Test.Pages.MainPart.Matches.ActiveMatches></Test.Pages.MainPart.Matches.ActiveMatches>
+                    <Test.Pages.MainPart.Matches.ActiveMatches Events="@allEvents.SelectEvents(_current).ToHashSet()"></Test.Pages.MainPart.Matches.ActiveMatches>
                 </div>
             </td>
             <td class="side">
@@ -14,18 +14,32 @@
             </td>
         </tr>
     </table>
-    
+
     <div class="bet" style="margin: 0px; margin-top: 40px">
-        <Test.Pages.MainPart.Matches.FutureMatches></Test.Pages.MainPart.Matches.FutureMatches>
+        <Test.Pages.MainPart.Matches.FutureMatches Events="@allEvents.SelectEvents(_future).ToHashSet()"></Test.Pages.MainPart.Matches.FutureMatches>
     </div>
 
     <div class="bet" style="margin: 0px; margin-top: 40px; margin-bottom: 60px">
-        <Test.Pages.MainPart.Matches.PastMatches></Test.Pages.MainPart.Matches.PastMatches>
+        <Test.Pages.MainPart.Matches.PastMatches Events="@allEvents.SelectEvents(_past).ToHashSet()"></Test.Pages.MainPart.Matches.PastMatches>
     </div>
 </div>
 
 
-@code {
-        [CascadingParameter]
-        public User User { get; set; }
+@code
+{
+    [CascadingParameter]
+    public Sport SelectSport { get; set; }
+
+    HashSet<Event> allEvents { get; set; }
+
+    Func<Event, bool> _current = temp => temp.StartDate <= DateTime.Now && temp.IsPast != true;
+    Func<Event, bool> _future = temp => temp.StartDate > DateTime.Now;
+    Func<Event, bool> _past = temp => temp.IsPast == true;
+
+    protected override Task OnInitializedAsync()
+    {
+        allEvents = EventService.GetEvents(SelectSport);
+        return base.OnInitializedAsync();
+    }
 }
+
