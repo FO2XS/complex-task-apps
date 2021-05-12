@@ -4,11 +4,13 @@
 
 
 
-<Header OnClickCallback="@AddLoginUser"></Header>
+<Header OnClickCallback="@AddLoginUser" SportCallBack="@ChangeSelectSport" ></Header>
 
 
 <CascadingValue Value="@loginUser">
-    <div style="margin: 0 auto; max-width: 1240px;">@Body</div>
+    <CascadingValue Value="@selectSport">
+        <div style="margin: 0 auto; max-width: 1240px;">@Body</div>
+    </CascadingValue>
 </CascadingValue>
 
 
@@ -18,9 +20,14 @@
 @code
 {
     public User loginUser { get; set; }
-
+    public Sport selectSport { get; set; } = new Sport() {Id = 1};
     private void AddLoginUser(User user)
     {
         loginUser = user;
+    }
+
+    private void ChangeSelectSport(Sport sport)
+    {
+        selectSport = sport;
     }
 }

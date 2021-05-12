@@ -68,13 +68,15 @@
 
 @code {
     private List<Event> Events { get; set; } = null;
-    private Sport SelectSport { get; set; } = new Sport() { Id = 1 };
+    [CascadingParameter]
+    public Sport SelectSport { get; set; }
 
 
 
-    protected override void OnInitialized()
+    protected override Task OnParametersSetAsync()
     {
         Events = new WebService().GetCurrentEvents(SelectSport);
+        return base.OnParametersSetAsync();
     }
 
     private String GetCoef1(ICollection<PossibleBet> ts)

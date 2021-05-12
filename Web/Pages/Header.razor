@@ -31,13 +31,14 @@
         <div>
             <div class="grid">
                 <div style="height: 80px;">
-                   
-                        <select value="@selectSport.Id" @onchange="Callback" aria-label="Default select example" style="height: 80px; font-size: 20px; background-color:#3b4451; border-width: 0; border:0px; outline:0px; margin:0 10px; color: white; justify-content: center;">
-                            @foreach (var temp in _sports)
-                            {
-                                <option value="@temp.Id">@temp.Title</option>
-                            }
-                        </select>
+
+                    <select value="@selectSport.Id" @onchange="Callback" aria-label="Default select example" style="height: 80px; font-size: 20px; background-color: #3b4451; border-width: 0; border: 0px; outline: 0px; margin: 0 10px; color: white; justify-content: center;">
+                        @foreach (var temp in _sports)
+                        {
+                            <option value="@temp.Id">@temp.Title</option>
+                        }
+                    </select>
+
                 </div>
                 <div>
                     <NavLink style="text-decoration:none; color: white; justify-content: center; height: 80px;" href="">
