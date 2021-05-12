@@ -247,22 +247,19 @@ namespace BaseSyle
 			ButtonCancle.Visibility = Visibility.Visible;
 		}
 
-		[Obsolete("Чет БД не работает надо исправлять, хотя, возооожно, это моя вина")]
         private async void ButtonSaveChangeAdd_Click(object sender, RoutedEventArgs e)
         {
             try
             {
 				var ob = View.GetUpdateInEditWindow(EditControls, null);
 
-				await Task.Delay(156); /// Делаем вид, что добавляем
-
-				// await Control.AddAsync(ob);
+				await Control.AddAsync(ob);
 
 				Items.Add(ob);
 
 				UpdateTable();
 
-				Tooltip.Show("Чет БД не работает надо исправлять, хотя, возооожно, это моя вина",Library.TypeEvent.ProgramError); /// Tooltip.Show("Данные успешно добавлены!");
+				Tooltip.Show("Данные успешно добавлены!");
 
 				ButtonCancle_Click(sender, null);
 			}

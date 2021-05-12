@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             d:DesignHeight="50" d:DesignWidth="300" Loaded="UserControl_Loaded">
+             x:Name="element" Background="White" Height="40" d:DesignWidth="300" Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -14,7 +14,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid MaxHeight="80" Height="40"> 
+    <Grid MaxHeight="80" Height="{Binding ElementName=element, Path=Height}"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="auto"/>
@@ -33,7 +33,7 @@
         </Grid.Resources>
 
         <Border x:Name="border">
-            <Border Style="{StaticResource borderStyle}">
+            <Border Style="{StaticResource borderStyle}" Background="{Binding ElementName=element, Path=Background}">
                 <Grid>
                     <TextBlock x:Name="bTextBlock">
                         <TextBlock.Style>
