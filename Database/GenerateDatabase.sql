@@ -25,6 +25,7 @@ CREATE TABLE public."Users" (
     "Name" character varying(256) COLLATE pg_catalog."default",
     "Surname" character varying(256) COLLATE pg_catalog."default",
     "Balance" numeric(12,2),
+    "Avatar" text COLLATE pg_catalog."default",
     CONSTRAINT "PK_Users" PRIMARY KEY ("Id")
 ) TABLESPACE pg_default;
 
