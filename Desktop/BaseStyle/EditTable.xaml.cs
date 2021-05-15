@@ -103,6 +103,8 @@ namespace BaseSyle
 
 		private async void UserControl_Loaded_1(object sender, RoutedEventArgs e)
 		{
+			Visibility = Visibility.Collapsed;
+
 			Items = new List<Object>();
 
 			Tooltip.Show("Загрузка данных");
@@ -134,6 +136,8 @@ namespace BaseSyle
 			foreach (IEditControl item in ListView.Items)
 				EditControls.Add(item);
 
+			Visibility = Visibility.Visible;
+
 			Tooltip.Show("Данные полностью загружены");
 		}
 
@@ -154,7 +158,7 @@ namespace BaseSyle
 				}
 				catch (Exception ex)
 				{
-					Tooltip.Show(ex.InnerException.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+					Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 					return;
 				}
 
@@ -166,6 +170,7 @@ namespace BaseSyle
 			}
 		}
 
+		
 		private async void SaveChange_Click(object sender, RoutedEventArgs e)
 		{
 			try
@@ -176,12 +181,15 @@ namespace BaseSyle
 
 				Tooltip.Show("Данные добавлены и успешно синхронизированы!");
 
-				UpdateTable();
 
 				ButtonIsEdit.Content = "Редактировать";
 				ButtonSaveChange.IsEnabled = false;
 
+
+				UpdateTable();
 				await Task.Delay(300);
+
+				ButtonSaveChange.IsEnabled = false;
 
 			}
 			catch (ExceptionForUser ex)
