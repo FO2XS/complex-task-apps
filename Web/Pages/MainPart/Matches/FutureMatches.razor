@@ -4,12 +4,47 @@
 
 <div class="active-matches">
     <div class="list-of-active-matches card">
-        <div class="active-matches-title">
-            <p>БУДУЩИЕ МАТЧИ</p>
+        <div class="active-matches-title" style="display: inline-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span>БУДУЩИЕ МАТЧИ</span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <button class="btn btn-primary" type="button" style="background: rgba(0,0,0,0);border-style: none;padding: 0px;margin-right: 5px;margin-left: 0px;width: 5%;min-width: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-x-circle" style="width: 100%;height: 100%;">
+                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                                </svg>
+                            </button><input type="text" class="form-control" style="background: rgba(255,255,255,0);margin-left: 5px;" placeholder="Название команды" /><button class="btn btn-primary" type="button" style="background: rgba(255,255,255,0);border-style: none;padding: 0px;margin-left: 5px;width: 5%;min-width: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-search" style="width: 100%;height: 100%;">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4">
+                        <button @onclick="() => ChangeDisplayEvents(true)" class="btn btn-primary" type="button" style="background: rgba(0, 0, 0, 0); border-style: none; padding: 0px; width: 5%; height: 100%; min-width: 20px; float: right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-circle float-end" style="width: 100%; height: 100%;">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"></path>
+                            </svg>
+                        </button>
+                        <button @onclick="() => ChangeDisplayEvents(false)" class="btn btn-primary" type="button" style="background: rgba(0, 0, 0, 0); border-style: none; padding: 0px; width: 5%; height: 100%; min-width: 20px; float: right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-left-circle float-end" style="width: 100%; height: 100%;">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <ul>
-            @foreach (var selectEvent in Events)
+            @foreach (var selectEvent in displayEvents)
             {
                 <li>
                     <div class="active-matches-bet">
@@ -65,12 +100,18 @@
 
 @code {
     [Parameter]
-    public HashSet<Event> Events { get; set; }
+    public EventCallback RefreshUser { get; set; }
 
     [CascadingParameter]
     public Sport SelectSport { get; set; }
 
+    [Parameter]
+    public List<Event> Events { get; set; }
 
+    private List<Event> displayEvents { get; set; }
+
+    private int step = 10;
+    private int indexStart = 0;
 
     private String GetCoef1(ICollection<PossibleBet> ts)
     {
@@ -84,10 +125,43 @@
     }
 
 
-    private void ClickEvent(Event selectEvent)
+    private async void ClickEvent(Event selectEvent)
     {
         var parameter = new DialogParameters { { "CurrentEvent", selectEvent } };
 
-        var dialog = _dialogService.Show<SelectBetModal>("Выбор ставки", parameter);
+        var result = await _dialogService.Show<SelectBetModal>("Выбор ставки", parameter).Result;
+
+        if (!result.Cancelled) await RefreshUser.InvokeAsync();
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        indexStart = 0;
+        displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(indexStart, step).ToList();
+        return base.OnParametersSetAsync();
+    }
+
+    /// <summary>
+    /// Листает отображаемые события из общего списка
+    /// </summary>
+    /// <param name="side">true - вперед по списку, false - назад по списку</param>
+    private void ChangeDisplayEvents(bool side)
+    {
+        displayEvents.Clear();
+        var sideStep = side ? step : -step;
+
+        indexStart += sideStep;
+
+        if (indexStart >= Events.Count - step)
+        {
+            indexStart = Events.Count - step;
+        }
+        if (indexStart < 0)
+        {
+            indexStart = 0;
+        }
+
+        displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(indexStart, step).ToList();
+        StateHasChanged();
     }
 }

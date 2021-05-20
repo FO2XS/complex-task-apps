@@ -32,7 +32,7 @@
             <div class="grid">
                 <div style="height: 80px;">
 
-                    <select value="@selectSport.Id" @onchange="Callback" aria-label="Default select example" style="height: 80px; font-size: 20px; background-color: #3b4451; border-width: 0; border: 0px; outline: 0px; margin: 0 10px; color: white; justify-content: center;">
+                    <select value="@_selectSport.Id" @onchange="Callback" aria-label="Default select example" style="height: 80px; font-size: 20px; background-color: #3b4451; border-width: 0; border: 0px; outline: 0px; margin: 0 10px; color: white; justify-content: center;">
                         @foreach (var temp in _sports)
                         {
                             <option value="@temp.Id">@temp.Title</option>
@@ -84,10 +84,6 @@
                     <NavLink style="text-decoration:none; color: white;" href="">
                         FAQ
                     </NavLink>
-                    @if (selectSport is not null)
-                    {
-                        @selectSport.Id
-                    }
                 </div>
             </div>
         </div>
@@ -98,9 +94,9 @@
 
 
 @code {
-    Sport selectSport = new Sport();
+    Sport _selectSport = new Sport();
     User _loginUser;
-    List<Sport> _sports = new List<Sport>();
+    HashSet<Sport> _sports = new HashSet<Sport>();
 
     [Parameter]
     public EventCallback<User> OnClickCallback { get; set; }
@@ -114,11 +110,13 @@
         if (await _localStorage.ContainKeyAsync(StorageKeys.LocalKey))
         {
             _loginUser = await _localStorage.GetItemAsync<User>(StorageKeys.LocalKey);
+            _loginUser = await UserService.GetUserAsync(_loginUser.Id);
+            
             await _sessionStorage.SetItemAsync(StorageKeys.SessionKey, _loginUser);
             await OnClickCallback.InvokeAsync(_loginUser);
-            _sports.Add(new Sport() { Id = 1, Title = "CS:GO" });
-            _sports.Add(new Sport() { Id = 2, Title = "LOL" });
         }
+
+        _sports = EventService.GetSports().ToHashSet();
     }
 
     private async void Login()
@@ -132,7 +130,6 @@
         else
         {
             _loginUser = (User)result.Data;
-            //_loginUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
             await OnClickCallback.InvokeAsync(_loginUser);
             StateHasChanged();
         }
@@ -156,8 +153,8 @@
 
     private async void Callback(ChangeEventArgs obj)
     {
-        selectSport = _sports.FirstOrDefault(e => e.Id== Convert.ToInt32(obj.Value));
-        await SportCallBack.InvokeAsync(selectSport);
+        _selectSport = _sports.FirstOrDefault(e => e.Id== Convert.ToInt32(obj.Value));
+        await SportCallBack.InvokeAsync(_selectSport);
     }
 
 }

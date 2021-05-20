@@ -31,6 +31,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\fonts\Roboto\" />
     <Folder Include="wwwroot\css\fonts\Montserrat\" />
+    <Folder Include="wwwroot\Iconic\" />
   </ItemGroup>
 
 </Project>

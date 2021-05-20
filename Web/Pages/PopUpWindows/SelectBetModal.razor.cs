@@ -24,14 +24,20 @@ namespace Test.Pages.PopUpWindows
             }
         }
 
-        private void OpenFinishBetModal(Team team, PossibleBet bet)
+        private async void OpenFinishBetModal(Team team, PossibleBet bet)
         {
             var coef = CurrentEvent.IdTeam1Navigation == team ? bet.Coef1 : bet.Coef2;
+            var side = CurrentEvent.IdTeam1Navigation == team;
             var parameters = new DialogParameters
             {
-                {"SelectedTeam", team}, {"SelectedBet", bet}, {"SelectedCoef", coef}
+                {"SelectedTeam", team}, {"SelectedBet", bet}, {"SelectedCoef", coef}, {"Side", side}
             };
-            var result = _dialogService.Show<FinishBetModal>("Заключение ставки", parameters);
+            var dialog = _dialogService.Show<FinishBetModal>("Заключение ставки", parameters);
+            var result = await dialog.Result;
+            if (!result.Cancelled)
+            {
+                MudDialog.Close(DialogResult.Ok(true));
+            }
         }
 
 

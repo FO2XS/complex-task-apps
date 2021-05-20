@@ -12,8 +12,8 @@ namespace Test.Data
 
         public static HashSet<Event> GetEvents(Sport sport)
         {
-            using var _context = new BookmakerContext();
-            return _context.Events
+            using var context = new BookmakerContext();
+            return context.Events
                 .Where(n => n.IdSport == sport.Id)
                 .Include(team1 => team1.IdTeam1Navigation)
                 .Include(team2 => team2.IdTeam2Navigation)
@@ -24,6 +24,13 @@ namespace Test.Data
         public static IEnumerable<Event> SelectEvents(this IEnumerable<Event> collection, Func<Event, bool> wFunc)
         {
             return collection.Where(wFunc).ToHashSet();
+        }
+
+        public static IEnumerable<Sport> GetSports()
+        {
+            using var context = new BookmakerContext();
+
+            return context.Sports.ToHashSet();
         }
     }
 }

@@ -14,8 +14,6 @@ namespace Test.Pages
 {
     public partial class RegistrationNewUser
     {
-        
-        private SignInManager<User> _signInManager;
         private string _email;
         private string _password;
         private string _verifyPassword;
@@ -23,6 +21,8 @@ namespace Test.Pages
 
         private async void CreateUser()
         {
+            if(CheckingInputData() is not true) return;
+
             var user = new User { UserName = _email, Email = _email };
             var result = await _userManager.CreateAsync(user, _password);
 
@@ -40,6 +40,17 @@ namespace Test.Pages
             {
                 _snackBar.Add("Ошибка при регистрации, введите другие данные");
             }
+        }
+
+        private bool CheckingInputData()
+        {
+            if (_password == _verifyPassword)
+            {
+                return true;
+            }
+
+            _snackBar.Add("Пароли не совпадают");
+            return false;
         }
     }
 }
