@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Test</name>
+    </assembly>
+    <members>
+        <member name="M:Test.Data.WebService.GetEvents(Test.Data.ModalEntity.Sport)">
+            <summary>
+            Возвращает список всех матчей по указанному виду спорта.
+            </summary>
+            <param name="sport">Вид спорта</param>
+            <returns>Список матчей с включенными объектами Team.</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetPossibleBets(Test.Data.ModalEntity.Event)">
+            <summary>
+            Возвращает список всех доступных ставок по данному событию.
+            </summary>
+            <param name="event">Матч</param>
+            <returns>Список возможных ставок с включенным объектом TypeOfBet.</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetPossibleBets(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Возвращает список указанных доступных ставок по данному событию.
+            </summary>
+            <param name="betsId">Id нужных типов ставок</param>
+            <returns>Список возможных ставок с указанными Id</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetHotEvents(Test.Data.ModalEntity.Sport)">
+            <summary>
+            В настоящее время возвращает Null. В будущем будет возвращать список горячих матчей.
+            </summary>
+            <param name="sport">Вид спорта</param>
+            <returns>Возвращает null</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetCurrentEvents(Test.Data.ModalEntity.Sport)">
+            <summary>
+            Возвращает список начавшихся, но не завершенных матчей
+            </summary>
+            <param name="sport">Вид спорта</param>
+            <returns>Список матчей с включенными объектами Team.</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetFutureEvents(Test.Data.ModalEntity.Sport)">
+            <summary>
+            Возвращает список предстоящих матчей.
+            </summary>
+            <param name="sport">Вид спорта</param>
+            <returns>Список матчей с включенными объектами Team.</returns>
+        </member>
+        <member name="M:Test.Data.WebService.GetPastEvents(Test.Data.ModalEntity.Sport)">
+            <summary>
+            Возвращает список прошедших матчей.
+            </summary>
+            <param name="sport">Вид спорта</param>
+            <returns>Список матчей с включенными объектами Team.</returns>
+        </member>
+        <member name="M:Test.Pages.MainPart.Matches.SearchAndLiftMatches.ChangeDisplayEvents(System.Boolean)">
+            <summary>
+            Листает отображаемые события из общего списка
+            </summary>
+            <param name="side">true - вперед по списку, false - назад по списку</param>
+        </member>
+    </members>
+</doc>
