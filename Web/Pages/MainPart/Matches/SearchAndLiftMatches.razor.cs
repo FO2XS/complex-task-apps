@@ -19,6 +19,7 @@ namespace Test.Pages.MainPart.Matches
 
         private int step = 10;
         private int indexStart = 0;
+        private string searchString="";
 
         /// <summary>
         /// Листает отображаемые события из общего списка
@@ -39,6 +40,31 @@ namespace Test.Pages.MainPart.Matches
                 indexStart = 0;
             }
 
+            var displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(indexStart, step).ToList();
+            await LeafEventsCallback.InvokeAsync(displayEvents);
+        }
+
+        private async void SearchInEvents()
+        {
+            if(searchString == "") return;
+            var temp = Events.Where(e =>
+                    e.IdTeam1Navigation.Title.ToLower().Contains(searchString.ToLower())
+                    || e.IdTeam2Navigation.Title.ToLower().Contains(searchString.ToLower()))
+                .ToList();
+
+            if (temp.Count < 1)
+            {
+                _snackBar.Add("Совпадений не найдено");
+                var displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(indexStart, step).ToList();
+                await LeafEventsCallback.InvokeAsync(displayEvents);
+                return;
+            }
+            await LeafEventsCallback.InvokeAsync(temp);
+        }
+
+        private async void ResetSearch()
+        {
+            searchString = "";
             var displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(indexStart, step).ToList();
             await LeafEventsCallback.InvokeAsync(displayEvents);
         }

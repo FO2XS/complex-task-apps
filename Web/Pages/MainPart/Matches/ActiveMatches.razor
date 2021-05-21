@@ -4,7 +4,10 @@
 <div class="active-matches">
     <div class="list-of-active-matches card">
         <div class="active-matches-title" style="display: inline-block">
-            <SearchAndLiftMatches Events="Events" LeafEventsCallback="@LeafDisplayEvents" Step="@step"></SearchAndLiftMatches>
+            <SearchAndLiftMatches 
+                Events="Events" 
+                LeafEventsCallback="@LeafDisplayEvents" 
+                Step="@step"></SearchAndLiftMatches>
         </div>
 
         <ul>
@@ -80,7 +83,7 @@
 
     private int step = 10;
 
-    
+
     private String GetCoef1(ICollection<PossibleBet> ts)
     {
         var tob = ts.FirstOrDefault(x => x.IdTob == 1);
@@ -104,6 +107,7 @@
     protected override Task OnParametersSetAsync()
     {
         displayEvents = step >= Events.Count ? Events.GetRange(0, Events.Count).ToList() : Events.GetRange(0, step).ToList();
+
         return base.OnParametersSetAsync();
     }
 
