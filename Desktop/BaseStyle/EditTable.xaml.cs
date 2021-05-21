@@ -97,7 +97,7 @@ namespace BaseSyle
 
 		private void BorderMenu_MouseLeave(object sender, MouseEventArgs e)
 		{
-			if (ListView.IsEnabled == false)
+			if (ListView.IsHitTestVisible == false)
 				BorderMenu.IsHitTestVisible = false;
 		}
 
@@ -215,7 +215,7 @@ namespace BaseSyle
 		{
 			if (ButtonSaveChange.IsEnabled)
 			{
-				ListView.IsEnabled = false;
+				ListView.IsHitTestVisible = false;
 				ButtonSaveChange.IsEnabled = false;
 
 				ButtonIsEdit.Content = "Редактировать";
@@ -224,7 +224,7 @@ namespace BaseSyle
 			}
 			else
             {
-				ListView.IsEnabled = true;
+				ListView.IsHitTestVisible = true;
 				ButtonSaveChange.IsEnabled = true;
 				ButtonIsEdit.Content = "Отменить";
 			}
@@ -243,7 +243,7 @@ namespace BaseSyle
         private void AddItem(object sender, RoutedEventArgs e)
         {
 			BorderMenu.IsHitTestVisible = true;
-			ListView.IsEnabled = true;
+			ListView.IsHitTestVisible = true;
 
 			View.UpdateEditWindow(EditControls, null);
 
@@ -290,7 +290,7 @@ namespace BaseSyle
 			await Task.Delay(300);
 
 			BorderMenu.IsHitTestVisible = false;
-			ListView.IsEnabled = false;
+			ListView.IsHitTestVisible = false;
 		}
 
 		private void UpdateTable()
@@ -301,6 +301,42 @@ namespace BaseSyle
 			data.ItemsSource = Items;
 
 			View.ViewTable(data);
+		}
+
+        private void data_KeyDown(object sender, KeyEventArgs e)
+		{
+			try
+			{
+
+			}
+			finally
+			{
+				e.Handled = true;
+			}
+        }
+
+        private void data_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            try
+            {
+
+            }
+            finally
+			{
+				e.Cancel = true;
+			}
+        }
+
+        private void data_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+			try
+			{
+
+			}
+			finally
+			{
+				e.Handled = true;
+			}
 		}
     }
 }
