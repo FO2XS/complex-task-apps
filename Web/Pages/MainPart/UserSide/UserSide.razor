@@ -54,20 +54,25 @@
                     @if (_formatUserBets is not null)
                     {
                         <MudGrid>
-                            @foreach (var userBet in _formatUserBets)
+                            @foreach (var userBet in _formatUserBets.Take(4))
                             {
                                 <MudItem xs="12">
                                     <MudPaper Elevation="3" Style="color:white; background-color: inherit;">
                                         @userBet.ViewEvent
-                                        <br/>
+                                        <br />
                                         @userBet.ViewBet
-                                        <br/>
+                                        <br />
                                         @userBet.ViewMoney
                                     </MudPaper>
                                 </MudItem>
                             }
                         </MudGrid>
-                    }
+
+                        @if (_formatUserBets.Count() > 4)
+                        {
+                            <p style="text-align: center; margin-top: 20px">●●●</p>
+                        }
+}
                 </div>
             </div>
         </div>

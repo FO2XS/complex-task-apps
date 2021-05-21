@@ -4,7 +4,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    min-width: 340px;
+    width: 340px;
     min-height: 600px;
     text-align: center;
     position: relative;
