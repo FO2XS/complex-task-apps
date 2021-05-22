@@ -86,13 +86,14 @@
 
     private String GetCoef1(ICollection<PossibleBet> ts)
     {
-        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
-        return tob is null ? "null" : tob.Coef1.ToString();
+        var tob = ts.FirstOrDefault(x => x.IdTob == StorageKeys.GeneralBetId);
+        return tob is null ? "Нема" : tob.Coef1.ToString();
     }
+
     private String GetCoef2(ICollection<PossibleBet> ts)
     {
-        var tob = ts.FirstOrDefault(x => x.IdTob == 1);
-        return tob is null ? "null" : tob.Coef2.ToString();
+        var tob = ts.FirstOrDefault(x => x.IdTob == StorageKeys.GeneralBetId);
+        return tob is null ? "Нема" : tob.Coef2.ToString();
     }
 
     private async void ClickEvent(Event selectEvent)
