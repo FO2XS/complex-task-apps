@@ -16,7 +16,7 @@ namespace Test.Data.ModalEntity
         public decimal Sum { get; set; }
         public BitArray Victory { get; set; }
         public decimal? Prize { get; set; }
-        public bool? ToArchive { get; set; }
+        public bool ToArchive { get; set; }
 
         public virtual PossibleBet IdPosBetNavigation { get; set; }
         public virtual User IdUserNavigation { get; set; }

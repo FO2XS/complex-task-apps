@@ -18,6 +18,7 @@ namespace Test.Data
                 .Include(team1 => team1.IdTeam1Navigation)
                 .Include(team2 => team2.IdTeam2Navigation)
                 .Include(x => x.PossibleBets)
+                .Include(tour => tour.IdTournamentNavigation)
                 .ToHashSet();
         }
 

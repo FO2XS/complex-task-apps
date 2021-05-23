@@ -27,6 +27,7 @@ namespace Test
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<TypeOfBet> TypeOfBets { get; set; }
         public virtual DbSet<UserBet> UserBets { get; set; }
+        public virtual DbSet<Tournament> Tournaments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,6 +50,12 @@ namespace Test
                     .HasForeignKey(d => d.IdSport)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_events_sports_idsport");
+
+                entity.HasOne(d => d.IdTournamentNavigation)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.IdTournament)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_events_tournaments_idtournaments");
 
                 entity.HasOne(d => d.IdTeam1Navigation)
                     .WithMany(p => p.EventIdTeam1Navigations)
@@ -90,6 +97,7 @@ namespace Test
                     .IsRequired()
                     .HasMaxLength(50);
             });
+
 
             modelBuilder.Entity<PossibleBet>(entity =>
             {

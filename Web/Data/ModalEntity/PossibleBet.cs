@@ -18,7 +18,7 @@ namespace Test.Data.ModalEntity
         public float Coef1 { get; set; }
         public float Coef2 { get; set; }
         public decimal Min { get; set; }
-        public decimal? Max { get; set; }
+        public decimal Max { get; set; }
         public bool IsAvalaible { get; set; }
         public float? Margin { get; set; }
         public bool IsPast { get; set; }
