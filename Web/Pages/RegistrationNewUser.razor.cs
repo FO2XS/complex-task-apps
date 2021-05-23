@@ -44,12 +44,26 @@ namespace Test.Pages
 
         private bool CheckingInputData()
         {
-            if (_password == _verifyPassword)
+            if (_email is null)
+            {
+                _snackBar.Add("Введите почту");
+            }
+            else if (_password is null)
+            {
+                _snackBar.Add("Введите пароль");
+            }
+            else if (_verifyPassword is null)
+            {
+                _snackBar.Add("Введите пароль второй раз");
+            }
+            else if (_password == _verifyPassword)
             {
                 return true;
             }
-
-            _snackBar.Add("Пароли не совпадают");
+            else
+            {
+                _snackBar.Add("Пароли не совпадают");
+            }
             return false;
         }
     }

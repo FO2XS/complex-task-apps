@@ -15,6 +15,8 @@ namespace Test.Pages.MainPart.Matches
         [Parameter]
         public EventCallback<List<Event>> LeafEventsCallback { get; set; }
 
+        [Parameter] 
+        public string Title { get; set; }
         [Parameter] public int Step { get; set; }
 
         private int step = 10;

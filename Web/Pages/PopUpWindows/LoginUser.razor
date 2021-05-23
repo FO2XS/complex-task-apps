@@ -7,7 +7,7 @@
 
 @inject ISnackbar _snackBar
 
-<MudDialog>
+<MudDialog Style="background-color: #2e353d; color: white;">
     <DialogContent>
         <div class="container">
             <div class="row">
@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input @bind-value="_mail" type="email" class="form-control" placeholder="Например@mail.ru">
+                    <input @bind-value="_mail" type="email" class="form-control" placeholder="Test2@mail.ru">
                 </div>
             </div>
             <div class="row"><div class="col"><br></div></div>
@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input @bind-value="_password" type="password" class="form-control" placeholder="qwerty123">
+                    <input @bind-value="_password" type="password" class="form-control" placeholder="qwerty">
                 </div>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col">
                     <p class="text-right">
-                        <a href="">Забыли пароль?</a>
+                        <a href="" style="color: white">Забыли пароль?</a>
                     </p>
                 </div>
             </div>
@@ -52,8 +52,8 @@
         </div>
     </DialogContent>
     <DialogActions>
-        <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+        <MudButton OnClick="Cancel" Style="color:white">Cancel</MudButton>
+        <MudButton Color="Color.Success" OnClick="Submit">Ok</MudButton>
     </DialogActions>
 </MudDialog>
 

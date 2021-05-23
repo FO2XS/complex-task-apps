@@ -53,20 +53,20 @@
                 <div class="history-bids-title">
                     @if (_formatUserBets is not null)
                     {
-                        <MudGrid>
-                            @foreach (var userBet in _formatUserBets.Take(4))
-                            {
-                                <MudItem xs="12">
-                                    <MudPaper Elevation="3" Style="color:white; background-color: inherit;">
-                                        @userBet.ViewEvent
-                                        <br />
-                                        @userBet.ViewBet
-                                        <br />
-                                        @userBet.ViewMoney
-                                    </MudPaper>
-                                </MudItem>
-                            }
-                        </MudGrid>
+                    <MudGrid>
+                        @foreach (var userBet in _formatUserBets.Take(4))
+                        {
+                            <MudItem xs="12">
+                                <MudPaper Elevation="3" Style="color: white; background-color: inherit;">
+                                    @userBet.ViewEvent
+                                    <br />
+                                    @userBet.ViewBet
+                                    <br />
+                                    @userBet.ViewMoney
+                                </MudPaper>
+                            </MudItem>
+                        }
+                    </MudGrid>
 
                         @if (_formatUserBets.Count() > 4)
                         {
