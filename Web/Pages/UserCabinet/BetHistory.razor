@@ -4,9 +4,9 @@
 
 <div>
     <h1 class="text-center">История ставок</h1>
-    <div class="table-responsive d-flex" style="margin-top: 10px;">
-        <table class="table">
-            <thead style="color: rgb(194,194,194);">
+    <div class="table-responsive d-flex" style="margin-top: 10px; overflow: scroll; min-height: 575px; max-height: 864px;">
+        <table class="table table-hover" style="color: white;">
+            <thead>
                 <tr style="border-bottom-style: none;border-bottom-color: rgba(255,255,255,0);">
                     <th>Матч</th>
                     <th>Ставка</th>
@@ -15,7 +15,7 @@
                     <th>Выигрыш</th>
                 </tr>
             </thead>
-            <tbody style="color: rgb(194, 194, 194);">
+            <tbody>
                 @foreach (var bet in formatUserBets)
                 {
                     <tr style="border-top-width: 5px; border-bottom-style: none; border-bottom-color: rgba(255, 255, 255, 0);">

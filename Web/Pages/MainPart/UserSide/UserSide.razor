@@ -9,12 +9,12 @@
                     <span>ВАШ ПРОФИЛЬ</span>
                 </div>
                 <div class="back">
-                    
+
                     <NavLink href="betHistory">
-                        <span class="title-img" style ="color: white">ПРОФИЛЬ</span>
+                        <span class="title-img" style="color: white">ПРОФИЛЬ</span>
                         <img class="icon-user" src=@User.Avatar />
                     </NavLink>
-                    
+
                 </div>
                 <div class="info-for-user">
                     <button class="nav"></button>
@@ -53,26 +53,25 @@
                 <div class="history-bids-title">
                     @if (_formatUserBets is not null)
                     {
-                    <MudGrid>
-                        @foreach (var userBet in _formatUserBets.Take(4))
-                        {
-                            <MudItem xs="12">
-                                <MudPaper Elevation="3" Style="color: white; background-color: inherit;">
-                                    @userBet.ViewEvent
-                                    <br />
-                                    @userBet.ViewBet
-                                    <br />
-                                    @userBet.ViewMoney
-                                </MudPaper>
-                            </MudItem>
-                        }
-                    </MudGrid>
-
+                        <MudGrid>
+                            @foreach (var userBet in _formatUserBets.Take(4))
+                            {
+                                <MudItem xs="12">
+                                    <MudPaper Elevation="3" Style="color: white; background-color: inherit;">
+                                        @userBet.ViewEvent
+                                        <br />
+                                        @userBet.ViewBet
+                                        <br />
+                                        @userBet.ViewMoney
+                                    </MudPaper>
+                                </MudItem>
+                            }
+                        </MudGrid>
                         @if (_formatUserBets.Count() > 4)
                         {
                             <p style="text-align: center; margin-top: 20px">●●●</p>
                         }
-}
+                    }
                 </div>
             </div>
         </div>
