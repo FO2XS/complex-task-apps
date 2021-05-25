@@ -21,7 +21,6 @@ namespace Test.Pages.UserCabinet.UserInfo
                 if (newPassword == repeatNewPassword)
                 {
                     var result = await _manager.ChangePasswordAsync(mainLayout.loginUser, currentPassword, newPassword);
-
                     if (result.Succeeded)
                     {
                         _snackbar.Add("Пароль успешно изменен");
