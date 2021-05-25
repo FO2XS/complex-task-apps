@@ -1,10 +1,11 @@
 ﻿@page "/addFunds"
+@inject ISnackbar _snackBar
 
 <div style="margin: auto;">
     <h2 class="text-center">Пополнение кошелька</h2>
     <label class="form-label d-flex justify-content-xxl-center" style="margin-top: 3%;">Сумма</label>
-    <input type="number" class="d-flex mx-auto form-control-lg"/>
+    <input @bind-value="_plusMoney" type="number" class="d-flex mx-auto form-control-lg" />
     <label class="form-label d-flex justify-content-xxl-center" style="margin-top: 1%;">Номер карты</label>
-    <input type="number" class="d-flex mx-auto form-control-lg" min="1000000000000000" max="9999999999999999" />
-    <button class="btn d-flex mx-auto" type="button" style="margin-top: 1%;">Пополнить</button>
+    <input @bind-value="_bankcard" type="number" class="d-flex mx-auto form-control-lg" min="1000000000000000" max="9999999999999999" />
+    <button @onclick="AddClick" class="btn d-flex mx-auto" type="button" style="margin-top: 1%;">Пополнить</button>
 </div>

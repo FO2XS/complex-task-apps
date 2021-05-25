@@ -22,5 +22,32 @@ namespace Test.Data
 
             return context.Users.First(user => user.Id == id);
         }
+
+        public static bool AddMoneyToUser(User user, MoneyManagement operation)
+        {
+            try
+            {
+                using var context = new BookmakerContext();
+
+                if (operation.TakeOrAdd)
+                {
+                    user.Balance -= operation.Sum;
+                }
+                else
+                {
+                    user.Balance += operation.Sum;
+                }
+
+                context.Entry(user).State = EntityState.Modified;
+                context.Entry(operation).State = EntityState.Added;
+                context.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
