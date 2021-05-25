@@ -39,7 +39,14 @@
 
     protected override Task OnParametersSetAsync()
     {
-        formatUserBets = _formatting.Format(User.UserBets);
+        try
+        {
+            formatUserBets = _formatting.Format(User.UserBets);
+        }
+        catch
+        {
+
+        }
         return base.OnParametersSetAsync();
     }
 

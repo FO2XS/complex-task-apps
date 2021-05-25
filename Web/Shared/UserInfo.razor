@@ -1,57 +1,66 @@
 ﻿@inherits LayoutComponentBase
 @layout UserCabinet
+@inject NavigationManager _navigation
 
 
-<div class="col">
-    <div class="row" style="margin-top: 18px;">
-        <div class="col">
-            <div class="row">
-                <div class="col">
-                    <label class="col-form-label d-flex justify-content-xl-center">
-                        Электронная почта
-                    </label>
+
+@if (mainLayout.loginUser is null)
+{
+    _navigation.NavigateTo("/");
+}
+else
+{
+    <div class="col">
+        <div class="row" style="margin-top: 18px;">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label class="col-form-label d-flex justify-content-xl-center">
+                            Электронная почта
+                        </label>
+                    </div>
+                    <div class="col d-flex">
+                        <input @bind-value="mainLayout.loginUser.Email" type="text" readonly />
+                    </div>
                 </div>
-                <div class="col d-flex">
-                    <input type="text"/>
+                <div class="row">
+                    <div class="col">
+                        <label class="col-form-label d-xl-flex justify-content-xl-center">
+                            Имя
+                        </label>
+                    </div>
+                    <div class="col d-flex">
+                        <input @bind-value="mainLayout.loginUser.Name" type="text" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="col-form-label d-flex justify-content-xl-center">
+                            Фамилия
+                        </label>
+                    </div>
+                    <div class="col d-flex">
+                        <input @bind-value="mainLayout.loginUser.Surname" type="text" readonly />
+                    </div>
+                </div>
+                <div role="group" class="btn-group d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+
+                    <button class="btn" type="button" style="margin-top: 11px; margin-right: 5px; margin-left: 5px;">
+                        <NavLink style="text-decoration:none; color: white;" href="changePassword">
+                            Сменить пароль
+                        </NavLink>
+                    </button>
+
+                    <button class="btn" type="button" style="margin-top: 11px; margin-left: 5px; margin-right: 5px;">
+                        <NavLink style="text-decoration:none; color: white;" href="changeEmail">
+                            Сменить почту
+                        </NavLink>
+                    </button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label class="col-form-label d-xl-flex justify-content-xl-center">
-                        Имя
-                    </label>
-                </div>
-                <div class="col d-flex">
-                    <input type="text"/>
-                </div>
+            <div class="col">
+                @Body
             </div>
-            <div class="row">
-                <div class="col">
-                    <label class="col-form-label d-flex justify-content-xl-center">
-                        Фамилия
-                    </label>
-                </div>
-                <div class="col d-flex">
-                    <input type="text"/>
-                </div>
-            </div>
-            <div role="group" class="btn-group d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
-                
-                <button class="btn" type="button" style="margin-top: 11px; margin-right: 5px; margin-left: 5px;">
-                    <NavLink style="text-decoration:none; color: white;" href="changePassword">
-                        Сменить пароль
-                    </NavLink>
-                </button>
-                
-                <button class="btn" type="button" style="margin-top: 11px; margin-left: 5px; margin-right: 5px;">
-                    <NavLink style="text-decoration:none; color: white;" href="changeEmail">
-                        Сменить почту
-                    </NavLink>
-                </button>
-            </div>
-        </div>
-        <div class="col">
-            @Body
         </div>
     </div>
-</div>
+}

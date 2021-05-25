@@ -4,6 +4,16 @@
         <name>Test</name>
     </assembly>
     <members>
+        <member name="M:Test.Data.ModalEntity.MoneyManagement.AddNewOperation(Test.Data.ModalEntity.User,System.Boolean,System.Decimal,System.String)">
+            <summary>
+            Функция осуществляет проверку входящих значений при создании операции ввода/вывода финансов
+            </summary>
+            <param name="user">Пользователь</param>
+            <param name="takeOrAdd">Операция вывод - true, операция на ввод - false</param>
+            <param name="sum">Денежная сумма</param>
+            <param name="numberCard">Номер счёта пользователя</param>
+            <returns>Возвращает объект MoneyManagement в случае прохождения проверки, null в остальных случаях</returns>
+        </member>
         <member name="M:Test.Data.WebService.GetEvents(Test.Data.ModalEntity.Sport)">
             <summary>
             Возвращает список всех матчей по указанному виду спорта.
