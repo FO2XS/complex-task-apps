@@ -30,13 +30,17 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <ComboBox  x:Name="title" Height="40">
+            <ComboBox x:Name="title" Height="40" SelectionChanged="title_Selected">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox" BasedOn="{StaticResource baseComboBox}">
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding ElementName=check, Path=IsChecked}" Value="True">
                                 <Setter Property="IsEnabled" Value="False"/>
                             </DataTrigger>
+                            
+                            <Trigger Property="IsHitTestVisible" Value="False">
+                                <Setter Property="Opacity" Value="0.6"/>
+                            </Trigger>
                         </Style.Triggers>
                     </Style>
                 </ComboBox.Style>

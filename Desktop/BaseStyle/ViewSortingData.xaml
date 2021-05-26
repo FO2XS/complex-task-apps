@@ -16,7 +16,8 @@
 
     <StackPanel Orientation="Horizontal" x:Name="panel">
         <ComboBox Name="comboBox"
-                  Height="40"
+                  Width="150"
+                  Height="30"
                   SelectionChanged="comboBox_SelectionChanged"
                   Style="{StaticResource baseComboBox}">
         </ComboBox>

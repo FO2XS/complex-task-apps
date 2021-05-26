@@ -30,6 +30,7 @@ namespace BaseSyle
 		}
 		public Tooltip Tooltip { get; }
 		public String TableName { get; set; }
+		public List<Func<object, bool>> GetFuncs { get; set; } = new List<Func<object, bool>>();
 
 
 		private object selectedItem;
@@ -123,7 +124,7 @@ namespace BaseSyle
 
 			try
 			{
-				await View.LoadEditWindow(ListView);
+				View.LoadEditWindow(ListView);
 			}
 			catch (Exception ex)
 			{
@@ -154,22 +155,24 @@ namespace BaseSyle
 				catch (ExceptionForUser ex)
 				{
 					Tooltip.Show(ex.Message, Library.TypeEvent.ErrorUser, ex.Title);
-					return;
+					await Task.Delay(5000);
 				}
 				catch (Exception ex)
 				{
 					Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
-					return;
+					await Task.Delay(2000);
 				}
-
-				UpdateTable();
+                finally
+                {
+					UpdateTable(true);
+					Tooltip.Show("Данные синхронизированы!");
+				}
 			}
-            else
+			else
             {
 				Tooltip.Show("Строка НЕ удалена!");
 			}
 		}
-
 		
 		private async void SaveChange_Click(object sender, RoutedEventArgs e)
 		{
@@ -181,16 +184,13 @@ namespace BaseSyle
 
 				Tooltip.Show("Данные добавлены и успешно синхронизированы!");
 
-
 				ButtonIsEdit.Content = "Редактировать";
-				ButtonSaveChange.IsEnabled = false;
 
+				ButtonSaveChange.IsEnabled = false;
+				ListView.IsHitTestVisible = false;
 
 				UpdateTable();
 				await Task.Delay(300);
-
-				ButtonSaveChange.IsEnabled = false;
-
 			}
 			catch (ExceptionForUser ex)
 			{
@@ -201,13 +201,6 @@ namespace BaseSyle
 			{
 				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 				return;
-			}
-            finally
-            {
-				ButtonIsEdit.Content = "Редактировать";
-
-				ButtonSaveChange.IsEnabled = false;
-				ListView.IsEnabled = false;
 			}
 		}
 
@@ -293,13 +286,19 @@ namespace BaseSyle
 			ListView.IsHitTestVisible = false;
 		}
 
-		private void UpdateTable()
+		public async void UpdateTable(Boolean isUpdateDate = false)
         {
 			data.ItemsSource = null;
 			data.Columns.Clear();
 
-			data.ItemsSource = Items;
+			if (isUpdateDate)
+				await Control.SearchAsync(Items, GetFuncs);
 
+			data.ItemsSource = null;
+			data.Columns.Clear();
+
+			data.ItemsSource = Items;
+			
 			View.ViewTable(data);
 		}
 

@@ -14,7 +14,6 @@ namespace DesktopBookmaker.Data
         {
             MoneyManagement = new HashSet<MoneyManagement>();
             UserBets = new HashSet<UserBets>();
-            Roles = new HashSet<Roles>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -60,13 +59,10 @@ namespace DesktopBookmaker.Data
 
         public decimal? Balance { get; set; }
 
+        public string Avatar { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MoneyManagement> MoneyManagement { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserBets> UserBets { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Roles> Roles { get; set; }
     }
 }

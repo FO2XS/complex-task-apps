@@ -14,5 +14,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <CheckBox x:Name="check" Style="{StaticResource CheckBox}" IsChecked="True"></CheckBox>
+    <StackPanel Orientation="Horizontal">
+        <CheckBox x:Name="check" Style="{StaticResource CheckBox}" IsChecked="True"></CheckBox>
+        <Button Click="Button_Click" Background="{x:Null}" BorderThickness="0">✖</Button>
+    </StackPanel>
 </UserControl>

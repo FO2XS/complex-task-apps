@@ -1,8 +1,10 @@
-﻿using DesktopBookmaker.Data;
+﻿using DesktopBokmeyker.View.EditElement;
+using DesktopBookmaker.Data;
 using DesktopBookmaker.View.EditElement;
 using InterfaceView;
 using InterfaceView.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,38 +14,110 @@ using System.Windows.Controls;
 
 namespace DesktopBookmaker.View.View
 {
-    public class EventsView
-        : IView
-    {
-        public object GetUpdateInEditWindow(List<IEditControl> edits, object ob)
-        {
-			var event1 = (Events)ob ?? new Events();
+	public class EventsView
+		: IView
+	{
+		private List<Teams> TeamsLoL { get; set; } = new List<Teams>();
+		private List<Teams> TeamsSCGO { get; set; } = new List<Teams>();
 
-			foreach (IEditControl item in edits)
+		private EditComboBox Sports { get; set; } 
+		private EditComboBox Teams { get; set; } 
+		private EditComboBox Teams1 { get; set; }
+		private EditComboBox Tournament { get; set; }
+
+		private EditDateTime StartDate { get; set; }
+
+		private EditCheckBox IsAvailable { get; set; }
+		private EditCheckBox IsPast { get; set; }
+		
+		public EventsView()
+		{
+			Sports = new EditComboBox() { Hint = "Спорт", NameItem = nameof(DesktopBookmaker.Data.Events.Sports) };
+			Teams = new EditComboBox() { Hint = "Команда 1", NameItem = nameof(DesktopBookmaker.Data.Events.Teams) };
+			Teams1 = new EditComboBox() { Hint = "Команда 2", NameItem = nameof(DesktopBookmaker.Data.Events.Teams1) };
+			Tournament = new EditComboBox() { Hint = "Турнир", NameItem = nameof(DesktopBookmaker.Data.Events.Tournaments) };
+			
+			StartDate = new EditDateTime() { Hint = "Дата начала", NameItem = nameof(DesktopBookmaker.Data.Events.StartDate) };
+			
+			IsAvailable = new EditCheckBox() { Hint = "Виден ли матч", NameItem = nameof(Events.IsAvailable) };
+			IsPast = new EditCheckBox() { Hint = "Матч завершен", NameItem = nameof(Events.IsAvailable) };
+
+			Sports.SelectedItemChanged += SportSelected;
+
+			initData();
+		}
+
+		private void SportSelected(Object sender, EventArgs e)
+		{
+			if (Sports.Title is null)
 			{
-				switch (item.NameItem)
-				{
-					case (nameof(Data.Events.Teams)):
-						event1.Teams = (Teams)item.Title;
-						break;
-
-					case (nameof(Data.Events.Teams1)):
-						event1.Teams1 = (Teams)item.Title;
-						break;
-
-					case (nameof(Data.Events.Sports)):
-						event1.Sports = (Sports)item.Title;
-						break;
-
-					case (nameof(Data.Events.StartDate)):
-						event1.StartDate = (DateTime)item.Title;
-						break;
-
-					default:
-						break;
-				}
+				Teams.IsHitTestVisible = false;
+				Teams1.IsHitTestVisible = false;
+				Teams.Title = null;
+				Teams1.Title = null;
+				return;
 			}
 
+			SetTeams(((Sports)Sports.Title).Id);
+
+			Teams.IsHitTestVisible = true;
+			Teams1.IsHitTestVisible = true;
+		}
+
+		private async void initData()
+		{
+			using (DBContext db = new DBContext())
+			{
+
+				IEnumerable sport = null;
+				IEnumerable tournament = null;
+				await Task.Run(()
+					=>
+				{
+					sport = db.Sports.ToArray();
+					tournament = db.Tournaments.ToArray();
+				});
+
+				Sports.Items = sport;
+				Tournament.Items = tournament;
+
+				await Task.Run(()
+					=>
+				{
+					TeamsSCGO.AddRange(db.GetEventsBySports(1).ToArray());
+					TeamsLoL.AddRange(db.GetEventsBySports(2).ToArray());
+				});
+			}
+		}
+
+		public void SetTeams(Int32 i)
+		{
+			if (i == 1)
+			{
+				Teams.Items = TeamsSCGO;
+				Teams1.Items = TeamsSCGO;
+			}
+			else if (i == 2)
+			{
+				Teams.Items = TeamsLoL;
+				Teams1.Items = TeamsLoL;
+			}
+			else
+				throw new Exception("что-то пошло не так");
+		}
+
+		public object GetUpdateInEditWindow(List<IEditControl> edits, object ob)
+		{
+			var event1 = (Events)ob ?? new Events();
+
+			event1.Sports = (Sports)Sports.Title;
+			event1.Teams = (Teams)Teams.Title;
+			event1.Teams1 = (Teams)Teams1.Title;
+
+			event1.StartDate = (DateTime)StartDate.Title;
+
+			event1.IsAvailable = ((Boolean?)IsAvailable.Title).Value;
+			event1.IsPast = ((Boolean?)IsPast.Title).Value;
 
 			if (event1.IdTeam1 == 0)
 				throw new ExceptionForUser("Вы не выбрали 1 команду!");
@@ -58,138 +132,85 @@ namespace DesktopBookmaker.View.View
 				throw new ExceptionForUser("Две одинаковые команды не могут сражаться друг с другом!");
 
 			return event1;
-        }
-
-        public async Task LoadEditWindow(ListView listView)
-        {
-			using (var db = new DBContext())
-			{
-				var teams = new List<Teams>();
-				var sports = new List<Sports>();
-
-				await Task.Run(() =>
-				{
-					teams = db.Teams.ToList();
-					sports = db.Sports.ToList();
-				});
-
-				new List<Object>()
-				{
-					new EditComboBox() { Items=sports, Hint="Спорт", NameItem=nameof(Data.Events.Sports) },
-					new EditComboBox() { Items=teams, Hint="Команда 1", NameItem=nameof(Data.Events.Teams) },
-					new EditComboBox() { Items=teams, Hint="Команда 2", NameItem=nameof(Data.Events.Teams1) },
-					new EditDateTime() { Hint="Дата", NameItem=nameof(Data.Events.StartDate) },
-
-				}.ForEach(x => listView.Items.Add(x));
-			}
 		}
 
-        public void UpdateEditWindow(List<IEditControl> edits, object ob1)
-        {
+		public void UpdateEditWindow(List<IEditControl> edits, object ob1)
+		{
 			var event1 = (Events)ob1;
 
-			if (event1 is null)
-            {
-				foreach (IEditControl item in edits)
-				{
-					switch (item.NameItem)
-					{
-						case (nameof(Data.Events.Teams)):
-							item.Title = null;
-							break;
-
-						case (nameof(Data.Events.Teams1)):
-							item.Title = null;
-							break;
-
-						case (nameof(Data.Events.Sports)):
-							item.Title = null;
-							break;
-
-						case (nameof(Data.Events.StartDate)):
-							item.Title = DateTime.Now;
-							break;
-
-						default:
-							break;
-					}
-				}
-
-				return;
-            }
-
-			foreach (IEditControl item in edits)
+			if (ob1 is null)
 			{
-				switch (item.NameItem)
+				Sports.Title = null;
+				Teams.Title = null;
+				Teams1.Title = null;
+
+				StartDate.Title = DateTime.Now;
+
+				IsAvailable.Title = false;
+				IsPast.Title = false;
+				return;
+			}
+
+			foreach (Sports item in Sports.Items)
+			{
+				if (event1.IdSport == item.Id)
 				{
-					case (nameof(Data.Events.Teams)):
-						var team = new Teams();
+					SetTeams(item.Id);
 
-						foreach (Teams t in ((EditComboBox)item).Items)
-							if (event1.IdTeam1 == t.Id) { team = t; break; }
+					Sports.Title = item;
 
-						item.Title = team;
-						break;
-
-					case (nameof(Data.Events.Teams1)):
-						var team1 = new Teams();
-
-						foreach (Teams t in ((EditComboBox)item).Items)
-							if (event1.IdTeam2 == t.Id) { team1 = t; break; }
-
-						item.Title = team1;
-						break;
-
-					case (nameof(Data.Events.Sports)):
-						var sport = new Sports();
-
-						foreach (Sports s in ((EditComboBox)item).Items)
-							if (event1.IdSport == s.Id) { sport = s; break; }
-
-						item.Title = sport;
-						break;
-
-					case (nameof(Data.Events.StartDate)):
-						item.Title = event1.StartDate;
-						break;
-
-					default:
-						break;
+					break;
 				}
 			}
+
+			foreach (Teams t in Teams.Items)
+				if (event1.IdTeam1 == t.Id) 
+				{ Teams.Title = t; break; }
+
+			foreach (Teams t in Teams1.Items)
+				if (event1.IdTeam2 == t.Id)
+				{ Teams1.Title = t; break; }
+			
+			foreach (Tournaments t in Tournament.Items)
+				if (event1.IdTournament == t.Id)
+				{ Tournament.Title = t; break; }
+
+			StartDate.Title = event1.StartDate;
+			IsAvailable.Title = event1.IsAvailable;
+			IsPast.Title = event1.IsPast;
 		}
 
-        public void ViewTable(DataGrid data)
+		public void ViewTable(DataGrid data)
 		{
 			foreach (var item in data.Columns)
 			{
 				switch (item.Header.ToString())
 				{
-					case (nameof(Data.Events.Id)):
+					case (nameof(DesktopBookmaker.Data.Events.Id)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IdWin)):
+					case (nameof(DesktopBookmaker.Data.Events.IdWin)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IsPast)):
+					case (nameof(DesktopBookmaker.Data.Events.IdSport)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IdSport)):
+					case (nameof(DesktopBookmaker.Data.Events.IdTeam1)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IdTeam1)):
+					case (nameof(DesktopBookmaker.Data.Events.IdTeam2)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IdTeam2)):
+					case (nameof(DesktopBookmaker.Data.Events.PossibleBets)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.PossibleBets)):
+					case (nameof(DesktopBookmaker.Data.Events.IdLose)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.IdLose)):
+					case (nameof(DesktopBookmaker.Data.Events.ToArchive)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(Data.Events.ToArchive)):
+					case (nameof(DesktopBookmaker.Data.Events.IdTournament)):
 						item.Visibility = Visibility.Collapsed;
 						break;
 					default:
@@ -197,5 +218,23 @@ namespace DesktopBookmaker.View.View
 				}
 			}
 		}
-    }
+
+		public void LoadEditWindow(ListView listView)
+		{
+			listView.Items.Add(Sports);
+			listView.Items.Add(Teams);
+			listView.Items.Add(Teams1);
+			listView.Items.Add(Tournament);
+
+			listView.Items.Add(StartDate);
+
+			listView.Items.Add(IsAvailable);
+			listView.Items.Add(IsPast);
+		}
+
+		internal void Sorted(Func<Events, bool> func)
+        {
+
+        }
+	}
 }

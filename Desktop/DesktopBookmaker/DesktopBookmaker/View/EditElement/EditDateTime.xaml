@@ -38,6 +38,10 @@
                             <DataTrigger Binding="{Binding ElementName=check, Path=IsChecked}" Value="True">
                                 <Setter Property="IsEnabled" Value="False"/>
                             </DataTrigger>
+
+                            <Trigger Property="IsHitTestVisible" Value="False">
+                                <Setter Property="Opacity" Value="0.6"/>
+                            </Trigger>
                         </Style.Triggers>
                     </Style>
                 </ControlBase:BaseDatePickerTextBox.Style>

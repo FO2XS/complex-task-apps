@@ -21,20 +21,53 @@ namespace BaseSyle
     public partial class ViewSortingData
         : UserControl
     {
+        private List<CheckBox> getActiveItems;
+
         protected ViewSortingData()
         {
             InitializeComponent();
         }
 
-        public ViewSortingData(List<BaseSyle.CheckBox> boxes)
+        public List<BaseSyle.CheckBox> GetActiveItems
         {
-            comboBox.DisplayMemberPath = nameof(BaseSyle.CheckBox.check.Content);
-            boxes.ForEach(x => comboBox.Items.Add(x));
+            get => getActiveItems;
+            private set => getActiveItems = value;
+        }
+
+        public ViewSortingData(List<BaseSyle.CheckBox> boxes)
+            : this()
+        {
+            comboBox.DisplayMemberPath = nameof(BaseSyle.CheckBox.Title);
+            boxes.ForEach(x => { x.Margin = new Thickness(10, 0, 10, 0); comboBox.Items.Add(x); x.Routed += deleteItem; });
+            GetActiveItems = new List<CheckBox>();
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (comboBox.SelectedItem is null)
+                return;
 
+            var ob = comboBox.SelectedItem;
+            if (!(ob is BaseSyle.CheckBox))
+                throw new InvalidCastException($"Не получилось привести тип {ob.GetType()} к типу {nameof(BaseSyle.CheckBox)}");
+
+            var checkBox = (BaseSyle.CheckBox)ob;
+
+            comboBox.Items.Remove(ob);
+            panel.Children.Add(checkBox);
+            GetActiveItems.Add(checkBox);
+        }
+
+        public void deleteItem(object sender, EventArgs e)
+        {
+            if (!(sender is BaseSyle.CheckBox))
+                throw new InvalidCastException($"Не получилось привести тип {sender.GetType()} к типу {nameof(BaseSyle.CheckBox)}");
+
+            var ob = (BaseSyle.CheckBox)sender;
+
+            panel.Children.Remove(ob);
+            comboBox.Items.Add(ob);
+            GetActiveItems.Remove(ob);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DesktopBookmaker
         : Application
     {
         [System.Diagnostics.DebuggerNonUserCode()]
-        [System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
+        [System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "2.0.0.0")]
         public void InitializeComponent1()
         {
 /*#line 4 "..\..\App.xaml"
@@ -26,7 +26,7 @@ namespace DesktopBookmaker
 
         [System.STAThread()]
         [System.Diagnostics.DebuggerNonUserCode()]
-        [System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
+        [System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "2.0.0.0")]
         public static void Main()
         {
 /*          DesktopBokmeyker.App app = new DesktopBokmeyker.App();

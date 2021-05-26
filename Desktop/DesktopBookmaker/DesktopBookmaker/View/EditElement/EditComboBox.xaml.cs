@@ -67,5 +67,10 @@ namespace DesktopBookmaker.View.EditElement
         {
             InitializeComponent();
         }
+
+        public event RoutedEventHandler SelectedItemChanged;
+        
+        private void title_Selected(object sender, RoutedEventArgs e)
+            => SelectedItemChanged?.Invoke(sender, e);
     }
 }

@@ -1,5 +1,4 @@
-﻿using DesktopBookmaker.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,7 @@ using System.Data.Entity;
 using BaseSyle;
 using DesktopBookmaker.View.EditElement;
 using InterfaceView.View;
+using DesktopBookmaker.View.EditWindows;
 
 namespace DesktopBookmaker.View
 {
@@ -30,6 +30,10 @@ namespace DesktopBookmaker.View
 		{
 			InitializeComponent();
 		}
+
+		public Matches Matches { get; set; }
+
+		UserControl EditWindow { get; set; } = new UserControl();
 
 		private void MenuCloseEvent(object sender, RoutedEventArgs e)
 		{
@@ -48,17 +52,13 @@ namespace DesktopBookmaker.View
 			Close();
         }
 
-		public EditTable EditTable;
-
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
+			InitEditWindow();
+
 			contentMain.Visibility = Visibility.Collapsed;
 
 			listSelectingAnAction.SelectedIndex = 0;
-
-			EditTable = new EditTable(new View.EventsView(), new Control.EventsControl(), tooltip);
-
-			editAndAddMatchesTable.Children.Add(EditTable);
 
 			var login = new LogIn.LogIn()
 			{
@@ -77,30 +77,31 @@ namespace DesktopBookmaker.View
 			};
 		}
 
-		Grid Grid { get; set; }
+        private void InitEditWindow()
+		{
+			Matches = new Matches(tooltip);
+        }
 
 		private void ListViewItem_Selected(object sender, RoutedEventArgs e)
 		{
-			if (Grid is null)
+			if (EditWindow is null)
 				return;
 
-			Grid.Visibility = Visibility.Hidden;
-			Grid = editAndAddMatches;
-			Grid.Visibility = Visibility.Visible;
+			if (WiewEditWindow.Children.Count > 0)
+				WiewEditWindow.Children.Remove(WiewEditWindow.Children[0]);
+
+			WiewEditWindow.Children.Add(Matches);
 		}
 
 		private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
 		{
-			if (Grid is null)
+			if (EditWindow is null)
 				return;
 
-			Grid.Visibility = Visibility.Hidden;
-			Grid = editAndAddBets;
-			Grid.Visibility = Visibility.Visible;
-		}
+			if (WiewEditWindow.Children.Count > 0)
+				WiewEditWindow.Children.Remove(WiewEditWindow.Children[0]);
 
-		private void SearchTextBox_SearchClick(object sender, RoutedEventArgs e)
-		{
+			WiewEditWindow.Children.Add(EditWindow);
 		}
     }
 }

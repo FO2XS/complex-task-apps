@@ -12,13 +12,15 @@ namespace DesktopBookmaker.Data
         private Teams teams;
         private Teams teams1;
         private Sports sports;
+        private Tournaments tournaments;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Events()
         {
             PossibleBets = new HashSet<PossibleBets>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int IdSport { get; set; }
@@ -33,9 +35,13 @@ namespace DesktopBookmaker.Data
 
         public int? IdLose { get; set; }
 
-        public bool? IsPast { get; set; }
+        public bool IsPast { get; set; }
 
-        public bool? ToArchive { get; set; }
+        public bool ToArchive { get; set; }
+
+        public bool IsAvailable { get; set; }
+
+        public int? IdTournament { get; set; }
 
         public virtual Sports Sports
         {
@@ -43,8 +49,7 @@ namespace DesktopBookmaker.Data
             set
             {
                 sports = value;
-                if (!(value is null))
-                    IdSport = value.Id;
+                IdSport = sports is null ? 0 : sports.Id;
             }
         }
 
@@ -54,8 +59,7 @@ namespace DesktopBookmaker.Data
             set
             {
                 teams = value;
-                if (!(value is null))
-                    IdTeam1 = value.Id;
+                IdTeam1 = teams is null ? 0 : teams.Id;
             }
         }
 
@@ -65,11 +69,21 @@ namespace DesktopBookmaker.Data
             set
             {
                 teams1 = value;
-                if (!(value is null))
-                    IdTeam2 = value.Id;
+                IdTeam2 = teams1 is null ? 0 : teams1.Id;
             }
         }
 
+        public virtual Tournaments Tournaments
+        {
+            get => tournaments;
+            set
+            {
+                tournaments = value;
+                IdTournament = tournaments is null ? 0 : tournaments.Id;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PossibleBets> PossibleBets { get; set; }
     }
 }

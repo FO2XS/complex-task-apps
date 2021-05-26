@@ -13,7 +13,6 @@ namespace DesktopBookmaker.Data
         public Roles()
         {
             RoleClaims = new HashSet<RoleClaims>();
-            Users = new HashSet<Users>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -29,8 +28,5 @@ namespace DesktopBookmaker.Data
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoleClaims> RoleClaims { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
     }
 }

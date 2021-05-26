@@ -24,17 +24,12 @@ namespace InterfaceView.Control
 
     public interface IControl
     {
-        void Add(Object ob);
         Task AddAsync(Object ob);
-        void Edit(Object ob);
         Task EditAsync(Object ob);
-        void Delete(Object ob);
         Task DeleteAsync(Object ob);
-        void Delete(Int32 id);
         Task DeleteAsync(Int32 id);
-        ICollection<Object> GetData();
         Task GetDataAsync(ICollection<Object> list);
-        ICollection<Object> Search(Func<Object, Boolean> func);
         Task SearchAsync(ICollection<Object> list, Func<Object, Boolean> func);
+        Task SearchAsync(ICollection<Object> list, List<Func<Object, Boolean>> listFunc);
     }
 }

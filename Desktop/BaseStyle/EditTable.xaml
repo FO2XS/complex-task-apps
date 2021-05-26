@@ -77,6 +77,7 @@
 			<DataGrid Name="data"
 					  VerticalScrollBarVisibility="Hidden"
 					  HorizontalScrollBarVisibility="Hidden"
+                      CanUserAddRows="False"
 					  BeginningEdit="data_BeginningEdit"
 					  SelectedCellsChanged="data_SelectedCellsChanged"
                       KeyDown="data_KeyDown"

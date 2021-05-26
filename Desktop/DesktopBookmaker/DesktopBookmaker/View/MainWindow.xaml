@@ -136,28 +136,7 @@
 
                 <Border Grid.Row="1" Background="#FF10263A"/>
 
-                <Grid x:Name="editAndAddMatches" Grid.Row="2" Visibility="Visible">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="10"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Row="0" Style="{StaticResource Heading}">
-                        ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
-                    </TextBlock>
-                    
-                    <ControlBase:SearchTextBox x:Name="searchTextBox" SearchClick="SearchTextBox_SearchClick" ButtonStyle="{StaticResource ButtonWhite}" Grid.Row="2" BackText="Поиск по названию комманды.." BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:SearchTextBox>
-
-                    <Grid x:Name="editAndAddMatchesTable" Grid.Row="8"/>
-                </Grid>
+                <Grid x:Name="WiewEditWindow" Grid.Row="2"/>
 
                 <Grid x:Name="editAndAddBets" Grid.Row="2" Visibility="Hidden">
                     <Grid.RowDefinitions>

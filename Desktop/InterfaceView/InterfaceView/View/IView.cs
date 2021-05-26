@@ -15,7 +15,7 @@ namespace InterfaceView.View
         /// </summary>
         /// <param name="listView">в коллекцию Items должны быть загружены Control</param>
         /// <returns></returns>
-        Task LoadEditWindow(ListView listView);
+        void LoadEditWindow(ListView listView);
 
         /// <summary>
         /// Реализует отображение данных в заполненной таблице

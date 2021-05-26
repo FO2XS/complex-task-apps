@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace DesktopBookmaker.Data
     public partial class DBContext : DbContext
     {
         public DBContext()
-            : base("name=DB")
+            : base("name=Model1")
         {
         }
 
@@ -20,12 +21,20 @@ namespace DesktopBookmaker.Data
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Sports> Sports { get; set; }
         public virtual DbSet<Teams> Teams { get; set; }
+        public virtual DbSet<Tournaments> Tournaments { get; set; }
         public virtual DbSet<TypeOfBets> TypeOfBets { get; set; }
-        public virtual DbSet<UserBets> UserBets { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserBets>()
+                .Property(e => e.Sum)
+                .HasPrecision(12, 2);
+
+            modelBuilder.Entity<UserBets>()
+                .Property(e => e.Prize)
+                .HasPrecision(12, 2);
+
             modelBuilder.Entity<Events>()
                 .HasMany(e => e.PossibleBets)
                 .WithRequired(e => e.Events)
@@ -61,13 +70,14 @@ namespace DesktopBookmaker.Data
                 .WithRequired(e => e.Roles)
                 .HasForeignKey(e => e.RoleId);
 
-            modelBuilder.Entity<Roles>()
-                .HasMany(e => e.Users)
-                .WithMany(e => e.Roles)
-                .Map(m => m.ToTable("UserRoles", "public").MapLeftKey("RoleId").MapRightKey("UserId"));
-
             modelBuilder.Entity<Sports>()
                 .HasMany(e => e.Events)
+                .WithRequired(e => e.Sports)
+                .HasForeignKey(e => e.IdSport)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Sports>()
+                .HasMany(e => e.Teams)
                 .WithRequired(e => e.Sports)
                 .HasForeignKey(e => e.IdSport)
                 .WillCascadeOnDelete(false);
@@ -84,19 +94,16 @@ namespace DesktopBookmaker.Data
                 .HasForeignKey(e => e.IdTeam2)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Tournaments>()
+                .HasMany(e => e.Events)
+                .WithOptional(e => e.Tournaments)
+                .HasForeignKey(e => e.IdTournament);
+
             modelBuilder.Entity<TypeOfBets>()
                 .HasMany(e => e.PossibleBets)
                 .WithRequired(e => e.TypeOfBets)
                 .HasForeignKey(e => e.IdTob)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<UserBets>()
-                .Property(e => e.Sum)
-                .HasPrecision(12, 2);
-
-            modelBuilder.Entity<UserBets>()
-                .Property(e => e.Prize)
-                .HasPrecision(12, 2);
 
             modelBuilder.Entity<Users>()
                 .Property(e => e.Balance)
@@ -107,12 +114,16 @@ namespace DesktopBookmaker.Data
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.IdUser)
                 .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Users>()
                 .HasMany(e => e.UserBets)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.IdUser)
                 .WillCascadeOnDelete(false);
+        }
+
+        internal IQueryable<Teams> GetEventsBySports(Int32 IdSports)
+        {
+            return Teams.Include(x => x.Sports).Where(x => x.IdSport == IdSports);
         }
     }
 }

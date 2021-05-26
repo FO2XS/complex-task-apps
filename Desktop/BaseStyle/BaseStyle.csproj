@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InterfaceView">
-      <HintPath>..\Desktop\InterfaceView\InterfaceView\bin\Release\InterfaceView.dll</HintPath>
+    <Reference Include="InterfaceView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InterfaceView\InterfaceView\bin\Debug\InterfaceView.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

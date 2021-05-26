@@ -51,8 +51,9 @@
     <Reference Include="EntityFramework6.Npgsql, Version=6.4.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework6.Npgsql.6.4.1\lib\net461\EntityFramework6.Npgsql.dll</HintPath>
     </Reference>
-    <Reference Include="InterfaceView">
-      <HintPath>..\..\InterfaceView\InterfaceView\bin\Release\InterfaceView.dll</HintPath>
+    <Reference Include="InterfaceView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\InterfaceView\InterfaceView\bin\Debug\InterfaceView.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -77,6 +78,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -107,10 +110,27 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Events.cs" />
+    <Compile Include="Data\DBContext.cs" />
+    <Compile Include="Data\MoneyManagement.cs" />
+    <Compile Include="Data\Operators.cs" />
+    <Compile Include="Data\PossibleBets.cs" />
+    <Compile Include="Data\RoleClaims.cs" />
+    <Compile Include="Data\Roles.cs" />
+    <Compile Include="Data\Sports.cs" />
+    <Compile Include="Data\Teams.cs" />
+    <Compile Include="Data\Tournaments.cs" />
+    <Compile Include="Data\TypeOfBets.cs" />
+    <Compile Include="Data\Users.cs" />
+    <Compile Include="Data\UserBets.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Control\EventsControl.cs" />
+    <Compile Include="View\Control\PossibleBetsControl.cs" />
+    <Compile Include="View\EditElement\EditCheckBox.xaml.cs">
+      <DependentUpon>EditCheckBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditElement\EditComboBox.xaml.cs">
       <DependentUpon>EditComboBox.xaml</DependentUpon>
     </Compile>
@@ -123,6 +143,9 @@
     <Compile Include="View\EditElement\EditTextBox.xaml.cs">
       <DependentUpon>EditTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditWindows\Matches.xaml.cs">
+      <DependentUpon>Matches.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LogIn\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -130,21 +153,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\View\EventsView.cs" />
-    <Compile Include="Data\DBContext.cs" />
-    <Compile Include="Data\Events.cs" />
-    <Compile Include="Data\MoneyManagement.cs" />
-    <Compile Include="Data\Operators.cs" />
-    <Compile Include="Data\PossibleBets.cs" />
-    <Compile Include="Data\RoleClaims.cs" />
-    <Compile Include="Data\Roles.cs" />
-    <Compile Include="Data\Sports.cs" />
-    <Compile Include="Data\Teams.cs" />
-    <Compile Include="Data\TypeOfBets.cs" />
-    <Compile Include="Data\UserBets.cs" />
-    <Compile Include="Data\Users.cs" />
     <Page Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditElement\EditCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EditElement\EditComboBox.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +176,10 @@
     <Page Include="View\EditElement\EditTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditWindows\Matches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LogIn\LogIn.xaml">
       <Generator>MSBuild:Compile</Generator>
