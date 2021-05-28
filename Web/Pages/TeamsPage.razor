@@ -1,0 +1,80 @@
+﻿@page "/Teams"
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="d-xl-flex justify-content-xl-center">Команды</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="sorting" @onclick="SortName">
+                                Название
+                            </div>
+                        </th>
+                        <th style="max-width: 100px;">Логотип</th>
+                        <th>
+                            <select value="@_selectSport.Id" @onchange="ChangeSport" style="font: inherit; background-color:#3b4451; border-width: 0; border: 0; outline: 0; margin: 0 10px; color: white; justify-content: center;">
+                                @foreach (var temp in Sports)
+                                {
+                                    <option style="font: inherit;" value="@temp.Id">@temp.Title</option>
+                                }
+                            </select>
+                        </th>
+                        <th>
+                            <div class="sorting" @onclick="SortRaiting">
+                                Место в рейтинге
+                            </div>
+                        </th>
+                        <th>% побед</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (Teams is not null)
+                    {
+                        @foreach (var temp in VisibleTeams)
+                        {
+                            <tr>
+                                <td>@temp.Title</td>
+                                <td>
+                                    <img src="@temp.Logo" class="picture" alt="Логотип"/>
+                                </td>
+                                <td>@temp.IdSportNavigation.Title</td>
+                                <td>
+                                    @if (@temp.Raiting is null)
+                                    {
+                                        <span>Нет</span>
+                                    }
+                                    else
+                                    {
+                                        @temp.Raiting
+                                    }
+                                </td>
+                                <td>
+                                    @if (@temp.Raiting is null)
+                                    {
+                                        <span>Нет</span>
+                                    }
+                                    else
+                                    {
+                                        @temp.PercentWin
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        
+                    }
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
