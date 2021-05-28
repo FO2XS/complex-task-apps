@@ -125,11 +125,23 @@ div.user-capabilities {
         }
 
 
-div.history-bids{
-
+div.history-bids {
 }
+
     div.history-bids div.history-bids-title {
-        margin-top:20px;
-        float:left;
-        margin-left:20px;
+        margin-top: 20px;
+        float: left;
+        margin-left: 20px;
+    }
+
+div.betcard {
+    color: white;
+    background-color: inherit;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.22);
+}
+    div.betcard:hover {
+        color: black;
+        background-color: #6bab44;
+        box-shadow: 0 10px 10px #2a2f36, 0 10px 10px rgba(0,0,0,0.22);
+        opacity: 0.8;
     }

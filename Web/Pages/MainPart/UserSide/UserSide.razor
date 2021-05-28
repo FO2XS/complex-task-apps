@@ -57,13 +57,13 @@
                             @foreach (var userBet in _formatUserBets.Take(4))
                             {
                                 <MudItem xs="12">
-                                    <MudPaper Elevation="3" Style="color: white; background-color: inherit;">
+                                    <div class ="betcard">
                                         @userBet.ViewEvent
                                         <br />
                                         @userBet.ViewBet
                                         <br />
                                         @userBet.ViewMoney
-                                    </MudPaper>
+                                    </div>
                                 </MudItem>
                             }
                         </MudGrid>
