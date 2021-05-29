@@ -39,4 +39,8 @@
     <Folder Include="wwwroot\Iconic\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\js\animation.js" />
+  </ItemGroup>
+
 </Project>
