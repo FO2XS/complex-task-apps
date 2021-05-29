@@ -17,7 +17,7 @@
             {
                 <li>
                     <div class="active-matches-bet">
-                        @if (selectEvent.IdWin == selectEvent.IdTeam1 && selectEvent.IdWin != null)
+                        @if (selectEvent.Winner.HasValue && selectEvent.Winner.Value)
                         {
                             <div class="team-left">
                                 <div class="team-win">
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                         }
-                        else
+                        else if (selectEvent.Winner.HasValue && !selectEvent.Winner.Value)
                         {
                             <div class="team-left">
                                 <div class="team-lose">
@@ -74,6 +74,40 @@
                             </div>
                             <div class="team-right">
                                 <div class="team-win">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam2Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam2Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef2(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="team-left">
+                                <div class="team-lose">
+                                    <div class="logo-team">
+                                        <img src="@selectEvent.IdTeam1Navigation.Logo">
+                                    </div>
+                                    <p class="title">@selectEvent.IdTeam1Navigation.Title</p>
+                                    <div class="koef">
+                                        <p>@(GetCoef1(selectEvent.PossibleBets))</p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-info">
+                                <div class="matches-bet-info">
+                                    <p class="tournament-title">ESEA Advanced NA</p>
+                                    <p class="type-bo">BO3</p>
+                                    <p class="time">@((@DateTime.Now - selectEvent.StartDate).ToString(@"hh\:mm\:ss"))</p>
+                                </div>
+                            </div>
+                            <div class="team-right">
+                                <div class="team-lose">
                                     <div class="logo-team">
                                         <img src="@selectEvent.IdTeam2Navigation.Logo">
                                     </div>

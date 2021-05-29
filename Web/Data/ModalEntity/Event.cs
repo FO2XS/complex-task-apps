@@ -18,8 +18,7 @@ namespace Test.Data.ModalEntity
         public int IdTeam1 { get; set; }
         public int IdTeam2 { get; set; }
         public DateTime StartDate { get; set; }
-        public int? IdWin { get; set; }
-        public int? IdLose { get; set; }
+        public bool? Winner { get; set; }
         public bool IsAvailable { get; set; }
         public bool IsPast { get; set; }
         public bool ToArchive { get; set; }
