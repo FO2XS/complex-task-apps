@@ -1,5 +1,21 @@
 ﻿body {
+    background-color: #021317;
+}
+canvas {
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    opacity: 1;
+}
+div.container {
+    text-align: center;
+    background-color: transparent;
     width: 100%;
-    overflow: hidden;
-    margin: 0;
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat, sans-serif;
+}
+li {
+    list-style-type: none;
 }

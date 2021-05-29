@@ -1,14 +1,14 @@
 ﻿var Obj = {
     circle: new Array(20),
-    radius: 2000,
+    radius: 1000,
     noise: 200,
     speed: 0.1,
-    size: 400,
+    size: 1000,
 
     //color a = background color; color b = object color 
     color: {
-        a: '#000000',
-        b: '#f0f8ff'
+        a: 'hsla(280, 95%, 5%, 1)',
+        b: '#3488a2'
     },
     //X & Y positions
     X: function (x) {
