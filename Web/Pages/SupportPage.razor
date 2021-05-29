@@ -1,5 +1,7 @@
 ﻿@page "/Support"
 
+@inject ISnackbar _snackBar
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -8,24 +10,25 @@
     </div>
     <div class="row">
         <div class="col">
-            <select>
-                <option value="12" selected="">This is item 1</option>
-                <option value="13">This is item 2</option>
-                <option value="14">This is item 3</option>
+            <label>Тема обращения</label>
+            <select @onchange="ChangeTopic">
+                <option value="0" selected>Технические неполадки</option>
+                <option value="1">Проблема с вводом/выводом средств</option>
+                <option value="2">Другое</option>
             </select>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <textarea></textarea>
+            <textarea @bind="text" placeholder="Опишите вашу проблему"></textarea>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <input type="text" placeholder="Email" inputmode="email">
+            <input @bind-value="email" type="text" placeholder="Email" inputmode="email">
         </div>
         <div class="col" style="text-align: end;">
-            <MudButton Variant="Variant.Filled" Color="Color.Success">
+            <MudButton OnClick="SendReport" Variant="Variant.Filled" Color="Color.Success">
                 Отправить
             </MudButton>
         </div>
