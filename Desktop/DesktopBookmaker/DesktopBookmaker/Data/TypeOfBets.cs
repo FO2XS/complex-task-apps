@@ -24,5 +24,8 @@ namespace DesktopBookmaker.Data
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PossibleBets> PossibleBets { get; set; }
+
+        public override string ToString()
+            => Title;
     }
 }

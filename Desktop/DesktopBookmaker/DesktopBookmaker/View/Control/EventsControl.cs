@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using InterfaceView.Control;
 using InterfaceView;
 using System.Data.Entity;
-using System.Windows;
 using DesktopBookmaker.Data;
 
 namespace DesktopBookmaker.View.Control
@@ -279,6 +276,9 @@ namespace DesktopBookmaker.View.Control
 
         public async Task SearchAsync(ICollection<Object> list, Func<Object, Boolean> func)
         {
+            if (list is null)
+                throw new ArgumentNullException(nameof(list));
+
             if (func is null)
                 throw new ArgumentNullException(nameof(func));
 
@@ -296,7 +296,7 @@ namespace DesktopBookmaker.View.Control
                         .Select(x => (Events)x)
                         .ToList();
 
-                    list = new List<Object>();
+                    list.Clear();
                     list1.ForEach(x => list.Add(x));
                 });
             }
@@ -304,6 +304,9 @@ namespace DesktopBookmaker.View.Control
 
         public async Task SearchAsync(ICollection<object> list, List<Func<object, bool>> listFunc)
         {
+            if (list is null)
+                throw new ArgumentNullException(nameof(list));
+
             if (listFunc is null)
                 throw new ArgumentNullException(nameof(listFunc));
 

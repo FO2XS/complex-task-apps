@@ -77,7 +77,7 @@ namespace BaseSyle
 			{
 				SelectedItem = Items.Find(x => x.Equals(data.SelectedItem));
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				Tooltip.Show("Не удалось найти выделенный элемент в коллекции Items", Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 			}
@@ -133,8 +133,6 @@ namespace BaseSyle
 				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 				await Task.Delay(3000);
 			}
-
-			View.ViewTable(data);
 
 			foreach (IEditControl item in ListView.Items)
 				EditControls.Add(item);

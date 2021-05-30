@@ -93,6 +93,7 @@ namespace DesktopBookmaker.Data
 
         public bool? Winner { get; set; }
 
+        [NotMapped]
         public Teams WinnerTeam
         {
             get
@@ -121,11 +122,13 @@ namespace DesktopBookmaker.Data
         [NotMapped]
         public MaxMin MaxMin { get; set; }
 
-        public virtual ICollection<UserBets> UserBets { get; set; }
+        public ICollection<UserBets> UserBets { get; set; }
 
         public PossibleBets()
         {
             UserBets = new HashSet<UserBets>();
+            Coef = new Coef();
+            MaxMin = new MaxMin();
         }
 
         public int CompareTo(object obj)

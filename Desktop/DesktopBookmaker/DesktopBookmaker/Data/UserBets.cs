@@ -1,6 +1,7 @@
 namespace DesktopBookmaker.Data
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -23,6 +24,8 @@ namespace DesktopBookmaker.Data
         public decimal Sum { get; set; }
 
         public decimal? Prize { get; set; }
+
+        public Int16? Victory { get; set; }
 
         public bool ToArchive { get; set; }
 

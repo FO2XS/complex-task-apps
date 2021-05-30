@@ -24,12 +24,19 @@ namespace DesktopBookmaker.Data
         public virtual DbSet<Tournaments> Tournaments { get; set; }
         public virtual DbSet<TypeOfBets> TypeOfBets { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UserBets> UserBets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserBets>()
                 .Property(e => e.Sum)
                 .HasPrecision(12, 2);
+
+            modelBuilder.Entity<PossibleBets>()
+                .HasMany(e => e.UserBets)
+                .WithRequired(e => e.PossibleBets)
+                .HasForeignKey(e => e.IdPosBet)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<UserBets>()
                 .Property(e => e.Prize)

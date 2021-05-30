@@ -102,7 +102,12 @@ namespace DesktopBookmaker.View.EditWindows
             if (events.SelectedItem is null)
                 return;
 
-            EditTable = new EditTable(View = new PossibleBetsView(), Control = new PossibleBetsControl(), Tooltip);
+            View = new PossibleBetsView();
+            Control = new PossibleBetsControl();
+
+            Control.IdEvents = ((Data.Events)events.SelectedItem).Id;
+            
+            EditTable = new EditTable(View, Control, Tooltip);
             editAndAddMatchesTable.Children.Add(EditTable);
         }
     }
