@@ -120,7 +120,7 @@ namespace BaseSyle
 				await Task.Delay(3000);
 			}
 
-			data.ItemsSource = Items;
+			UpdateTable(true);
 
 			try
 			{

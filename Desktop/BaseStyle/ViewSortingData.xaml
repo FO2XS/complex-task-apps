@@ -10,16 +10,47 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="BaseStyle.xaml"/>
+                <ResourceDictionary>
+                    <Style x:Key="baseStyle" TargetType="ComboBox" BasedOn="{StaticResource baseComboBox}">
+                        <Style.Triggers>
+                            <Trigger Property="IsHitTestVisible" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation From="0" To="200" Duration="0:0:0.2" Storyboard.TargetProperty="Width">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <PowerEase Power="4" EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation From="200" To="0" Duration="0:0:0.4" Storyboard.TargetProperty="Width">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <PowerEase Power="5" EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal" x:Name="panel">
         <ComboBox Name="comboBox"
-                  Width="150"
+                  Width="200"
                   Height="30"
-                  SelectionChanged="comboBox_SelectionChanged"
-                  Style="{StaticResource baseComboBox}">
+                  MinWidth="0"
+                  SelectionChanged="AddItem"
+                  Style="{StaticResource baseStyle}">
         </ComboBox>
     </StackPanel>
 </UserControl>

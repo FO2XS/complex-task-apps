@@ -19,7 +19,7 @@
     <Grid x:Name="editAndAddMatches" Grid.Row="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition/>
@@ -30,7 +30,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading}">
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading}" Margin="10 0 0 0">
             ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
         </TextBlock>
 
@@ -42,7 +42,7 @@
             </Grid.RowDefinitions>
 
 
-            <ControlBase:SearchTextBox Grid.Row="1" x:Name="searchTextBox" SearchClick="SearchTextBox_SearchClick" ButtonStyle="{StaticResource ButtonWhite}" BackText="Поиск по названию комманды.." BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:SearchTextBox>
+            <ControlBase:SearchTextBox Margin="10 0" Grid.Row="1" x:Name="searchTextBox" SearchClick="SearchTextBox_SearchClick" ButtonStyle="{StaticResource ButtonWhite}" BackText="Поиск по названию комманды.." BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:SearchTextBox>
         </Grid>
 
         <Grid x:Name="editAndAddMatchesTable" Grid.Row="8"/>

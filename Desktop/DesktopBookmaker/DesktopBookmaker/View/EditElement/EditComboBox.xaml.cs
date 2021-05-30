@@ -37,7 +37,10 @@ namespace DesktopBookmaker.View.EditElement
             set
             {
                 if ((value is null) && check.Visibility == Visibility.Visible)
-                    check.IsChecked = false;
+                {
+                    check.IsChecked = true;
+                    title.SelectedItem = null;
+                }
                 else
                     title.SelectedValue = value;
             }

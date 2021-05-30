@@ -74,7 +74,7 @@
 				<ColumnDefinition Width="auto"/>
 			</Grid.ColumnDefinitions>
 
-			<DataGrid Name="data"
+            <DataGrid Name="data"
 					  VerticalScrollBarVisibility="Hidden"
 					  HorizontalScrollBarVisibility="Hidden"
                       CanUserAddRows="False"
@@ -83,8 +83,9 @@
                       KeyDown="data_KeyDown"
                       RowEditEnding="data_RowEditEnding"
                       PreviewKeyDown="data_PreviewKeyDown"
-                      SelectionMode="Single">
-				<DataGrid.Style>
+                      SelectionMode="Single"
+                      Margin="10 0 0 0">
+                <DataGrid.Style>
 					<Style TargetType="DataGrid" BasedOn="{StaticResource baseDataGrid}">
 					</Style>
 				</DataGrid.Style>
@@ -97,22 +98,22 @@
 						<Setter Property="VerticalAlignment" Value="Top"/>
 						<Setter Property="HorizontalAlignment" Value="Right"/>
 						<Setter Property="Height" Value="45"/>
-						<Setter Property="Margin" Value="8 0 0 0"/>
-						<Setter Property="Width" Value="90"/>
+						<Setter Property="Margin" Value="10 0"/>
+						<Setter Property="Width" Value="100"/>
 
 						<Style.Triggers>
 							<DataTrigger Binding="{Binding ElementName=BorderMenu, Path=IsHitTestVisible}" Value="False">
 								<DataTrigger.EnterActions>
 									<BeginStoryboard>
 										<Storyboard>
-											<DoubleAnimation Duration="0:0:0.3" From="0" To="90" Storyboard.TargetProperty="Width"></DoubleAnimation>
+											<DoubleAnimation Duration="0:0:0.3" From="0" To="100" Storyboard.TargetProperty="Width"></DoubleAnimation>
 										</Storyboard>
 									</BeginStoryboard>
 								</DataTrigger.EnterActions>
 								<DataTrigger.ExitActions>
 									<BeginStoryboard>
 										<Storyboard>
-											<DoubleAnimation Duration="0:0:0.14" From="90" To="0" Storyboard.TargetProperty="Width"></DoubleAnimation>
+                                            <DoubleAnimation Duration="0:0:0.14" From="100" To="0" Storyboard.TargetProperty="Width"></DoubleAnimation>
 										</Storyboard>
 									</BeginStoryboard>
 								</DataTrigger.ExitActions>

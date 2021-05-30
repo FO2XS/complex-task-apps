@@ -16,7 +16,7 @@
     </UserControl.Resources>
 
     <Grid MaxHeight="40">
-        <CheckBox x:Name="title">
+        <CheckBox x:Name="title" Checked="title_Selected" Unchecked="title_Selected">
             <CheckBox.Style>
                 <Style TargetType="CheckBox" BasedOn="{StaticResource CheckBox}">
                     <Style.Triggers>

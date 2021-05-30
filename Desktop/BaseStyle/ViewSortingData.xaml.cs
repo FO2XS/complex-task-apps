@@ -42,7 +42,12 @@ namespace BaseSyle
             GetActiveItems = new List<CheckBox>();
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void SelectAnItem(BaseSyle.CheckBox box)
+        {
+            comboBox.SelectedItem = box;
+        }
+
+        private void AddItem(object sender, SelectionChangedEventArgs e)
         {
             if (comboBox.SelectedItem is null)
                 return;
@@ -56,9 +61,11 @@ namespace BaseSyle
             comboBox.Items.Remove(ob);
             panel.Children.Add(checkBox);
             GetActiveItems.Add(checkBox);
+            if (comboBox.Items.Count < 1)
+                comboBox.IsHitTestVisible = false;
         }
 
-        public void deleteItem(object sender, EventArgs e)
+        private void deleteItem(object sender, EventArgs e)
         {
             if (!(sender is BaseSyle.CheckBox))
                 throw new InvalidCastException($"Не получилось привести тип {sender.GetType()} к типу {nameof(BaseSyle.CheckBox)}");
@@ -68,6 +75,7 @@ namespace BaseSyle
             panel.Children.Remove(ob);
             comboBox.Items.Add(ob);
             GetActiveItems.Remove(ob);
+            comboBox.IsHitTestVisible = true;
         }
     }
 }

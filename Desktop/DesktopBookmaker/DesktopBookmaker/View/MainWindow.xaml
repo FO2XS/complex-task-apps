@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DesktopBookmaker.View"
         xmlns:ControlBase="clr-namespace:BaseSyle;assembly=BaseSyle"
         mc:Ignorable="d"
-		Title="MainWindow" Height="609" Width="1173" Loaded="Window_Loaded">
+		Title="MainWindow" Height="800" Width="1600" Loaded="Window_Loaded">
 
     <Window.Resources>
         <ResourceDictionary>

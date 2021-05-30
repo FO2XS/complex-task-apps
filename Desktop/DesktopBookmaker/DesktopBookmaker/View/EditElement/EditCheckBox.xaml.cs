@@ -1,6 +1,7 @@
 ﻿using InterfaceView.View;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DesktopBokmeyker.View.EditElement
@@ -22,6 +23,8 @@ namespace DesktopBokmeyker.View.EditElement
                     throw new ArgumentNullException(nameof(value));
 
                 title.IsChecked = value;
+
+                title_Selected(this, new RoutedEventArgs());
             }
         }
 
@@ -42,6 +45,12 @@ namespace DesktopBokmeyker.View.EditElement
             get => title.Content.ToString();
             set => title.Content = value?.ToString();
         }
+
+
+        public event RoutedEventHandler SelectedItemChanged;
+
+        private void title_Selected(object sender, RoutedEventArgs e)
+            => SelectedItemChanged?.Invoke(sender, e);
 
         public EditCheckBox()
         {

@@ -82,6 +82,29 @@ namespace DesktopBookmaker.Data
             }
         }
 
+        [NotMapped]
+        public Teams WinnerTeam
+        {
+            get
+            {
+                if (Winner is null)
+                    return null;
+                else if (Winner.Value)
+                    return Teams;
+                else
+                    return Teams1;
+            }
+            set
+            {
+                if (value is null)
+                    Winner = null;
+                else if (Teams.Id == value.Id)
+                    Winner = true;
+                else
+                    Winner = false;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PossibleBets> PossibleBets { get; set; }
 

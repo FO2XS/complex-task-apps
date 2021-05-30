@@ -34,7 +34,8 @@ namespace DesktopBookmaker.View.EditWindows
 
         protected BaseSyle.CheckBox IsAvailable { get; set; }
         protected BaseSyle.CheckBox IsPast { get; set; }
-        
+        protected BaseSyle.CheckBox ToArchive { get; set; }
+
         private Matches()
         {
             InitializeComponent();
@@ -58,8 +59,20 @@ namespace DesktopBookmaker.View.EditWindows
                 Hint = "Матч завершен",
                 NameItem = nameof(Events.IsPast)
             };
+            ToArchive = new BaseSyle.CheckBox()
+            {
+                Hint = "В архив",
+                NameItem = nameof(Events.ToArchive),
+                IsCheked = false,
+            };
 
-            ViewSortingData = new ViewSortingData(new List<BaseSyle.CheckBox>() { IsAvailable, IsPast });
+            ViewSortingData = new ViewSortingData(new List<BaseSyle.CheckBox>() { IsAvailable, IsPast, ToArchive })
+            {
+                Margin = new Thickness(10),
+            };
+
+            ViewSortingData.SelectAnItem(ToArchive);
+            
             searchWindow.Children.Add(ViewSortingData);
 
             EditTable = new EditTable(View = new EventsView(), Control =  new EventsControl(), Tooltip);
@@ -80,6 +93,12 @@ namespace DesktopBookmaker.View.EditWindows
             {
                 Boolean? b = IsAvailable.IsCheked;
                 EditTable.GetFuncs.Add(x => b == ((Events)x).IsAvailable);
+            }
+
+            if (ViewSortingData.GetActiveItems.Contains(ToArchive))
+            {
+                Boolean? b = ToArchive.IsCheked;
+                EditTable.GetFuncs.Add(x => b == ((Events)x).ToArchive);
             }
 
             if (!String.IsNullOrWhiteSpace(searchTextBox.Text))
