@@ -50,6 +50,8 @@ namespace BaseSyle
 			View = view;
 			Control = control;
 			Tooltip = tooltip;
+
+			UserControl_Loaded_1();
 		}
 
 		private void data_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
@@ -102,7 +104,7 @@ namespace BaseSyle
 				BorderMenu.IsHitTestVisible = false;
 		}
 
-		private async void UserControl_Loaded_1(object sender, RoutedEventArgs e)
+		private async void UserControl_Loaded_1()
 		{
 			Visibility = Visibility.Collapsed;
 

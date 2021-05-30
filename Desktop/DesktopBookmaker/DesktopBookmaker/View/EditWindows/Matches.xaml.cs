@@ -25,6 +25,8 @@ namespace DesktopBookmaker.View.EditWindows
     public partial class Matches 
         : UserControl
     {
+        private Boolean IsLoad { get; set; }
+
         protected EventsView View { get; set; }
         protected EventsControl Control { get; set; }
         
@@ -45,10 +47,7 @@ namespace DesktopBookmaker.View.EditWindows
             : this()
         {
             Tooltip = tooltip;
-        }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
             IsAvailable = new BaseSyle.CheckBox()
             {
                 Hint = "Виден ли матч",
@@ -72,11 +71,15 @@ namespace DesktopBookmaker.View.EditWindows
             };
 
             ViewSortingData.SelectAnItem(ToArchive);
-            
+
             searchWindow.Children.Add(ViewSortingData);
 
-            EditTable = new EditTable(View = new EventsView(), Control =  new EventsControl(), Tooltip);
+            EditTable = new EditTable(View = new EventsView(), Control = new EventsControl(), Tooltip);
             editAndAddMatchesTable.Children.Add(EditTable);
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
         }
 
         private void SearchTextBox_SearchClick(object sender, RoutedEventArgs e)

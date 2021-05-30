@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DesktopBokmeyker.View.EditElement
+namespace DesktopBookmaker.View.EditElement
 {
     /// <summary>
     /// Логика взаимодействия для EditCheckBox.xaml

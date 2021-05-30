@@ -32,8 +32,7 @@ namespace DesktopBookmaker.View
 		}
 
 		public Matches Matches { get; set; }
-
-		UserControl EditWindow { get; set; } = new UserControl();
+        public PossibleBets PossibleBets { get; private set; }
 
 		private void MenuCloseEvent(object sender, RoutedEventArgs e)
 		{
@@ -80,13 +79,11 @@ namespace DesktopBookmaker.View
         private void InitEditWindow()
 		{
 			Matches = new Matches(tooltip);
-        }
+			PossibleBets = new PossibleBets(tooltip);
+		}
 
 		private void ListViewItem_Selected(object sender, RoutedEventArgs e)
 		{
-			if (EditWindow is null)
-				return;
-
 			if (WiewEditWindow.Children.Count > 0)
 				WiewEditWindow.Children.Remove(WiewEditWindow.Children[0]);
 
@@ -95,13 +92,10 @@ namespace DesktopBookmaker.View
 
 		private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
 		{
-			if (EditWindow is null)
-				return;
-
 			if (WiewEditWindow.Children.Count > 0)
 				WiewEditWindow.Children.Remove(WiewEditWindow.Children[0]);
 
-			WiewEditWindow.Children.Add(EditWindow);
+			WiewEditWindow.Children.Add(PossibleBets);
 		}
     }
 }
