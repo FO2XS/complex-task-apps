@@ -74,7 +74,7 @@ namespace DesktopBookmaker.Data
 
         public virtual Tournaments Tournaments
         {
-            get => tournaments;
+            get => tournaments is null ? new Tournaments() { Title="Нет турнира" } : tournaments;
             set
             {
                 tournaments = value;

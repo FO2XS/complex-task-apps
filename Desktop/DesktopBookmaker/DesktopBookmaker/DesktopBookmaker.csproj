@@ -146,6 +146,9 @@
     <Compile Include="View\EditWindows\Matches.xaml.cs">
       <DependentUpon>Matches.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditWindows\PossibleBets.xaml.cs">
+      <DependentUpon>PossibleBets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LogIn\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -178,6 +181,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\EditWindows\Matches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditWindows\PossibleBets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

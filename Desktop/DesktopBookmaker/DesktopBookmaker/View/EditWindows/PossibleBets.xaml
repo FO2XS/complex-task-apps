@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="DesktopBokmeyker.View.EditWindows.PossibleBets"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ControlBase="clr-namespace:BaseSyle;assembly=BaseSyle"
+             xmlns:local="clr-namespace:DesktopBokmeyker.View.EditWindows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BaseSyle;component/BaseStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="editAndAddMatches" Grid.Row="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading}" Margin="10 0 0 0">
+            ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ СТАВОК НА МАТЧ
+        </TextBlock>
+
+        <Grid x:Name="searchWindow" Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="10 0" Grid.Row="1">
+                <ControlBase:SearchTextBox HorizontalAlignment="Left" x:Name="searchTextBox" Width="450" SearchClick="SearchTextBox_SearchClick" ButtonStyle="{StaticResource ButtonWhite}" BackText="Поиск по названию комманды.." BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:SearchTextBox>
+                <ComboBox HorizontalAlignment="Right" Width="200" Style="{StaticResource baseComboBox}"></ComboBox>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="editAndAddMatchesTable" Grid.Row="8"/>
+    </Grid>
+</UserControl>
