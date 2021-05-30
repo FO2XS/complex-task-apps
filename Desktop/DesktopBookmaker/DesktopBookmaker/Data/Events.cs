@@ -21,7 +21,6 @@ namespace DesktopBookmaker.Data
             PossibleBets = new HashSet<PossibleBets>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int IdSport { get; set; }
@@ -131,6 +130,11 @@ namespace DesktopBookmaker.Data
         public int CompareTo(object obj)
         {
             return Id.CompareTo(((Events)obj).Id);
+        }
+
+        public override string ToString()
+        {
+            return $"{Teams} - {Teams1}";
         }
     }
 }

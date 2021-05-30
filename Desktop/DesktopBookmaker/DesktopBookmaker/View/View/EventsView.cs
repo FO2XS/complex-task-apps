@@ -43,7 +43,7 @@ namespace DesktopBookmaker.View.View
 			StartDate = new EditDateTime() { Hint = "Дата начала", NameItem = nameof(DesktopBookmaker.Data.Events.StartDate) };
 			
 			IsAvailable = new EditCheckBox() { Hint = "Видимость матча", NameItem = nameof(Events.IsAvailable) };
-			IsPast = new EditCheckBox() { Hint = "Завершен", NameItem = nameof(Events.IsAvailable) };
+			IsPast = new EditCheckBox() { Hint = "Завершен", NameItem = nameof(Events.IsPast) };
 			WinnerTeam = new EditComboBox { Hint = "Победитель", NameItem = nameof(Events.WinnerTeam), IsNullable=true };
 			ToArchive = new EditCheckBox() { Hint = "В архиве", NameItem = nameof(Events.ToArchive) };
 
@@ -52,6 +52,7 @@ namespace DesktopBookmaker.View.View
             Teams1.SelectedItemChanged += Teams1_SelectedItemChanged;
             IsPast.SelectedItemChanged += IsPast_SelectedItemChanged;
             ToArchive.SelectedItemChanged += ToArchive_SelectedItemChanged;
+			
 			initData();
 		}
 

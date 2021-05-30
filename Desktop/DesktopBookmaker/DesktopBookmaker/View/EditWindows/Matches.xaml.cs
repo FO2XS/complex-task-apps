@@ -89,7 +89,7 @@ namespace DesktopBookmaker.View.EditWindows
             if (ViewSortingData.GetActiveItems.Contains(IsPast))
             {
                 Boolean? b = IsPast.IsCheked;
-                EditTable.GetFuncs.Add(x => b == ((Events)x).IsPast);
+                EditTable.GetFuncs.Add((x) => b == ((Events)x).IsPast);
             }
 
             if (ViewSortingData.GetActiveItems.Contains(IsAvailable))

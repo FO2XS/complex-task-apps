@@ -15,6 +15,28 @@ namespace DesktopBookmaker.Data
         private decimal min;
         private decimal max;
 
+        public virtual TypeOfBets TypeOfBets
+        {
+            get => typeOfBets;
+            set
+            {
+                typeOfBets = value;
+                if (!(events is null))
+                    IdTob = typeOfBets.Id;
+            }
+        }
+
+        public virtual Events Events
+        {
+            get => events;
+            set
+            {
+                events = value;
+                if (!(events is null))
+                    IdEvent = events.Id;
+            }
+        }
+
         public int Id { get; set; }
 
         public int IdEvent { get; set; }
@@ -71,25 +93,25 @@ namespace DesktopBookmaker.Data
 
         public bool? Winner { get; set; }
 
-        public virtual Events Events
+        public Teams WinnerTeam
         {
-            get => events;
-            set
+            get
             {
-                events = value;
-                if (!(events is null))
-                    IdEvent = events.Id;
+                if (Winner is null)
+                    return null;
+                else if (Winner.Value)
+                    return Events.Teams;
+                else
+                    return Events.Teams1;
             }
-        }
-
-        public virtual TypeOfBets TypeOfBets
-        {
-            get => typeOfBets;
             set
             {
-                typeOfBets = value;
-                if (!(events is null))
-                    IdTob = typeOfBets.Id;
+                if (value is null)
+                    Winner = null;
+                else if (value.Id == Events.Teams.Id)
+                    Winner = true;
+                else
+                    Winner = false;
             }
         }
 

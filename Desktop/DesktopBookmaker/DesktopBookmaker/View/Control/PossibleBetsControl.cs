@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DesktopBookmaker.View.Control
 {
-    class PossibleBetsControl
+    public class PossibleBetsControl
         : IControl
     {
         public Task AddAsync(object ob)

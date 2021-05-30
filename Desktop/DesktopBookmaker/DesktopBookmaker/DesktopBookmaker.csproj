@@ -156,6 +156,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\View\EventsView.cs" />
+    <Compile Include="View\View\PossibleBetsView.cs" />
     <Page Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
