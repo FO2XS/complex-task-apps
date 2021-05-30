@@ -8,6 +8,7 @@ namespace DesktopBookmaker.Data
 
     [Table("public.Events")]
     public partial class Events
+        :ICloneable, IComparable
     {
         private Teams teams;
         private Teams teams1;
@@ -31,9 +32,7 @@ namespace DesktopBookmaker.Data
 
         public DateTimeOffset StartDate { get; set; }
 
-        public int? IdWin { get; set; }
-
-        public int? IdLose { get; set; }
+        public Boolean? Winner { get; set; }
 
         public bool IsPast { get; set; }
 
@@ -85,5 +84,30 @@ namespace DesktopBookmaker.Data
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PossibleBets> PossibleBets { get; set; }
+
+        public object Clone()
+        {
+            return new Events()
+            {
+                Id = Id,
+                IdSport = IdSport,
+                IdTeam1 = IdTeam1,
+                IdTeam2 = IdTeam2,
+                Winner = Winner,
+                IsPast = IsPast,
+                ToArchive = ToArchive,
+                StartDate = StartDate,
+                Teams = Teams,
+                Teams1 = Teams1,
+                Tournaments = Tournaments,
+                IsAvailable = IsAvailable,
+                Sports = Sports,
+            };
+        }
+
+        public int CompareTo(object obj)
+        {
+            return Id.CompareTo(((Events)obj).Id);
+        }
     }
 }

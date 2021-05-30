@@ -47,11 +47,10 @@ namespace DesktopBookmaker.View.Control
 
                 var event2 = new Events
                 {
-                    IdLose = event1.IdLose,
                     IdSport = event1.IdSport,
                     IdTeam1 = event1.IdTeam1,
                     IdTeam2 = event1.IdTeam2,
-                    IdWin = event1.IdWin,
+                    Winner = event1.Winner,
                     IsPast = event1.IsPast,
                     ToArchive = event1.ToArchive,
                     StartDate = event1.StartDate,
@@ -83,14 +82,14 @@ namespace DesktopBookmaker.View.Control
 
                 var event2 = DB.Events.Find(event1.Id);
 
-                event2.IdLose = event1.IdLose;
                 event2.IdSport = event1.IdSport;
                 event2.IdTeam1 = event1.IdTeam1;
                 event2.IdTeam2 = event1.IdTeam2;
-                event2.IdWin = event1.IdWin;
+                event2.Winner = event1.Winner;
                 event2.IsPast = event1.IsPast;
                 event2.ToArchive = event1.ToArchive;
                 event2.StartDate = event1.StartDate;
+                event2.IsAvailable = event1.IsAvailable;
 
                 DB.SaveChanges();
             }
@@ -113,14 +112,14 @@ namespace DesktopBookmaker.View.Control
 
                 var event2 = await DB.Events.FindAsync(event1.Id);
 
-                event2.IdLose = event1.IdLose;
                 event2.IdSport = event1.IdSport;
                 event2.IdTeam1 = event1.IdTeam1;
                 event2.IdTeam2 = event1.IdTeam2;
-                event2.IdWin = event1.IdWin;
+                event2.Winner = event1.Winner;
                 event2.IsPast = event1.IsPast;
                 event2.ToArchive = event1.ToArchive;
                 event2.StartDate = event1.StartDate;
+                event2.IsAvailable = event1.IsAvailable;
 
                 /// DB.Entry<Events>(event2).State = EntityState.Modified;
 

@@ -25,8 +25,8 @@ namespace BaseSyle
 		}
 		public Object SelectedItem
 		{
-			get => selectedItem;
-			set => selectedItem = value;
+			get => ((ICloneable)selectedItem)?.Clone();
+			set => selectedItem = ((ICloneable)value)?.Clone();
 		}
 		public Tooltip Tooltip { get; }
 		public String TableName { get; set; }
@@ -189,7 +189,7 @@ namespace BaseSyle
 				ButtonSaveChange.IsEnabled = false;
 				ListView.IsHitTestVisible = false;
 
-				UpdateTable();
+				UpdateTable(true);
 				await Task.Delay(300);
 			}
 			catch (ExceptionForUser ex)
@@ -258,7 +258,7 @@ namespace BaseSyle
 
 				Items.Add(ob);
 
-				UpdateTable();
+				UpdateTable(true);
 
 				Tooltip.Show("Данные успешно добавлены!");
 
@@ -288,7 +288,6 @@ namespace BaseSyle
 
 		public async void UpdateTable(Boolean isUpdateDate = false)
         {
-			data.ItemsSource = null;
 			data.Columns.Clear();
 
 			if (isUpdateDate)
@@ -300,6 +299,11 @@ namespace BaseSyle
 			data.ItemsSource = Items;
 			
 			View.ViewTable(data);
+
+			if (!(SelectedItem is null))
+				foreach (Object item in data.ItemsSource)
+					if(((IComparable)item).CompareTo(SelectedItem) == 0) 
+					{ data.SelectedItem = item; break; }
 		}
 
         private void data_KeyDown(object sender, KeyEventArgs e)

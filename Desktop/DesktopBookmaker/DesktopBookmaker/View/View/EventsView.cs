@@ -182,6 +182,8 @@ namespace DesktopBookmaker.View.View
 
 		public void ViewTable(DataGrid data)
 		{
+			data.SelectedValuePath = "id";
+
 			foreach (var item in data.Columns)
 			{
 				switch (item.Header.ToString())
@@ -189,7 +191,7 @@ namespace DesktopBookmaker.View.View
 					case (nameof(DesktopBookmaker.Data.Events.Id)):
 						item.Visibility = Visibility.Collapsed;
 						break;
-					case (nameof(DesktopBookmaker.Data.Events.IdWin)):
+					case (nameof(DesktopBookmaker.Data.Events.Winner)):
 						item.Visibility = Visibility.Collapsed;
 						break;
 					case (nameof(DesktopBookmaker.Data.Events.IdSport)):
@@ -202,9 +204,6 @@ namespace DesktopBookmaker.View.View
 						item.Visibility = Visibility.Collapsed;
 						break;
 					case (nameof(DesktopBookmaker.Data.Events.PossibleBets)):
-						item.Visibility = Visibility.Collapsed;
-						break;
-					case (nameof(DesktopBookmaker.Data.Events.IdLose)):
 						item.Visibility = Visibility.Collapsed;
 						break;
 					case (nameof(DesktopBookmaker.Data.Events.ToArchive)):
