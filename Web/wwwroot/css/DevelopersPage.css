@@ -16,6 +16,10 @@ div.container {
     font-size: 20px;
     font-family: Montserrat, sans-serif;
 }
+ul {
+    padding: 0;
+}
 li {
+    padding: 0;
     list-style-type: none;
 }

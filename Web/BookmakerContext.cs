@@ -194,7 +194,7 @@ namespace Test
 
                 entity.Property(e => e.Sum).HasColumnType("numeric(12,2)");
 
-                entity.Property(e => e.Victory).HasColumnType("bit(2)");
+                entity.Property(e => e.Victory).HasColumnType("short");
 
                 entity.HasOne(d => d.IdPosBetNavigation)
                     .WithMany(p => p.UserBets)

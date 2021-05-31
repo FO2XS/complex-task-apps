@@ -14,7 +14,7 @@ namespace Test.Data.ModalEntity
         public bool Side { get; set; }
         public float Coef { get; set; }
         public decimal Sum { get; set; }
-        public BitArray Victory { get; set; }
+        public short? Victory { get; set; }
         public decimal? Prize { get; set; }
         public bool ToArchive { get; set; }
 
