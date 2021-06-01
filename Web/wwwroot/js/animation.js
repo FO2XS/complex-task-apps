@@ -2,7 +2,7 @@
     circle: new Array(20),
     radius: 1000,
     noise: 200,
-    speed: 0.1,
+    speed: 0.3,
     size: 1000,
 
     //color a = background color; color b = object color 
