@@ -13,6 +13,7 @@ namespace Test.Pages.PopUpWindows
     {
         [CascadingParameter]
         private MudDialogInstance MudDialog { get; set; }
+        private User refreshUser;
         [Parameter]
         public Team SelectedTeam { get; set; }
         [Parameter]
@@ -23,18 +24,23 @@ namespace Test.Pages.PopUpWindows
         public bool Side { get; set; }
         private decimal? _sum;
 
+        protected override async void OnInitialized()
+        {
+            //Получаем свежие данные с серва
+            refreshUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
+            if(refreshUser is null) return;
+            refreshUser = UserService.GetUser(refreshUser.Id);
+            StateHasChanged();
+        }
 
         private decimal? CalculatePrize(decimal? sum, float coef)
         {
             return sum * Convert.ToDecimal(coef);
         }
 
-
-        private async void MakeBet()
+        private void MakeBet()
         {
-            //Получаем свежие данные с серва
-            User refreshUser = await _sessionStorage.GetItemAsync<User>(StorageKeys.SessionKey);
-            refreshUser = UserService.GetUser(refreshUser.Id);
+            
             SelectedBet = BetsService.GetPossibleBet(SelectedBet.Id);
             //
 
