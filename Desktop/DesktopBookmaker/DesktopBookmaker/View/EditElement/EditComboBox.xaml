@@ -45,7 +45,18 @@
                     </Style>
                 </ComboBox.Style>
             </ComboBox>
-            <CheckBox Grid.Column="2" x:Name="check" Style="{StaticResource CheckBox}" Visibility="Collapsed">
+            <CheckBox Grid.Column="2" x:Name="check" Visibility="Collapsed" Checked="check_Checked">
+
+                <CheckBox.Style>
+                    <Style TargetType="CheckBox" BasedOn="{StaticResource CheckBox}">
+                        <Style.Triggers>
+                            <Trigger Property="IsHitTestVisible" Value="False">
+                                <Setter Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </CheckBox.Style>
+                
                 <TextBlock Margin="0 0 0 0" Style="{StaticResource TextBold}">Пустое</TextBlock>
             </CheckBox>
         </Grid>

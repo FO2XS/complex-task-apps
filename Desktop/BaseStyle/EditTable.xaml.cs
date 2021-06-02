@@ -18,6 +18,8 @@ namespace BaseSyle
 	public partial class EditTable
 		: UserControl
 	{
+		public Boolean IsActive { get; set; }
+
 		public ListView ListView
 		{
 			get => list;
@@ -56,46 +58,54 @@ namespace BaseSyle
 
 		private void data_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
 		{
-			if (ButtonSaveChange.IsEnabled || ButtonSaveChangeAdd.Visibility == Visibility.Visible)
+            try
             {
-				Tooltip.Show("Сохраните или отмените изменения!", Library.TypeEvent.ErrorUser);
+				if (ButtonSaveChange.IsEnabled || ButtonSaveChangeAdd.Visibility == Visibility.Visible)
+				{
+					Tooltip.Show("Сохраните или отмените изменения!", Library.TypeEvent.ErrorUser);
 
+					e.Cancel = true;
+					return;
+				}
+
+				ButtonDelete.Visibility = Visibility.Visible;
+				ButtonIsEdit.Visibility = Visibility.Visible;
+				ButtonSaveChange.Visibility = Visibility.Visible;
+
+				ButtonSaveChangeAdd.Visibility = Visibility.Collapsed;
+				ButtonCancle.Visibility = Visibility.Collapsed;
+
+				BorderMenu.IsHitTestVisible = true;
+
+				try
+				{
+					SelectedItem = Items.Find(x => x.Equals(data.SelectedItem));
+				}
+				catch (Exception ex)
+				{
+					Tooltip.Show("Не удалось найти выделенный элемент в коллекции Items", Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+					return;
+				}
+
+				try
+				{
+					View.UpdateEditWindow(EditControls, SelectedItem);
+				}
+				catch (ExceptionForUser ex)
+				{
+					Tooltip.Show(ex.Message, Library.TypeEvent.ErrorUser, ex.Title);
+					return;
+				}
+				catch (Exception ex)
+				{
+					Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+					return;
+				}
+			}
+            finally
+            {
 				e.Cancel = true;
-				return;
 			}
-
-			ButtonDelete.Visibility = Visibility.Visible;
-			ButtonIsEdit.Visibility = Visibility.Visible;
-			ButtonSaveChange.Visibility = Visibility.Visible;
-
-			ButtonSaveChangeAdd.Visibility = Visibility.Collapsed;
-			ButtonCancle.Visibility = Visibility.Collapsed;
-
-			BorderMenu.IsHitTestVisible = true;
-
-			try
-			{
-				SelectedItem = Items.Find(x => x.Equals(data.SelectedItem));
-			}
-			catch (Exception ex)
-			{
-				Tooltip.Show("Не удалось найти выделенный элемент в коллекции Items", Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
-			}
-
-			try
-			{
-				View.UpdateEditWindow(EditControls, SelectedItem);
-			}
-			catch (ExceptionForUser ex)
-			{
-				Tooltip.Show(ex.Message, Library.TypeEvent.ErrorUser, ex.Title);
-			}
-			catch (Exception ex)
-			{
-				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
-			}
-			
-			e.Cancel = true;
 		}
 
 		private void BorderMenu_MouseLeave(object sender, MouseEventArgs e)
@@ -182,7 +192,7 @@ namespace BaseSyle
 
 				await Control.EditAsync(SelectedItem);
 
-				Tooltip.Show("Данные добавлены и успешно синхронизированы!");
+				Tooltip.Show("Данные обновлены и успешно синхронизированы!");
 
 				ButtonIsEdit.Content = "Редактировать";
 
@@ -191,6 +201,8 @@ namespace BaseSyle
 
 				UpdateTable(true);
 				await Task.Delay(300);
+
+				IsActive = false;
 			}
 			catch (ExceptionForUser ex)
 			{
@@ -202,6 +214,7 @@ namespace BaseSyle
 				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 				return;
 			}
+
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -214,12 +227,16 @@ namespace BaseSyle
 				ButtonIsEdit.Content = "Редактировать";
 
 				View.UpdateEditWindow(EditControls, SelectedItem);
+
+				IsActive = false;
 			}
 			else
             {
 				ListView.IsHitTestVisible = true;
 				ButtonSaveChange.IsEnabled = true;
 				ButtonIsEdit.Content = "Отменить";
+
+				IsActive = true;
 			}
 		}
 
@@ -227,7 +244,9 @@ namespace BaseSyle
         {
 			if (ButtonSaveChange.IsEnabled)
 			{
-				data.SelectedItem = SelectedItem;
+				foreach (Object item in data.ItemsSource)
+					if (((IComparable)item).CompareTo(SelectedItem) == 0)
+					{ data.SelectedItem = item; break; }
 
 				Tooltip.Show("Сохраните или отмените изменения!", Library.TypeEvent.ErrorUser);
 			}
@@ -246,15 +265,19 @@ namespace BaseSyle
 
 			ButtonSaveChangeAdd.Visibility = Visibility.Visible;
 			ButtonCancle.Visibility = Visibility.Visible;
+
+			IsActive = true;
 		}
 
-        private async void ButtonSaveChangeAdd_Click(object sender, RoutedEventArgs e)
+		private async void ButtonSaveChangeAdd_Click(object sender, RoutedEventArgs e)
         {
             try
             {
 				var ob = View.GetUpdateInEditWindow(EditControls, null);
 
 				await Control.AddAsync(ob);
+
+				SelectedItem = ob;
 
 				Items.Add(ob);
 
@@ -271,14 +294,20 @@ namespace BaseSyle
 			}
 			catch (Exception ex)
 			{
-				Tooltip.Show(ex.InnerException.InnerException.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
+				Tooltip.Show(ex.Message, Library.TypeEvent.ProgramError, $"Ошибка в таблице {TableName}");
 				return;
+			}
+            finally
+            {
+				IsActive = false;
 			}
 		}
 
         private async void ButtonCancle_Click(object sender, RoutedEventArgs e)
         {
 			ButtonSaveChangeAdd.Visibility = Visibility.Collapsed;
+
+			IsActive = false;
 
 			await Task.Delay(300);
 

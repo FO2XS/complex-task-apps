@@ -51,7 +51,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock Style="{StaticResource TextCenter}">Введите пароль</TextBlock>
 
-                    <ControlBase:BaseTextBox x:Name="pass" Grid.Row="1" BackText="Пароль" Style="{StaticResource textBox}" Height="26" BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:BaseTextBox>
+                    <ControlBase:BasePasswordBox x:Name="pass" Grid.Row="1" BackText="Пароль" Height="26" BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:BasePasswordBox>
                 </Grid>
             </Grid>
 

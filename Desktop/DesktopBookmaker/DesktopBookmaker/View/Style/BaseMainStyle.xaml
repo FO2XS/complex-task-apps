@@ -3,7 +3,7 @@
 
     <Storyboard x:Key="MenuOpen">
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
-            <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+            <EasingDoubleKeyFrame KeyTime="0" Value="40"/>
             <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="270">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn"/>
@@ -15,7 +15,7 @@
     <Storyboard x:Key="MenuClose">
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BorderMenu">
             <EasingDoubleKeyFrame KeyTime="0" Value="270"/>
-            <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="50">
+            <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseOut"/>
                 </EasingDoubleKeyFrame.EasingFunction>

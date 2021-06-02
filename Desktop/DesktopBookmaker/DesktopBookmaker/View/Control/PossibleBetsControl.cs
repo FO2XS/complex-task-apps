@@ -26,7 +26,7 @@ namespace DesktopBookmaker.View.Control
 
 				var possibleBets2 = new PossibleBets
 				{
-					IdTob = possibleBets.IdTob,
+					IdTob = possibleBets.TypeOfBets.Id,
 					IdEvent = possibleBets.IdEvent,
 					Min = possibleBets.Min,
 					Max = possibleBets.Max,
@@ -44,6 +44,9 @@ namespace DesktopBookmaker.View.Control
 				DB.PossibleBets.Add(possibleBets2);
 
 				await DB.SaveChangesAsync();
+
+				DB.Entry(possibleBets2);
+				possibleBets2.Id = possibleBets2.Id;
 			}
 			catch (ExceptionForUser ex)
 			{
@@ -64,8 +67,11 @@ namespace DesktopBookmaker.View.Control
 
 				var ev = await DB.PossibleBets.FindAsync(possibleBets.Id);
 
+				if (ev.IsPast)
+					throw new ExceptionForUser("Нельзя удалить событие, которое уже завершилось!");
+
 				if (ev.UserBets.Count > 0)
-					throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки! Вместо этого попробуйте установить значение\"Событие прошло\"");
+					throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки!");
 
 				DB.PossibleBets.Remove(ev);
 
@@ -85,8 +91,11 @@ namespace DesktopBookmaker.View.Control
 
 				var ev = await DB.PossibleBets.FindAsync(id);
 
+				if (ev.IsPast)
+					throw new ExceptionForUser("Нельзя удалить событие, которое уже завершилось!");
+
 				if (ev.UserBets.Count > 0)
-					throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки! Вместо этого попробуйте установить значение\"Событие прошло\"");
+					throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки!");
 
 				DB.PossibleBets.Remove(ev);
 

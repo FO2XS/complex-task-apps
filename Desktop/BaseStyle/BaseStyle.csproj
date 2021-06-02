@@ -56,6 +56,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BasePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BaseStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,9 @@
   <ItemGroup>
     <Compile Include="BaseDatePickerTextBox.xaml.cs">
       <DependentUpon>BaseDatePickerTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasePasswordBox.xaml.cs">
+      <DependentUpon>BasePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseTextBox.xaml.cs">
       <DependentUpon>BaseTextBox.xaml</DependentUpon>

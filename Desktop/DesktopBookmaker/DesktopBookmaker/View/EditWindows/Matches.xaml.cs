@@ -60,7 +60,7 @@ namespace DesktopBookmaker.View.EditWindows
             };
             ToArchive = new BaseSyle.CheckBox()
             {
-                Hint = "В архив",
+                Hint = "В архиве",
                 NameItem = nameof(Events.ToArchive),
                 IsCheked = false,
             };

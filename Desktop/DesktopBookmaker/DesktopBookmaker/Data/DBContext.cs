@@ -25,6 +25,7 @@ namespace DesktopBookmaker.Data
         public virtual DbSet<TypeOfBets> TypeOfBets { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserBets> UserBets { get; set; }
+        public virtual DbSet<Admins> Admins { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -23,15 +23,17 @@ namespace DesktopBookmaker.View.EditElement
                     throw new ArgumentNullException(nameof(value));
 
                 title.IsChecked = value;
-
-                title_Selected(this, new RoutedEventArgs());
             }
         }
 
         public Object Title
         {
             get => title.IsChecked;
-            set => title.IsChecked = (Boolean?)value;
+            set
+            {
+                title.IsChecked = (Boolean?)value;
+                title_Selected(this, new RoutedEventArgs());
+            }
         }
 
         public Boolean IsNullable

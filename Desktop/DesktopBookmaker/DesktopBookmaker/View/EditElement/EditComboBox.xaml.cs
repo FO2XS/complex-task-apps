@@ -39,12 +39,23 @@ namespace DesktopBookmaker.View.EditElement
                 if ((value is null) && check.Visibility == Visibility.Visible)
                 {
                     check.IsChecked = true;
-                    title.SelectedItem = null;
+                    title.SelectedItem = null; 
+                    SelectedItemChanged?.Invoke(this, new RoutedEventArgs());
                 }
                 else
+                {
                     title.SelectedValue = value;
+                    check.IsChecked = false;
+                }
             }
         }
+        
+        public Boolean? IsChecked
+        {
+            get => check.IsChecked;
+            set => check.IsChecked = value;
+        }
+
         public bool IsNullable
         {
             get => isNullable;
@@ -52,8 +63,11 @@ namespace DesktopBookmaker.View.EditElement
             {
                 isNullable = value;
 
-                if (isNullable)
+                if (isNullable) 
+                { 
                     check.Visibility = Visibility.Visible;
+                    check.IsChecked = true;
+                }
             }
         }
 
@@ -75,5 +89,10 @@ namespace DesktopBookmaker.View.EditElement
         
         private void title_Selected(object sender, RoutedEventArgs e)
             => SelectedItemChanged?.Invoke(sender, e);
+
+        private void check_Checked(object sender, RoutedEventArgs e)
+        {
+            title.SelectedItem = null;
+        }
     }
 }

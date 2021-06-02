@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DesktopBookmaker.View"
         xmlns:ControlBase="clr-namespace:BaseSyle;assembly=BaseSyle"
         mc:Ignorable="d"
-		Title="MainWindow" Height="800" Width="1600" Loaded="Window_Loaded">
+		Title="FrogBet" Icon="https://i.imgur.com/5l3htpj.png?2" Height="800" Width="1600" Loaded="Window_Loaded">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -78,8 +78,8 @@
                         <Grid x:Name="buttonClouseUp" Grid.Row="0">
                             <StackPanel Orientation="Horizontal" Background="White">
                                 <Grid>
-                                    <Button Margin="5" Content="≡" Style="{StaticResource ButtonOpenOrCloseStyle}" x:Name="ButtonMenuOpen" Click="MenuOpenEvent"/>
-                                    <Button Margin="5" Content="≡" Style="{StaticResource ButtonOpenOrCloseStyle}" x:Name="ButtonMenuClose" Click="MenuCloseEvent" Visibility="Collapsed"/>
+                                    <Button Margin="5" Content="≡" Style="{StaticResource ButtonOpenOrCloseStyle}" Cursor="Hand" x:Name="ButtonMenuOpen" Click="MenuOpenEvent"/>
+                                    <Button Margin="5" Content="≡" Style="{StaticResource ButtonOpenOrCloseStyle}" Cursor="Hand" x:Name="ButtonMenuClose" Click="MenuCloseEvent" Visibility="Collapsed"/>
                                 </Grid>
                             </StackPanel>
                         </Grid>
@@ -87,19 +87,19 @@
                         <Grid x:Name="gridSelectingAnAction" Grid.Row="1">
                             <ListView x:Name="listSelectingAnAction" Style="{StaticResource ListViewMenyStyle}">
 
-                                <ListViewItem Selected="ListViewItem_Selected">
+                                <ListViewItem Cursor="Hand" Selected="ListViewItem_Selected">
                                     ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ МАТЧЕЙ
                                 </ListViewItem>
-                                <ListViewItem Selected="ListViewItem_Selected_1">
+                                <ListViewItem Cursor="Hand" Selected="ListViewItem_Selected_1">
                                     СОЗДАНИЕ И РЕДАКТИРОВАНИЕ СТАВОК
                                 </ListViewItem>
-                                <ListViewItem>
+                                <ListViewItem Cursor="Hand">
                                     ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ КОМАНД
                                 </ListViewItem>
                                 <ListViewItem>
                                     ДОБАВЛЕНИЕ И РЕДАКТИРОВАНИЕ ТУРНИРОВ
                                 </ListViewItem>
-                                <ListViewItem>
+                                <ListViewItem Cursor="Hand">
                                     РАСЧЕТ СТАВОК
                                 </ListViewItem>
                             </ListView>
@@ -128,7 +128,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Button Name="logIn" Style="{StaticResource LogInOrOut}" Grid.Column="0">Войдите</Button>
-                                <Button Style="{StaticResource LogInOrOut}" Grid.Column="1">Выйти</Button>
+                                <Button Name="exist" Style="{StaticResource LogInOrOut}" Grid.Column="1">Выйти</Button>
                             </Grid>
                         </StackPanel>
                     </Grid>

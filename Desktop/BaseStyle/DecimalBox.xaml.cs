@@ -40,11 +40,17 @@ namespace BaseSyle
 
         private String content;
 
+        public Func<Decimal, Boolean> Func { get; set; }
+        
         private void text_LostFocus(object sender, RoutedEventArgs e)
         {
             if (Decimal.TryParse(text.Text, out Decimal value))
-                Value = value;
-
+            {
+                if (Func is null || Func(value))
+                    Value = value;
+                else
+                    text.Text = content;
+            }
             else
                 text.Text = content;
         }

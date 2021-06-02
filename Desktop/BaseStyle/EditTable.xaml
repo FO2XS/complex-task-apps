@@ -134,7 +134,7 @@
 					<RowDefinition Height="20"/>
 				</Grid.RowDefinitions>
 
-				<TextBlock x:Name="Title" Style="{StaticResource TextBold}">РЕДАКТИРОВАНИЕ СТРОКИ</TextBlock>
+				<TextBlock HorizontalAlignment="Center" x:Name="Title" Style="{StaticResource TextBold}">РЕДАКТИРОВАНИЕ СТРОКИ</TextBlock>
 
                 <ListView Background="{x:Null}" Grid.Row="1" Width="auto" Name="list">
                     <ListView.Style>

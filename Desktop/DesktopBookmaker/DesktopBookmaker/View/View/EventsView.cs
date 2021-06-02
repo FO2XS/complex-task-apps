@@ -37,7 +37,7 @@ namespace DesktopBookmaker.View.View
 			Sports = new EditComboBox() { Hint = "Спорт", NameItem = nameof(DesktopBookmaker.Data.Events.Sports) };
 			Teams = new EditComboBox() { Hint = "Команда 1", NameItem = nameof(DesktopBookmaker.Data.Events.Teams) };
 			Teams1 = new EditComboBox() { Hint = "Команда 2", NameItem = nameof(DesktopBookmaker.Data.Events.Teams1) };
-			Tournament = new EditComboBox() { Hint = "Турнир", NameItem = nameof(DesktopBookmaker.Data.Events.Tournaments) };
+			Tournament = new EditComboBox() { Hint = "Турнир", NameItem = nameof(DesktopBookmaker.Data.Events.Tournaments), IsNullable=true };
 			
 			StartDate = new EditDateTime() { Hint = "Дата начала", NameItem = nameof(DesktopBookmaker.Data.Events.StartDate) };
 			
@@ -51,23 +51,39 @@ namespace DesktopBookmaker.View.View
             Teams1.SelectedItemChanged += Teams1_SelectedItemChanged;
             IsPast.SelectedItemChanged += IsPast_SelectedItemChanged;
             ToArchive.SelectedItemChanged += ToArchive_SelectedItemChanged;
-			
+
 			initData();
 		}
 
         private void ToArchive_SelectedItemChanged(object sender, RoutedEventArgs e)
         {
-			if(ToArchive.IsCheked == true)
-            {
+			if (ToArchive.IsCheked == true)
+			{
 				WinnerTeam.IsHitTestVisible = false;
 
 				IsAvailable.IsCheked = false;
 				IsAvailable.IsHitTestVisible = false;
+
+				IsPast.IsHitTestVisible = false;
+				IsPast.IsCheked = true;
+
+				Sports.IsHitTestVisible = false;
+				Teams.IsHitTestVisible = false;
+				Teams1.IsHitTestVisible = false;
+				StartDate.IsHitTestVisible = false;
+				Tournament.IsHitTestVisible = false;
 			}
-            else
+			else
 			{
 				IsAvailable.IsHitTestVisible = true;
+				IsPast.IsHitTestVisible = true;
 				WinnerTeam.IsHitTestVisible = true;
+
+				Sports.IsHitTestVisible = true;
+				Teams1.IsHitTestVisible = true;
+				Teams.IsHitTestVisible = true;
+				StartDate.IsHitTestVisible = true;
+				Tournament.IsHitTestVisible = true;
 			}
 		}
 
@@ -76,10 +92,13 @@ namespace DesktopBookmaker.View.View
 			if (IsPast.IsCheked == true)
 			{
 				WinnerTeam.IsHitTestVisible = true;
+				ToArchive.IsHitTestVisible = true;
 			}
 			else
 			{
 				WinnerTeam.IsHitTestVisible = false;
+				WinnerTeam.Title = null;
+				ToArchive.IsHitTestVisible = false;
 			}
 		}
 
@@ -199,6 +218,7 @@ namespace DesktopBookmaker.View.View
 			event1.IsPast = ((Boolean?)IsPast.Title).Value;
 			event1.WinnerTeam = (Teams)WinnerTeam.Title;
 			event1.ToArchive = ((Boolean?)ToArchive.Title).Value;
+			event1.IdTournament = ((Tournaments)Tournament.Title)?.Id;
 
 			if (event1.IdTeam1 == 0)
 				throw new ExceptionForUser("Вы не выбрали 1 команду!");
@@ -219,6 +239,8 @@ namespace DesktopBookmaker.View.View
 		{
 			var event1 = (Events)ob1;
 
+			UpdateEditControl();
+
 			if (ob1 is null)
 			{
 				Sports.Title = null;
@@ -228,10 +250,30 @@ namespace DesktopBookmaker.View.View
 				StartDate.Title = DateTime.Now;
 
 				IsAvailable.Title = false;
+
+				IsPast.Visibility = Visibility.Collapsed;
+				WinnerTeam.Visibility = Visibility.Collapsed;
+				ToArchive.Visibility = Visibility.Collapsed;
+
 				IsPast.Title = false;
 				WinnerTeam.Title = null;
 				ToArchive.Title = false;
+				Tournament.Title = null;
 				return;
+			}
+
+			if (event1.IsPast)
+            {
+				Sports.IsEnabled = false;
+				Teams.IsEnabled = false;
+				Teams1.IsEnabled = false;
+
+				StartDate.IsEnabled = false;
+
+				IsAvailable.IsEnabled = false;
+				WinnerTeam.IsEnabled = false;
+				IsPast.IsEnabled = false;
+				Tournament.IsEnabled = false;
 			}
 
 			foreach (Sports item in Sports.Items)
@@ -260,12 +302,51 @@ namespace DesktopBookmaker.View.View
 
 			StartDate.Title = event1.StartDate;
 			IsAvailable.Title = event1.IsAvailable;
-			IsPast.Title = event1.IsPast;
+
+			WinnerTeam.Items = new List<Teams>() { event1.Teams, event1.Teams1 };
+
+			if (event1.Winner == true)
+				WinnerTeam.Title = event1.Teams;
+
+			else if (event1.Winner == false)
+				WinnerTeam.Title = event1.Teams1;
+
+			else
+				WinnerTeam.Title = null;
+
 			WinnerTeam.Title = event1.WinnerTeam;
 			ToArchive.Title = event1.ToArchive;
+			IsPast.Title = event1.IsPast;
 		}
 
-		public void ViewTable(DataGrid data)
+        private void UpdateEditControl()
+        {
+			Sports.Visibility = Visibility.Visible;
+			Teams.Visibility = Visibility.Visible;
+			Teams1.Visibility = Visibility.Visible;
+
+			StartDate.Visibility = Visibility.Visible;
+
+			IsAvailable.Visibility = Visibility.Visible;
+			IsPast.Visibility = Visibility.Visible;
+			WinnerTeam.Visibility = Visibility.Visible;
+			ToArchive.Visibility = Visibility.Visible;
+			Tournament.Visibility = Visibility.Visible;
+
+			Sports.IsEnabled = true;
+			Teams.IsEnabled = true;
+			Teams1.IsEnabled = true;
+
+			StartDate.IsEnabled = true;
+
+			IsAvailable.IsEnabled = true;
+			IsPast.IsEnabled = true;
+			WinnerTeam.IsEnabled = true;
+			ToArchive.IsEnabled = true;
+			Tournament.IsEnabled = true;
+		}
+
+        public void ViewTable(DataGrid data)
 		{
 			data.SelectedValuePath = "Id";
 

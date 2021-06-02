@@ -13,7 +13,6 @@ namespace DesktopBookmaker.Data
         private Teams teams;
         private Teams teams1;
         private Sports sports;
-        private Tournaments tournaments;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Events()
@@ -71,15 +70,7 @@ namespace DesktopBookmaker.Data
             }
         }
 
-        public virtual Tournaments Tournaments
-        {
-            get => tournaments is null ? new Tournaments() { Title="Нет турнира" } : tournaments;
-            set
-            {
-                tournaments = value;
-                IdTournament = tournaments is null ? 0 : tournaments.Id;
-            }
-        }
+        public virtual Tournaments Tournaments { get; set; }
 
         [NotMapped]
         public Teams WinnerTeam
@@ -122,6 +113,7 @@ namespace DesktopBookmaker.Data
                 Teams = Teams,
                 Teams1 = Teams1,
                 Tournaments = Tournaments,
+                IdTournament = IdTournament,
                 IsAvailable = IsAvailable,
                 Sports = Sports,
             };

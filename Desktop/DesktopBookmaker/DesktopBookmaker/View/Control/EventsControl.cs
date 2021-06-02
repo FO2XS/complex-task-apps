@@ -59,6 +59,9 @@ namespace DesktopBookmaker.View.Control
                 DB.Events.Add(event2);
 
                 await DB.SaveChangesAsync();
+
+                DB.Entry(event2);
+                event1.Id = event2.Id;
             }
             catch (ExceptionForUser ex)
             {
@@ -107,6 +110,8 @@ namespace DesktopBookmaker.View.Control
 
                 var DB = new DBContext();
 
+                var d = DB.Tournaments.ToArray();
+
                 var event2 = await DB.Events.FindAsync(event1.Id);
 
                 event2.IdSport = event1.IdSport;
@@ -117,6 +122,7 @@ namespace DesktopBookmaker.View.Control
                 event2.ToArchive = event1.ToArchive;
                 event2.StartDate = event1.StartDate;
                 event2.IsAvailable = event1.IsAvailable;
+                event2.IdTournament = event1.IdTournament;
 
                 /// DB.Entry<Events>(event2).State = EntityState.Modified;
 
@@ -181,6 +187,9 @@ namespace DesktopBookmaker.View.Control
 
                 var ev = await DB.Events.FindAsync(event1.Id);
 
+                if (ev.IsPast)
+                    throw new ExceptionForUser("Нельзя удалить событие, т.к. расчитаны ставки на матч!", "Ошибка удаления");
+
                 Int32 d = ev.PossibleBets.Count();
 
                 for (int i = 0; i < d; i++)
@@ -188,7 +197,7 @@ namespace DesktopBookmaker.View.Control
                     var possibleBets = ev.PossibleBets.First();
 
                     if (possibleBets.UserBets.Count() > 0)
-                        throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки! Вместо этого попробуйте установить значение\"Событие прошло\"");
+                        throw new ExceptionForUser("Нельзя удалить событие, на котором есть пользовательские ставки!", "Ошибка удаления");
 
                     DB.PossibleBets.Remove(possibleBets);
                 }

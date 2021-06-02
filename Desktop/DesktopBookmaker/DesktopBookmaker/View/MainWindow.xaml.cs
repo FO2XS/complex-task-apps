@@ -50,6 +50,11 @@ namespace DesktopBookmaker.View
 
 			main.Children.Add(login);
 
+			exist.Click += (s, ex) =>
+			{
+				if(MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+					Close();
+			};
 			login.CloseEvent += Close;
 			login.LogInEvent += (s, ex) => 
 			{

@@ -133,13 +133,14 @@
     </Style>
 
     <Style x:Key="baseDataGridRowHeader" TargetType="DataGridRowHeader">
-        <Setter Property="Background" Value="WhiteSmoke"></Setter>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
     <Style x:Key="baseDataGridColumnHeader" TargetType="DataGridColumnHeader">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DataGridColumnHeader">
-                    <Border x:Name="bord" Background="#FFF1EEEE" Padding="4">
+                    <Border x:Name="bord" Background="#FFF1EEEE" Cursor="Hand" Padding="4">
                         <Grid>
                             <Grid.Style>
                                 <Style TargetType="Grid">
@@ -425,6 +426,7 @@
         <Setter Property="FontSize" Value="17"/>
         <Setter Property="FontWeight" Value="500"/>
         <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">

@@ -1,4 +1,5 @@
 ﻿using BaseSyle;
+using DesktopBookmaker.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,18 @@ namespace DesktopBookmaker.View.LogIn
 				return;
 			}
 
-			LogInEvent?.Invoke(sender, e);
+            using (DBContext db = new DBContext())
+            {
+				if (db.Admins.FirstOrDefault(x => x.Login == logIn.Text.Trim() && x.Password == pass.Text.Trim()) is null)
+                {
+					Tooltip.Show("Неправильный логин или пароль!", BaseSyle.Library.TypeEvent.ErrorUser);
+				}
+                else
+                {
+					LogInEvent?.Invoke(sender, e);
+					Tooltip.Show($"Привет, {logIn.Text}!");
+				}
+			}
 		}
 	}
 }

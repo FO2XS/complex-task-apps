@@ -6,7 +6,7 @@
              xmlns:ControlBase="clr-namespace:BaseSyle;assembly=BaseSyle"
              xmlns:local="clr-namespace:DesktopBookmaker.View.EditWindows"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1000" Background="White">
+             d:DesignHeight="450" d:DesignWidth="1000" Background="White" Loaded="UserControl_Loaded">
     
     <UserControl.Resources>
         <ResourceDictionary>
@@ -21,7 +21,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -45,7 +45,7 @@
                 <ControlBase:SearchTextBox HorizontalAlignment="Left" x:Name="searchTextBox" Width="450" SearchClick="SearchTextBox_SearchClick" ButtonStyle="{StaticResource ButtonWhite}" BackText="Поиск по названию комманды.." BorderStyle="{StaticResource baseBorderStyleForTextBox}"></ControlBase:SearchTextBox>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                     <TextBlock Margin="0 1 5 0" Style="{StaticResource TextRight}">СОБЫТИЯ:</TextBlock>
-                    <ComboBox SelectionChanged="SelectEvents" Name="events" Width="300" Style="{StaticResource baseComboBox}"></ComboBox>
+                    <ComboBox SelectionChanged="SelectEvents" Name="events" Width="300" Style="{StaticResource baseComboBox}" DropDownOpened="events_DropDownOpened"></ComboBox>
                 </StackPanel>
             </Grid>
         </Grid>
